@@ -1,6 +1,6 @@
 
 // Set language first
-var localeNormalCase = 'en'; // default locale, may happen to be capitalised, cf pt-BR
+var localeNormalCase = 'pl'; // default locale, may happen to be capitalised, cf pt-BR
 var locale; // this will retrieve a lower-case locale, used for file names etc.
 
 function setLocale() {

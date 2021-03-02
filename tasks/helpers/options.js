@@ -13,7 +13,7 @@ module.exports = {
   webextensioncssdest: './webextension/css',
   webextensionpolyfill: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js',
   scsslint: { config: 'configs/.scsslint.yml' },
-  locales: ['en','fr','ru','zh','pt-br', 'gr', 'ar', 'es'],
+  locales: ['en','fr','pl','ru','zh','pt-br', 'gr', 'ar', 'es'],
   localesdest: 'sass/locales/',
   sassdoc: {
     dest: 'docs/SassDoc',
@@ -24,9 +24,9 @@ module.exports = {
       watermark: true
     },
     groups: {
-      'undefined': 'Configuration',
-      'languages': 'Translation'
+      'undefined': 'Konfiguracja',
+      'languages': 'Tłumaczenie'
     },
-    basePath: 'https://github.com/ffoodd/a11y.css/tree/master/sass'
+    basePath: 'https://github.com/lepszyweb/a11y.css/tree/master/sass'
   }
 };

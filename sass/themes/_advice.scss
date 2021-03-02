@@ -3,20 +3,21 @@
 
 /*doc
 ---
-title: "<select required> should start with an empty <option>'s [value]"
+title: "<select required> powinien zaczynać się od <option> z pustą [value]"
 name: empty-option-on-select
 category: Advices
 ---
 
-## Description
-A `<select required>` element, which isn't `[multiple]` and whose `[size]` isn't greater than `1`, should start with an empty `<option>`. That being said, you may use a placeholder content for this option but must ensure to use an empty `[value]` attribute; or set a `[size]` attribute to the `<select>`, which value should equal to the number of `<option>`s.
+##Opis
+Element `<select required>`, który nie jest `[multiple]` i którego `[size]` nie jest większy niż `1`, powinien zaczynać się od pustej `<option>`. To powiedziawszy, możesz użyć zawartości placeholder dla tej opcji, ale musisz upewnić się, że używasz pustego atrybutu `[value]`; lub ustawić atrybut `[size]` do `<select>`, którego wartość powinna być równa liczbie `<option>`.
 
-## References
+
+##Bibliografia
 * <https://twitter.com/WebPlatformNews/status/1346492730223058946>
 * <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
 * <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
 
-## Selector
+##Selektor
 ```css_example
 select[required]:not([multiple])[size="1"],
 select[required]:not([multiple]):not([size])
@@ -25,7 +26,7 @@ select[required]:not([multiple]):not([size])
 ## Test
 ```html_example
 <select name="slices" required>
-  <option value="1">Cheese</option>
+  <option value="1">Ser</option>
   <option value="2">Salami</option>
 </select><span>†</span>
 ```
@@ -38,15 +39,15 @@ select[required]:not([multiple]):not([size]) {
 
 /*doc
 ---
-title: "Empty [class] attribute"
+title: "Pusty atrybut [class]"
 name: empty-class
 category: Advices
 ---
 
-##Description
-`[class]` shouldn't be present if empty. Something to improve, right?
+###Opis
+`[class]` nie powinno istnieć, jeśli jest puste. Coś do poprawienia, prawda?
 
-##Selector
+##Selektor
 ```css_example
 [class=""],
 [class=" "]
@@ -54,7 +55,7 @@ category: Advices
 
 ##Test
 ```html_example
-<b class="">Why is there a class here?</b>
+<b class="">Dlaczego jest tu klasa?</b>
 ```
 */
 [class=""],
@@ -69,15 +70,15 @@ category: Advices
 
 /*doc
 ---
-title: "Empty [id] attribute"
+title: "Pusty atrybut [id]"
 name: empty-id
 category: Advices
 ---
 
-##Description
-`[id]` shouldn't be present if empty. You'll thank me later.
+###Opis
+`[id]` nie powinien istnieć, jeśli jest pusty. Podziękujesz mi później.
 
-##Selector
+##Selektor
 ```css_example
 [id=""],
 [id=" "]
@@ -85,7 +86,7 @@ category: Advices
 
 ##Test
 ```html_example
-<i id="">Wait. Why is my ID empty?</i>
+<i id="">Zaczekaj. Dlaczego mój identyfikator jest pusty?</i>
 ```
 */
 [id=""],
@@ -100,27 +101,27 @@ category: Advices
 
 /*doc
 ---
-title: "A second visible main tag"
+title: "Drugi widoczny znacznik main"
 name: main
 category: Advices
 ---
 
-##Description
-A single `<main>` should be visible at a time. Isn't that obvious?
+###Opis
+W danym momencie powinien być widoczny tylko jeden `<main>`. Czy to nie jest oczywiste?
 
-##Reference
+##Bibliografia
 * <https://www.w3.org/TR/html52/changes.html#new-concepts>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 
-##Selector
+##Selektor
 ```css_example
 main ~ main:not([hidden])
 ```
 
 ##Test
 ```html_example
-<main>I'm the main content!</main>
-<main>No, It's me!</main>
+<main>Ja jestem główną treścią!</main>
+<main>Nie, to ja jestem treścią główną!</main>
 ```
 */
 main ~ main:not([hidden]) {
@@ -130,18 +131,18 @@ main ~ main:not([hidden]) {
 
 /*doc
 ---
-title: "A second figcaption tag"
+title: "Drugi znacznik figcaption"
 name: figcaption
 category: Advices
 ---
 
-##Description
-`<figcaption>` should be single inside its parent. Check the spec!
+###Opis
+`<figcaption>` powinien być jeden wewnątrz swojego rodzica. Sprawdź specyfikację!
 
-##References
+##Bibliografia
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
-##Selector
+##Selektor
 ```css_example
 figcaption:not(:first-of-type)
 ```
@@ -149,9 +150,9 @@ figcaption:not(:first-of-type)
 ##Test
 ```html_example
 <figure role="group">
-  <figcaption>I'm the caption.</figcaption>
-  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
-  <figcaption>I'm the caption too.</figcaption>
+  <figcaption>Jestem podpisem.</figcaption>
+  <img src="static/ffoodd.png" alt="Potrzebna" width="144" height="144" />
+  <figcaption>Ja też jestem podpisem.</figcaption>
 </figure>
 ```
 */
@@ -162,18 +163,18 @@ figcaption:not(:first-of-type) {
 
 /*doc
 ---
-title: "figcaption order"
+title: "Kolejność figcaption"
 name: figcaption-order
 category: Advices
 ---
 
-##Description
-`<figcaption>` should be first or last child. Nothing else.
+###Opis
+`<figcaption>` powinno być pierwszym lub ostatnim dzieckiem. Nie inaczej.
 
-##References
+##Bibliografia
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
-##Selector
+##Selektor
 ```css_example
 figcaption:not(:first-child):not(:last-child)
 ```
@@ -181,9 +182,9 @@ figcaption:not(:first-child):not(:last-child)
 ##Test
 ```html_example
 <figure role="group">
-  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
-  <figcaption>I'm the caption.</figcaption>
-  <p>I'm something else. Oh, wait.</p>
+  <img src="static/ffoodd.png" alt="Potrzebna" width="144" height="144" />
+  <figcaption>Jestem podpisem.</figcaption>
+  <p>Jestem kimś innym. Oh, czekaj.</p>
 </figure>
 ```
 */
@@ -194,23 +195,23 @@ figcaption:not(:first-child):not(:last-child) {
 
 /*doc
 ---
-title: "An email link should be valid"
+title: "Link e-mail powinien być poprawny"
 name: mailto
 category: Advices
 ---
 
-##Description
-A `<href="mailto:">` should contain a valid email.
-Otherwise you may annoy your users.
+###Opis
+`<href="mailto:">` powinien zawierać poprawny email.
+W przeciwnym razie możesz zirytować swoich użytkowników.
 
-##Selector
+##Selektor
 ```css_example
 [href^="mailto"]
 ```
 
 ##Test
 ```html_example
-<a href="mailto:myself">Surpri-ise!</a>
+<a href="mailto:myself">Niespo-dzianka!</a>
 ```
 */
 [href^="mailto"] {
@@ -220,23 +221,23 @@ Otherwise you may annoy your users.
 
 /*doc
 ---
-title: "A phone link should call a real number"
+title: "Łącze telefoniczne powinno dzwonić pod numer rzeczywisty"
 name: tel
 category: Advices
 ---
 
-##Description
-A `<href="tel:">` should contain a valid phone number.
-Otherwise you may make your users to call anubody.
+###Opis
+`<href="tel:">` powinno zawierać prawidłowy numer telefonu.
+W przeciwnym razie możesz zmusić użytkowników do dzwonienia do Berdyczowa.
 
-##Selector
+##Selektor
 ```css_example
 [href^="tel"]
 ```
 
 ##Test
 ```html_example
-<a href="tel:012345678">Who will I call?</a>
+<a href="tel:012345678">Do kogo zadzwonię?</a>
 ```
 */
 [href^="tel"] {
@@ -251,20 +252,20 @@ name: role-button
 category: Advices
 ---
 
-##Description
-Obviously, a button role on a link is probably not so hard to move to an authentic button tag, isn't it?
+###Opis
+Oczywiście, rola przycisku w linku nie jest chyba tak trudna do przeniesienia do autentycznego znacznika przycisku, prawda?
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
-##Selector
+##Selektor
 ```css_example
 a[role="button"]
 ```
 
 ##Test
 ```html_example
-<a href="/" role="button">Submit</a>
+<a href="/" role="button">Wyślij</a>
 ```
 */
 a[role="button"] {
@@ -274,16 +275,17 @@ a[role="button"] {
 
 /*doc
 ---
-title: "Link opening new tab"
+title: "Łącze otwiera nową kartę"
 name: target-blank
 category: Advices
 ---
 
-##Description
-A link opening new tab or window should warn user about its behaviour.
-You could use a `[title]`, for example.
+###Opis
+Łącze otwierające nową kartę lub okno powinno ostrzegać użytkownika o swoim zachowaniu.
+Możesz użyć na przykład `[title]`.
 
-##References
+
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
@@ -291,14 +293,14 @@ You could use a `[title]`, for example.
 * <https://www.w3.org/TR/WCAG-TECHS/H83.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F22.html>
 
-##Selector
+##Selektor
 ```css_example
 [target$="blank"]
 ```
 
 ##Test
 ```html_example
-<a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
+<a href="/" target="_blank" rel="noopener noreferrer">Nowa karta</a>
 ```
 */
 [target$="blank"] {
@@ -308,21 +310,21 @@ You could use a `[title]`, for example.
 
 /*doc
 ---
-title: "Linking to a file"
+title: "Łącze do pliku"
 name: file-format
 category: Advices
 ---
 
-##Description
-A link to a file should indicate the file format, the file size and if different from the main document, the file language.
+###Opis
+Łącze do pliku powinno wskazywać format pliku, rozmiar pliku oraz język pliku, jeśli jest inny niż w dokumencie głównym.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG-TECHS/H33.html>
 
-##Selector
+##Selektor
 ```css_example
 [download],
 [href$=".pdf"]:not(link),
@@ -347,7 +349,7 @@ A link to a file should indicate the file format, the file size and if different
 
 ##Test
 ```html_example
-<a href="/file.png">Wanna file?</a>
+<a href="/file.png">Chcesz złożyć wniosek?</a>
 ```
 */
 $href: ('[download]');
@@ -363,19 +365,19 @@ $href: ('[download]');
 
 /*doc
 ---
-title: "Duplicated roles"
+title: "Powtórzona rola"
 name: duplicate-roles
 category: Advices
 ---
 
-##Description
-Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
+###Opis
+Niektóre role ARIA powinny być unikalne: `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
-##Selector
+##Selektor
 ```css_example
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
@@ -399,19 +401,19 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 
 /*doc
 ---
-title: "May have a search [role]?"
+title: "Może ma [role] search?"
 name: missing-role
 category: Advices
 ---
 
-##Description
-A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
+###Opis
+`[class]` lub `[id]` zawierające search może mieć `[role]` ARIA wyszukiwania.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
-##Selector
+##Selektor
 ```css_example
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"])
@@ -420,7 +422,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 ##Test
 ```html_example
 <form class="search" action="">
-  <label for="field">Search</label>
+  <label for="field">Szukaj</label>
   <input type="search" id="field" /><span>†</span>
 </form>
 ```
@@ -443,19 +445,19 @@ input[class*="search"]:not([role="search"]) {
 
 /*doc
 ---
-title: "Does this look like [required]?"
+title: "Czy to wygląda jak [required]?"
 name: required
 category: Advices
 ---
 
-##Description
-A `[required]` or `[aria-required]` should be visually understandable.
+###Opis
+Pole wymagane - `[required]` lub `[aria-required]` powinny być wizualnie zrozumiałe.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
-##Selector
+##Selektor
 ```css_example
 [required],
 [aria-required]
@@ -464,7 +466,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 ##Test
 ```html_example
 <form action="">
-  <label for="field">Fied</label>
+  <label for="field">Pole</label>
   <textarea id="field" required></textarea><span>†</span>
 </form>
 ```
@@ -491,14 +493,15 @@ name: hidden
 category: Advices
 ---
 
-##Description
-A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
+###Opis
+Użycie`[hidden]` lub `[aria-hidden]` może nie być dobrym pomysłem na ukrycie treści.
 
-##References
+
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
-##Selector
+##Selektor
 ```css_example
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty)
@@ -506,7 +509,7 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 ##Test
 ```html_example
-<a href="/" aria-hidden="true">Important thing!</a>
+<a href="/" aria-hidden="true">Ważna rzecz!</a>
 ```
 */
 [hidden]:not(:empty),
@@ -522,22 +525,22 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 /*doc
 ---
-title: "Placeholder can't replace a label"
+title: "Placeholder nie może zastąpić etykiety"
 name: placeholder
 category: Advices
 ---
 
-##Description
-A `[placeholder]` is not a label, is it?
+###Opis
+Przecież `[placeholder]` nie jest etykietą, prawda?
 
-##Selector
+##Selektor
 ```css_example
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ##Test
 ```html_example
-<input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
+<input type="text" placeholder="Spójrz mamo, nie ma etykiety!" id="test"><span>†</span>
 ```
 */
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
@@ -551,22 +554,22 @@ label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: "video or audio things"
+title: "rzezy dla video lub audio"
 name: video-audio
 category: Advices
 ---
 
-##Description
-A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
+###Opis
+`<video>` lub `<audio>` potrzebuje kilku rzeczy, aby być dostępne, jak transkrypcja, napisy rozszerzone, kontrolki. 
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
-##Selector
+##Selektor
 ```css_example
 video,
 audio
@@ -585,21 +588,21 @@ audio {
 
 /*doc
 ---
-title: "[title] should be equal to alternative"
+title: "[title] powinnie być równy alternatywie tekstowej"
 name: title
 category: Advices
 ---
 
-##Description
-A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
+###Opis
+A `[title]` każdej treści graficznej powinno być równe `[aria-label]` lub `[alt]`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 
-##Selector
+##Selektor
 ```css_example
 img[alt][title],
 area[alt][title],
@@ -608,7 +611,7 @@ svg[aria-label][title]
 
 ##Test
 ```html_example
-<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
+<img src="static/ffoodd.png" alt="Jestem tekstem alternatywnym!" title="Jestem tytułem!" height="144" width="144"><span>†</span>
 ```
 */
 img[alt][title],
@@ -620,15 +623,15 @@ svg[aria-label][title] {
 
 /*doc
 ---
-title: "Date and time should be understandable"
+title: "Data i godzina powinny być zrozumiałe"
 name: time
 category: Advices
 ---
 
-##Description
-A `<time>` or `[datetime]` content should be an understandable and well formated date.
+###Opis
+Zawartość `<time>` lub `[datetime]` powinna być zrozumiałą i dobrze sformułowaną datą.
 
-##Selector
+##Selektor
 ```css_example
 time,
 [datetime]
@@ -636,7 +639,7 @@ time,
 
 ##Test
 ```html_example
-<time>Yesterday</time>
+<time>Wczoraj</time>
 ```
 */
 time,
@@ -647,20 +650,20 @@ time,
 
 /*doc
 ---
-title: "[scope] should be either col or row"
+title: "[scope] powinien być albo col albo row"
 name: th-scope
 category: Advices
 ---
 
-##Description
-A `[scope]` can be col or row (and nothing else) and it has to be relevant.
+###Opis
+Wartość `[scope]` może być col lub row (i nic innego) i musi być istotna.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG-TECHS/H63.html>
 
-##Selector
+##Selektor
 ```css_example
 th[scope]
 ```
@@ -668,21 +671,21 @@ th[scope]
 ##Test
 ```html_example
 <table>
-  <caption>I'm a caption</caption>
+  <caption>Jestem podpisem</caption>
   <thead>
     <tr>
-      <th scope="col">First column</th>
-      <td>Second column</td>
+      <th scope="col">Pierwsza kolumna</th>
+      <td>Druga kolumna</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>First cell</td>
-      <td>Second cell</td>
+      <td>Pierwsza komórka</td>
+      <td>Druga komórka</td>
     </tr>
     <tr>
-      <td>First cell</td>
-      <td>Second cell</td>
+      <td>Pierwsza komórka</td>
+      <td>Druga komórka</td>
     </tr>
   </tbody>
 </table>
@@ -695,19 +698,19 @@ th[scope] {
 
 /*doc
 ---
-title: "Layout table in use"
+title: "Użyto tabeli układu"
 name: table-presentation
 category: Advices
 ---
 
-##Description
-A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
+###Opis
+`[role="presentation"]` jest dobrym pomysłem dla każdej `<table>` używanej dla układu, ale złą rzeczą dla tabeli danych. Sprawdź to dwukrotnie!
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+##Selektor
 ```css_example
 table[role="presentation"]
 ```
@@ -716,12 +719,12 @@ table[role="presentation"]
 ```html_example
 <table role="presentation">
   <tr>
-    <td>First cell</td>
-    <td>Second cell</td>
+    <td>Pierwsza komórka</td>
+    <td>Druga komórka</td>
   </tr>
   <tr>
-    <td>First cell</td>
-    <td>Second cell</td>
+    <td>Pierwsza komórka</td>
+    <td>Druga komórka</td>
   </tr>
 </table>
 ```
@@ -733,27 +736,27 @@ table[role="presentation"] {
 
 /*doc
 ---
-title: "No [href]"
+title: "Brak [href]"
 name: no-href
 category: Advices
 ---
 
-##Description
-Yet it's valid to skip the `[href]` attribute on a link, it's probably better to double check, isn't it?
+###Opis
+Czy poprawne jest pominięcie atrybutu `[href]` w łączu, prawdopodobnie lepiej to sprawdzić dwukrotnie, prawda?
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+##Selektor
 ```css_example
 a:not([href])
 ```
 
 ##Test
 ```html_example
-<a>Who am I? Where do I link?</a>
+<a>Kim jestem? Do czego łączę?</a>
 ```
 */
 a:not([href]) {
@@ -763,21 +766,21 @@ a:not([href]) {
 
 /*doc
 ---
-title: "Non HTTPS URL"
+title: "URL nie HTTPS"
 name: no-https
 category: Advices
 ---
 
-##Description
-When possible, try to use HTTPS.
+###Opis
+Gdy to możliwe, staraj się używać HTTPS.
 
-##References
+##Bibliografia
 * <https://twitter.com/fvsch/status/921748801542639616>
 * <https://transparencyreport.google.com/https/overview?hl=en>
 * <https://letsencrypt.org/>
 * <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
 
-##Selector
+##Selektor
 ```css_example
 [src^="http:"],
 [href^="http:"]
@@ -785,7 +788,7 @@ When possible, try to use HTTPS.
 
 ##Test
 ```html_example
-<a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
+<a href="http://www.ffoodd.fr/">Protokół mojego celu nie jest zabezpieczony</a>
 ```
 */
 [src^="http:"],

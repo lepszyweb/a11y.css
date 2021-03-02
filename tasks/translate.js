@@ -9,7 +9,7 @@ var onError = require('./helpers/onError');
 
 module.exports = function (done) {
   options.locales.forEach( function(locale) {
-    console.info('Generate translation Sass map for: ' + locale);
+    console.info('Generowanie mapowania tłumaczeń Sass dla: ' + locale);
     return fs.createReadStream('locales/' + locale + '.json')
       .pipe(plumber({ errorHandler: onError }))
       .pipe(rootbeer({ prefix: '$messages: ' }))

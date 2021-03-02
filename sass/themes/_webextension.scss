@@ -7,22 +7,22 @@ name: check-alt-0
 category: WebExtension
 ---
 
-The WebExtension provides some more tools requiring a bit of JavaScript:
+Rozszerzenie WebExtension dostarcza kilku dodatkowych narzędzi wymagających odrobiny JavaScriptu:
 
-* Force focus;
-* Show `lang` attributes;
-* Check `alt` and `title` for `<img>`;
-* Increase text spacings.
+* Wymuszenie fokusu;
+* Pokazywanie atrybutu `lang`;
+* sprawdzanie `alt` i `title` w `<img>`;
+* Zwiększanei odstępów w tekście.
 
-##Description
-This page provides fake content with:
+##Opis
+Ta strona dostarcza fałszywych treści z:
 
-* language attributes,
-* images: some have a correct `alt` attribute, some don't, some have an empty `alt`.
+* atrybutami języka,
+* obrazkami: niektóre mają poprawny atrybut `alt`, inne nie, niektóre mają pusty `alt`.
 
-This enables us to test two  webextension's modules.
+Dzięki temu możemy przetestować dwa moduły webextension.
 
-##References for `alt` and `title` on `<img>`
+##Bibliografia dla `alt` i `title` w `<img>`
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
@@ -37,7 +37,7 @@ This enables us to test two  webextension's modules.
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##References for text spacing
+##Bibliografia dla odstępów w tekście
 * <https://www.w3.org/TR/WCAG21/#text-spacing>
 * <https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/>.
 
@@ -46,7 +46,7 @@ This enables us to test two  webextension's modules.
 
 /*doc
 ---
-title: "No alt, no title"
+title: "Bez alt, bez title"
 name: check-alt-1
 category: WebExtension
 ---
@@ -59,20 +59,20 @@ category: WebExtension
 
 /*doc
 ---
-title: "One alt, one title"
+title: "Jeden alt, jeden title"
 name: check-alt-2
 category: WebExtension
 ---
 
 ```html_example
-<img alt="A typewriter" title="Last day of August" src="static/checkalts/2.jpg" /><span>†</span>
+<img alt="Maszyna do pisania" title="Ostatni dzień sierpnia" src="static/checkalts/2.jpg" /><span>†</span>
 ```
 */
 
 
 /*doc
 ---
-title: "Empty alt, no title"
+title: "Pusty alt, bez title"
 name: check-alt-3
 category: WebExtension
 ---
@@ -85,13 +85,13 @@ category: WebExtension
 
 /*doc
 ---
-title: "One alt, no title"
+title: "Jeden alt, bez title"
 name: check-alt-4
 category: WebExtension
 ---
 
 ```html_example
-<img src="static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
+<img src="static/checkalts/4.jpg" alt="Zachód słońca" /><span>†</span>
 ```
 */
 
@@ -103,14 +103,14 @@ name: check-alt-6
 category: WebExtension
 ---
 
-##Selector
+##Selektor
 ```css_example
 [lang]
 ```
 
 ##Test
 ```html_example
-<p>Just testing languages. <span lang="fr">Voilà</span>.</p>
+<p>Tylko testowanie języków. <span lang="fr">Voilà</span>.</p>
 ```
 */
 
@@ -122,13 +122,13 @@ name: check-alt-5
 category: WebExtension
 ---
 
-##Selector
+##Selektor
 ```css_example
 [hreflang]
 ```
 
 ##Test
 ```html_example
-<p>Here comes a simple to <a href="https://www.ffoodd.fr" hreflang="fr">my very own website</a>.</p>
+<p>Oto prosta droga do <a href="https://www.ffoodd.fr" hreflang="fr">mojej własnej strony internetowej</a>.</p>
 ```
-*/
+*/ 

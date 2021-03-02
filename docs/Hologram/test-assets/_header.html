@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
     <title><%= title %> a11y.css</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-          content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+          content="Ten plik CSS ma na celu ostrzeganie programistów o możliwych zagrożeniach i błędach występujących w kodzie HTML. Może być również użyty do wstępnej oceny jakości strony. Wystarczy go dołączyć jako zewnętrzny arkusz stylów.">
     <link rel="stylesheet" href="static/doc.css">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <!-- CSS to be documented -->
-    <% if title != "" and title != "Check alternate text for images" %>
-      <link rel="stylesheet" href="css/a11y-en_<%= title.downcase %>-only.css" media="all">
+    <% if title != "" and title != "Sprawdź tekst zastępczy dla obrazów" %>
+      <link rel="stylesheet" href="css/a11y-pl_<%= title.downcase %>-only.css" media="all">
     <% end %>
   </head>
   <body>
-    <a href="#toc" class="skip">Skip to table of content</a>
-    <a href="#content" class="skip">Skip to content</a>
+    <a href="#toc" class="skip">Do spisu treści</a>
+    <a href="#content" class="skip">Do treści</a>
 
     <header role="banner" id="top" class="main">
-      <a href="https://ffoodd.github.io/a11y.css/index.html">
+      <a href="https://github.com/lepszyweb/a11y.css/index.html">
         <svg xmlns="https://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img" aria-labelledby="titre">
           <title id="titre">a11y.css</title>
           <path fill="#ffce00" d="M0 8a8 8 0 0 1 8-8h164a8 8 0 0 1 8 8v163.81a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8z"/>
@@ -27,19 +27,19 @@
         </svg>
       </a>
 
-      <nav role="navigation" aria-label="Main navigation" class="Index <%= title %>">
+      <nav role="navigation" aria-label="główna" class="Index <%= title %>">
         <ul>
-          <li><a href="index.html" class="index">Home</a></li>
-          <li><a href="errors.html" class="errors">Errors</a></li>
-          <li><a href="warnings.html" class="warnings">Warnings</a></li>
-          <li><a href="obsolete.html" class="obsolete">Obsoletes</a></li>
-          <li><a href="advices.html" class="advices">Advices</a></li>
-          <li><a href="webextension.html" class="alt">WebExtension</a></li>
-          <li><a href="docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a></li>
+          <li><a href="index.html" class="index">Start</a></li>
+          <li><a href="errors.html" class="errors">Błędy</a></li>
+          <li><a href="warnings.html" class="warnings">Ostrzeżenia</a></li>
+          <li><a href="obsolete.html" class="obsolete">Przestarzałe</a></li>
+          <li><a href="advices.html" class="advices">Porady</a></li>
+          <li><a href="webextension.html" class="alt">Rozszerzenia przeglądarek</a></li>
+          <li><a href="docs.html" class="sassdoc"><abbr title="Dokumentacja">Dok.</abbr> <b><abbr title="Interfejs programowania aplikacji">API</abbr></b></a></li>
           <li>
-            <a href="https://github.com/ffoodd/a11y.css">
-              on <b>Github</b>
-              <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
+            <a href="https://github.com/lepszyweb/a11y.css/">
+              na <b>Github</b>
+              <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(link zewnętrzny)" width="10" height="10">
                 <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
                 <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
               </svg>
@@ -53,7 +53,7 @@
       <aside>
         <% if title != "" %>
         <nav role="navigation" aria-labelledby="toc-title" id="toc">
-          <p class="h2-like" id="toc-title">Table of content</p>
+          <p class="h2-like" id="toc-title">Spis treści</p>
           <ol>
             <% @blocks.each do |block| %>
               <% if block[:title] != "" %>
@@ -67,16 +67,16 @@
         <% end %>
 
         <div>
-          <p class="h2-like">Web extensions</p>
+          <p class="h2-like">Rozszerzenia przeglądarek</p>
           <ul>
             <li>
-              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
-                <img src="static/firefox.svg" width="100" height="37" alt="a11y.css Firefox add-on"/>
+              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css - rozszerzenie dla Firefox">
+                <img src="static/firefox.svg" width="100" height="37" alt="a11y.css - rozszerzenie dla Firefox"/>
               </a>
             </li>
             <li>
-              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
-                <img src="static/chrome.svg" width="100" height="38" alt="a11y.css Chrome extension"/>
+              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css - rozszerzenie dla Chrome">
+                <img src="static/chrome.svg" width="100" height="38" alt="a11y.css - rozszerzenie dla Chrome"/>
               </a>
             </li>
           </ul>
@@ -85,22 +85,23 @@
         <div>
           <form action="/" id="bookmarklet">
             <fieldset>
-              <legend>Bookmarlet generator</legend>
+              <legend>Generator skryptozakładki</legend>
               <p>
-                <label for="minimum-level">Minimum level</label>
+                <label for="minimum-level">Poziom minimum</label>
                 <select id="minimum-level" name="minimum-level">
-                  <option value="advice">Advices</option>
-                  <option value="obsolete">Obsoletes</option>
-                  <option value="warning">Warnings</option>
-                  <option value="error">Errors</option>
+                  <option value="advice">Porady</option>
+                  <option value="obsolete">Przestarzałe</option>
+                  <option value="warning">Ostrzeżenia</option>
+                  <option value="error">Błędy</option>
                 </select>
               </p>
               <p>
-                <label for="language">Language</label>
+                <label for="language">Język</label>
                 <select id="language" name="language">
                   <option value="ar" lang="ar" dir="rtl">عربى</option>
                   <option value="fr" lang="fr">Français</option>
                   <option value="en" lang="en">English</option>
+                  <option value="pl" lang="pl">Polski</option>		  
                   <option value="pt-br" lang="pt-br">Português</option>
                   <option value="ru" lang="ru">русский</option>
                   <option value="zh" lang="zh">中文</option>
@@ -110,12 +111,12 @@
               </p>
             </fieldset>
 
-            <button type="submit">Generate <span>the</span> bookmarklet</button>
+            <button type="submit">Wygeneruj zakładkę</button>
           </form>
 
           <p>
-            Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
-            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://ffoodd.github.io/a11y.css/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
+            Po prostu przeciągnij to do swoich zakładek, a będziesz mógł użyć <b>a11y.css</b> na każdej stronie:
+            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://lepszyweb.github.io/a11y.css/css/a11y-pl.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
           </p>
         </div>
       </aside>

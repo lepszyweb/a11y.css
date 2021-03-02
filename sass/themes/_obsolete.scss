@@ -2,20 +2,20 @@
 
 /*doc
 ---
-title: "Old school tags"
+title: "Znaczniki starej szkoły"
 name: tags
 category: Obsolete
 ---
 
-##Description
-Many, many tags are obsolete in HTML5. You should care!
+##Opis
+Wiele, wiele znaczników jest przestarzałych w HTML5. Musisz się tym zainteresować!
 
-##Reference
+##Bibliografia
 * <https://www.w3.org/TR/html5/obsolete.html#obsolete>
 * <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 
-##Selector
+##Selektor
 ```css_example
 applet,
 acronym,
@@ -90,22 +90,22 @@ menuitem {
 
 /*doc
 ---
-title: "Old school attributes"
+title: "Atrybuty starej szkoły"
 name: attributes
 category: Obsolete
 ---
 
-##Description
-Many, many attributes are obsolete in HTML5. You should care!
+##Opis
+Wiele, wiele atrybutów jest przestarzałych w HTML5. Musisz się tym zainteresować!
 
-##Reference
+##Bibliografia
 * <https://www.w3.org/TR/html5/obsolete.html#obsolete>
 * <https://w3c.github.io/html/obsolete.html#non-conforming-features>
 * <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 
-##Selector
+##Selektor
 ```css_example
 [dropzone],
 a[charset], link[charset],
@@ -191,7 +191,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
 
 ##Test
 ```html_example
-<h3 align="right">I'm using [align]!</h3>
+<h3 align="right">Używam [align]!</h3>
 ```
 */
 [dropzone],

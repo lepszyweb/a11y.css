@@ -3,22 +3,22 @@
 
 /*doc
 ---
-title: "Invalid nesting in a list"
+title: "Niepoprawne zagnieżdżanie na liście"
 name: invalid-list-nesting
 category: Warnings
 ---
 
-##Description
-The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
+##Opis
+Jedynym dozwolonym dzieckiem w `<ul>` i `<ol>` jest `<li>` - i odwrotnie jest również prawdziwe.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
-##Selector
+##Selektor
 ```css_example
 ul > :not(li),
 ol > :not(li),
@@ -28,7 +28,7 @@ ol > :not(li),
 ##Test
 ```html_example
 <ul>
-  <p>I feel like I'm lost.</p>
+  <p>Czuję się jakbym się zgubił.</p>
 </ul>
 ```
 */
@@ -41,22 +41,22 @@ ol > :not(li),
 
 /*doc
 ---
-title: "Invalid sibling in a definition list"
+title: "Niepoprawne rodzeństwo na liście definicji"
 name: invalid-def
 category: Warnings
 ---
 
-##Description
-`<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
+##Opis
+`<dt>` i `<dd>` powinny być bezpośrednio sąsiadującym rodzeństwem, i nic więcej. Chociaż wiele `<dd>` może nastąpić za pojedynczym `<dt>`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
-##Selector
+##Selektor
 ```css_example
 dt + :not(dd),
 :not(dt):not(dd) + dd
@@ -65,8 +65,8 @@ dt + :not(dd),
 ##Test
 ```html_example
 <dl>
-  <dt>I need a definition, don't you think?</dt>
-  <li>I'm a list item.</li>
+  <dt>Potrzebna mi definicja, nie sądzisz?</dt>
+  <li>A ja jestem pozycją na liście&hellip;</li>
 </dl>
 ```
 */
@@ -78,16 +78,16 @@ dt + :not(dd),
 
 /*doc
 ---
-title: "Invalid nesting in a definition list"
+title: "Niepoprawne zagnieżdżanie na liście definicji"
 name: invalid-def-nesting
 category: Warnings
 ---
 
-##Description
-`<div>`, `<dt>` and `<dd>` should be direct children of `<dl>`.
-Any other imbrication may be a crime somewhere.
+##Opis
+`<div>`, `<dt>` i `<dd>` powinny być bezpośrednimi dziećmi `<dl>`.
+Każda inna konstrukcja może być gdzieś naruszeniem.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -95,7 +95,7 @@ Any other imbrication may be a crime somewhere.
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
-##Selector
+##Selektor
 ```css_example
 :not(dl) > dt,
 :not(dl) > dd,
@@ -105,7 +105,7 @@ dl > :not(dt):not(dd):not(div)
 ##Test
 ```html_example
 <dl>
-  <li>I'm a list item.</li>
+  <li>Jestem pozycją na liście.</li>
 </dl>
 ```
 */
@@ -118,28 +118,28 @@ dl > :not(dt):not(dd):not(div) {
 
 /*doc
 ---
-title: "figcaption outside a figure"
+title: "figcaption poza figure"
 name: invalid-figcaption-nesting
 category: Warnings
 ---
 
-##Description
-`<figcaption>` doesn't make sense outside a `<figure>`.
+##Opis
+`<figcaption>` nie ma sensu poza `<figure>`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
-##Selector
+##Selektor
 ```css_example
 :not(figure) > figcaption
 ```
 
 ##Test
 ```html_example
-<figcaption>I'm captionning something, isn't it?</figcaption>
+<figcaption>Podpisuję coś pod tym czymś, czy nie?</figcaption>
 ```
 */
 :not(figure) > figcaption {
@@ -149,20 +149,20 @@ category: Warnings
 
 /*doc
 ---
-title: "figure without the group ARIA role"
+title: "figure bez roli group"
 name: figure-role
 category: Warnings
 ---
 
-##Description
-`<figure>` needs `[role="group"]` for accessibility reason.
+##Opis
+`<figure>` potrzebuje atrybutu ARIA `[role="group"]` ze względu na dostępność.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
-##Selector
+##Selektor
 ```css_example
 figure:not([role="group"])
 ```
@@ -170,8 +170,8 @@ figure:not([role="group"])
 ##Test
 ```html_example
 <figure>
-  <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
-  <figcaption>I'm a figcaption</figcaption>
+  <img src="static/ffoodd.png" width="144" height="144" alt="Test figcaption"/>
+  <figcaption>&nbsp;Jestem figcaption (podpis figure)</figcaption>
 </figure>
 ```
 */
@@ -182,32 +182,33 @@ figure:not([role="group"]) {
 
 /*doc
 ---
-title: "Invalid nesting"
+title: "Nieprawidłowe zagnieżdżanie"
 name: invalid-nesting
 category: Warnings
 ---
 
-##Description
-Some nestings are forbidden, and do not have their own test case for now:
+##Opis
+Niektóre zagnieżdżenia są zabronione i na razie nie mają swoich własnych przypadków testowych:
 
-* `<main>`  contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
-* `<address>`  containing any of `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` or `<article>` — neither headings;
-* `<option>` and `<optgroup>` outside a `<select>`;
-* `<legend>` outside a `<fieldset>`;
-* `<td>` or `<th>` outside a `<tr>`;
-* direct children of a `<table>`;
-* `<colgroup>` containing anything else than `<col>`.
+* `<main>` zawarte w którymkolwiek z `<nav>`, `<aside>`, `<footer>`, `<header>` lub `<article>`;
+* `<address>`  zawarte w którymkolwiek z `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` lub `<article>` — ani nagłówkach;
+* `<option>` i `<optgroup>` poza `<select>`;
+* `<legend>` poza `<fieldset>`;
+* `<td>` lub `<th>` poza `<tr>`;
+* bezpośrednie dzieci `<table>`;
+* `<colgroup>` zawierające cokolwiek innego niż `<col>`.
 
-Maybe other invalid nestings to test. Stay tuned.
+Może inne nieprawidłowe zagnieżdżenia do przetestowania. Bądź na bieżąco.
 
-##References
+
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
-##Selector
+##Selektor
 ```css_example
 nav main,
 aside main,
@@ -242,7 +243,7 @@ address section
 
 ##Test
 ```html_example
-<legend>I'm an legend. Am I?</legend>
+<legend>Jestem legendą. Czyżby?</legend>
 ```
 */
 nav main,
@@ -280,19 +281,18 @@ address section {
 
 /*doc
 ---
-title: "Misplaced div"
+title: "Niewłaściwie umieszczony div"
 name: misplaced-div
 category: Warnings
 ---
 
-##Description
-Did you know that you shouldn't add a `<div>` inside any inline element?
-You could use a `<span>` instead.
+##Opis
+Czy wiesz, że nie powinieneś dodawać `<div>`  wewnątrz jakiegokolwiek elementu liniowego? Zamiast tego możesz użyć `<span>`.
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
-##Selector
+##Selektor
 ```css_example
 b div,
 i div,
@@ -309,7 +309,7 @@ strong div
 
 ##Test
 ```html_example
-<b><div>Hey ya!</div></b>
+<b><div>Hej ha!</div></b>
 ```
 */
 b div,
@@ -329,20 +329,20 @@ strong div {
 
 /*doc
 ---
-title: "Misused sectioning tags"
+title: "Nieprawidłowo użyte znaczniki sekcji"
 name: sectioning-tags
 category: Warnings
 ---
 
-##Description
-`<section>`, `<aside>`, `<article>` are sectioning tags.
-They must not be used as wrappers!
+##Opis
+`<section>`, `<aside>`, `<article>` to znaczniki sekcji.
+Nie wolno ich używać jako opakowania!
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
 * <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
-##Selector
+##Selektor
 ```css_example
 aside > aside:first-child,
 article > aside:first-child,
@@ -356,7 +356,7 @@ article > article:first-child
 ##Test
 ```html_example
 <aside>
-  <section>I'm wrapping, you know.</section>
+  <section>Jestem opakowany, wiesz.</section>
 </aside>
 ```
 */
@@ -373,22 +373,22 @@ article > article:first-child {
 
 /*doc
 ---
-title: "legend must be a fieldset's:first-child"
+title: "legend w fieldset musi być :first-child"
 name: fieldset
 category: Warnings
 ---
 
-##Description
-`<legend>` must be a `<fieldset>`'s`:first-child`.
-Always.
+##Opis
+`<legend>`  w elemencie `<fieldset>` musi być pierwszym dzieckiem `:first-child`.
+Zawsze.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
-##Selector
+##Selektor
 ```css_example
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child)
@@ -397,7 +397,7 @@ fieldset > legend:not(:first-child)
 ##Test
 ```html_example
 <fieldset>
-  <label>I'm not a legend.</label>
+  <label>Nie jestem legendą.</label>
 </fieldset>
 ```
 */
@@ -409,23 +409,22 @@ fieldset > legend:not(:first-child) {
 
 /*doc
 ---
-title: "summary must be a details's:first-child"
+title: "summary w details musi być :first-child"
 name: details
 category: Warnings
 ---
 
-##Description
-`<summary>` must be a `<details>`'s`:first-child`.
-Always.
+##Opis
+`<summary>` w elemencie `<details>` musi być pierwszym dzieckiem (`:first-child`). Zawsze.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
-##Selector
+##Selektor
 ```css_example
 details > *:not(summary):first-child,
 details > summary:not(:first-child)
@@ -434,7 +433,7 @@ details > summary:not(:first-child)
 ##Test
 ```html_example
 <details>
-  <legend>I'm not a summary.</legend>
+  <legend>Nie jestem podsumowaniem.</legend>
 </details>
 ```
 */
@@ -446,15 +445,15 @@ details > summary:not(:first-child) {
 
 /*doc
 ---
-title: "abbr should have a [title]"
+title: "abbr powinien mieć [title]"
 name: empty-title
 category: Warnings
 ---
 
-##Description
-Any abbreviation should give an explanation about its meaning, at least on its first occurrence.
+##Opis
+Każdy skrót powinien zawierać wyjaśnienie jego znaczenia, przynajmniej przy pierwszym wystąpieniu.
 
-##References
+##Bibliografia
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-located>
@@ -463,7 +462,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <https://www.w3.org/TR/WCAG-TECHS/G102.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H28.html>
 
-##Selector
+##Selektor
 ```css_example
 abbr:not([title]),
 abbr[title=" "],
@@ -472,7 +471,7 @@ abbr[title=""]
 
 ##Test
 ```html_example
-<p>Do you know about <abbr>W3C</abbr>?</p>
+<p>Co wiesz o <abbr>W3C</abbr>?</p>
 ```
 */
 abbr:not([title]),
@@ -484,16 +483,15 @@ abbr[title=""] {
 
 /*doc
 ---
-title: "[alt] can be empty but has to be checked"
+title: "[alt] może być pusty, ale wymaga sprawdzenia"
 name: empty-alt
 category: Warnings
 ---
 
-##Description
-An alternative has to be empty when image is decorative only. In any other case, `[alt]` must be defined.
-That should be double-checked.
+##Opis
+Wartość `[alt]` może być pusta, jeśli obraz jest tylko dekoracyjny. W każdym innym przypadku tekst `[alt]` musi być zdefiniowany.Sprawdź to dwa razy.
 
-##References
+##Bibliografia
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
@@ -504,7 +502,7 @@ That should be double-checked.
 * <https://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
-##Selector
+##Selektor
 ```css_example
 img[alt=""],
 area[alt=""],
@@ -532,15 +530,15 @@ object[type="image"][alt=""] {
 
 /*doc
 ---
-title: "[alt] containing file name"
+title: "[alt] zawiera nazwę pliku"
 name: filename-alt
 category: Warnings
 ---
 
-##Description
-A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
+##Opis
+Nazwa pliku w `[alt]` jest prawdopodobnie błędem automatyzacji… i nigdy nie pomoże żadnemu użytkownikowi.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
@@ -550,7 +548,7 @@ A file name in `[alt]` is probably wrongly automated… and would never ever hel
 * <https://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
-##Selector
+##Selektor
 ```css_example
 img[alt$=".pdf"],
 area[alt$=".pdf"],
@@ -668,25 +666,26 @@ $self-alt: ();
 
 /*doc
 ---
-title: "Decorative image shouldn't have an accessible name"
+title: "Obraz dekoracyjny nie powinien mieć dostępnej nazwy"
 name: decoration
 category: Warnings
 ---
 
-##Description
-Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — shouldn't have any of those:
+##Opis
+Żaden ozdobny obraz - z `[aria-hidden="true"]` lub pustym `[alt]` — nie powinien mieć żadnego z tych elementów:
 
 * `[title]`;
 * `[aria-label]`;
 * `[aria-labelledby]`;
 * `[aria-describedby]`;
-* a `<title>` child;
-* or a `<desc>`.
+* potomne `<title>`;
+* lub potomne `<desc>`.
 
-This test currently can't check if any `<title>` nor `<desc>` child is present since `<svg>` is a replaced elements.
-See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
+Ten test obecnie nie może sprawdzić czy istnieje jakiekolwiek dziecko `<title>` lub `<desc>`, ponieważ `<svg>` jest wymienionym (???) elementem.
 
-##References
+Zobacz [Przypadki skrajne i znane problemy](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) na wiki a11y.css'.
+
+##Bibliografia
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
@@ -699,7 +698,7 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##Selector
+##Selektor
 ```css_example
 img[alt=""][title],
 img[alt=""][aria-label],
@@ -772,22 +771,21 @@ object[type="image"][aria-hidden="true"][aria-describedby] {
 
 /*doc
 ---
-title: "[role=presentation] shouldn't be used on image"
+title: "[role=presentation] nie powinna być używana dla obrazu"
 name: presentation
 category: Warnings
 ---
 
-##Description
-Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `[alt]` if `<img>`).
-`[role=presentation]` shall do the trick but at the time of writing, its support is too low compared
-to empty `[alt]` or `[aria-hidden=true]`.
+##Opis
+Każdy obraz dekoracyjny powinien być oznaczony `[aria-hidden="true"]` (lub pustym `[alt]`, jeśli to element`<img>`).
+`[role=presentation]` spowinno załatwić sprawę, ale w momencie pisania tego tekstu, jego wsparcie jest zbyt niskie w porównaniu do pustego `[alt]` lub `[aria-hidden=true]`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
-##Selector
+##Selektor
 ```css_example
 img[role="presentation"],
 svg[role="presentation"],
@@ -822,20 +820,20 @@ object[role="presentation"] {
 
 /*doc
 ---
-title: "A role is needed for svg"
+title: "Rola jest wymagana dla svg"
 name: no-aria-role
 category: Warnings
 ---
 
-##Description
-Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
+##Opis
+Każdy `<svg>` powinien mieć albo `[aria-hidden="true"]`, jeśli ma charakter dekoracyjny, albo `[role="img"]`, jeśli ma charakter informacyjny.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##Selector
+##Selektor
 ```css_example
 svg:not([aria-hidden="true"]):not([role="img"])
 ```
@@ -844,7 +842,7 @@ svg:not([aria-hidden="true"]):not([role="img"])
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
-     aria-label="Decorative SVG, you punk!">
+     aria-label="Dekoracyjny SVG, ty punku!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
@@ -857,21 +855,21 @@ svg:not([aria-hidden="true"]):not([role="img"]) {
 
 /*doc
 ---
-title: "[autoplay] should probably not be used"
+title: "[autoplay] prawdopodobnie nie powinnno być używane"
 name: autoplay
 category: Warnings
 ---
 
-##Description
-A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
+##Opis
+Media oparte na czasie, takie jak `<audio>` lub `<video>`  nie powinny być odtwarzane automatycznie , bo może to być dość zaskakujące dla użytkownika.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
 * <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
-##Selector
+##Selektor
 ```css_example
 video[autoplay],
 audio[autoplay]
@@ -890,22 +888,22 @@ audio[autoplay] {
 
 /*doc
 ---
-title: "[controls] would be helpful"
+title: "[controls] byłoby pomocne"
 name: controls
 category: Warnings
 ---
 
-##Description
-A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
+##Opis
+Media oparte na czasie, takie jak `<audio>` lub `<video>` będzie łatwiejsze w użyciu, jeśli `[controls]` są aktywowane dla użytkownika.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
 * <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
 * <https://www.w3.org/TR/WCAG-TECHS/G4.html>
 
-##Selector
+##Selektor
 ```css_example
 video:not([controls]),
 audio:not([controls])
@@ -924,34 +922,32 @@ audio:not([controls]) {
 
 /*doc
 ---
-title: "Most of DOM nodes shouldn't be :empty"
+title: "Większość węzłów DOM nie może być :empty"
 name: empty-nodes
 category: Warnings
 ---
 
-##Description
-Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
-Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
+##Opis
+Oczywiście elementy void są puste, tak samo jak `<iframe>` i `<textarea>` mogą być `:empty` (puste).
+Każdy inny znacznik `:empty`, który nie jest ukryty, jest prawdopodobnie bezużyteczny i powinien zostać usunięty.
 
-Please note that it's disabled for tags owning a source through `[src]`. It's pretty opinionated,
-but it's meant to avoid false positives on tags such as `<video>` or `<audio>` which may be
-empty if they have at least one source specified through `[src]`.
+Zauważ, że nie dotyczy to znaczników posiadających źródło wskazane w `[src]`. Jest to raczej opinia, ale ma na celu uniknięcie fałszywych alarmów w odniesieniu do takich znaczników jak `<video>` lub `<audio>`, które mogą być puste, jeśli mają co najmniej jedno źródło określone przez `[src]`.
 
 ###Notes
 
-* This test only targets tags in `<body>`, since most of head's tags should be empty.
-* `<button>` and `<a>` are also excluded since `button:empty` and `a:empty` are both covered by their own error.
+* Ten test dotyczy tylko znaczników w `<body>`, ponieważ większość znaczników w head powinna być pusta.
+* `<button>` oraz `<a>` oraz również wyłączone, ponieważ `button:empty` oraz `a:empty` są objęte ich własnym błędem.
 
-We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
+Moglibyśmy użyć pseudo-klasy `:blank`, ale w tym momencie jej wsparcie jest bardzo słabe. Moglibyśmy również użyć pseudoklasy `:-moz-only-whitespace` pseudo-class, ale jej wsparcie jest ograniczone do Firefoxa i w ten sposób moglibyśmy unieważnić nasz stos selektorów…
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <https://www.w3.org/TR/html-markup/syntax.html#void-element>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
-##Selector
+##Selektor
 ```css_example
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
@@ -979,20 +975,21 @@ svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not
 
 /*doc
 ---
-title: "A single line table may be used for layout"
+title: "Do układu można użyć tabeli jednoliniowej"
 name: table-layout
 category: Warnings
 ---
 
-##Description
-A lonely `<tr>` can be a symptom of a table used for layout.
-Should be double checked!
+##Opis
+Samotny `<tr>` może być symptomem tabeli używanej do układu.
+Należy to sprawdzić dwukrotnie!
 
-##References
+
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+##Selektor
 ```css_example
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child
@@ -1001,15 +998,15 @@ table:not([role="presentation"]) > tbody > tr:only-child
 ##Test
 ```html_example
 <table>
-  <caption>I'm a caption :3</caption>
+  <caption>Jestem podpisem :3</caption>
   <thead>
     <tr>
-      <th scope="col">Oh boy…</th>
+      <th scope="col">O rany…</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>I'm a poor lonesone table-roooow!</td>
+      <td>Jestem biednym samotnym rzęęęędem tabeli!</td>
     </tr>
   </tbody>
 </table>
@@ -1023,21 +1020,21 @@ table:not([role="presentation"]) > tbody > tr:only-child {
 
 /*doc
 ---
-title: "Nested tables"
+title: "Zagnieżdżone tabele"
 name: nested-table
 category: Warnings
 ---
 
-##Description
-There's no good reason to nest data tables: thus it probably means we're facing a layout table…
+##Opis
+Nie ma dobrego powodu, aby zagnieżdżać tabele danych: więc prawdopodobnie oznacza to, że mamy do czynienia z tabelą układu…
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
-##Selector
+##Selektor
 ```css_example
 table table
 ```
@@ -1045,31 +1042,31 @@ table table
 ##Test
 ```html_example
 <table>
-  <caption>I'm a caption :3</caption>
+  <caption>Jestem podpisem :3</caption>
   <thead>
     <tr>
-      <th scope="col">Oh boy…</th>
+      <th scope="col">O rany…</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>I'm a table-cell!</td>
+      <td>Jestem komórką tabeli!</td>
     </tr>
     <tr>
       <td>
         <table>
-          <caption>I'm a caption too!</caption>
+          <caption>Jestem komórką tabeli!</caption>
           <thead>
             <tr>
-              <th scope="col">Oh boy…</th>
+              <th scope="col">O rany…</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>I'm a table-cell!</td>
+              <td>Jestem komórką tabeli!</td>
             </tr>
             <tr>
-              <td>I'm a table-cell!</td>
+              <td>Jestem komórką tabeli!</td>
             </tr>
         </table>
       </td>
@@ -1085,23 +1082,23 @@ table table {
 
 /*doc
 ---
-title: "Every data table must have a caption"
+title: "Każda tabela danych musi mieć podpis"
 name: table-caption
 category: Warnings
 ---
 
-##Description
-`<caption>` is needed for data `<table>`.
-And it must be the `:first-child`, by the way.
+##Opis
+`<caption>` jest potrzebny dla `<table>` z  danymi.
+I to musi być `:first-child`, tak przy okazji.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <https://www.w3.org/TR/WCAG-TECHS/H39.html>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
-##Selector
+##Selektor
 ```css_example
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption)
@@ -1112,16 +1109,16 @@ table:not([role="presentation"]) > *:first-child:not(caption)
 <table>
   <thead>
     <tr>
-      <th id="th-one">I'm a table without a caption!</th>
-      <th id="th-two">I'm a table without a caption!</th>
+      <th id="th-one">Jestem tabelą bez podpisu (tytułu)!</th>
+      <th id="th-two">Jestem tabelą bez podpisu (tytułu)!</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+      <td colspan="2" headers="th-one th-two">Jestem tabelą bez podpisu (tytułu)!</td>
     </tr>
     <tr>
-      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+      <td colspan="2" headers="th-one th-two">Jestem tabelą bez podpisu (tytułu)!</td>
     </tr>
   </tbody>
 </table>
@@ -1135,21 +1132,21 @@ table:not([role="presentation"]) > *:first-child:not(caption) {
 
 /*doc
 ---
-title: "Invalid table structure"
+title: "Niepoprawna struktura tabeli"
 name: table-structure
 category: Warnings
 ---
 
-##Description
-`<thead>`, `<tfoot>` and `<tbody>` must be in this order.
+##Opis
+`<thead>`, `<tfoot>` oraz `<tbody>` muszą występować w tej kolejności.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
-##Selector
+##Selektor
 ```css_example
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
@@ -1162,25 +1159,25 @@ table > tbody ~ colgroup
 ##Test
 ```html_example
 <table>
-  <caption>I'm a caption</caption>
+  <caption>Jestem podpisem</caption>
   <thead>
     <tr>
-      <th scope="col">Where's my foot?</th>
+      <th scope="col">Gdzie jest moja stopka?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>I'm a table with tfoot done wrong.</td>
-      <td>I'm a table with tfoot done wrong.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
     </tr>
     <tr>
-      <td>I'm a table with tfoot done wrong.</td>
-      <td>I'm a table with tfoot done wrong.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
     </tr>
   </tbody>
   <tfoot>
-    <th id="th-1">I'm a table with tfoot done wrong.</th>
-    <th id="th-2">I'm a table with tfoot done wrong.</th>
+    <th id="th-1">Jestem tabelą ze źle zrobioną stopką.</th>
+    <th id="th-2">Jestem tabelą ze źle zrobioną stopką.</th>
   </tfoot>
 </table>
 ```
@@ -1197,15 +1194,15 @@ table > tbody ~ colgroup {
 
 /*doc
 ---
-title: "Missing head for data table"
+title: "Brakujący nagłówek w tabeli danych"
 name: missing-thead
 category: Warnings
 ---
 
-##Description
-`<thead>` is strongly needed if `<tbody>` is present.
+##Opis
+`<thead>` jest bardzo potrzebny, jeśli istnieje `<tbody>`.
 
-##Selector
+##Selektor
 ```css_example
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
@@ -1214,15 +1211,15 @@ table:not([role="presentation"]) > tbody:first-child
 ##Test
 ```html_example
 <table>
-  <caption>Missing thead</caption>
+  <caption>Brakujący thead</caption>
   <tbody>
     <tr>
-      <td>I'm a table without thead.</td>
-      <td>I'm a table without thead.</td>
+      <td>Jestem tabelą bez thead.</td>
+      <td>Jestem tabelą bez thead.</td>
     </tr>
     <tr>
-      <td>I'm a table without thead.</td>
-      <td>I'm a table without thead.</td>
+      <td>Jestem tabelą bez thead.</td>
+      <td>Jestem tabelą bez thead.</td>
     </tr>
   </tbody>
 </table>
@@ -1236,20 +1233,20 @@ table:not([role="presentation"]) > tbody:first-child {
 
 /*doc
 ---
-title: "th without [scope] or [id]"
+title: "th bez [scope] lub [id]"
 name: th-no-scope
 category: Warnings
 ---
 
-##Description
-`<th>` strongly needs an `[id]` or a `[scope]`.
+##Opis
+`<th>` usilnie potrzebuje `[id]` lub `[scope]`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
-##Selector
+##Selektor
 ```css_example
 th:not([scope]):not([id])
 ```
@@ -1257,21 +1254,21 @@ th:not([scope]):not([id])
 ##Test
 ```html_example
 <table>
-  <caption>Need for a [scope] or [id]</caption>
+  <caption>Potrzebne [scope] lub [id]</caption>
   <thead>
     <tr>
-      <th>I'm a th without [scope] or [id].</th>
-      <th scope="col">I'm a th with [scope].</th>
+      <th>Jestem bez [scope] lub [id].</th>
+      <th scope="col">jestem th ze [scope].</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>I'm a td missing something.</td>
-      <td>I'm a td missing something.</td>
+      <td>Jestem td i czegoś mi brakuje.</td>
+      <td>Jestem td i czegoś mi brakuje.</td>
     </tr>
     <tr>
-      <td>I'm a td feeling well.</td>
-      <td>I'm a td feeling well.</td>
+      <td>Jestem td i czuje się dobrze.</td>
+      <td>Jestem td i czuje się dobrze</td>
     </tr>
   </tbody>
 </table>
@@ -1284,18 +1281,18 @@ th:not([scope]):not([id]) {
 
 /*doc
 ---
-title: "spacer.gif used"
+title: "użyto spacer.gif"
 name: spacer-gif
 category: Warnings
 ---
 
-##Description
-Believe me, this still have to be tested.
+##Opis
+Uwierz mi, to jeszcze musi zostać przetestowane.
 
-##References
+##Bibliografia
 * <https://www.la-grange.net/2015/03/11/visible>
 
-##Selector
+##Selektor
 ```css_example
 img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
@@ -1308,7 +1305,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 
 ##Test
 ```html_example
-<img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
+<img src="static/spacer.gif" alt="spacer.gif" width="100" height="100"/><span>†</span>
 ```
 */
 img[src*="1px.gif"]:not([role="presentation"]),
@@ -1324,15 +1321,15 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) {
 
 /*doc
 ---
-title: "Bad computed value"
+title: "Zła obliczona wartość"
 name: oops
 category: Warnings
 ---
 
-##Description
-Don't laugh, shit happens.
+##Opis
+Nie śmiej się, gówno się stało.
 
-##Selector
+##Selektor
 ```css_example
 [id*="NaN"],
 [id*="null"],
@@ -1344,7 +1341,7 @@ Don't laugh, shit happens.
 
 ##Test
 ```html_example
-<p class="undefined">Oups, something went wrong.</p>
+<p class="undefined">Oops, coś poszło nie tak.</p>
 ```
 */
 [class*="NaN"],
@@ -1374,22 +1371,22 @@ name: href-js
 category: Warnings
 ---
 
-##Description
-The `[href]` attribute should not start with "javascript".
-Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
-The only exception shall be bookmarklets.
+##Opis
+Atrybut `[href]`  nie powinien zaczynać się od "javascript".
+. Prawdopodobnie powinien to być `<button>` lub przynajmniej element z `[role="button"]`, nie sądzisz?
+Jedynym wyjątkiem powinny być skryptozakładki.
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+##Selektor
 ```css_example
 a[href^="javascript"]:not([role="button"])
 ```
 
 ##Test
 ```html_example
-<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
+<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Proszę użyć mojej zakładki ;)</a>
 ```
 */
 a[href^="javascript"]:not([role="button"]) {
@@ -1404,14 +1401,14 @@ name: empty-href
 category: Warnings
 ---
 
-##Description
+##Opis
 The `[href]` attribute is only containing `#`.
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+##Selektor
 ```css_example
 a[href="#"]:not([role="button"])
 ```
@@ -1428,28 +1425,28 @@ a[href="#"]:not([role="button"]) {
 
 /*doc
 ---
-title: "[style] attribute"
+title: "atrybut [style]"
 name: style-attr
 category: Warnings
 ---
 
-##Description
-Your styles should be driven by a CSS file. That's it.
-And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
+##Opis
+Twoje style powinny być sterowane przez plik CSS. To wszystko.
+I nie, JS nie powinien manipulować stylami: lepiej jest bawić się klasami, na przykład.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+##Selektor
 ```css_example
 [style]
 ```
 
 ##Test
 ```html_example
-<div style="color: red;">I'm red. I really feel dirty.</div>
+<div style="color: red;">Jestem czerwony. Naprawdę czuję się brudny.</div>
 ```
 */
 [style] {
@@ -1463,23 +1460,24 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 
 /*doc
 ---
-title: "Unsecured [target=_blank]"
+title: "Niezabezpieczone [target=_blank]"
 name: unsecured-target
 category: Warnings
 ---
 
-##Description
-`[target="_blank"]` links might be used for phishing.
-This is not actually an accessibility related issue, but everything helping users is welcome.
+##Opis
+Łącza `[target="_blank"]` mogą być wykorzystywane do wyłudzania informacji.
+Właściwie nie jest to problem związany z dostępnością, ale wszystko co pomaga użytkownikom jest mile widziane.
 
-##References*
+
+##Bibliografia*
 * <https://mathiasbynens.github.io/rel-noopener/>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
 * <https://dev.to/ben/the-targetblank-vulnerability-by-example>
 * <https://twitter.com/HugoGiraudel/status/801475801397030912>
 
-##Selector
+##Selektor
 ```css_example
 [target$="blank"]:not([rel]),
 [target$="blank"]:not([rel*="noopener"]),
@@ -1488,7 +1486,7 @@ This is not actually an accessibility related issue, but everything helping user
 
 ##Test
 ```html_example
-<a href="/" target="_blank">I feel vulnerable…</a>
+<a href="/" target="_blank">Czuję się bezbronna...</a>
 ```
 */
 [target$="blank"]:not([rel]),
@@ -1500,15 +1498,15 @@ This is not actually an accessibility related issue, but everything helping user
 
 /*doc
 ---
-title: "Missing [aria-level]"
+title: "Brak [aria-level]"
 name: no-aria-level
 category: Warnings
 ---
 
-##Description
-Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
+##Opis
+Chociaż `[aria-level]` nie jest wymagany przez specyfikację ARIA, w rzeczywistości lepiej jest go podać.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
@@ -1517,14 +1515,14 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 * <https://www.w3.org/TR/WCAG-TECHS/G141.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H42.html>
 
-##Selector
+##Selektor
 ```css_example
 [role="heading"]:not([aria-level])
 ```
 
 ##Test
 ```html_example
-<strong role="heading">Heading with undefined level</strong>
+<strong role="heading">Nagłówek z nieokreślonym poziomem</strong>
 ```
 */
 [role="heading"]:not([aria-level]) {
@@ -1534,16 +1532,16 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 
 /*doc
 ---
-title: "A label without a [for] attribute"
+title: "label bez atrybutu [for]"
 name: no-for
 category: Warnings
 ---
 
-##Description
-A `<label>` is labelling something, in theory.
-Although implicitly labelling form controls is accepted, it's probably better to double-check that form control is *really* nested in its `<label>`.
+##Opis
+Znacznik `<label>` coś etykietuje, w teorii.
+Chociaż domyślne etykietowanie kontrolek formularzy jest akceptowane, prawdopodobnie lepiej jest dwukrotnie sprawdzić, czy kontrolka formularza jest *naprawdę* zagnieżdżona w swojej `<label>`.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
@@ -1553,14 +1551,14 @@ Although implicitly labelling form controls is accepted, it's probably better to
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
-##Selector
+##Selektor
 ```css_example
 label:not([for])
 ```
 
 ##Test
 ```html_example
-<label>Guess what?</label>
+<label>Zgadnij co?</label>
 ```
 */
 label:not([for]) {
@@ -1570,22 +1568,21 @@ label:not([for]) {
 
 /*doc
 ---
-title: "Mismatching [dir] and [lang] attributes"
+title: "niedopasowane [dir] i [lang]"
 name: mismatched-dir
 category: Warnings
 ---
 
-##Description
-Some languages — like Arabic or Hebrew — requires a text direction switch usin `[dir="rtl"]`, as default text direction is left-to-right.
-This also requires to check any in-page language change (marked up with `[lang]`) in Arabic or Hebrew content to define `[dir]` too.
+##Opis
+Niektóre języki - jak arabski czy hebrajski - wymagają przełączenia kierunku tekstu za pomocą `[dir="rtl"]`, ponieważ domyślnym kierunkiem tekstu jest od lewej do prawej. Wymaga to również sprawdzenia każdej zmiany języka strony (oznaczonej za pomocą `[lang]`) w arabskiej lub hebrajskiej treści, aby zdefiniować również `[dir]`.
 
-##References
+##Bibliografia
 * <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
-##Selector
+##Selektor
 ```css_example
 [lang="ar"]:not([dir="rtl"]),
 [lang="he"]:not([dir="rtl"]),
@@ -1596,7 +1593,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 
 ##Test
 ```html_example
-<p dir="rtl" lang="en">Well, I'm kinda disoriented…</p>
+<p dir="rtl" lang="pl">Cóż, jestem trochę zdezorientowany…</p>
 ```
 */
 [lang="ar"]:not([dir="rtl"]),

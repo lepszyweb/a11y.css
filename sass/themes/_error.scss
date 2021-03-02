@@ -2,20 +2,20 @@
 
 /*doc
 ---
-title: "Attribute should not contain whitespace"
+title: "Atrybuty z białymi znakami"
 name: attribute-whitespace
 category: Errors
 ---
 
-## Description
-Some HTML attributes should not contain any whitespace —namely `[id]`, `[lang]` and `map[name]`.
+##Opis
+Niektóre atrybuty HTML nie powinny zawierać żadnych białych znaków - mianowicie `[id]`, `[lang]` oraz `map[name]`.
 
-## Reference
+##Bibliografia
 * <https://html.spec.whatwg.org/#the-id-attribute>
 * <https://html.spec.whatwg.org/#the-map-element>
 * <https://tools.ietf.org/html/bcp47#section-2.1.1>
 
-## Selector
+##Selektor
 ```css_example
 [id*=" "],
 [lang*=" "],
@@ -24,7 +24,7 @@ map[name*=" "]
 
 ## Test
 ```html_example
-<p id="my id">This is my beautiful element with an ID</p>
+<p id="my id">To jest mój piękny element z ID</p>
 ```
 */
 [id*=" "],
@@ -45,23 +45,23 @@ name: tab-order
 category: Errors
 ---
 
-##Description
-The `[tabindex]` attribute should never be greater than 0.
+##Opis
+Atrybut `[tabindex]` nigdy nie powinien być większy niż 0.
 
-##Reference
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-12-13>
 * <https://www.w3.org/TR/WCAG-TECHS/F44.html>
 * <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
 
-##Selector
+##Selektor
 ```css_example
 [tabindex]:not([tabindex="0"]):not([tabindex^="-"])
 ```
 
 ##Test
 ```html_example
-<button tabindex="1" type="button">Positive tabindex is bad</button>
+<button tabindex="1" type="button">Dodatni tabindex jest zły</button>
 ```
 */
 [tabindex]:not([tabindex="0"]):not([tabindex^="-"]) {
@@ -75,20 +75,20 @@ The `[tabindex]` attribute should never be greater than 0.
 
 /*doc
 ---
-title: "Empty [href]"
+title: "Pusty [href]"
 name: empty-href
 category: Errors
 ---
 
-##Description
-The `[href]` attribute, if present, should not be empty. A link *to* something, right?
+##Opis
+Atrybut `[href]`, jeśli występuje, nie powinien być pusty. Łączy *do* czegoś, prawda?
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+##Selektor
 ```css_example
 a[href=""],
 a[href=" "]
@@ -96,7 +96,7 @@ a[href=" "]
 
 ##Test
 ```html_example
-<a href=" ">Who am I? Where do I link?</a>
+<a href=" ">Czym jestem? Do czego łączę?</a>
 ```
 */
 a[href=""],
@@ -107,17 +107,17 @@ a[href=" "] {
 
 /*doc
 ---
-title: "Empty link"
+title: "Puste łącze"
 name: empty-link
 category: Errors
 ---
 
-##Description
-An empty link should have a label, within `[title]`, `[aria-label]` or targeted by `[aria-labelledby]`.
-By the way, why would you use an empty link?
+##Opis
+Puste łącze powinno mieć etykietę wewnątrz `[title]`, `[aria-label]` lub wskazaną przez `[aria-labelledby]`.
+          Przy okazji, po co miałbyś używać pustego łącza?
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-6-5>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-6-5>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
@@ -125,7 +125,7 @@ By the way, why would you use an empty link?
 * <https://www.w3.org/TR/WCAG-TECHS/G91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
-##Selector
+##Selektor
 ```css_example
 a:empty[title=""],
 a:empty[aria-label=""],
@@ -148,16 +148,16 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: "Missing alternative for img"
+title: "Brak alt w img"
 name: no-alt
 category: Errors
 ---
 
-##Description
-An `<img>` must have an `[alt]`. Always.
+##Opis
+`<img>` musi mieć `[alt]`. Zawsze.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
@@ -166,7 +166,7 @@ An `<img>` must have an `[alt]`. Always.
 * <https://www.w3.org/TR/WCAG-TECHS/H24.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##Selector
+##Selektor
 ```css_example
 img[alt=" "],
 area[alt=" "],
@@ -193,23 +193,22 @@ input[type="image"]:not([alt]) {
 
 /*doc
 ---
-title: "Missing label for [role=img]"
+title: "Brak etykiety dla [role=img]"
 name: no-aria-label
 category: Errors
 ---
 
-##Description
-`[role=img]` should either have `[aria-label]` or `[aria-labelledby]`.
-If image is decorative, please use `[role=presentation]` instead.
+##Opis
+Element z `[role=img]` powinien mieć albo `[aria-label]` albo `[aria-labelledby]`. Jeśli obraz jest dekoracyjny, użyj `[role=presentation]` zamiast `[role=img]`.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#img>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria/roles#presentation>
 * <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
 
-##Selector
+##Selektor
 ```css_example
 [role="img"]:not([aria-label]):not([aria-labelledby]),
 svg[role="img"]:not([aria-label]):not([aria-labelledby])
@@ -235,19 +234,19 @@ svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: "Missing source for img"
+title: "Brak źródła img"
 name: no-src
 category: Errors
 ---
 
-##Description
-An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
+##Opis
+Element `<img>` musi mieć `[src]` lub `[srcset]`. I powinno być poprawne. Oczywiście.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
 * <https://scottjehl.github.io/picturefill/>
 
-##Selector
+##Selektor
 ```css_example
 img:not([src]):not([srcset]),
 img[src=""],
@@ -271,7 +270,7 @@ input[type="image"][srcset="/"]
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144"/>
+<img alt="Brakuje src" width="144" height="144"/>
 ```
 */
 img:not([src]):not([srcset]),
@@ -305,15 +304,15 @@ input[type="image"][srcset="/"] {
 
 /*doc
 ---
-title: "A label with an empty [for] attribute"
+title: "Etykieta z pustym atrybutem [for]"
 name: empty-for
 category: Errors
 ---
 
-##Description
-A `<label>` with a `[for]` attribute should label something with an `[id]` attribute, obviously.
+##Opis
+Znacznik `<label>` z atrybutem `[for]` powinien oczywiście etykietować coś z atrybutem `[id]`. W atrybucie `[for]` musi być wartość `[id]` etykietowanego elementu. Oczywiście.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
@@ -323,7 +322,7 @@ A `<label>` with a `[for]` attribute should label something with an `[id]` attri
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
-##Selector
+##Selektor
 ```css_example
 label[for=""],
 label[for=" "]
@@ -331,7 +330,7 @@ label[for=" "]
 
 ##Test
 ```html_example
-<label for=" ">Guess what?</label>
+<label for=" ">Zgadnij co?</label>
 ```
 */
 label[for=""],
@@ -342,22 +341,22 @@ label[for=" "] {
 
 /*doc
 ---
-title: "Missing some kind of label"
+title: "Brak jakiejś etykiety"
 name: no-id
 category: Errors
 ---
 
-##Description
-How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
+##Opis
+Jak oznaczyć pole? Masz kilka opcji do wyboru: `[id]`, `[title]`, `[aria-label]` oraz `[aria-labelledby]`.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-1>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 
-##Selector
+##Selektor
 ```css_example
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
@@ -378,21 +377,21 @@ select:not([id]):not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: "Missing a value"
+title: "Brak wartości"
 name: no-value
 category: Errors
 ---
 
-##Description
-How to label a `[reset]`, `[submit]` or `[button]` type input?
-You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
+##Opis
+Jak oznaczyć etykietą pożąane dane wejściowe typu `[reset]`, `[submit]` or `[button]`?
+Zawsze masz kilka opcji do wyboru: `[value]`, `[title]`, `[aria-label]` oraz `[aria-labelledby]`.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 
-##Selector
+##Selektor
 ```css_example
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
@@ -413,22 +412,23 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 /*doc
 ---
-title: "Empty button"
+title: "Pusty przycisk"
 name: empty-button
 category: Errors
 ---
 
-##Description
-A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]` or `[title]`. Those attributes, if present, should not be empty.
+##Opis
+Przycisk `<button>` powinien mieć albo zawartość albo atrybut `[aria-label]`, `[aria-labelledby]` lub `[title]`. Atrybuty te, jeśli istnieją, nie mogą być puste.
 
-##References
+
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
-##Selector
+##Selektor
 ```css_example
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 ```
@@ -445,22 +445,22 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
 
 /*doc
 ---
-title: "Empty button attribute"
+title: "Pusty atrybut przycisku"
 name: empty-button-attr
 category: Errors
 ---
 
-##Description
-`[aria-label]`, `[aria-labelledby]` or `[title]` on a `<button>` must not be empty.
+##Opis
+Atrybut `[aria-label]`, `[aria-labelledby]` lub `[title]` w znaczniku `<button>` nie może być pusty.
 
-##References
+##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
-##Selector
+##Selektor
 ```css_example
 button[title=""],
 button[aria-label=""],
@@ -487,30 +487,30 @@ button[aria-labelledby=""] {
 
 /*doc
 ---
-title: "Form button"
+title: "Przycisk formularza"
 name: not-form-button
 category: Errors
 ---
 
-##Description
-A `<button>` has a defaut `[type]` value of `"submit"`, in order to send a `<form>`.
+##Opis
+Kontrolka `<button>` ma domyślnie wartość `[type]` równą `&quot;submit&quot;`, aby wysłać `<form>`.
 
-However outside a form, if it's intended to send a form it should mention it with one of those attributes: `[form]`, `[formaction]`, `[formtarget]`.
+Jednak jeśli przycisk znajduje się poza `<form>`, jeśli ma on za zadanie wysłać formularz, powinien o tym wspomnieć za pomocą jednego z tych atrybutów: `[form]`, `[formaction]`, `[formtarget]`.
 
-If it doesn't submit anything, it should have the `[type="button"]`.
+Jeśli nie wysyła niczego, powinien mieć atrybut `[type="button"]`.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/html5/forms.html#the-button-element>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
-##Selector
+##Selektor
 ```css_example
 button:not([type]):not([form]):not([formaction]):not([formtarget])
 ```
 
 ##Test
 ```html_example
-<button>I just don't know what todo with myself</button>
+<button>Po prostu nie wiem, co ze sobą zrobić.</button>
 ```
 */
 button:not([type]):not([form]):not([formaction]):not([formtarget]) {
@@ -523,23 +523,24 @@ form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 
 /*doc
 ---
-title: "Button not submitting"
+title: "Przycisk, który nie wysyła"
 name: not-submit-button
 category: Errors
 ---
 
-##Description
-If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use the following attributes:
+##Opis
+Jeśli  `<button>` ma wartość `[type]` albo `"reset"` albo `"button"`, nie powinien używać następujacych atrybutów:
+
 * `[formmethod]`;
 * `[formaction]`;
 * `[formtarget]`;
 * `[formenctype]`;
 * `[formnovalidate]`.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/html5/forms.html#the-button-element>
 
-##Selector
+##Selektor
 ```css_example
 button[type="reset"][formmethod],
 button[type="reset"][formaction],
@@ -555,7 +556,7 @@ button[type="button"][formnovalidate]
 
 ##Test
 ```html_example
-<button type="button" formmethod="GET">I have a method!</button>
+<button type="button" formmethod="GET">Mam metodę! A nie powinienem!</button>
 ```
 */
 button[type="reset"],
@@ -571,26 +572,25 @@ button[type="button"] {
 
 /*doc
 ---
-title: "Disabled button"
+title: "Wyłączony przycisk"
 name: disabled-button
 category: Errors
 ---
 
-##Description
-A `<button>` styled to be disabled should be disabled *for real*.
-Use `[disabled]` and `[readonly]`.
+##Opis
+Przycisk `<button>` stylizowany na wyłączony powinien być wyłączony *w rzeczywistości*. Użyj `[disabled]` i `[readonly]`.
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
-##Selector
+##Selektor
 ```css_example
 button[class*="disabled"]:not([disabled]):not([readonly])
 ```
 
 ##Test
 ```html_example
-<button class="is-disabled" type="button">To be or not to be (disabled)?</button>
+<button class="is-disabled" type="button">Być albo nie być (wyłączonym)?</button>
 ```
 */
 button[class*="disabled"]:not([disabled]):not([readonly]) {
@@ -600,19 +600,19 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
 
 /*doc
 ---
-title: "input without [type]"
+title: "input bez [type]"
 name: no-type
 category: Errors
 ---
 
-##Description
-`<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
+##Opis
+`<input>` potrzebuje `[type]`, aby powiedzieć użytkownikowi, jaki rodzaj danych jest pożądany.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-11>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-11>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
-##Selector
+##Selektor
 ```css_example
 input:not([type]),
 input[type=" "],
@@ -621,8 +621,8 @@ input[type=""]
 
 ##Test
 ```html_example
-<label for="No-type">No type</label>
-<input value="Whatever you want" id="No-type"/><span>†</span>
+<label for="No-type">Brak type</label>
+<input value="Cokolwiek chcesz" id="No-type"/><span>†</span>
 ```
 */
 input:not([type]),
@@ -634,20 +634,20 @@ input[type=""] {
 
 /*doc
 ---
-title: "optgroup without label"
+title: "optgroup bez label"
 name: optgroup
 category: Errors
 ---
 
-##Description
-`<optgroup>` needs a `[label]` to explain what's inside the group.
+##Opis
+`<optgroup>` potrzebuje `[label]`, aby wyjaśnić, co jest wewnątrz grupy.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-8>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-8>
 * <https://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
-##Selector
+##Selektor
 ```css_example
 optgroup:not([label])
 ```
@@ -655,15 +655,15 @@ optgroup:not([label])
 ##Test
 ```html_example
 <form action="/">
-    <label for="optgroup-test">Oh, hey</label>
+    <label for="optgroup-test">Oh, hej</label>
     <select id="optgroup-test">
-      <optgroup label="I'm a group">
-        <option value="1">I'm an option</option>
-        <option value="2">I'm another option</option>
+      <optgroup label="Jestem grupą">
+        <option value="1">Jestem opcją</option>
+        <option value="2">Jestem inną opcją</option>
       </optgroup>
       <optgroup>
-        <option value="3">I'm an option, but from another group</option>
-        <option value="4">I'm another option, still from another group</option>
+        <option value="3">Jestem opcją, ale z następnej grupy</option>
+        <option value="4">Ja też jestem inną opcją, ale z następnej grupy</option>
      </optgroup>
    </select>
 </form>
@@ -676,20 +676,20 @@ optgroup:not([label]) {
 
 /*doc
 ---
-title: "iframe without [title]"
+title: "iframe bez [title]"
 name: no-title
 category: Errors
 ---
 
-##Description
-`<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
+##Opis
+`<iframe>` potrzebuje `[title]`, aby powiedzieć użytkownikowi, czego może się spodziewać w ramce.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-2-1>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-2-1>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H64.html>
 
-##Selector
+##Selektor
 ```css_example
 iframe:not([title]),
 iframe[title=" "],
@@ -710,18 +710,18 @@ iframe[title=""] {
 
 /*doc
 ---
-title: "form missing an [action]"
+title: "Formularz bez [action]"
 name: no-action
 category: Errors
 ---
 
-##Description
-`<form>` should do something, isnt'it? Well, `[action]` is meant to define what.
+##Opis
+Przyznasz, że `<form>` powinien coś robić. Czyż nie?  Właśnie, a `[action]` ma za zadanie określić co.
 
-##References
+##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
-##Selector
+##Selektor
 ```css_example
 form:not([action]),
 form[action=" "],
@@ -731,10 +731,10 @@ form[action=""]
 ##Test
 ```html_example
 <form>
-  <label for="input">Guess what do we do with your datas?</label>
+  <label for="input">Zgadnij, co zrobimy z Twoimi danymi?</label>
   <input id="input" type="text" />
 
-  <input type="submit" value="No idea, huh?"/>
+  <input type="submit" value="Nie mam pojęcia, co?"/>
 </form>
 ```
 */
@@ -747,18 +747,18 @@ form[action=""] {
 
 /*doc
 ---
-title: "No valid language defined"
+title: "Język określony nieprawidłowo"
 name: no-lang
 category: Errors
 ---
 
-##Description
-`<html>` must indicate to User Agents the human language used in the document.
+##Opis
+`<html>` musi wskazywać programom użytkownika naturalny język dokumentu.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-3>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3>
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <https://www.w3.org/TR/WCAG-TECHS/H57.html>
 * <https://html.spec.whatwg.org/#attr-lang>
@@ -769,7 +769,7 @@ category: Errors
 * <https://www.matuzo.at/blog/lang-attribute/>
 * <https://codepen.io/matuzo/project/editor/ZyrVee>
 
-##Selector
+##Selektor
 ```css_example
 html:not([lang]),
 html[lang*=" "],
@@ -778,7 +778,7 @@ html[lang=""]
 
 ##Test
 ```html_example
-<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" sandbox="allow-same-origin"></iframe>
+<iframe title="Nie określono języka a11y.css test-case" src="static/no-lang.html" sandbox="allow-same-origin"></iframe>
 ```
 */
 html:not([lang]),
@@ -790,14 +790,16 @@ html[lang=""] {
 
 /*doc
 ---
-title: "table used for layout"
+title: "Tabela układu"
 name: table-for-layout
 category: Errors
 ---
 
-##Description
-`<table>` may be used for layout if a [role="presentation"] is added.
-However, semantics tags and attributes aiming to organize datas mustn't be used. Here's a list:
+##Opis
+Element `<table>` może być użyty do układu, jeśli dodana jest `[role="presentation"]`.
+
+Nie wolno natomiast używać znaczników semantyki oraz atrybutów mających na celu uporządkowanie danych. Oto ich lista:
+
 * `<th>`;
 * `<thead>`;
 * `<tfoot>`;
@@ -807,13 +809,13 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[headers]`;
 * `[colgroup]`.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-8>
 * <https://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 * <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
 
-##Selector
+##Selektor
 ```css_example
 table[role="presentation"] th,
 table[role="presentation"] thead,
@@ -828,10 +830,10 @@ table[role="presentation"] [headers]
 ##Test
 ```html_example
 <table role="presentation">
-  <caption>I do not mean anything!</caption>
+  <caption>Ja nic nie znaczę! Nie powinno mnie tu być!</caption>
   <tbody>
     <tr>
-      <td colspan="2">It works</td>
+      <td colspan="2">To działa</td>
     </tr>
   </tbody>
 </table>
@@ -851,22 +853,21 @@ table[role="presentation"] [headers] {
 
 /*doc
 ---
-title: "[width] & [height] attributes"
+title: "Atrybuty [width] i [height]"
 name: dimensions
 category: Errors
 ---
 
-##Description
-`[width]` and `[height]` are presentation informations.
-Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
+##Opis
+`[width]` i `[height]` są informacjami o prezentacji (o wyglądzie). Dlatego nie powinny być używane w znacznikach, poza `<img>`. Zamiast tego używaj CSS.
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#presentation>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#presentation>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+##Selektor
 ```css_example
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height]
@@ -874,7 +875,7 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ##Test
 ```html_example
-<p width="20">Damned! I feel sooo strait :(</p>
+<p width="20">Cholera! Źle się czuję :(</p>
 ```
 */
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
@@ -890,20 +891,20 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 /*doc
 ---
-title: "Javascript events attributes"
+title: "Atrybut zdarzenia Javascript"
 name: js-events
 category: Errors
 ---
 
-##Description
-Javascript event attributes (such as `[onmouseover]`) should not be used.
-Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS event listeners.
+##Opis
+Atrybuty zdarzeń Javascript (takie jak `[onmouseover]`) nie powinny być używane.
+Preferuj albo pseudo-klasy CSS (`:hover`, `:focus`, `:active`, etc.) albo obserwatory zdarzeń JS.
 
-##References
+##Bibliografia
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
-##Selector
+##Selektor
 ```css_example
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
@@ -930,7 +931,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 
 ##Test
 ```html_example
-<span onclick="alert('You clicked!');">Click click click</span>
+<span onclick="alert('Kliknąłeś!');">Kliknij kliknij kliknij</span>
 ```
 */
 [onafterprint], [onbeforeprint], [onbeforeunload],
@@ -960,21 +961,20 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 
 /*doc
 ---
-title: "Namespaces"
+title: "Przestrzeń nazw"
 name: namespace
 category: Errors
 ---
 
-##Description
-Did you know that some characters should be avoided as first characters in class names and identifiers?
-Yep. Digits, two hyphens, or hyphen followed by a digit.
+##Opis
+Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS? Tak. Cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
 
-##Selector
+##Selektor
 ```css_example
 [id^="1"],
 [id^="2"],
@@ -1022,7 +1022,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 
 ##Test
 ```html_example
-<div id="2">Hello! My ID is 2.</div>
+<div id="2">Witam! Moje ID to 2.</div>
 ```
 */
 [id^="1"],
@@ -1076,18 +1076,19 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 
 /*doc
 ---
-title: "Empty title tag"
+title: "Pusty znacznik title"
 name: no-page-title
 category: Errors
 ---
 
-##Description
-The `<title>` tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines' results pages.
+##Opis
+Znacznik `<title>` jest pierwszą rzeczą czytaną na głos przez czytniki ekranu - aby ogłosić&hellip; tytuł strony - a także pierwszą rzeczą wyświetlaną na stronach wyników wyszukiwarek.
 
-We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
+Moglibyśmy użyć pseudoklasy `:blank`, ale w tym momencie jej obsługa jest bardzo słaba. Moglibyśmy również użyć pseudoklasy `:-moz-only-whitespace`, ale jej obsługa jest ograniczona do Firefoksa, co mogłoby spowodować niepoprawność naszego stosu selektorów…
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5>
+
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5>
 * <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
@@ -1100,7 +1101,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
-##Selector
+##Selektor
 ```css_example
 title:empty
 ```
@@ -1118,15 +1119,15 @@ title:empty {
 
 /*doc
 ---
-title: "Unaccessible viewport attribute"
+title: "Niedostępny atrybut viewport"
 name: unaccessible-viewport
 category: Errors
 ---
 
-##Description
-User should be able to zoom in or out the page to improve readability and comfort; this is usually allowed by the viewport `<meta>`.
+##Opis
+Użytkownik powinien mieć możliwość powiększania lub pomniejszania strony, aby poprawić czytelność i wygodę; jest to zwykle dozwolone w `<meta>` viewport.
 
-##References
+##Bibliografia
 * <https://bitsofco.de/linting-html-using-css/>
 * <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
@@ -1134,7 +1135,7 @@ User should be able to zoom in or out the page to improve readability and comfor
 * <https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
 * <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
 
-##Selector
+##Selektor
 ```css_example
 meta[name="viewport"][content*="maximum-scale"],
 meta[name="viewport"][content*="minimum-scale"],
@@ -1143,7 +1144,7 @@ meta[name="viewport"][content*="user-scalable=no"]
 
 ##Test
 ```html_example
-<iframe src="static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
+<iframe src="static/viewport.html" sandbox="allow-same-origin" title="Przykład błędnej instrukcji viewport"></iframe><span>†</span>
 ```
 */
 meta[name="viewport"][content*="maximum-scale"],
@@ -1156,18 +1157,18 @@ meta[name="viewport"][content*="user-scalable=no"] {
 
 /*doc
 ---
-title: "Incorrect charset"
+title: "Niewłaściwy charset"
 name: incorrect-charset
 category: Errors
 ---
 
-##Description
-Using `utf-8` character encoding is recommended by the W3C itself:
-> supports many languages and can accommodate pages and forms in any mixture of those languages.
+##Opis
+Używanie kodowania znaków `utf-8` est zalecane przez samo W3C:
+> obsługuje wiele języków i może obsługiwać strony i formularze w dowolnej mieszance tych języków.
 
-Moreover it avoids some security issues exploiting some other charsets…
+Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wykorzystywanych przez inne zestawy znaków…
 
-##References
+##Bibliografia
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
@@ -1176,7 +1177,7 @@ Moreover it avoids some security issues exploiting some other charsets…
 * <https://validator.w3.org/i18n-checker/>
 * <https://www.w3.org/International/tutorials/tutorial-char-enc/>
 
-##Selector
+##Selektor
 ```css_example
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 ```
@@ -1194,35 +1195,34 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
 
 /*doc
 ---
-title: "Charset should come first"
+title: "Charset powinien być w head pierwszy"
 name: late-charset
 category: Errors
 ---
 
-##Description
-As explained on the Mozilla Developer Network:
+##Opis
+Jak wyjaśniono na Mozilla Developer Network:
 
-> The `<meta>` element declaring the encoding must be inside the `<head>` element
-> and **within the first 1024 bytes** of the HTML, as some browsers only look at
-> those bytes before choosing an encoding.
+> Element `<meta>` deklarujący kodowanie musi znajdować się wewnątrz elementu `<head>`
+> i **w obrębie pierwszych 1024 bajtów** HTML, ponieważ niektóre przeglądarki
+> patrzą tylko na te bajty przed wyborem kodowania.
 
-It's also meant to prevent an old security exploit using UTF-7. Declaring the charset
-before the `<title>` tag is the simplest way to cover it.
+Ma to również na celu zapobieżenie staremu exploitowi bezpieczeństwa wykorzystującemu UTF-7. Zadeklarowanie zestawu znaków przed znacznikiem `<title>` jest najprostszym sposobem, aby to ukryć.
 
-##References
+##Bibliografia
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://w3c.github.io/html/document-metadata.html#charset>
 * <https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
 
-##Selector
+##Selektor
 ```css_example
 head :first-child:not([charset])
 ```
 
 ##Test
 ```html_example
-<iframe src="static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
+<iframe src="static/no-charset.html" title="Opóźnione ustawienie strony kodowej a11y.css test-case" sandbox="allow-same-origin"></iframe>
 ```
 */
 head :first-child:not([charset]) {
@@ -1233,28 +1233,28 @@ head :first-child:not([charset]) {
 
 /*doc
 ---
-title: "Invalid [dir] attribute"
+title: "Niepoprawny atrybut [dir]"
 name: invalid-dir
 category: Errors
 ---
 
-##Description
-The `[dir]` attribute — used to specify the element’s text directionality — only accepts three values: `rtl`, `ltr` and `auto`.
+##Opis
+Atrybut  `[dir]` służący do określenia kierunku tekstu elementu - przyjmuje tylko trzy wartości: `rtl`, `ltr` oraz `auto`.
 
-##References
+##Bibliografia
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
-##Selector
+##Selektor
 ```css_example
 [dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
 ```
 
 ##Test
 ```html_example
-<p dir="wtf">Well, I'm kinda disoriented…</p>
+<p dir="wtf">Cóż, jestem trochę zdezorientowany…</p>
 ```
 */
 [dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
@@ -1264,19 +1264,17 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 
 /*doc
 ---
-title: "[accesskey] is a bad idea"
+title: "[accesskey] to zły pomysł"
 name: accesskey
 category: Errors
 ---
 
-##Description
-The `[accesskey]` attribute is meant to implement site specific keyboard shortcuts.
-This is usually a bad idea since keys might be already used by either the operating system,
-the browser, browser extension and even user's settings…
+##Opis
+Atrybut `[accesskey]` jest przeznaczony do implementacji skrótów klawiaturowych specyficznych dla danej witryny. Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już używane przez system operacyjny, przeglądarkę, rozszerzenie przeglądarki, a nawet ustawienia użytkownika…
 
-This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup. Could be.
+To jest opinia: w idealnym świecie `[accesskey]` może być używany mądrze. Yup. Być może.
 
-##References
+##Bibliografia
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
 * <https://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
@@ -1284,14 +1282,14 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 * <https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
 * <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
 
-##Selector
+##Selektor
 ```css_example
 [accesskey]
 ```
 
 ##Test
 ```html_example
-<a id="key" name="key" accesskey="1">Skip to this link using <kbd>1</kbd></a>
+<a id="key" name="key" accesskey="1">Przejdź do tego łącza, używając <kbd>1</kbd></a>
 ```
 */
 [accesskey] {
@@ -1301,23 +1299,22 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 
 /*doc
 ---
-title: "Grouping inputs"
+title: "Grupa pól formularza"
 name: inputs-group
 category: Errors
 ---
 
-##Description
-Inputs with a type of `radio` or `checkbox` are usually grouped. The `[name]` attribute is meant to programmatically associate them,
-thus is needed.
+##Opis
+Pola typu `radio` lub `checkbox` są zwykle zgrupowane. Atrybut `[name]` służy do ich programowego powiązania, dlatego jest potrzebny.
 
-##References
+##Bibliografia
 * <https://www.w3.org/WAI/tutorials/forms/grouping/>
 * <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
 * <https://www.w3.org/TR/WCAG-TECHS/H71.html>
 
-##Selector
+##Selektor
 ```css_example
 [type="radio"]:not([name]),
 [type="checkbox"]:not(:only-of-type):not([name])
@@ -1327,13 +1324,13 @@ thus is needed.
 ```html_example
 <form action="/">
   <fieldset>
-    <legend>Options</legend>
+    <legend>Opcje</legend>
     <p>
-      <label for="option-1">Option N<sup>o</sup>1</label>
+      <label for="option-1">Opcja N<sup>o</sup>1</label>
       <input type="radio" id="option-1"><span>†</span>
     </p>
     <p>
-      <label for="option-2">Option N<sup>o</sup>2</label>
+      <label for="option-2">Opcja N<sup>o</sup>2</label>
       <input type="radio" id="option-2" name="options">
     </p>
   </fieldset>
@@ -1348,28 +1345,28 @@ thus is needed.
 
 /*doc
 ---
-title: "[radio] outside a fieldset"
+title: "[radio] poza fieldset"
 name: radio-group
 category: Errors
 ---
 
-##Description
-Inputs with a type of `radio` should be grouped by a parent `<fieldset>`, described by its `<legend>`.
+##Opis
+Pola typu `radio` powinny być zgrupowane przez nadrzędny `<fieldset>`, opisany przez jego `<legend>`.
+          
+Zauważ, że WCAG nie wymaga tego, ale zdecydowanie zaleca:
+&bdquo;w przypadku, gdy indywidualna etykieta związana z każdą konkretną kontrolą zapewnia wystarczający opis, użycie elementów fieldset i legend nie jest wymagane&rdquo;
+          
+Ten test może być ostrzeżeniem…
 
-Please note that WCAG doesn't actually require this but strongly recommends it:
-"where the individual label associated with each particular control provides a sufficient description,
-the use of the fieldset and legend elements is not required."
 
-This test could be a warning…
-
-##References
+##Bibliografia
 * <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
 * <https://www.w3.org/TR/WCAG-TECHS/H71.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 
-##Selector
+##Selektor
 ```css_example
 [type="radio"]
 ```
@@ -1378,16 +1375,16 @@ This test could be a warning…
 ```html_example
 <form action="/">
   <p>
-    <label for="option-1">Option N<sup>o</sup>1</label>
+    <label for="option-1">Opcja N<sup>o</sup>1</label>
     <input type="radio" id="option-1" name="options"><span>†</span>
   </p>
 
   <br>
 
   <fieldset>
-    <legend>Trying within a fieldset, shouldn't match</legend>
+    <legend>Próba w ramach zestawu pól nie powinna być dopasowana</legend>
     <p>
-      <label for="option-2">Option N<sup>o</sup>2</label>
+      <label for="option-2">Opcja N<sup>o</sup>2</label>
       <input type="radio" id="option-2" name="options"><span>†</span>
     </p>
   </fieldset>
@@ -1405,21 +1402,21 @@ fieldset [type="radio"] {
 
 /*doc
 ---
-title: "[role=slider] missing attributes"
+title: "[role=slider] - brak atrybutów"
 name: role-slider
 category: Errors
 ---
 
-##Description
-`[role="slider"]` requires a few attributes:
+##Opis
+Element z `[role="slider"]` wymaga kilku atrybutów:
 
 * `[aria-valuemin]`
 * `[aria-valuemax]`
 * `[aria-valuenow]`
 
-Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specification.
+Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany przez specyfikację ARIA.
 
-##References
+##Bibliografia
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
 * <https://www.w3.org/TR/wai-aria/roles#slider>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
@@ -1431,7 +1428,7 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 * <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
 * <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
 
-##Selector
+##Selektor
 ```css_example
 [role="slider"]:not([aria-valuemin]),
 [role="slider"]:not([aria-valuemax]),
@@ -1462,21 +1459,21 @@ name: role-spinbutton
 category: Errors
 ---
 
-##Description
-`[role="spinbutton"]` requires a few attributes:
+##Opis
+[role=spinbutton] wymaga atrybutów:
 
 * `[aria-valuemin]`
 * `[aria-valuemax]`
 * `[aria-valuenow]`
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#spinbutton>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
 * <https://oaa-accessibility.org/example/33/>
 
-##Selector
+##Selektor
 ```css_example
 [role="spinbutton"]:not([aria-valuemin]),
 [role="spinbutton"]:not([aria-valuemax]),
@@ -1502,31 +1499,27 @@ category: Errors
 
 /*doc
 ---
-title: "[role=checkbox] missing state"
+title: "[role=checkbox] nie ma stanu"
 name: role-checkbox
 category: Errors
 ---
 
-##Description
-`[role="spinbutton"]` requires a few attributes:
+##Opis
+Element z `[role="checkbox"]` wymaga atrybutu stanu `[aria-checked]`
 
-* `[aria-valuemin]`
-* `[aria-valuemax]`
-* `[aria-valuenow]`
-
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#checkbox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
 * <https://oaa-accessibility.org/examples/role/76/>
 
-##Selector
+##Selektor
 ```css_example
 [role="checkbox"]:not([aria-checked])
 ```
 
 ##Test
 ```html_example
-<img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
+<img src="static/ffoodd.png" alt="Pole wyboru" role="checkbox" width="36" height="36"/><span>†</span>
 ```
 */
 [role="checkbox"]:not([aria-checked]) {
@@ -1540,27 +1533,27 @@ category: Errors
 
 /*doc
 ---
-title: "[role=combobox] missing [state]"
+title: "[role=combobox] nie ma [state]"
 name: role-combobox
 category: Errors
 ---
 
-##Description
-`[aria-expanded]` is required on `[role="combobox"]`.
+##Opis
+Element z `[role="combobox"]` wymaga atrybutu stanu `[aria-expanded]`
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#combobox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
 * <https://oaa-accessibility.org/examples/role/77/>
 
-##Selector
+##Selektor
 ```css_example
 [role="combobox"]:not([aria-expanded])
 ```
 
 ##Test
 ```html_example
-<input type="text" aria-label="Combobox" role="combobox" id="combobox"><span>†</span>
+<input type="text" aria-label="Pole kombinowane" role="combobox" id="combobox"><span>†</span>
 ```
 */
 [role="combobox"]:not([aria-expanded]) {
@@ -1574,13 +1567,13 @@ category: Errors
 
 /*doc
 ---
-title: "[role=scrollbar] required properties"
+title: "[role=scrollbar] wymaga właściwości"
 name: role-scrollbar
 category: Errors
 ---
 
-##Description
-Some properties are required to comply the `[role="scrollbar"]` pattern:
+##Opis
+Niektóre właściwości muszą być zgodne z wzorcem projektowym `[role="scrollbar"]`:
 
 * `[aria-controls]`
 * `[aria-valuemin]`
@@ -1588,7 +1581,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 * `[aria-valuenow]`
 * `[aria-orientation]`
 
-##References
+##Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#scrollbar>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
@@ -1596,7 +1589,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
 
-##Selector
+##Selektor
 ```css_example
 [role="scrollbar"]:not([aria-controls]),
 [role="scrollbar"]:not([aria-valuemin]),
@@ -1621,17 +1614,17 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 
 /*doc
 ---
-title: "Nested interactive elements"
+title: "Zagnieżdżony element interaktywny"
 name: nested-interactive
 category: Errors
 ---
 
-##Description
-An interactive element should not be contained in another interactive element (e.g. `<a>` in `<button>`).
+##Opis
+Element interaktywny nie może być umieszczony w innym elemencie interaktywnym (np. `<a>` w `<button>`).
 
 
-##References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+##Bibliografia
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
@@ -1643,7 +1636,7 @@ An interactive element should not be contained in another interactive element (e
 * <https://w3c.github.io/html/textlevel-semantics.html#the-a-element>
 * <https://w3c.github.io/html/sec-forms.html#the-label-element>
 
-##Selector
+##Selektor
 ```css_example
 a a[href],
 button a[href],
@@ -1677,8 +1670,8 @@ progress progress
 
 ##Test
 ```html_example
-<a href="https://www.ffoodd.fr">
-  <button type=button">Oh wait, what should I trigger?</button>
+<a href="https://lepszyweb.pl">
+  <button type=button">Chwila, co mam uruchomić?</button>
 </a>
 ```
 */
