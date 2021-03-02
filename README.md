@@ -1,51 +1,52 @@
 a11y.css
 ========
 
-Pronounced *Alix*. Because it’s simpler.
+Wymawiaj &bdquo;Alix&rdquo;. Bo tak prościej!
 
 [![GitHub version](https://badge.fury.io/gh/ffoodd%2Fa11y.css.svg)](https://badge.fury.io/gh/ffoodd%2Fa11y.css)
 [![Build Status](https://travis-ci.org/ffoodd/a11y.css.svg?branch=master)](https://travis-ci.org/ffoodd/a11y.css)
 
-## Introduction
+## Wstęp
 
-Pronounced "Alix".
+Wymawiaj "Alix".
 
-This CSS file intends to warn developers about *possible risks and mistakes* that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
+Ten plik CSS ma na celu ostrzeganie programistów o *możliwych zagrożeniach i błędach* występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
 
-When activating the stylesheet, a tip should appear beside each incriminated elements, displaying what’s going on.
+Podczas uruchamiania arkusza stylów obok każdego z obciążonych elementów powinna pojawić się wskazówka informująca o tym, co się dzieje.
 
-*This file is not a replacement to a complete tool such as [aXe](https://www.deque.com/products/axe/), [Tanaguru](http://www.tanaguru.com/en/) or [Tenon](http://tenon.io/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
+*Ten pilnik nie zastępuje kompletnego narzędzia, takiego jak [aXe](https://www.deque.com/products/axe/), [Tanaguru](http://www.tanaguru.com/en/) czy [Tenon](http://tenon.io/). Ma on jedynie na celu pokazać możliwe słabości. Oczywiście, powinieneś ręcznie sprawdzić ręcznie, aby wiedzieć, czy kod powinien, czy nie powinien zostać poprawiony.*
 
+## Jak stosować?
 
-## How to use?
+### Rozszerzenie przeglądarki
 
-### WebExtension
+Niezależnie od tego, czy używasz [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/), czy [Chrome](https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en), , zapraszamy do zainstalowania i używania rozszerzenia przeglądarki **a11y.css**.
 
-Either you're using [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/) or [Chrome](https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en), you're invited to install and use a11y.css's webextension.
+Zapewnia ono kilka fajnych funkcji, których nie ma w głównym pliku CSS (na razie), takich jak:
 
-It provides some nice features not included in the main CSS file (for now), such as:
+* wymuszona widoczność fokusu;
+* pokazywanie atrybutu lang;
+* sprawdzanie alternatyw obrazów poprzez ich wyświetlanie;
+* zwiększanie odstępów w tekście.
 
-* force focus visibility;
-* show lang attributes;
-* check images' alternatives by displaying them;
-* increase text spacings.
+Ponadto rozszerzenie przeglądarek umożliwiają:
 
-As a WebExtension, it also enables to:
+* przełączanie CSS i zmianę poziomu dokładności w locie,, 
+* zapamiętywanie ustawień dla każdej karty,
+* automatyczną aktualizację w tle.
 
-* toggle CSS and change level on the fly, 
-* remember settings for each tab,
-* automatically update in the background.
+### Skryptozakładka
 
-### Bookmarklet
+Możesz również użyć formularza na lewym pasku bocznym, aby określić minimalny poziom i język, aby wygenerować własną skryptozakładkę. Następnie po prostu przeciągnij zielony przycisk do swoich zakładek i gotowe! Teraz jesteś w stanie używać a11y.css na każdej stronie, którą odwiedzasz, po prostu klikając na tę zakładkę.
 
-You can also use the form on the left sidebar to define the minimum level and language, in order to generate a custom bookmarklet. Then simply drag the green button to your bookmarks, and you're done! You're now able to use a11y.css on every page you visit by simply clicking on this bookmark.
+#### Zastrzeżenia dotyczące zakładki
 
-#### Bookmarklet's caveats
+Główne zastrzeżenie polega na tym, że nagłówki HTTP CSP blokują niebezpieczne/zewnętrzne skrypty - głównie z powodu błędów i niespójności przeglądarek. Ale wiele zasad CORS może zablokować działanie skryptozakładki…
 
-The main caveat consists of CSP HTTP headers blocking unsafe / external script — mostly due to browsers bugs and inconsistencies. But many CORS policies might prevent a bookmarklet from working…
+Należy również pamiętać, że ładowanie skryptozakładki może potrwać kilka sekund, ponieważ zasadniczo wstrzykuje ona arkusz stylów a11y.css do DOM przeglądanej strony. Na początku może być trochę powolny, ponieważ jest pobierany z GitHuba, ale jest to cena, którą trzeba zapłacić za jej *aktualność*.
 
-But also note that the bookmarklet might take a couple of seconds to load since it basically injects the `a11y.css` stylesheet within the DOM of the page you're browsing. It might be a bit slow at first because it is being downloaded from GitHub, but it's the price to pay to keep it *up-to-date*.
+## Wkład
 
-## Contribution & customisation
+Jeśli chcesz się zaangażować w ten projekt, upewnij się, że [zajrzysz na jego wiki](https://github.com/lepszyweb/a11y.css/wiki). Z przyjemnością przeczytam twoje problemy lub pull requesty!
 
-If you want to get involved in this project, be sure to [take a look at its wiki](https://github.com/ffoodd/a11y.css/wiki) (also [available in French](https://github.com/ffoodd/a11y.css/wiki/Introduction)). I'll be pleased to read your issues or pull requests!
+Możesz również zaangażować się w oryginalny projekt, który prowadzi Gaël Poupard. Znajdziesz go pod adresem (https://github.com/ffoodd/a11y.css)
