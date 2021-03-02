@@ -6,10 +6,10 @@
     "alias": false,
     "watermark": true
   },
-  "basePath": "https://github.com/ffoodd/a11y.css/tree/master/sass",
+  "basePath": "https://github.com/lepszyweb/a11y.css/tree/master/sass",
   "theme": "alix",
   "groups": {
-      "undefined": "Configuration",
-      "languages": "Translation"
+      "undefined": "Konfiguracja",
+      "languages": "Tłumaczenie"
   }
 }

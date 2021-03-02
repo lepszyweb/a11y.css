@@ -1,98 +1,11 @@
 @charset 'UTF-8';
 
-/*doc
----
-title: "Znaczniki starej szkoły"
-name: tags
-category: Obsolete
----
-
-##Opis
-Wiele, wiele znaczników jest przestarzałych w HTML5. Musisz się tym zainteresować!
-
-##Bibliografia
-* <https://www.w3.org/TR/html5/obsolete.html#obsolete>
-* <https://www.w3.org/TR/html52/changes.html#features-removed>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-
-##Selektor
-```css_example
-applet,
-acronym,
-bgsound,
-dir,
-frame,
-frameset,
-noframes,
-hgroup,
-isindex,
-listing,
-nextid,
-noembed,
-plaintext,
-rb,
-rtc,
-strike,
-xmp,
-basefont,
-big,
-blink,
-center,
-font,
-marquee,
-multicol,
-nobr,
-spacer,
-tt,
-keygen,
-menu,
-menuitem
-```
-
-##Test
-```html_example
-<acronym title="World Wide Web Consortium">W3C</acronym>
-```
-*/
-applet,
-acronym,
-bgsound,
-dir,
-frame,
-frameset,
-noframes,
-hgroup,
-isindex,
-listing,
-nextid,
-noembed,
-plaintext,
-rb,
-rtc,
-strike,
-xmp,
-basefont,
-big,
-blink,
-center,
-font,
-marquee,
-multicol,
-nobr,
-spacer,
-tt,
-keygen,
-menu,
-menuitem {
-  @include obsolete('tags');
-}
-
 
 /*doc
 ---
 title: "Atrybuty starej szkoły"
 name: attributes
-category: Obsolete
+category: Przestarzałe
 ---
 
 ##Opis
@@ -297,3 +210,92 @@ script[for] {
   @include obsolete('attributes', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
+
+
+/*doc
+---
+title: "Znaczniki starej szkoły"
+name: tags
+category: Przestarzałe
+---
+
+##Opis
+Wiele, wiele znaczników jest przestarzałych w HTML5. Musisz się tym zainteresować!
+
+##Bibliografia
+* <https://www.w3.org/TR/html5/obsolete.html#obsolete>
+* <https://www.w3.org/TR/html52/changes.html#features-removed>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+
+##Selektor
+```css_example
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+noframes,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+rtc,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt,
+keygen,
+menu,
+menuitem
+```
+
+##Test
+```html_example
+<acronym title="World Wide Web Consortium">W3C</acronym>
+```
+*/
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+noframes,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+rtc,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt,
+keygen,
+menu,
+menuitem {
+  @include obsolete('tags');
+}
+

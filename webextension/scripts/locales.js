@@ -90,7 +90,7 @@ const localeStrings = {
 		"a11ycssLevel_warning-only":"Ostrzeżenia",
 		"a11ycssLevel_error": "Tylko Błędy",
 		"a11ycssLevel_error-only":"Błędy",
-		"a11ycssMinimumNoticeLevel": "Minimalny poziom powiadomień",
+		"a11ycssMinimumNoticeLevel": "Minimalny poziom alertów",
 		"a11ycssSeparateLevels":"Osobne poziomy",
 		"altEmpty":"pusty",
 		"altMissing":"brak",

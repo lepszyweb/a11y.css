@@ -1,109 +1,138 @@
 @charset 'UTF-8';
 
-
 /*doc
 ---
-title: "<select required> powinien zaczynać się od <option> z pustą [value]"
-name: empty-option-on-select
-category: Advices
+title: "Brak [href]"
+name: no-href
+category: Porady
 ---
 
-##Opis
-Element `<select required>`, który nie jest `[multiple]` i którego `[size]` nie jest większy niż `1`, powinien zaczynać się od pustej `<option>`. To powiedziawszy, możesz użyć zawartości placeholder dla tej opcji, ale musisz upewnić się, że używasz pustego atrybutu `[value]`; lub ustawić atrybut `[size]` do `<select>`, którego wartość powinna być równa liczbie `<option>`.
-
+###Opis
+Czy poprawne jest pominięcie atrybutu `[href]` w łączu, prawdopodobnie lepiej to sprawdzić dwukrotnie, prawda?
 
 ##Bibliografia
-* <https://twitter.com/WebPlatformNews/status/1346492730223058946>
-* <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
-* <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
+* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ##Selektor
 ```css_example
-select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size])
+a:not([href])
 ```
 
-## Test
+##Test
 ```html_example
-<select name="slices" required>
-  <option value="1">Ser</option>
-  <option value="2">Salami</option>
-</select><span>†</span>
+<a>Kim jestem? Do czego łączę?</a>
 ```
 */
-select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size]) {
-  @include advice('select-option-not-empty', $self-closing: true);
+a:not([href]) {
+  @include advice('no-href');
+}
+
+/*doc
+---
+title: "button [role] on a link"
+name: role-button
+category: Porady
+---
+
+###Opis
+Oczywiście, rola przycisku w linku nie jest chyba tak trudna do przeniesienia do autentycznego znacznika przycisku, prawda?
+
+##Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
+
+##Selektor
+```css_example
+a[role="button"]
+```
+
+##Test
+```html_example
+<a href="/" role="button">Wyślij</a>
+```
+*/
+a[role="button"] {
+  @include advice('role-button');
 }
 
 
 /*doc
 ---
-title: "Pusty atrybut [class]"
-name: empty-class
-category: Advices
+title: "Czy to wygląda jak [required]?"
+name: required
+category: Porady
 ---
 
 ###Opis
-`[class]` nie powinno istnieć, jeśli jest puste. Coś do poprawienia, prawda?
+Pole wymagane - `[required]` lub `[aria-required]` powinny być wizualnie zrozumiałe.
+
+##Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ##Selektor
 ```css_example
-[class=""],
-[class=" "]
+[required],
+[aria-required]
 ```
 
 ##Test
 ```html_example
-<b class="">Dlaczego jest tu klasa?</b>
+<form action="">
+  <label for="field">Pole</label>
+  <textarea id="field" required></textarea><span>†</span>
+</form>
 ```
 */
-[class=""],
-[class=" "] {
-  @include advice('empty-class');
+[required],
+[aria-required] {
+  @include advice('required', $self-closing: true);
+}
 
-  @include void-tags {
-    @include advice('empty-class', $self-closing: true);
-  }
+input[required],
+input[aria-required],
+select[required],
+select[aria-required],
+textarea[required],
+textarea[aria-required] {
+  @include advice('required', $self-closing: true);
 }
 
 
 /*doc
 ---
-title: "Pusty atrybut [id]"
-name: empty-id
-category: Advices
+title: "Data i godzina powinny być zrozumiałe"
+name: time
+category: Porady
 ---
 
 ###Opis
-`[id]` nie powinien istnieć, jeśli jest pusty. Podziękujesz mi później.
+Zawartość `<time>` lub `[datetime]` powinna być zrozumiałą i dobrze sformułowaną datą.
 
 ##Selektor
 ```css_example
-[id=""],
-[id=" "]
+time,
+[datetime]
 ```
 
 ##Test
 ```html_example
-<i id="">Zaczekaj. Dlaczego mój identyfikator jest pusty?</i>
+<time>Wczoraj</time>
 ```
 */
-[id=""],
-[id=" "] {
-  @include advice('empty-id');
-
-  @include void-tags {
-    @include advice('empty-id', $self-closing: true);
-  }
+time,
+[datetime] {
+  @include advice('time');
 }
+
 
 
 /*doc
 ---
 title: "Drugi widoczny znacznik main"
 name: main
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -133,7 +162,7 @@ main ~ main:not([hidden]) {
 ---
 title: "Drugi znacznik figcaption"
 name: figcaption
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -165,7 +194,7 @@ figcaption:not(:first-of-type) {
 ---
 title: "Kolejność figcaption"
 name: figcaption-order
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -192,127 +221,11 @@ figcaption:not(:first-child):not(:last-child) {
   @include advice('figcaption-order');
 }
 
-
-/*doc
----
-title: "Link e-mail powinien być poprawny"
-name: mailto
-category: Advices
----
-
-###Opis
-`<href="mailto:">` powinien zawierać poprawny email.
-W przeciwnym razie możesz zirytować swoich użytkowników.
-
-##Selektor
-```css_example
-[href^="mailto"]
-```
-
-##Test
-```html_example
-<a href="mailto:myself">Niespo-dzianka!</a>
-```
-*/
-[href^="mailto"] {
-  @include advice('mailto');
-}
-
-
-/*doc
----
-title: "Łącze telefoniczne powinno dzwonić pod numer rzeczywisty"
-name: tel
-category: Advices
----
-
-###Opis
-`<href="tel:">` powinno zawierać prawidłowy numer telefonu.
-W przeciwnym razie możesz zmusić użytkowników do dzwonienia do Berdyczowa.
-
-##Selektor
-```css_example
-[href^="tel"]
-```
-
-##Test
-```html_example
-<a href="tel:012345678">Do kogo zadzwonię?</a>
-```
-*/
-[href^="tel"] {
-  @include advice('tel');
-}
-
-
-/*doc
----
-title: "button [role] on a link"
-name: role-button
-category: Advices
----
-
-###Opis
-Oczywiście, rola przycisku w linku nie jest chyba tak trudna do przeniesienia do autentycznego znacznika przycisku, prawda?
-
-##Bibliografia
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
-
-##Selektor
-```css_example
-a[role="button"]
-```
-
-##Test
-```html_example
-<a href="/" role="button">Wyślij</a>
-```
-*/
-a[role="button"] {
-  @include advice('role-button');
-}
-
-
-/*doc
----
-title: "Łącze otwiera nową kartę"
-name: target-blank
-category: Advices
----
-
-###Opis
-Łącze otwierające nową kartę lub okno powinno ostrzegać użytkownika o swoim zachowaniu.
-Możesz użyć na przykład `[title]`.
-
-
-##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
-* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H83.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F22.html>
-
-##Selektor
-```css_example
-[target$="blank"]
-```
-
-##Test
-```html_example
-<a href="/" target="_blank" rel="noopener noreferrer">Nowa karta</a>
-```
-*/
-[target$="blank"] {
-  @include advice('target-blank');
-}
-
-
 /*doc
 ---
 title: "Łącze do pliku"
 name: file-format
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -362,48 +275,99 @@ $href: ('[download]');
   @include advice('file-format');
 }
 
-
 /*doc
 ---
-title: "Powtórzona rola"
-name: duplicate-roles
-category: Advices
+title: "Łącze e-mail powinno być poprawne"
+name: mailto
+category: Porady
 ---
 
 ###Opis
-Niektóre role ARIA powinny być unikalne: `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
-
-##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+`<href="mailto:">` powinien zawierać poprawny email.
+W przeciwnym razie możesz zirytować swoich użytkowników.
 
 ##Selektor
 ```css_example
-[role="main"] ~ [role="main"],
-[role="search"] ~ [role="search"],
-[role="banner"] ~ [role="banner"],
-[role="contentinfo"] ~ [role="contentinfo"]
+[href^="mailto"]
 ```
 
 ##Test
 ```html_example
-<main role="main"><br /></main>
-<div role="main"><br /></div>
+<a href="mailto:myself">Niespo-dzianka!</a>
 ```
 */
-[role="main"] ~ [role="main"],
-[role="search"] ~ [role="search"],
-[role="banner"] ~ [role="banner"],
-[role="contentinfo"] ~ [role="contentinfo"] {
-  @include advice('duplicate-roles');
+[href^="mailto"] {
+  @include advice('mailto');
 }
+
+
+
+/*doc
+---
+title: "Łącze otwiera nową kartę"
+name: target-blank
+category: Porady
+---
+
+###Opis
+Łącze otwierające nową kartę lub okno powinno ostrzegać użytkownika o swoim zachowaniu.
+Możesz użyć na przykład `[title]`.
+
+
+##Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
+* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H83.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F22.html>
+
+##Selektor
+```css_example
+[target$="blank"]
+```
+
+##Test
+```html_example
+<a href="/" target="_blank" rel="noopener noreferrer">Nowa karta</a>
+```
+*/
+[target$="blank"] {
+  @include advice('target-blank');
+}
+
+/*doc
+---
+title: "Łącze telefoniczne powinno dzwonić pod numer rzeczywisty"
+name: tel
+category: Porady
+---
+
+###Opis
+`<href="tel:">` powinno zawierać prawidłowy numer telefonu.
+W przeciwnym razie możesz zmusić użytkowników do dzwonienia do Berdyczowa.
+
+##Selektor
+```css_example
+[href^="tel"]
+```
+
+##Test
+```html_example
+<a href="tel:012345678">Do kogo zadzwonię?</a>
+```
+*/
+[href^="tel"] {
+  @include advice('tel');
+}
+
 
 
 /*doc
 ---
 title: "Może ma [role] search?"
 name: missing-role
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -442,55 +406,11 @@ input[class*="search"]:not([role="search"]) {
   @extend %a11y-reset;
 }
 
-
 /*doc
 ---
-title: "Czy to wygląda jak [required]?"
-name: required
-category: Advices
----
-
-###Opis
-Pole wymagane - `[required]` lub `[aria-required]` powinny być wizualnie zrozumiałe.
-
-##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
-
-##Selektor
-```css_example
-[required],
-[aria-required]
-```
-
-##Test
-```html_example
-<form action="">
-  <label for="field">Pole</label>
-  <textarea id="field" required></textarea><span>†</span>
-</form>
-```
-*/
-[required],
-[aria-required] {
-  @include advice('required', $self-closing: true);
-}
-
-input[required],
-input[aria-required],
-select[required],
-select[aria-required],
-textarea[required],
-textarea[aria-required] {
-  @include advice('required', $self-closing: true);
-}
-
-
-/*doc
----
-title: "Not :empty [hidden] things"
+title: "Nie :puste [hidden] rzeczy"
 name: hidden
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -521,13 +441,11 @@ Użycie`[hidden]` lub `[aria-hidden]` może nie być dobrym pomysłem na ukrycie
   }
 }
 
-
-
 /*doc
 ---
 title: "Placeholder nie może zastąpić etykiety"
 name: placeholder
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -551,12 +469,109 @@ label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
   @extend %a11y-reset;
 }
 
+/*doc
+---
+title: "Powtórzona rola"
+name: duplicate-roles
+category: Porady
+---
+
+###Opis
+Niektóre role ARIA powinny być unikalne: `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
+
+##Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+
+##Selektor
+```css_example
+[role="main"] ~ [role="main"],
+[role="search"] ~ [role="search"],
+[role="banner"] ~ [role="banner"],
+[role="contentinfo"] ~ [role="contentinfo"]
+```
+
+##Test
+```html_example
+<main role="main"><br /></main>
+<div role="main"><br /></div>
+```
+*/
+[role="main"] ~ [role="main"],
+[role="search"] ~ [role="search"],
+[role="banner"] ~ [role="banner"],
+[role="contentinfo"] ~ [role="contentinfo"] {
+  @include advice('duplicate-roles');
+}
+
 
 /*doc
 ---
-title: "rzezy dla video lub audio"
+title: "Pusty atrybut [class]"
+name: empty-class
+category: Porady
+---
+
+###Opis
+`[class]` nie powinno istnieć, jeśli jest puste. Coś do poprawienia, prawda?
+
+##Selektor
+```css_example
+[class=""],
+[class=" "]
+```
+
+##Test
+```html_example
+<b class="">Dlaczego jest tu klasa?</b>
+```
+*/
+[class=""],
+[class=" "] {
+  @include advice('empty-class');
+
+  @include void-tags {
+    @include advice('empty-class', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "Pusty atrybut [id]"
+name: empty-id
+category: Porady
+---
+
+###Opis
+`[id]` nie powinien istnieć, jeśli jest pusty. Podziękujesz mi później.
+
+##Selektor
+```css_example
+[id=""],
+[id=" "]
+```
+
+##Test
+```html_example
+<i id="">Zaczekaj. Dlaczego mój identyfikator jest pusty?</i>
+```
+*/
+[id=""],
+[id=" "] {
+  @include advice('empty-id');
+
+  @include void-tags {
+    @include advice('empty-id', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "Rzeczy dla video lub audio"
 name: video-audio
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -585,74 +600,11 @@ audio {
   @include advice('video-audio', $self-closing: true);
 }
 
-
-/*doc
----
-title: "[title] powinnie być równy alternatywie tekstowej"
-name: title
-category: Advices
----
-
-###Opis
-A `[title]` każdej treści graficznej powinno być równe `[aria-label]` lub `[alt]`.
-
-##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/html51/semantics.html#alt>
-
-##Selektor
-```css_example
-img[alt][title],
-area[alt][title],
-svg[aria-label][title]
-```
-
-##Test
-```html_example
-<img src="static/ffoodd.png" alt="Jestem tekstem alternatywnym!" title="Jestem tytułem!" height="144" width="144"><span>†</span>
-```
-*/
-img[alt][title],
-area[alt][title],
-svg[aria-label][title] {
-  @include advice('title', $self-closing: true);
-}
-
-
-/*doc
----
-title: "Data i godzina powinny być zrozumiałe"
-name: time
-category: Advices
----
-
-###Opis
-Zawartość `<time>` lub `[datetime]` powinna być zrozumiałą i dobrze sformułowaną datą.
-
-##Selektor
-```css_example
-time,
-[datetime]
-```
-
-##Test
-```html_example
-<time>Wczoraj</time>
-```
-*/
-time,
-[datetime] {
-  @include advice('time');
-}
-
-
 /*doc
 ---
 title: "[scope] powinien być albo col albo row"
 name: th-scope
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -695,12 +647,113 @@ th[scope] {
   @include advice('th-scope');
 }
 
+/*doc
+---
+title: "<select required> powinien zaczynać się od <option> z pustą [value]"
+name: empty-option-on-select
+category: Porady
+---
+
+##Opis
+Element `<select required>`, który nie jest `[multiple]` i którego `[size]` nie jest większy niż `1`, powinien zaczynać się od pustej `<option>`. To powiedziawszy, możesz użyć zawartości placeholder dla tej opcji, ale musisz upewnić się, że używasz pustego atrybutu `[value]`; lub ustawić atrybut `[size]` do `<select>`, którego wartość powinna być równa liczbie `<option>`.
+
+
+##Bibliografia
+* <https://twitter.com/WebPlatformNews/status/1346492730223058946>
+* <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
+* <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
+
+##Selektor
+```css_example
+select[required]:not([multiple])[size="1"],
+select[required]:not([multiple]):not([size])
+```
+
+## Test
+```html_example
+<select name="slices" required>
+  <option value="1">Ser</option>
+  <option value="2">Salami</option>
+</select><span>†</span>
+```
+*/
+select[required]:not([multiple])[size="1"],
+select[required]:not([multiple]):not([size]) {
+  @include advice('select-option-not-empty', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[title] powinnie być równy alternatywie tekstowej"
+name: title
+category: Porady
+---
+
+###Opis
+A `[title]` każdej treści graficznej powinno być równe `[aria-label]` lub `[alt]`.
+
+##Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
+* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+
+##Selektor
+```css_example
+img[alt][title],
+area[alt][title],
+svg[aria-label][title]
+```
+
+##Test
+```html_example
+<img src="static/ffoodd.png" alt="Jestem tekstem alternatywnym!" title="Jestem tytułem!" height="144" width="144"><span>†</span>
+```
+*/
+img[alt][title],
+area[alt][title],
+svg[aria-label][title] {
+  @include advice('title', $self-closing: true);
+}
+
+/*doc
+---
+title: "URL nie HTTPS"
+name: no-https
+category: Porady
+---
+
+###Opis
+Gdy to możliwe, staraj się używać HTTPS.
+
+##Bibliografia
+* <https://twitter.com/fvsch/status/921748801542639616>
+* <https://transparencyreport.google.com/https/overview?hl=en>
+* <https://letsencrypt.org/>
+* <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
+
+##Selektor
+```css_example
+[src^="http:"],
+[href^="http:"]
+```
+
+##Test
+```html_example
+<a href="http://www.ffoodd.fr/">Protokół mojego celu nie jest zabezpieczony</a>
+```
+*/
+[src^="http:"],
+[href^="http:"] {
+  @include advice('no-https');
+}
 
 /*doc
 ---
 title: "Użyto tabeli układu"
 name: table-presentation
-category: Advices
+category: Porady
 ---
 
 ###Opis
@@ -731,67 +784,4 @@ table[role="presentation"]
 */
 table[role="presentation"] {
   @include advice('table-presentation');
-}
-
-
-/*doc
----
-title: "Brak [href]"
-name: no-href
-category: Advices
----
-
-###Opis
-Czy poprawne jest pominięcie atrybutu `[href]` w łączu, prawdopodobnie lepiej to sprawdzić dwukrotnie, prawda?
-
-##Bibliografia
-* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
-
-##Selektor
-```css_example
-a:not([href])
-```
-
-##Test
-```html_example
-<a>Kim jestem? Do czego łączę?</a>
-```
-*/
-a:not([href]) {
-  @include advice('no-href');
-}
-
-
-/*doc
----
-title: "URL nie HTTPS"
-name: no-https
-category: Advices
----
-
-###Opis
-Gdy to możliwe, staraj się używać HTTPS.
-
-##Bibliografia
-* <https://twitter.com/fvsch/status/921748801542639616>
-* <https://transparencyreport.google.com/https/overview?hl=en>
-* <https://letsencrypt.org/>
-* <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
-
-##Selektor
-```css_example
-[src^="http:"],
-[href^="http:"]
-```
-
-##Test
-```html_example
-<a href="http://www.ffoodd.fr/">Protokół mojego celu nie jest zabezpieczony</a>
-```
-*/
-[src^="http:"],
-[href^="http:"] {
-  @include advice('no-https');
 }
