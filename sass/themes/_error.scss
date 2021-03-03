@@ -3,7 +3,7 @@
 /*doc
 ---
 title: "[accesskey] to zły pomysł"
-name: accesskey
+name: a01-accesskey
 category: Błędy
 ---
 
@@ -13,12 +13,12 @@ Atrybut `[accesskey]` jest przeznaczony do implementacji skrótów klawiaturowyc
 To jest opinia: w idealnym świecie `[accesskey]` może być używany mądrze. Yup. Być może.
 
 ##Bibliografia
-* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
-* <https://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
-* <https://w3c.github.io/html/editing.html#element-attrdef-global-accesskey>
-* <https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
-* <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
+* [K.Groves. Dignsitic.css](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159)
+* [Using accesskey attribute in HTML forms and links](https://www.cs.tut.fi/~jkorpela/forms/accesskey.html)
+* [MDN. Accesskey](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
+* [HTML. Living standard. 6.6.2 The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute)
+* [More reasons why we don’t use accesskeys](http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/)
+* [Accesskey le grand échec de l'accessibilité du Web](https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html)
 
 ##Selektor
 ```css_example
@@ -38,7 +38,7 @@ To jest opinia: w idealnym świecie `[accesskey]` może być używany mądrze. Y
 /*doc
 ---
 title: "Atrybut zdarzenia Javascript"
-name: js-events
+name: a02-js-events
 category: Błędy
 ---
 
@@ -47,8 +47,8 @@ Atrybuty zdarzeń Javascript (takie jak `[onmouseover]`) nie powinny być używa
 Preferuj albo pseudo-klasy CSS (`:hover`, `:focus`, `:active`, etc.) albo obserwatory zdarzeń JS.
 
 ##Bibliografia
-* <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
-* <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
+* [MDN. Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* [MDN. EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener)
 
 ##Selektor
 ```css_example
@@ -108,7 +108,7 @@ Preferuj albo pseudo-klasy CSS (`:hover`, `:focus`, `:active`, etc.) albo obserw
 /*doc
 ---
 title: "Atrybuty [width] i [height]"
-name: dimensions
+name: a03-dimensions
 category: Błędy
 ---
 
@@ -116,10 +116,10 @@ category: Błędy
 `[width]` i `[height]` są informacjami o prezentacji (o wyglądzie). Dlatego nie powinny być używane w znacznikach, poza `<img>`. Zamiast tego używaj CSS.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#presentation>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1->
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* [RGAA. 10. Prezentacja informacji](https://rgaa.lepszyweb.pl/pl/criteres.html#prezentacja)
+* [RGAA. Kryterium 10.1 [A]](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1)
+* [1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
+* [1.3.2 Zrozumiała kolejność](https://wcag.lepszyweb.pl/#meaningful-sequence)
 
 ##Selektor
 ```css_example
@@ -141,13 +141,10 @@ category: Błędy
   }
 }
 
-
-
-
 /*doc
 ---
 title: "Atrybuty z białymi znakami"
-name: attribute-whitespace
+name: a04-attribute-whitespace
 category: Błędy
 ---
 
@@ -155,9 +152,9 @@ category: Błędy
 Niektóre atrybuty HTML nie powinny zawierać żadnych białych znaków - mianowicie `[id]`, `[lang]` oraz `map[name]`.
 
 ##Bibliografia
-* <https://html.spec.whatwg.org/#the-id-attribute>
-* <https://html.spec.whatwg.org/#the-map-element>
-* <https://tools.ietf.org/html/bcp47#section-2.1.1>
+* [HTML Living Standard. Global attributes](https://html.spec.whatwg.org/#the-id-attribute)
+* [HTML Living Standard. The map element](https://html.spec.whatwg.org/#the-map-element)
+* [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47#section-2.1.1)
 
 ##Selektor
 ```css_example
@@ -184,7 +181,7 @@ map[name*=" "] {
 /*doc
 ---
 title: "Brak alt w img"
-name: no-alt
+name: a05-no-alt
 category: Błędy
 ---
 
@@ -192,14 +189,14 @@ category: Błędy
 `<img>` musi mieć `[alt]`. Zawsze.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-1>
-* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* [RGAA. Kryterium 1.1](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-1)
+* [Web Accessibility Tutorials: An alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H36.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H37.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H24.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+* [KS 1.1.1 Treści nietekstowe](https://wcag.lepszyweb.pl/#non-text-content)
+* [H36: Użycie atrybutów alt na obrazach używanych jako przyciski przesyłania](https://www.w3.org/WAI/WCAG21/Techniques/html/H36)
+* [H37: Użycie atrybutów alt w elementach img](https://www.w3.org/WAI/WCAG21/Techniques/html/H37)
+* [H24: Zapewnienie alternatyw tekstowych dla elementów obszaru map obrazów](https://www.w3.org/WAI/WCAG21/Techniques/html/H24)
+* [F65: Niespełnienie kryterium sukcesu 1.1.1 z powodu pominięcia atrybutu alt lub tekstu  alternatywnego w elementach img, elementach area i polach typu "image"](https://www.w3.org/WAI/WCAG21/Techniques/failures/F65)
 
 ##Selektor
 ```css_example
@@ -229,7 +226,7 @@ input[type="image"]:not([alt]) {
 /*doc
 ---
 title: "Brak etykiety dla [role=img]"
-name: no-aria-label
+name: a06-no-aria-label
 category: Błędy
 ---
 
@@ -237,11 +234,11 @@ category: Błędy
 Element z `[role=img]` powinien mieć albo `[aria-label]` albo `[aria-labelledby]`. Jeśli obraz jest dekoracyjny, użyj `[role=presentation]` zamiast `[role=img]`.
 
 ##Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#img>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/wai-aria/roles#presentation>
-* <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
+* [WAI-ARIA 1.2 img (role)](https://www.w3.org/TR/wai-aria-1.2/#img)
+* [KS 1.1.1 Treści nietekstowe](https://wcag.lepszyweb.pl/#non-text-content>
+* [Web Accessibility Tutorials: An alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+* [WAI-ARIA 1.2 presentation (role)](https://www.w3.org/TR/wai-aria-1.2/#presentation)
+* [WAI-ARIA 1.2 Accessible Name and Description Computation](https://www.w3.org/TR/wai-aria-1.2/#textalternativecomputation)
 
 ##Selektor
 ```css_example
@@ -269,7 +266,7 @@ svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
 /*doc
 ---
 title: "Brak jakiejś etykiety"
-name: no-id
+name: a07-no-id
 category: Błędy
 ---
 
@@ -277,11 +274,11 @@ category: Błędy
 Jak oznaczyć pole? Masz kilka opcji do wyboru: `[id]`, `[title]`, `[aria-label]` oraz `[aria-labelledby]`.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-1>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* [RGAA. Kryterium 11-1](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-1)
+* [KS 3.3.2 Etykiety lub instrukcje](https://wcag.lepszyweb.pl/#labels-or-instructions)
+* [KS 2.4.6 Nagłówki i etykiety](https://wcag.lepszyweb.pl/#headings-and-labels)
+* [KS 1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
+* [H44: Używanie elementu label do kojarzenia etykiet tekstowych z formantami formularzy](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
 
 ##Selektor
 ```css_example
@@ -305,7 +302,7 @@ select:not([id]):not([aria-label]):not([aria-labelledby]) {
 /*doc
 ---
 title: "Brak wartości"
-name: no-value
+name: a08-no-value
 category: Błędy
 ---
 
@@ -314,9 +311,9 @@ Jak oznaczyć etykietą pożąane dane wejściowe typu `[reset]`, `[submit]` or 
 Zawsze masz kilka opcji do wyboru: `[value]`, `[title]`, `[aria-label]` oraz `[aria-labelledby]`.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+* [RGAA. Kryterium 11-9](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9)
+* [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [H91: Korzystanie z formantów formularzy HTML i łączy](https://www.w3.org/WAI/WCAG21/Techniques/html/H91)
 
 ##Selektor
 ```css_example
@@ -340,7 +337,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 /*doc
 ---
 title: "Brak źródła img"
-name: no-src
+name: a09-no-src
 category: Błędy
 ---
 
@@ -409,7 +406,7 @@ input[type="image"][srcset="/"] {
 /*doc
 ---
 title: "Charset powinien być w head pierwszy"
-name: late-charset
+name: a10-late-charset
 category: Błędy
 ---
 
@@ -447,7 +444,7 @@ head :first-child:not([charset]) {
 /*doc
 ---
 title: "Etykieta z pustym atrybutem [for]"
-name: empty-for
+name: a11-empty-for
 category: Błędy
 ---
 
@@ -457,12 +454,12 @@ Znacznik `<label>` z atrybutem `[for]` powinien oczywiście etykietować coś z 
 ##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
-* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* [H44: Używanie elementu label do kojarzenia etykiet tekstowych z formantami formularzy](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
 * <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* [KS 3.3.2 Etkiety i instrukcje](https://wcag.lepszyweb.pl/#labels-or-instructions)
+* [KS 2.4.6 Nagłówki i etykiety](https://wcag.lepszyweb.pl/#headings-and-labels)
+* [KS 1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
 
 ##Selektor
 ```css_example
@@ -483,7 +480,7 @@ label[for=" "] {
 /*doc
 ---
 title: "Formularz bez [action]"
-name: no-action
+name: a12-no-action
 category: Błędy
 ---
 
@@ -519,7 +516,7 @@ form[action=""] {
 /*doc
 ---
 title: "Grupa pól formularza"
-name: inputs-group
+name: a13-inputs-group
 category: Błędy
 ---
 
@@ -531,7 +528,7 @@ Pola typu `radio` lub `checkbox` są zwykle zgrupowane. Atrybut `[name]` służy
 * <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
-* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+* [H71: Zapewnienie opisu dla grup kontrolek formularzy przy użyciu elementów fieldset i legend](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
 
 ##Selektor
 ```css_example
@@ -565,7 +562,7 @@ Pola typu `radio` lub `checkbox` są zwykle zgrupowane. Atrybut `[name]` służy
 /*doc
 ---
 title: "iframe bez [title]"
-name: no-title
+name: a14-no-title
 category: Błędy
 ---
 
@@ -573,9 +570,9 @@ category: Błędy
 `<iframe>` potrzebuje `[title]`, aby powiedzieć użytkownikowi, czego może się spodziewać w ramce.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-2-1>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <https://www.w3.org/TR/WCAG-TECHS/H64.html>
+* [RGAA. Kryterium 2-1](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-2-1)
+* [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [H64: Używanie atrybutu title do tytułowania elementów frame i iframe](https://www.w3.org/WAI/WCAG21/Techniques/html/H64)
 
 ##Selektor
 ```css_example
@@ -599,7 +596,7 @@ iframe[title=""] {
 /*doc
 ---
 title: "input bez [type]"
-name: no-type
+name: a15-no-type
 category: Błędy
 ---
 
@@ -607,8 +604,8 @@ category: Błędy
 `<input>` potrzebuje `[type]`, aby powiedzieć użytkownikowi, jaki rodzaj danych jest pożądany.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-11>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
+* [RGAA. Kryterium 11-11](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-11)
+* [KS 3.3.3 Sugestie korekty błędów](https://wcag.lepszyweb.pl/#error-suggestion)
 
 ##Selektor
 ```css_example
@@ -632,7 +629,7 @@ input[type=""] {
 /*doc
 ---
 title: "Język określony nieprawidłowo"
-name: no-lang
+name: a16-no-lang
 category: Błędy
 ---
 
@@ -640,16 +637,15 @@ category: Błędy
 `<html>` musi wskazywać programom użytkownika naturalny język dokumentu.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3>
+* [RGAA. Kryterium 8-3](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3)
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4>
-* <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
-* <https://www.w3.org/TR/WCAG-TECHS/H57.html>
+* [RGAA. Kryterium 8-4](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4)
+* [KS 3.1.1 Język strony](https://wcag.lepszyweb.pl/#language-of-page)
+* [KS 3.1.2 Język części strony](https://wcag.lepszyweb.pl/#language-of-parts)
+* [H57: Używanie atrybutu lang dla elementu html](https://www.w3.org/WAI/WCAG21/Techniques/html/H57)
 * <https://html.spec.whatwg.org/#attr-lang>
 * <https://tools.ietf.org/html/bcp47#section-2.1.1>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
-* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-page>
-* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html>
 * <https://www.matuzo.at/blog/lang-attribute/>
 * <https://codepen.io/matuzo/project/editor/ZyrVee>
 
@@ -675,7 +671,7 @@ html[lang=""] {
 /*doc
 ---
 title: "Niedostępny atrybut viewport"
-name: unaccessible-viewport
+name: a17-unaccessible-viewport
 category: Błędy
 ---
 
@@ -712,7 +708,7 @@ meta[name="viewport"][content*="user-scalable=no"] {
 /*doc
 ---
 title: "Niepoprawny atrybut [dir]"
-name: invalid-dir
+name: a18-invalid-dir
 category: Błędy
 ---
 
@@ -744,7 +740,7 @@ Atrybut  `[dir]` służący do określenia kierunku tekstu elementu - przyjmuje 
 /*doc
 ---
 title: "Niewłaściwy charset"
-name: incorrect-charset
+name: a19-incorrect-charset
 category: Błędy
 ---
 
@@ -783,7 +779,7 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
 /*doc
 ---
 title: "optgroup bez label"
-name: optgroup
+name: a20-optgroup
 category: Błędy
 ---
 
@@ -791,8 +787,8 @@ category: Błędy
 `<optgroup>` potrzebuje `[label]`, aby wyjaśnić, co jest wewnątrz grupy.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-8>
-* <https://www.w3.org/TR/WCAG-TECHS/H85.html>
+* [RGAA. Kryterium 11-8](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-8)
+* [H85: Użycie optgroup do grupowania elementów option wewnątrz select](https://www.w3.org/WAI/WCAG21/Techniques/html/H85)
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ##Selektor
@@ -825,7 +821,7 @@ optgroup:not([label]) {
 /*doc
 ---
 title: "Przestrzeń nazw"
-name: namespace
+name: a21-namespace
 category: Błędy
 ---
 
@@ -942,7 +938,7 @@ Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w naz
 /*doc
 ---
 title: "Przycisk, który nie wysyła"
-name: not-submit-button
+name: a22-not-submit-button
 category: Błędy
 ---
 
@@ -992,7 +988,7 @@ button[type="button"] {
 /*doc
 ---
 title: "Przycisk formularza"
-name: not-form-button
+name: a23-not-form-button
 category: Błędy
 ---
 
@@ -1029,7 +1025,7 @@ form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 /*doc
 ---
 title: "Puste łącze"
-name: empty-link
+name: a24-empty-link
 category: Błędy
 ---
 
@@ -1038,12 +1034,12 @@ Puste łącze powinno mieć etykietę wewnątrz `[title]`, `[aria-label]` lub ws
           Przy okazji, po co miałbyś używać pustego łącza?
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-6-5>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
-* <https://www.w3.org/TR/WCAG-TECHS/H30.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G91.html>
+* [RGAA. Kryterium 6-5](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-6-5)
+* [KS 1.1.1 Treść nietekstowa](https://wcag.lepszyweb.pl/#non-text-content)
+* [KS 2.4.4 Cel łącza (w kontekście)](https://wcag.lepszyweb.pl/#link-purpose-in-context)
+* [KS 2.4.9 Cel łącza (z samego łącza)](https://wcag.lepszyweb.pl/#link-purpose-link-only)
+* [H30: Zapewnienie tekstu łącza opisującego cel łącza dla elementów kotwiących](https://www.w3.org/WAI/WCAG21/Techniques/html/H30)
+* [G91: Zapewnienie tekstu łącza opisującego cel łącza](https://www.w3.org/WAI/WCAG21/Techniques/global/G91)
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ##Selektor
@@ -1070,7 +1066,7 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
 /*doc
 ---
 title: "Pusty [href]"
-name: empty-href
+name: a25-empty-href
 category: Błędy
 ---
 
@@ -1101,7 +1097,7 @@ a[href=" "] {
 /*doc
 ---
 title: "Pusty atrybut przycisku"
-name: empty-button-attr
+name: a26-empty-button-attr
 category: Błędy
 ---
 
@@ -1110,9 +1106,9 @@ Atrybut `[aria-label]`, `[aria-labelledby]` lub `[title]` w znaczniku `<button>`
 
 ##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+* [RGAA. Kryterium 11-9](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9)
+* [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [H91: Korzystanie z kontrolek formularzy HTML i łączy](https://www.w3.org/WAI/WCAG21/Techniques/html/H91)
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ##Selektor
@@ -1143,7 +1139,7 @@ button[aria-labelledby=""] {
 /*doc
 ---
 title: "Pusty przycisk"
-name: empty-button
+name: a27-empty-button
 category: Błędy
 ---
 
@@ -1153,9 +1149,9 @@ Przycisk `<button>` powinien mieć albo zawartość albo atrybut `[aria-label]`,
 
 ##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+* [RGAA. Kryterium 11-9](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9)
+* [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [H91: Korzystanie z formantów formularzy HTML i łączy](https://www.w3.org/WAI/WCAG21/Techniques/html/H91)
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ##Selektor
@@ -1175,7 +1171,7 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
 /*doc
 ---
 title: "Pusty znacznik title"
-name: no-page-title
+name: a28-no-page-title
 category: Błędy
 ---
 
@@ -1186,18 +1182,16 @@ Moglibyśmy użyć pseudoklasy `:blank`, ale w tym momencie jej obsługa jest ba
 
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5>
+* [RGAA. Kryterium 8-5](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5)
 * <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
-* <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
-* <https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title>
-* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G88.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G127.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H25.html>
+* [HTML Living Standard. 4.2.2 The title element](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element)
+* [KS 2.4.2 Tytuł strony](https://wcag.lepszyweb.pl/#page-titled)
+* [G88: Zapewnienie opisowych tytułów stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G88)
+* [G127: Określenie relacji strony internetowej z większym zbiorem stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G127)
+* [H25: Zapewnienie tytułu za pomocą elementu title](https://www.w3.org/WAI/WCAG21/Techniques/html/H25)
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
-* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
-* <https://css-tricks.com/almanac/selectors/b/blank/>
+* [MDN. :-moz-only-whitespace](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace)
+* [CSS-Tricks :blank](https://css-tricks.com/almanac/selectors/b/blank/)
 
 ##Selektor
 ```css_example
@@ -1217,7 +1211,7 @@ title:empty {
 /*doc
 ---
 title: "[radio] poza fieldset"
-name: radio-group
+name: a29-radio-group
 category: Błędy
 ---
 
@@ -1231,11 +1225,11 @@ Ten test może być ostrzeżeniem…
 
 
 ##Bibliografia
-* <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
+* [Web Accessibility Tutorials. Grouping Controls](https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons)
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
-* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* [H71: Zapewnienie opisu dla grup kontrolek formularzy przy użyciu elementów fieldset i legend](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+* [H44: Używanie elementu label do kojarzenia etykiet tekstowych z formantami formularzy](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
 
 ##Selektor
 ```css_example
@@ -1273,7 +1267,7 @@ fieldset [type="radio"] {
 /*doc
 ---
 title: "[role=checkbox] nie ma stanu"
-name: role-checkbox
+name: a30-role-checkbox
 category: Błędy
 ---
 
@@ -1281,9 +1275,9 @@ category: Błędy
 Element z `[role="checkbox"]` wymaga atrybutu stanu `[aria-checked]`
 
 ##Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#checkbox>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
-* <https://oaa-accessibility.org/examples/role/76/>
+* [WAI-ARIA 1.2 checkbox (role)](https://www.w3.org/TR/wai-aria-1.2/#checkbox)
+* [WAI-ARIA 1.2 aria-checked (state)](https://www.w3.org/TR/wai-aria-1.2/#aria-checked)
+
 
 ##Selektor
 ```css_example
@@ -1307,7 +1301,7 @@ Element z `[role="checkbox"]` wymaga atrybutu stanu `[aria-checked]`
 /*doc
 ---
 title: "[role=combobox] nie ma [state]"
-name: role-combobox
+name: a31-role-combobox
 category: Błędy
 ---
 
@@ -1315,9 +1309,9 @@ category: Błędy
 Element z `[role="combobox"]` wymaga atrybutu stanu `[aria-expanded]`
 
 ##Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#combobox>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
-* <https://oaa-accessibility.org/examples/role/77/>
+* [WAI-ARIA 1.2 combobox (role)](https://www.w3.org/TR/wai-aria-1.2/#combobox)
+* [WAI-ARIA 1.2 aria-expanded (state](https://www.w3.org/TR/wai-aria-1.2#aria-expanded)
+
 
 ##Selektor
 ```css_example
@@ -1342,7 +1336,7 @@ Element z `[role="combobox"]` wymaga atrybutu stanu `[aria-expanded]`
 /*doc
 ---
 title: "[role=scrollbar] wymaga właściwości"
-name: role-scrollbar
+name: a32-role-scrollbar
 category: Błędy
 ---
 
@@ -1356,12 +1350,12 @@ Niektóre właściwości muszą być zgodne z wzorcem projektowym `[role="scroll
 * `[aria-orientation]`
 
 ##Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#scrollbar>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
+* [WAI-ARIA 1.2 combobox (role](https://www.w3.org/TR/wai-aria-1.2/#scrollbar)
+* [WAI-ARIA 1.2 scrollbar (role](https://www.w3.org/TR/wai-aria-1.2/#combobox)
+* [WAI-ARIA 1.2. aria-valuenow (property)](https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow)
+* [WAI-ARIA 1.2. aria-valuemin (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemin)
+* [WAI-ARIA 1.2. aria-valuemax (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemax)
+* [WAI-ARIA 1.2. aria-orientation (property)](https://www.w3.org/TR/wai-aria-1.2#aria-orientation)
 
 ##Selektor
 ```css_example
@@ -1390,7 +1384,7 @@ Niektóre właściwości muszą być zgodne z wzorcem projektowym `[role="scroll
 /*doc
 ---
 title: "[role=slider] - brak atrybutów"
-name: role-slider
+name: a33-role-slider
 category: Błędy
 ---
 
@@ -1405,14 +1399,14 @@ Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany prze
 
 ##Bibliografia
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
-* <https://www.w3.org/TR/wai-aria/roles#slider>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
-* <https://www.oaa-accessibility.org/examplep/slider1/>
-* <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
-* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
-* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
+* [WAI-ARIA 1.2. slider (role)]https://www.w3.org/TR/wai-aria-1.2/#slider)
+* [WAI-ARIA 1.2. aria-valuenow (property)](https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow)
+* [WAI-ARIA 1.2. aria-valuemin (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemin)
+* [WAI-ARIA 1.2. aria-valuemax (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemax)
+
+* [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-1/)
+* [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-2/)
+* [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-3/)
 * <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
 
 ##Selektor
@@ -1442,7 +1436,7 @@ Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany prze
 /*doc
 ---
 title: "[role=spinbutton] missing attributes"
-name: role-spinbutton
+name: a34-role-spinbutton
 category: Błędy
 ---
 
@@ -1454,11 +1448,11 @@ category: Błędy
 * `[aria-valuenow]`
 
 ##Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#spinbutton>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
-* <https://oaa-accessibility.org/example/33/>
+* [WAI-ARIA 1.2. spinbutton (role)](https://www.w3.org/TR/wai-aria-1.2/#spinbutton)
+* [WAI-ARIA 1.2. aria-valuenow (property)](https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow)
+* [WAI-ARIA 1.2. aria-valuemin (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemin)
+* [WAI-ARIA 1.2. aria-valuemax (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemax)
+
 
 ##Selektor
 ```css_example
@@ -1487,7 +1481,7 @@ category: Błędy
 /*doc
 ---
 title: "Tabela układu"
-name: table-for-layout
+name: a35-table-for-layout
 category: Błędy
 ---
 
@@ -1506,10 +1500,10 @@ Nie wolno natomiast używać znaczników semantyki oraz atrybutów mających na 
 * `[colgroup]`.
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-8>
-* <https://www.w3.org/TR/WCAG-TECHS/F46.html>
-* <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
-* <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
+* [RGAA. Kryterium 5-8](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-8)
+* [F46: Niespełnienie kryterium sukcesu 1.3.1 z powodu użycia elementów th, elementów caption lub niepustych atrybutów summary w tabelach formujących układ](https://www.w3.org/WAI/WCAG21/Techniques/failures/F46)
+* [F49: Niespełnienie kryterium sukcesu 1.3.2 z powodu użycia do formowania układu tabeli HTML, która nie ma sensu po linearyzacji](https://www.w3.org/WAI/WCAG21/Techniques/failures/F49)
+* [KS 1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
 
 ##Selektor
 ```css_example
@@ -1551,7 +1545,7 @@ table[role="presentation"] [headers] {
 /*doc
 ---
 title: "[tabindex] > 0"
-name: tab-order
+name: a36-tab-order
 category: Błędy
 ---
 
@@ -1560,9 +1554,9 @@ Atrybut `[tabindex]` nigdy nie powinien być większy niż 0.
 
 ##Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-12-13>
-* <https://www.w3.org/TR/WCAG-TECHS/F44.html>
-* <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
+* [RGAA. Kryterium 12-13](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-12-13)
+* [F44: Niespełnienie kryterium sukcesu 2.4.3 z powodu użycia tabindex do utworzenia kolejności tabulacji, która nie zachowuje znaczenia i funkcjonalności](https://www.w3.org/WAI/WCAG21/Techniques/failures/F44)
+* [Scott O'Hara, Tabindex: it rarely pays to be positive](https://www.scottohara.me/blog/2019/05/25/tabindex.html)
 
 ##Selektor
 ```css_example
@@ -1585,7 +1579,7 @@ Atrybut `[tabindex]` nigdy nie powinien być większy niż 0.
 /*doc
 ---
 title: "Wyłączony przycisk"
-name: disabled-button
+name: a37-disabled-button
 category: Błędy
 ---
 
@@ -1612,7 +1606,7 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
 /*doc
 ---
 title: "Zagnieżdżony element interaktywny"
-name: nested-interactive
+name: a38-nested-interactive
 category: Błędy
 ---
 
@@ -1621,19 +1615,19 @@ Element interaktywny nie może być umieszczony w innym elemencie interaktywnym 
 
 
 ##Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <https://www.w3.org/TR/xhtml1/#prohibitions>
-* <https://w3c.github.io/html/dom.html#interactive-content-2>
-* <https://w3c.github.io/html/sec-forms.html#the-form-element>
-* <https://w3c.github.io/html/sec-forms.html#the-progress-element>
-* <https://w3c.github.io/html/sec-forms.html#the-meter-element>
-* <https://w3c.github.io/html/sec-forms.html#the-button-element>
-* <https://w3c.github.io/html/textlevel-semantics.html#the-a-element>
-* <https://w3c.github.io/html/sec-forms.html#the-label-element>
+* [RGAA. Kryterium 8-2](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2)
+* [WCAG 2.1 KS 4.1.1 Poprawność kodu]https://wcag.lepszyweb.pl/#parsing)
+* [WCAG 2.1 KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [B. Element Prohibitions](https://www.w3.org/TR/xhtml1/#prohibitions)
+* [HTML Living Standard. 3.2.5.2.7 Interactive content]https://w3c.github.io/html/dom.html#interactive-content-2)
+* [HTML Living Standard. 4.10.3 The form element](https://w3c.github.io/html/sec-forms.html#the-form-element)
+* [HTML Living Standard. 4.10.13 The progress element](https://w3c.github.io/html/sec-forms.html#the-progress-element)
+* [HTML Living Standard. 4.10.14 The meter element](https://w3c.github.io/html/sec-forms.html#the-meter-element)
+* [HTML Living Standard. 4.10.6 The button element](https://w3c.github.io/html/sec-forms.html#the-button-element)
+* [HTML Living Standard. 4.5.1 The a element](https://w3c.github.io/html/textlevel-semantics.html#the-a-element)
+* [HTML Living Standard. 4.10.4 The label element]https://w3c.github.io/html/sec-forms.html#the-label-element>
 
-##Selektor
+(##Selektor
 ```css_example
 a a[href],
 button a[href],

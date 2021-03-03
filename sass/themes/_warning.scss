@@ -3,7 +3,7 @@
 /*doc
 ---
 title: "# [href]"
-name: empty-href
+name: a01-empty-href
 category: Ostrzeżenia
 ---
 
@@ -33,7 +33,7 @@ a[href="#"]:not([role="button"]) {
 /*doc
 ---
 title: "abbr powinien mieć [title]"
-name: empty-title
+name: a02-empty-title
 category: Ostrzeżenia
 ---
 
@@ -71,7 +71,7 @@ abbr[title=""] {
 /*doc
 ---
 title: "[alt] może być pusty, ale wymaga sprawdzenia"
-name: empty-alt
+name: a03-empty-alt
 category: Ostrzeżenia
 ---
 
@@ -118,7 +118,7 @@ object[type="image"][alt=""] {
 /*doc
 ---
 title: "[alt] zawiera nazwę pliku"
-name: filename-alt
+name: a04-filename-alt
 category: Ostrzeżenia
 ---
 
@@ -254,7 +254,7 @@ $self-alt: ();
 /*doc
 ---
 title: "atrybut [style]"
-name: style-attr
+name: a05-style-attr
 category: Ostrzeżenia
 ---
 
@@ -289,7 +289,7 @@ I nie, JS nie powinien manipulować stylami: lepiej jest bawić się klasami, na
 /*doc
 ---
 title: "[autoplay] prawdopodobnie nie powinnno być używane"
-name: autoplay
+name: a06-autoplay
 category: Ostrzeżenia
 ---
 
@@ -321,7 +321,7 @@ audio[autoplay] {
 /*doc
 ---
 title: "Brak [aria-level]"
-name: no-aria-level
+name: a07-no-aria-level
 category: Ostrzeżenia
 ---
 
@@ -355,7 +355,7 @@ Chociaż `[aria-level]` nie jest wymagany przez specyfikację ARIA, w rzeczywist
 /*doc
 ---
 title: "Brak nagłówka w tabeli danych"
-name: missing-thead
+name: a08-missing-thead
 category: Ostrzeżenia
 ---
 
@@ -394,7 +394,7 @@ table:not([role="presentation"]) > tbody:first-child {
 /*doc
 ---
 title: "[controls] byłoby pomocne"
-name: controls
+name: a09-controls
 category: Ostrzeżenia
 ---
 
@@ -427,7 +427,7 @@ audio:not([controls]) {
 /*doc
 ---
 title: "Do układu można użyć tabeli jednowierszowej"
-name: table-layout
+name: a10-table-layout
 category: Ostrzeżenia
 ---
 
@@ -473,7 +473,7 @@ table:not([role="presentation"]) > tbody > tr:only-child {
 /*doc
 ---
 title: "figcaption poza figure"
-name: invalid-figcaption-nesting
+name: a11-invalid-figcaption-nesting
 category: Ostrzeżenia
 ---
 
@@ -504,7 +504,7 @@ category: Ostrzeżenia
 /*doc
 ---
 title: "figure bez roli group"
-name: figure-role
+name: a12-figure-role
 category: Ostrzeżenia
 ---
 
@@ -536,7 +536,7 @@ figure:not([role="group"]) {
 /*doc
 ---
 title: "JS [href]"
-name: href-js
+name: a13-href-js
 category: Ostrzeżenia
 ---
 
@@ -566,7 +566,7 @@ a[href^="javascript"]:not([role="button"]) {
 /*doc
 ---
 title: "Każda tabela danych musi mieć podpis"
-name: table-caption
+name: a14-table-caption
 category: Ostrzeżenia
 ---
 
@@ -615,7 +615,7 @@ table:not([role="presentation"]) > *:first-child:not(caption) {
 /*doc
 ---
 title: "label bez atrybutu [for]"
-name: no-for
+name: a15-no-for
 category: Ostrzeżenia
 ---
 
@@ -651,7 +651,7 @@ label:not([for]) {
 /*doc
 ---
 title: "legend w fieldset musi być :first-child"
-name: fieldset
+name: a16-fieldset
 category: Ostrzeżenia
 ---
 
@@ -687,7 +687,7 @@ fieldset > legend:not(:first-child) {
 /*doc
 ---
 title: "Niepoprawna struktura tabeli"
-name: table-structure
+name: a17-table-structure
 category: Ostrzeżenia
 ---
 
@@ -749,7 +749,7 @@ table > tbody ~ colgroup {
 /*doc
 ---
 title: "Niepoprawne rodzeństwo na liście definicji"
-name: invalid-def
+name: a18-invalid-def
 category: Ostrzeżenia
 ---
 
@@ -785,7 +785,7 @@ dt + :not(dd),
 /*doc
 ---
 title: "Niepoprawne zagnieżdżanie na liście"
-name: invalid-list-nesting
+name: a19-invalid-list-nesting
 category: Ostrzeżenia
 ---
 
@@ -823,7 +823,7 @@ ol > :not(li),
 /*doc
 ---
 title: "Niepoprawne zagnieżdżanie"
-name: invalid-nesting
+name: a20-invalid-nesting
 category: Ostrzeżenia
 ---
 
@@ -922,7 +922,7 @@ address section {
 /*doc
 ---
 title: "Niepoprawne zagnieżdżanie na liście definicji"
-name: invalid-def-nesting
+name: a21-invalid-def-nesting
 category: Ostrzeżenia
 ---
 
@@ -961,7 +961,7 @@ dl > :not(dt):not(dd):not(div) {
 /*doc
 ---
 title: "Nieprawidłowo użyte znaczniki sekcji"
-name: sectioning-tags
+name: a22-sectioning-tags
 category: Ostrzeżenia
 ---
 
@@ -1004,7 +1004,7 @@ article > article:first-child {
 /*doc
 ---
 title: "Niespójne [dir] i [lang]"
-name: mismatched-dir
+name: a23-mismatched-dir
 category: Ostrzeżenia
 ---
 
@@ -1043,7 +1043,7 @@ Niektóre języki - jak arabski czy hebrajski - wymagają przełączenia kierunk
 /*doc
 ---
 title: "Niewłaściwie umieszczony div"
-name: misplaced-div
+name: a24-misplaced-div
 category: Ostrzeżenia
 ---
 
@@ -1090,7 +1090,7 @@ strong div {
 /*doc
 ---
 title: "Niezabezpieczone [target=_blank]"
-name: unsecured-target
+name: a25-unsecured-target
 category: Ostrzeżenia
 ---
 
@@ -1128,7 +1128,7 @@ Właściwie nie jest to problem związany z dostępnością, ale wszystko co pom
 /*doc
 ---
 title: "Obraz dekoracyjny nie powinien mieć dostępnej nazwy"
-name: decoration
+name: a26-decoration
 category: Ostrzeżenia
 ---
 
@@ -1232,7 +1232,7 @@ object[type="image"][aria-hidden="true"][aria-describedby] {
 /*doc
 ---
 title: "Rola jest wymagana dla svg"
-name: no-aria-role
+name: a27-no-aria-role
 category: Ostrzeżenia
 ---
 
@@ -1268,7 +1268,7 @@ svg:not([aria-hidden="true"]):not([role="img"]) {
 /*doc
 ---
 title: "[role=presentation] nie powinna być używana dla obrazu"
-name: presentation
+name: a28presentation
 category: Ostrzeżenia
 ---
 
@@ -1318,7 +1318,7 @@ object[role="presentation"] {
 /*doc
 ---
 title: "summary w details musi być :first-child"
-name: details
+name: a29details
 category: Ostrzeżenia
 ---
 
@@ -1353,7 +1353,7 @@ details > summary:not(:first-child) {
 /*doc
 ---
 title: "th bez [scope] lub [id]"
-name: th-no-scope
+name: a30-th-no-scope
 category: Ostrzeżenia
 ---
 
@@ -1401,7 +1401,7 @@ th:not([scope]):not([id]) {
 /*doc
 ---
 title: "Użyto spacer.gif"
-name: spacer-gif
+name: a31-spacer-gif
 category: Ostrzeżenia
 ---
 
@@ -1442,7 +1442,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) {
 /*doc
 ---
 title: "Większość węzłów DOM nie może być :empty"
-name: empty-nodes
+name: a32-empty-nodes
 category: Ostrzeżenia
 ---
 
@@ -1495,7 +1495,7 @@ svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not
 /*doc
 ---
 title: "Zagnieżdżone tabele"
-name: nested-table
+name: a33-nested-table
 category: Ostrzeżenia
 ---
 
@@ -1557,7 +1557,7 @@ table table {
 /*doc
 ---
 title: "Zła wyliczona wartość"
-name: oops
+name: a34-oops
 category: Ostrzeżenia
 ---
 

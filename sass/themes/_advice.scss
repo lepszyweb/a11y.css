@@ -3,7 +3,7 @@
 /*doc
 ---
 title: "Brak [href]"
-name: no-href
+name: a01-no-href
 category: Porady
 ---
 
@@ -32,7 +32,7 @@ a:not([href]) {
 /*doc
 ---
 title: "button [role] on a link"
-name: role-button
+name: a02-role-button
 category: Porady
 ---
 
@@ -60,7 +60,7 @@ a[role="button"] {
 /*doc
 ---
 title: "Czy to wygląda jak [required]?"
-name: required
+name: a03-required
 category: Porady
 ---
 
@@ -103,7 +103,7 @@ textarea[aria-required] {
 /*doc
 ---
 title: "Data i godzina powinny być zrozumiałe"
-name: time
+name: a04-time
 category: Porady
 ---
 
@@ -131,7 +131,7 @@ time,
 /*doc
 ---
 title: "Drugi widoczny znacznik main"
-name: main
+name: a05-main
 category: Porady
 ---
 
@@ -161,7 +161,7 @@ main ~ main:not([hidden]) {
 /*doc
 ---
 title: "Drugi znacznik figcaption"
-name: figcaption
+name: a06-figcaption
 category: Porady
 ---
 
@@ -193,7 +193,7 @@ figcaption:not(:first-of-type) {
 /*doc
 ---
 title: "Kolejność figcaption"
-name: figcaption-order
+name: a07-figcaption-order
 category: Porady
 ---
 
@@ -224,7 +224,7 @@ figcaption:not(:first-child):not(:last-child) {
 /*doc
 ---
 title: "Łącze do pliku"
-name: file-format
+name: a08-file-format
 category: Porady
 ---
 
@@ -278,7 +278,7 @@ $href: ('[download]');
 /*doc
 ---
 title: "Łącze e-mail powinno być poprawne"
-name: mailto
+name: a09-mailto
 category: Porady
 ---
 
@@ -305,7 +305,7 @@ W przeciwnym razie możesz zirytować swoich użytkowników.
 /*doc
 ---
 title: "Łącze otwiera nową kartę"
-name: target-blank
+name: a10-target-blank
 category: Porady
 ---
 
@@ -339,7 +339,7 @@ Możesz użyć na przykład `[title]`.
 /*doc
 ---
 title: "Łącze telefoniczne powinno dzwonić pod numer rzeczywisty"
-name: tel
+name: a11-tel
 category: Porady
 ---
 
@@ -366,7 +366,7 @@ W przeciwnym razie możesz zmusić użytkowników do dzwonienia do Berdyczowa.
 /*doc
 ---
 title: "Może ma [role] search?"
-name: missing-role
+name: a12-missing-role
 category: Porady
 ---
 
@@ -409,7 +409,7 @@ input[class*="search"]:not([role="search"]) {
 /*doc
 ---
 title: "Nie :puste [hidden] rzeczy"
-name: hidden
+name: a13-hidden
 category: Porady
 ---
 
@@ -444,7 +444,7 @@ Użycie`[hidden]` lub `[aria-hidden]` może nie być dobrym pomysłem na ukrycie
 /*doc
 ---
 title: "Placeholder nie może zastąpić etykiety"
-name: placeholder
+name: a14-placeholder
 category: Porady
 ---
 
@@ -472,7 +472,7 @@ label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
 /*doc
 ---
 title: "Powtórzona rola"
-name: duplicate-roles
+name: a15-duplicate-roles
 category: Porady
 ---
 
@@ -508,7 +508,7 @@ Niektóre role ARIA powinny być unikalne: `[main]`, `[search]`, `[banner]`, `[c
 /*doc
 ---
 title: "Pusty atrybut [class]"
-name: empty-class
+name: a16-empty-class
 category: Porady
 ---
 
@@ -539,7 +539,7 @@ category: Porady
 /*doc
 ---
 title: "Pusty atrybut [id]"
-name: empty-id
+name: a17-empty-id
 category: Porady
 ---
 
@@ -570,7 +570,7 @@ category: Porady
 /*doc
 ---
 title: "Rzeczy dla video lub audio"
-name: video-audio
+name: a18-video-audio
 category: Porady
 ---
 
@@ -603,7 +603,7 @@ audio {
 /*doc
 ---
 title: "[scope] powinien być albo col albo row"
-name: th-scope
+name: a19-th-scope
 category: Porady
 ---
 
@@ -650,7 +650,7 @@ th[scope] {
 /*doc
 ---
 title: "<select required> powinien zaczynać się od <option> z pustą [value]"
-name: empty-option-on-select
+name: a20-empty-option-on-select
 category: Porady
 ---
 
@@ -686,7 +686,7 @@ select[required]:not([multiple]):not([size]) {
 /*doc
 ---
 title: "[title] powinnie być równy alternatywie tekstowej"
-name: title
+name: a21-title
 category: Porady
 ---
 
@@ -720,7 +720,7 @@ svg[aria-label][title] {
 /*doc
 ---
 title: "URL nie HTTPS"
-name: no-https
+name: a22-no-https
 category: Porady
 ---
 
@@ -752,7 +752,7 @@ Gdy to możliwe, staraj się używać HTTPS.
 /*doc
 ---
 title: "Użyto tabeli układu"
-name: table-presentation
+name: a23-table-presentation
 category: Porady
 ---
 
