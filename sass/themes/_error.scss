@@ -13,9 +13,9 @@ Atrybut `[accesskey]` jest przeznaczony do implementacji skrótów klawiaturowyc
 To jest opinia: w idealnym świecie `[accesskey]` może być używany mądrze. Yup. Być może.
 
 ##Bibliografia
-* [K.Groves. Dignsitic.css](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159)
+* [K.Groves. Diagnostic.css - L159](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159)
 * [Using accesskey attribute in HTML forms and links](https://www.cs.tut.fi/~jkorpela/forms/accesskey.html)
-* [MDN. Accesskey](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
+* [MDN Web Docs. Accesskey](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
 * [HTML. Living standard. 6.6.2 The accesskey attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute)
 * [More reasons why we don’t use accesskeys](http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/)
 * [Accesskey le grand échec de l'accessibilité du Web](https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html)
@@ -47,8 +47,8 @@ Atrybuty zdarzeń Javascript (takie jak `[onmouseover]`) nie powinny być używa
 Preferuj albo pseudo-klasy CSS (`:hover`, `:focus`, `:active`, etc.) albo obserwatory zdarzeń JS.
 
 ##Bibliografia
-* [MDN. Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-* [MDN. EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener)
+* [MDN Web Docs. Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* [MDN Web Docs. EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener)
 
 ##Selektor
 ```css_example
@@ -235,7 +235,7 @@ Element z `[role=img]` powinien mieć albo `[aria-label]` albo `[aria-labelledby
 
 ##Bibliografia
 * [WAI-ARIA 1.2 img (role)](https://www.w3.org/TR/wai-aria-1.2/#img)
-* [KS 1.1.1 Treści nietekstowe](https://wcag.lepszyweb.pl/#non-text-content>
+* [KS 1.1.1 Treści nietekstowe](https://wcag.lepszyweb.pl/#non-text-content)
 * [Web Accessibility Tutorials: An alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
 * [WAI-ARIA 1.2 presentation (role)](https://www.w3.org/TR/wai-aria-1.2/#presentation)
 * [WAI-ARIA 1.2 Accessible Name and Description Computation](https://www.w3.org/TR/wai-aria-1.2/#textalternativecomputation)
@@ -346,7 +346,7 @@ Element `<img>` musi mieć `[src]` lub `[srcset]`. I powinno być poprawne. Oczy
 
 ##Bibliografia
 * <https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
-* <https://scottjehl.github.io/picturefill/>
+* [Picturefill. A responsive image polyfill](https://scottjehl.github.io/picturefill/)
 
 ##Selektor
 ```css_example
@@ -420,10 +420,10 @@ Jak wyjaśniono na Mozilla Developer Network:
 Ma to również na celu zapobieżenie staremu exploitowi bezpieczeństwa wykorzystującemu UTF-7. Zadeklarowanie zestawu znaków przed znacznikiem `<title>` jest najprostszym sposobem, aby to ukryć.
 
 ##Bibliografia
-* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
-* <https://w3c.github.io/html/document-metadata.html#charset>
-* <https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
+* [Linting HTML using CSS, Incorrect Character Set](https://bitsofco.de/linting-html-using-css/#incorrectcharacterset)
+* [MDN Web Docs &lt;meta&gt;: The metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+* [HTML Living Standard, Specifying the document's character encoding](https://w3c.github.io/html/document-metadata.html#charset)
+* [Michael Thelin, Web Security: Cross-site scripting attacks using UTF-7](https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html)
 
 ##Selektor
 ```css_example
@@ -452,11 +452,10 @@ category: Błędy
 Znacznik `<label>` z atrybutem `[for]` powinien oczywiście etykietować coś z atrybutem `[id]`. W atrybucie `[for]` musi być wartość `[id]` etykietowanego elementu. Oczywiście.
 
 ##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
-* <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
+* [RGAA. Test 11-1-2](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-2)
 * [H44: Używanie elementu label do kojarzenia etykiet tekstowych z formantami formularzy](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
-* <https://www.w3.org/WAI/tutorials/forms/labels/>
-* <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
+* [Web Accessibility Tutorials, Labeling Controls](https://www.w3.org/WAI/tutorials/forms/labels/)
+* [Testing form functionality with different assistive technology](https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/)
 * [KS 3.3.2 Etkiety i instrukcje](https://wcag.lepszyweb.pl/#labels-or-instructions)
 * [KS 2.4.6 Nagłówki i etykiety](https://wcag.lepszyweb.pl/#headings-and-labels)
 * [KS 1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
@@ -488,7 +487,7 @@ category: Błędy
 Przyznasz, że `<form>` powinien coś robić. Czyż nie?  Właśnie, a `[action]` ma za zadanie określić co.
 
 ##Bibliografia
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
+* [Heydon Pickering, Revenge.css - L214](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214)
 
 ##Selektor
 ```css_example
@@ -524,10 +523,9 @@ category: Błędy
 Pola typu `radio` lub `checkbox` są zwykle zgrupowane. Atrybut `[name]` służy do ich programowego powiązania, dlatego jest potrzebny.
 
 ##Bibliografia
-* <https://www.w3.org/WAI/tutorials/forms/grouping/>
-* <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
-* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
-* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* [Web Accessibility Tutorials, Grouping Controls](https://www.w3.org/WAI/tutorials/forms/grouping/)
+* [HTML
+Living Standard, Forms](https://html.spec.whatwg.org/multipage/forms.html)
 * [H71: Zapewnienie opisu dla grup kontrolek formularzy przy użyciu elementów fieldset i legend](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
 
 ##Selektor
@@ -638,16 +636,16 @@ category: Błędy
 
 ##Bibliografia
 * [RGAA. Kryterium 8-3](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3)
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
+* [RGAA, Słownik - Język domyślny strony](https://rgaa.lepszyweb.pl/pl/glossaire.html#)
 * [RGAA. Kryterium 8-4](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4)
 * [KS 3.1.1 Język strony](https://wcag.lepszyweb.pl/#language-of-page)
 * [KS 3.1.2 Język części strony](https://wcag.lepszyweb.pl/#language-of-parts)
 * [H57: Używanie atrybutu lang dla elementu html](https://www.w3.org/WAI/WCAG21/Techniques/html/H57)
-* <https://html.spec.whatwg.org/#attr-lang>
-* <https://tools.ietf.org/html/bcp47#section-2.1.1>
-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
-* <https://www.matuzo.at/blog/lang-attribute/>
-* <https://codepen.io/matuzo/project/editor/ZyrVee>
+* [HTML Living Standard, The lang attribute](https://html.spec.whatwg.org/multipage/dom.html#attr-lang)
+* [Tags for Identifying Languages, 2.1.1.  Formatting of Language Tags](https://tools.ietf.org/html/bcp47#section-2.1.1)
+* [MDN, Language tag syntax](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)
+* [The lang attribute: browsers telling lies, telling sweet little lies](https://www.matuzo.at/blog/lang-attribute/)
+* [Manuel Matuzovic, Debugging the lang attribute](https://codepen.io/matuzo/project/editor/ZyrVee>
 
 ##Selektor
 ```css_example
@@ -679,12 +677,12 @@ category: Błędy
 Użytkownik powinien mieć możliwość powiększania lub pomniejszania strony, aby poprawić czytelność i wygodę; jest to zwykle dozwolone w `<meta>` viewport.
 
 ##Bibliografia
-* <https://bitsofco.de/linting-html-using-css/>
-* <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
-* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html>
-* <https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
-* <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
+* [Linting HTML using CSS](https://bitsofco.de/linting-html-using-css/)
+* [Zooming and scaling must not be disabled](https://dequeuniversity.com/rules/axe/4.1/meta-viewport)
+* [KS 1.4.4 Zmiana rozmiaru tekstu](https://wcag.lepszyweb.pl/#resize-text)
+* [Understanding Success Criterion 1.4.4: Resize text](https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html)
+* [Ne pas brider le zoom avec la propriété user-scalable](https://www.accede-web.com/notices/html-et-css/recommandations-complementaires/ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/)
+* [A. Roselli, Don’t Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html)
 
 ##Selektor
 ```css_example
@@ -716,10 +714,10 @@ category: Błędy
 Atrybut  `[dir]` służący do określenia kierunku tekstu elementu - przyjmuje tylko trzy wartości: `rtl`, `ltr` oraz `auto`.
 
 ##Bibliografia
-* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
-* <https://www.w3.org/International/questions/qa-html-dir>
-* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
-* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+* * [K.Groves. Diagnostic.css L113](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113)
+* [Structural markup and right-to-left text in HTML](https://www.w3.org/International/questions/qa-html-dir)
+* [Inline markup and bidirectional text in HTML, The dir attribute](https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* [HTML Living Standard, The dir attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute)
 
 ##Selektor
 ```css_example
@@ -751,13 +749,13 @@ Używanie kodowania znaków `utf-8` est zalecane przez samo W3C:
 Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wykorzystywanych przez inne zestawy znaków…
 
 ##Bibliografia
-* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
-* <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
-* <https://validator.w3.org/docs/help.html#faq-charset>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning>
-* <https://validator.w3.org/i18n-checker/>
-* <https://www.w3.org/International/tutorials/tutorial-char-enc/>
+* [Linting HTML przy użyciu CSS, Incorrect Character Set](https://bitsofco.de/linting-html-using-css/#incorrectcharacterset)
+* HTML Living Standard, atrybut medta-charset](https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset)
+* [MDN Web Docs &lt;meta&gt;: The metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+* [Help and FAQ for the Markup Validato](https://validator.w3.org/docs/help.html#faq-charset)
+* [WCAG, Zasada 3 - Zrozumiałość](https://wcag.lepszyweb.pl/#principle3](https://wcag.lepszyweb.pl/#principle3)
+* [W3C Internationalization Checker](https://validator.w3.org/i18n-checker/)
+* [Handling character encodings in HTML and CSS (tutorial)](https://www.w3.org/International/tutorials/tutorial-char-enc/)
 
 ##Selektor
 ```css_example
@@ -789,7 +787,6 @@ category: Błędy
 ##Bibliografia
 * [RGAA. Kryterium 11-8](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-8)
 * [H85: Użycie optgroup do grupowania elementów option wewnątrz select](https://www.w3.org/WAI/WCAG21/Techniques/html/H85)
-* <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ##Selektor
 ```css_example
@@ -829,8 +826,7 @@ category: Błędy
 Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS? Tak. Cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.
 
 ##Bibliografia
-* <https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
-* <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
+* [Selectors Level 3. Selektor syntax](https://www.w3.org/TR/selectors-3/#selector-syntax)
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
 
 ##Selektor
@@ -952,7 +948,7 @@ Jeśli  `<button>` ma wartość `[type]` albo `"reset"` albo `"button"`, nie pow
 * `[formnovalidate]`.
 
 ##Bibliografia
-* <https://www.w3.org/TR/html5/forms.html#the-button-element>
+* [HTML Living Standard, The button element](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element)
 
 ##Selektor
 ```css_example
@@ -1000,8 +996,8 @@ Jednak jeśli przycisk znajduje się poza `<form>`, jeśli ma on za zadanie wys�
 Jeśli nie wysyła niczego, powinien mieć atrybut `[type="button"]`.
 
 ##Bibliografia
-* <https://www.w3.org/TR/html5/forms.html#the-button-element>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
+* [HTML Living Standard, The button element](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element)
+* [Heydon Pickering, Revenge.css -L189](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189)
 
 ##Selektor
 ```css_example
@@ -1040,7 +1036,7 @@ Puste łącze powinno mieć etykietę wewnątrz `[title]`, `[aria-label]` lub ws
 * [KS 2.4.9 Cel łącza (z samego łącza)](https://wcag.lepszyweb.pl/#link-purpose-link-only)
 * [H30: Zapewnienie tekstu łącza opisującego cel łącza dla elementów kotwiących](https://www.w3.org/WAI/WCAG21/Techniques/html/H30)
 * [G91: Zapewnienie tekstu łącza opisującego cel łącza](https://www.w3.org/WAI/WCAG21/Techniques/global/G91)
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+* [Heydon Pickering, Revenge.css - L193](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193)
 
 ##Selektor
 ```css_example
@@ -1074,9 +1070,9 @@ category: Błędy
 Atrybut `[href]`, jeśli występuje, nie powinien być pusty. Łączy *do* czegoś, prawda?
 
 ##Bibliografia
-* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+* [HTML Living standards, Links created by a and area elements](https://html.spec.whatwg.org/multipage/links.html#links-created-by-a-and-area-elements)
+* [Heydon Pickering, Revenge.css - L161](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161)
+* [Heydon Pickering, Revenge.css - L165](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165)
 
 ##Selektor
 ```css_example
@@ -1105,11 +1101,11 @@ category: Błędy
 Atrybut `[aria-label]`, `[aria-labelledby]` lub `[title]` w znaczniku `<button>` nie może być pusty.
 
 ##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
+* [RGAA, 11. Formularze](https://rgaa.lepszyweb.pl/pl/criteres.html#formularze)
 * [RGAA. Kryterium 11-9](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9)
 * [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
 * [H91: Korzystanie z kontrolek formularzy HTML i łączy](https://www.w3.org/WAI/WCAG21/Techniques/html/H91)
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+* [Heydon Pickering, Revenge.css - L193](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193)
 
 ##Selektor
 ```css_example
@@ -1148,11 +1144,11 @@ Przycisk `<button>` powinien mieć albo zawartość albo atrybut `[aria-label]`,
 
 
 ##Bibliografia
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
+* [RGAA, 11. Formularze](https://rgaa.lepszyweb.pl/pl/criteres.html#formularze)
 * [RGAA. Kryterium 11-9](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9)
 * [KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
 * [H91: Korzystanie z formantów formularzy HTML i łączy](https://www.w3.org/WAI/WCAG21/Techniques/html/H91)
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+* [Heydon Pickering, Revenge.css - L193](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193)
 
 ##Selektor
 ```css_example
@@ -1183,14 +1179,14 @@ Moglibyśmy użyć pseudoklasy `:blank`, ale w tym momencie jej obsługa jest ba
 
 ##Bibliografia
 * [RGAA. Kryterium 8-5](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5)
-* <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
+* [RGAA Słownik, Tytuł strony](https://rgaa.lepszyweb.pl/pl/glossaire.html#tytulStrony)
 * [HTML Living Standard. 4.2.2 The title element](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element)
 * [KS 2.4.2 Tytuł strony](https://wcag.lepszyweb.pl/#page-titled)
 * [G88: Zapewnienie opisowych tytułów stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G88)
 * [G127: Określenie relacji strony internetowej z większym zbiorem stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G127)
 * [H25: Zapewnienie tytułu za pomocą elementu title](https://www.w3.org/WAI/WCAG21/Techniques/html/H25)
-* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
-* [MDN. :-moz-only-whitespace](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace)
+* [The Empty-Value Pseudo-class: :blank](https://drafts.csswg.org/selectors-4/#blank>
+* [MDN Web Docs. :-moz-only-whitespace](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace)
 * [CSS-Tricks :blank](https://css-tricks.com/almanac/selectors/b/blank/)
 
 ##Selektor
@@ -1398,7 +1394,7 @@ Element z `[role="slider"]` wymaga kilku atrybutów:
 Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany przez specyfikację ARIA.
 
 ##Bibliografia
-* <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
+* [Debug.css, L378](https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378)
 * [WAI-ARIA 1.2. slider (role)]https://www.w3.org/TR/wai-aria-1.2/#slider)
 * [WAI-ARIA 1.2. aria-valuenow (property)](https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow)
 * [WAI-ARIA 1.2. aria-valuemin (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemin)
@@ -1435,7 +1431,7 @@ Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany prze
 
 /*doc
 ---
-title: "[role=spinbutton] missing attributes"
+title: "[role=spinbutton] wymaga atrybutów"
 name: a34-role-spinbutton
 category: Błędy
 ---
@@ -1553,7 +1549,7 @@ category: Błędy
 Atrybut `[tabindex]` nigdy nie powinien być większy niż 0.
 
 ##Bibliografia
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
+* [Heydon Pickering, Revenge.css - L337](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337)
 * [RGAA. Kryterium 12-13](https://rgaa.lepszyweb.pl/pl/criteres.html#crit-12-13)
 * [F44: Niespełnienie kryterium sukcesu 2.4.3 z powodu użycia tabindex do utworzenia kolejności tabulacji, która nie zachowuje znaczenia i funkcjonalności](https://www.w3.org/WAI/WCAG21/Techniques/failures/F44)
 * [Scott O'Hara, Tabindex: it rarely pays to be positive](https://www.scottohara.me/blog/2019/05/25/tabindex.html)
@@ -1587,7 +1583,7 @@ category: Błędy
 Przycisk `<button>` stylizowany na wyłączony powinien być wyłączony *w rzeczywistości*. Użyj `[disabled]` i `[readonly]`.
 
 ##Bibliografia
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
+* [Heydon Pickering, Revenge.css - L122](https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122)
 
 ##Selektor
 ```css_example
