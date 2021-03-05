@@ -685,7 +685,7 @@ select[required]:not([multiple]):not([size]) {
 
 /*doc
 ---
-title: "[title] powinnie być równy alternatywie tekstowej"
+title: "[title] powinnie być równy alt"
 name: a21-title
 category: Porady
 ---
@@ -696,8 +696,12 @@ A `[title]` każdej treści graficznej powinno być równe `[aria-label]` lub `[
 ##Bibliografia
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* [An alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
 * <https://www.w3.org/TR/html51/semantics.html#alt>
+* [Image ALT Tag Tips for HTML](https://accessibility.psu.edu/images/imageshtml/)
+* [TPG, Short note on use of alt="" and the title attribute](https://www.tpgi.com/short-note-on-use-of-alt-and-the-title-attribute/)
+* [24 Accessibility. The Trials and Tribulations of the Title Attribute](https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/)
+
 
 ##Selektor
 ```css_example

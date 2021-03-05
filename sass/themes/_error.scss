@@ -714,9 +714,9 @@ category: Błędy
 Atrybut  `[dir]` służący do określenia kierunku tekstu elementu - przyjmuje tylko trzy wartości: `rtl`, `ltr` oraz `auto`.
 
 ##Bibliografia
-* * [K.Groves. Diagnostic.css L113](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113)
+* [K.Groves. Diagnostic.css L113](https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113)
 * [Structural markup and right-to-left text in HTML](https://www.w3.org/International/questions/qa-html-dir)
-* [Inline markup and bidirectional text in HTML, The dir attribute](https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* [Inline markup and bidirectional text in HTML, The dir attribute](https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute)
 * [HTML Living Standard, The dir attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute)
 
 ##Selektor
@@ -750,10 +750,10 @@ Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wyk
 
 ##Bibliografia
 * [Linting HTML przy użyciu CSS, Incorrect Character Set](https://bitsofco.de/linting-html-using-css/#incorrectcharacterset)
-* HTML Living Standard, atrybut medta-charset](https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset)
+* HTML Living Standard, atrybut medata-charset](https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset)
 * [MDN Web Docs &lt;meta&gt;: The metadata element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
 * [Help and FAQ for the Markup Validato](https://validator.w3.org/docs/help.html#faq-charset)
-* [WCAG, Zasada 3 - Zrozumiałość](https://wcag.lepszyweb.pl/#principle3](https://wcag.lepszyweb.pl/#principle3)
+* [WCAG, Zasada 3 - Zrozumiałość](https://wcag.lepszyweb.pl/#principle3)
 * [W3C Internationalization Checker](https://validator.w3.org/i18n-checker/)
 * [Handling character encodings in HTML and CSS (tutorial)](https://www.w3.org/International/tutorials/tutorial-char-enc/)
 
@@ -827,7 +827,7 @@ Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w naz
 
 ##Bibliografia
 * [Selectors Level 3. Selektor syntax](https://www.w3.org/TR/selectors-3/#selector-syntax)
-* <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
+* [Przestrzeń nazw, przykład](https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html)
 
 ##Selektor
 ```css_example
@@ -1185,7 +1185,7 @@ Moglibyśmy użyć pseudoklasy `:blank`, ale w tym momencie jej obsługa jest ba
 * [G88: Zapewnienie opisowych tytułów stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G88)
 * [G127: Określenie relacji strony internetowej z większym zbiorem stron internetowych](https://www.w3.org/WAI/WCAG21/Techniques/global/G127)
 * [H25: Zapewnienie tytułu za pomocą elementu title](https://www.w3.org/WAI/WCAG21/Techniques/html/H25)
-* [The Empty-Value Pseudo-class: :blank](https://drafts.csswg.org/selectors-4/#blank>
+* [The Empty-Value Pseudo-class: :blank](https://drafts.csswg.org/selectors-4/#blank)
 * [MDN Web Docs. :-moz-only-whitespace](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace)
 * [CSS-Tricks :blank](https://css-tricks.com/almanac/selectors/b/blank/)
 
@@ -1222,8 +1222,8 @@ Ten test może być ostrzeżeniem…
 
 ##Bibliografia
 * [Web Accessibility Tutorials. Grouping Controls](https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons)
-* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
-* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* [HTML Living Standard, Forms](https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-typeradio)
+* [HTML Living Standard, Forms&hellip;](https://html.spec.whatwg.org/multipage/forms.html#element-attrdef-formelements-name)
 * [H71: Zapewnienie opisu dla grup kontrolek formularzy przy użyciu elementów fieldset i legend](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
 * [H44: Używanie elementu label do kojarzenia etykiet tekstowych z formantami formularzy](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
 
@@ -1395,7 +1395,7 @@ Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany prze
 
 ##Bibliografia
 * [Debug.css, L378](https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378)
-* [WAI-ARIA 1.2. slider (role)]https://www.w3.org/TR/wai-aria-1.2/#slider)
+* [WAI-ARIA 1.2. slider (role)](https://www.w3.org/TR/wai-aria-1.2/#slider)
 * [WAI-ARIA 1.2. aria-valuenow (property)](https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow)
 * [WAI-ARIA 1.2. aria-valuemin (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemin)
 * [WAI-ARIA 1.2. aria-valuemax (property)](https://www.w3.org/TR/wai-aria-1.2#aria-valuemax)
@@ -1403,7 +1403,7 @@ Również `[aria-valuetext]` jest mile widziany, mimo że nie jest wymagany prze
 * [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-1/)
 * [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-2/)
 * [TPG, Hans Hillen: ARIA Slider, Part 1](https://www.tpgi.com/aria-slider-part-3/)
-* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
+* [MDN Web Docs. Using the slider role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role)
 
 ##Selektor
 ```css_example
@@ -1615,13 +1615,13 @@ Element interaktywny nie może być umieszczony w innym elemencie interaktywnym 
 * [WCAG 2.1 KS 4.1.1 Poprawność kodu]https://wcag.lepszyweb.pl/#parsing)
 * [WCAG 2.1 KS 4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
 * [B. Element Prohibitions](https://www.w3.org/TR/xhtml1/#prohibitions)
-* [HTML Living Standard. 3.2.5.2.7 Interactive content]https://w3c.github.io/html/dom.html#interactive-content-2)
+* [HTML Living Standard. 3.2.5.2.7 Interactive content](https://w3c.github.io/html/dom.html#interactive-content-2)
 * [HTML Living Standard. 4.10.3 The form element](https://w3c.github.io/html/sec-forms.html#the-form-element)
 * [HTML Living Standard. 4.10.13 The progress element](https://w3c.github.io/html/sec-forms.html#the-progress-element)
 * [HTML Living Standard. 4.10.14 The meter element](https://w3c.github.io/html/sec-forms.html#the-meter-element)
 * [HTML Living Standard. 4.10.6 The button element](https://w3c.github.io/html/sec-forms.html#the-button-element)
 * [HTML Living Standard. 4.5.1 The a element](https://w3c.github.io/html/textlevel-semantics.html#the-a-element)
-* [HTML Living Standard. 4.10.4 The label element]https://w3c.github.io/html/sec-forms.html#the-label-element>
+* [HTML Living Standard. 4.10.4 The label element]https://w3c.github.io/html/sec-forms.html#the-label-element)
 
 (##Selektor
 ```css_example
