@@ -1,16 +1,23 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ffi (1.15.3)
+    ffi (1.15.3-x64-mingw32)
     hologram (1.4.0)
       redcarpet (>= 2.2, < 4.0)
       rouge (>= 1.5)
-    rake (11.1.2)
+    rb-fsevent (0.11.0)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     redcarpet (3.5.1)
     rouge (1.10.1)
-    sass (3.4.22)
-    scss_lint (0.48.0)
-      rake (>= 0.9, < 12)
-      sass (~> 3.4.15)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    scss_lint (0.59.0)
+      sass (~> 3.5, >= 3.5.5)
 
 PLATFORMS
   ruby
