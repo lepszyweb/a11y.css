@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "csslint-stylish": "0.0.6",
-    "del": "^4.1.1",
+    "del": "^6.0.0",
     "fs-promise": "^2.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
