@@ -60,7 +60,7 @@
     "gulp-hologram": "^1.2.3",
     "gulp-plumber": "latest",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "gulp-scss-lint": "latest",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
