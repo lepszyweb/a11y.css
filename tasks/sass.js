@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('node-sass'));
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var options = require('./helpers/options');
