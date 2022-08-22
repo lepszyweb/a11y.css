@@ -151,7 +151,7 @@ figcaption:not(:first-of-type)
 ``` html
 <figure role="group">
   <figcaption>Jestem podpisem.</figcaption>
-  <img src="/static/ffoodd.png" alt="Potrzebny" width="144" height="144" />
+  <img src="./static/ffoodd.png" alt="Potrzebny" width="144" height="144" />
   <figcaption>Ja też jestem podpisem.</figcaption>
 </figure>
 ```
@@ -182,7 +182,7 @@ figcaption:not(:first-child):not(:last-child)
 #### Test
 ``` html
 <figure role="group">
-  <img src="/static/ffoodd.png" alt="Potrzebny" width="144" height="144" />
+  <img src="./static/ffoodd.png" alt="Potrzebny" width="144" height="144" />
   <figcaption>Jestem podpisem.</figcaption>
   <p>Jestem kimś innym. Oh, czekaj.</p>
 </figure>
@@ -608,7 +608,7 @@ svg[aria-label][title]
 
 #### Test
 ``` html
-<img src="/static/ffoodd.png" alt="Jestem tekstem alternatywnym!" title="Jestem tytułem!" height="144" width="144"><span>†</span>
+<img src="./static/ffoodd.png" alt="Jestem tekstem alternatywnym!" title="Jestem tytułem!" height="144" width="144"><span>†</span>
 ```
 */
 img[alt][title],

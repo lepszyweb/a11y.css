@@ -178,7 +178,7 @@ input[type="image"]:not([alt])
 
 ### Test
 ``` html
-<img src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img src="./static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 img[alt=" "],
@@ -1553,7 +1553,7 @@ Element z <code>[role="checkbox"]</code> wymaga atrybutu stanu <code>[aria-check
 
 ### Test
 ``` html
-<img src="/static/ffoodd.png" alt="Pole wyboru" role="checkbox" width="36" height="36"/><span>†</span>
+<img src="./static/ffoodd.png" alt="Pole wyboru" role="checkbox" width="36" height="36"/><span>†</span>
 ```
 */
 [role="checkbox"]:not([aria-checked]) {
