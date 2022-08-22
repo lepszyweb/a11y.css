@@ -515,7 +515,7 @@ object[type="image"][alt=""]
 
 ### Test
 ``` html
-<img alt="" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img alt="" src="./static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 img[alt=""],
@@ -646,7 +646,7 @@ object[type="image"][alt$=".svgz"]
 
 ### Test
 ``` html
-<img alt="/static/ffoodd.png" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img alt="/static/ffoodd.png" src="./static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 $alt: ();
