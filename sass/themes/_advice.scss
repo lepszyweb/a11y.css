@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 /*doc
 ---
 title: "<select required> powinien zaczynać się od <option> z pustą [value]"
@@ -9,7 +8,9 @@ category: Porady
 ---
 
 ### Opis
-Element `<select required>`, który nie jest `[multiple]` i którego `[size]` nie jest większy niż `1`, powinien zaczynać się od pustej `<option>`. To powiedziawszy, możesz użyć zawartości placeholder dla tej opcji, ale musisz upewnić się, że używasz pustego atrybutu `[value]`; lub ustawić atrybut `[size]` do `<select>`, którego wartość powinna być równa liczbie `<option>`.
+Element `<select required>`, który nie jest `[multiple]` i którego `[size]` nie jest większy niż `1`, powinien zaczynać się od pustej `<option>`.
+To powiedziawszy, możesz użyć zawartości placeholder dla tej opcji, ale musisz upewnić się, że używasz pustego atrybutu `[value]`; lub ustawić atrybut `[size]` do `<select>`,
+którego wartość powinna być równa liczbie `<option>`.
 
 
 ### Bibliografia
@@ -201,7 +202,7 @@ category: Porady
 ---
 
 #### Opis
-Łącze `<href="mailto:">` powinnno mieć poprawny adres e-mail. 
+Łącze `<href="mailto:">` powinnno mieć poprawny adres e-mail.
 W przeciwnym razie możesz zirytować swoich użytkowników.
 
 #### Selektor
@@ -227,7 +228,7 @@ category: Porady
 ---
 
 #### Opis
-Łącze `<href="tel:">` powinnno powinno zawierać prawidłowy numer telefonu. 
+Łącze `<href="tel:">` powinnno powinno zawierać prawidłowy numer telefonu.
 W przeciwnym razie możesz zmusić użytkowników do dzwonienia do Berdyczowa.
 
 #### Selektor
@@ -281,7 +282,7 @@ category: Porady
 ---
 
 #### Opis
-Łącze otwierające nową kartę lub okno powinno ostrzegać użytkownika o swoim zachowaniu. 
+Łącze otwierające nową kartę lub okno powinno ostrzegać użytkownika o swoim zachowaniu.
 Możesz użyć na przykład `[title]`.
 
 #### Bibliografia

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 /*doc
 ---
 title: "Niepoprawne zagnieżdżanie na liście"
@@ -286,7 +285,7 @@ category: Ostrzeżenia
 ---
 
 ### Opis
-Czy wiesz, że nie powinieneś dodawać `<div>`  wewnątrz jakiegokolwiek elementu liniowego? 
+Czy wiesz, że nie powinieneś dodawać `<div>`  wewnątrz jakiegokolwiek elementu liniowego?
 Zamiast tego możesz użyć `<span>`.
 
 ### Bibliografia
@@ -415,7 +414,7 @@ category: Ostrzeżenia
 ---
 
 ### Opis
-`<summary>` w elemencie `<details>` musi być pierwszym dzieckiem (<code>:first-child</code>). 
+`<summary>` w elemencie `<details>` musi być pierwszym dzieckiem (<code>:first-child</code>).
 Zawsze.
 
 ### Bibliografia
@@ -490,7 +489,7 @@ category: Ostrzeżenia
 ---
 
 ### Opis
-Wartość <code>[alt]</code> może być pusta, jeśli obraz jest tylko dekoracyjny. W każdym innym przypadku tekst <code>[alt]</code> musi być zdefiniowany. 
+Wartość <code>[alt]</code> może być pusta, jeśli obraz jest tylko dekoracyjny. W każdym innym przypadku tekst <code>[alt]</code> musi być zdefiniowany.
 Sprawdź to dwa razy.
 
 ### Bibliografia
@@ -683,7 +682,9 @@ category: Ostrzeżenia
 * potomne `<title>`;
 * lub potomne `<desc>`.
 
-Ten test obecnie nie może sprawdzić czy istnieje jakiekolwiek dziecko `<title>` lub `<desc>`, ponieważ `<svg>` jest elementem zastąpionym.</p><p>Zobacz <a href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues" title="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues">Przypadki skrajne i znane problemy</a> na wiki a11y.css&#39;.
+Ten test obecnie nie może sprawdzić czy istnieje jakiekolwiek dziecko `<title>` lub `<desc>`, ponieważ `<svg>` jest elementem zastąpionym.
+
+Zobacz <a href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues" title="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues">Przypadki skrajne i znane problemy</a> na wiki a11y.css&#39;.
 
 
 ### Bibliografia
@@ -932,8 +933,8 @@ category: Ostrzeżenia
 Oczywiście elementy void są puste, tak samo jak `<iframe>` i `<textarea>` mogą być <code>:empty</code> (puste).
 Każdy inny znacznik <code>:empty</code>, który nie jest ukryty, jest prawdopodobnie bezużyteczny i powinien zostać usunięty.
 
-Zauważ, że nie dotyczy to znaczników posiadających źródło wskazane w <code>[src]</code>. Jest to raczej opinia, 
-ale ma na celu uniknięcie fałszywych alarmów w odniesieniu do takich znaczników jak `<video>` 
+Zauważ, że nie dotyczy to znaczników posiadających źródło wskazane w <code>[src]</code>. Jest to raczej opinia,
+ale ma na celu uniknięcie fałszywych alarmów w odniesieniu do takich znaczników jak `<video>`
 lub `<audio>`, które mogą być puste, jeśli mają co najmniej jedno źródło określone przez <code>[src]</code>.
 
 
@@ -1375,7 +1376,7 @@ category: Ostrzeżenia
 ---
 
 ### Opis
-Atrybut <code>[href]</code>  nie powinien zaczynać się od "javascript". 
+Atrybut <code>[href]</code>  nie powinien zaczynać się od "javascript".
 Prawdopodobnie powinien to być `<button>` lub przynajmniej element z <code>[role="button"]</code>, nie sądzisz?
 Jedynym wyjątkiem są skryptozakładki.
 

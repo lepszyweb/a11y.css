@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 /*doc
+
 ---
 title: "Atrybuty z białymi znakami"
 name: attribute-whitespace
@@ -113,7 +114,7 @@ category: Błędy
 ---
 
 ### Opis
-Puste łącze powinno mieć etykietę wewnątrz <code>[title]</code>, <code>[aria-label]</code> lub wskazaną przez <code>[aria-labelledby]</code>. 
+Puste łącze powinno mieć etykietę wewnątrz <code>[title]</code>, <code>[aria-label]</code> lub wskazaną przez <code>[aria-labelledby]</code>.
 Przy okazji, po co miałbyś używać pustego łącza?
 
 ### Bibliografia
@@ -199,7 +200,7 @@ category: Błędy
 ---
 
 ### Opis
-Element z <code>[role=img]</code> powinien mieć albo <code>[aria-label]</code> albo <code>[aria-labelledby]</code>. 
+Element z <code>[role=img]</code> powinien mieć albo <code>[aria-label]</code> albo <code>[aria-labelledby]</code>.
 Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <code>[role=img]</code>.
 
 ### Bibliografia
@@ -384,7 +385,7 @@ category: Błędy
 ---
 
 ### Opis
-Jak oznaczyć etykietą pożąane dane wejściowe typu <code>[reset]</code>, <code>[submit]</code> or <code>[button]</code>? 
+Jak oznaczyć etykietą pożąane dane wejściowe typu <code>[reset]</code>, <code>[submit]</code> or <code>[button]</code>?
 Zawsze masz kilka opcji do wyboru: <code>[value]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.
 
 ### Bibliografia
@@ -578,7 +579,7 @@ category: Błędy
 ---
 
 ### Opis
-Przycisk `<button>` stylizowany na wyłączony powinien być *faktycznie* wyłączony. 
+Przycisk `<button>` stylizowany na wyłączony powinien być *faktycznie* wyłączony.
 Użyj <code>[disabled]</code> i <code>[readonly]</code>.
 
 ### Bibliografia
@@ -874,8 +875,8 @@ category: Błędy
 ---
 
 ### Opis
-<code>[width]</code> i <code>[height]</code> są informacjami o prezentacji (o wyglądzie). 
-Dlatego nie powinny być używane w znacznikach, poza `<img>`. 
+<code>[width]</code> i <code>[height]</code> są informacjami o prezentacji (o wyglądzie).
+Dlatego nie powinny być używane w znacznikach, poza `<img>`.
 Zamiast tego używaj CSS.
 
 ### Bibliografia
@@ -983,7 +984,7 @@ category: Błędy
 ---
 
 ### Opis
-Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS? 
+Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS?
 Tak - cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.
 
 ### Bibliografia
@@ -1305,7 +1306,7 @@ category: Błędy
 ---
 
 ### Opis
-Atrybut <code>[accesskey]</code> jest przeznaczony do implementacji skrótów klawiaturowych specyficznych dla danej witryny. 
+Atrybut <code>[accesskey]</code> jest przeznaczony do implementacji skrótów klawiaturowych specyficznych dla danej witryny.
 Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już używane przez system operacyjny, przeglądarkę, rozszerzenie przeglądarki, a nawet ustawienia użytkownika…
 
 To jest opinia: w idealnym świecie <code>[accesskey]</code> może być używany mądrze. Yup. Być może.
