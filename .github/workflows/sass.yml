@@ -11,7 +11,7 @@ on:
       - opened
       - synchronize
     branches:
-      - main
+      - main-pl
       - "!dependabot/**"
 
 env:
