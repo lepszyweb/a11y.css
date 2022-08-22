@@ -1,0 +1,1607 @@
+@charset "UTF-8";
+
+
+/*doc
+---
+title: "Niepoprawne zagnieżdżanie na liście"
+name: invalid-list-nesting
+category: Ostrzeżenia
+---
+
+### Opis
+Jedynym dozwolonym dzieckiem w `<ul>` i `<ol>` jest `<li>` - i odwrotnie jest również prawdziwe.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
+
+### Selektor
+```css
+ul > :not(li),
+ol > :not(li),
+:not(ul):not(ol) > li
+```
+
+### Test
+``` html
+<ul>
+  <p>Czuję się, jakbym się zgubił.</p>
+</ul>
+```
+*/
+ul > :not(li),
+ol > :not(li),
+:not(ul):not(ol) > li {
+  @include warning('invalid-list-nesting');
+}
+
+
+/*doc
+---
+title: "Niepoprawne rodzeństwo na liście definicji"
+name: invalid-def
+category: Ostrzeżenia
+---
+
+### Opis
+Elementy `<dt>` i `<dd>` powinny być bezpośrednio sąsiadującym rodzeństwem, i nic więcej. Chociaż wiele `<dd>` może nastąpić za pojedynczym `<dt>`.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+
+### Selektor
+```css
+dt + :not(dd),
+:not(dt):not(dd) + dd
+```
+
+### Test
+``` html
+<dl>
+  <dt>Potrzebna mi definicja, nie sądzisz?</dt>
+  <li>A ja jestem pozycją na liście&hellip;</li>
+</dl>
+```
+*/
+dt + :not(dd),
+:not(dt):not(dd) + dd {
+  @include warning('invalid-def');
+}
+
+
+/*doc
+---
+title: "Niepoprawne zagnieżdżanie na liście definicji"
+name: invalid-def-nesting
+category: Ostrzeżenia
+---
+
+### Opis
+Elementy `<div>`, `<dt>` i `<dd>` powinny być bezpośrednimi dziećmi `<dl>`.
+Każda inna konstrukcja może być gdzieś naruszeniem.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
+
+### Selektor
+```css
+:not(dl) > dt,
+:not(dl) > dd,
+dl > :not(dt):not(dd):not(div)
+```
+
+### Test
+``` html
+<dl>
+  <li>Jestem pozycją na liście.</li>
+</dl>
+```
+*/
+:not(dl) > dt,
+:not(dl) > dd,
+dl > :not(dt):not(dd):not(div) {
+  @include warning('invalid-def-nesting');
+}
+
+
+/*doc
+---
+title: "figcaption poza figure"
+name: invalid-figcaption-nesting
+category: Ostrzeżenia
+---
+
+### Opis
+Element `<figcaption>` poza `<figure>` nie ma sensu.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
+
+### Selektor
+```css
+:not(figure) > figcaption
+```
+
+### Test
+``` html
+<figcaption>Podpisuję coś pod czymś, czy nie?</figcaption>
+```
+*/
+:not(figure) > figcaption {
+  @include warning('invalid-figcaption-nesting');
+}
+
+
+/*doc
+---
+title: "figure bez roli ARIA group"
+name: figure-role
+category: Ostrzeżenia
+---
+
+### Opis
+Element `<figure>` potrzebuje atrybutu ARIA <code>[role="group"]</code> ze względu na dostępność.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
+* <https://www.w3.org/WAI/tutorials/images/groups/>
+* <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
+
+### Selektor
+```css
+figure:not([role="group"])
+```
+
+### Test
+``` html
+<figure>
+  <img src="/static/ffoodd.png" width="144" height="144" alt="Test figcaption"/>
+  <figcaption>Jestem figcaption (podpis figure).</figcaption>
+</figure>
+```
+*/
+figure:not([role="group"]) {
+  @include warning('figure-role');
+}
+
+
+/*doc
+---
+title: "Invalid nesting"
+name: Niepoprawne zagnieżdżanie
+category: Ostrzeżenia
+---
+
+### Opis
+<p>Niektóre zagnieżdżenia są zabronione i na razie nie mają swoich własnych przypadków testowych:</p>
+
+* `<main>`  zawarte w którymkolwiek z `<nav>`, `<aside>`, `<footer>`, `<header>` lub `<article>`;
+* `<address>` zawarte w którymkolwiek z `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` lub `<article>` — ani w nagłówkach;
+* `<option>` i `<optgroup>` poza `<select>`;
+* `<legend>` poza `<fieldset>`;
+* `<td>` lub `<th>` poza `<tr>`;
+* bezpośrednie dzieci `<table>`;
+* `<colgroup>` zawierające cokolwiek innego niż `<col>`.
+
+Może inne nieprawidłowe zagnieżdżenia do przetestowania. Bądź na bieżąco.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
+* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
+* <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+
+### Selektor
+```css
+nav main,
+aside main,
+footer main,
+header main,
+article main,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
+optgroup > :not(option),
+:not(select) > optgroup,
+:not(fieldset) > legend,
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+address h1,
+address h2,
+address h3,
+address h4,
+address h5,
+address h6,
+address nav,
+address aside,
+address header,
+address footer,
+address address,
+address article,
+address section
+```
+
+### Test
+``` html
+<legend>Jestem legendą. Czyżby?</legend>
+```
+*/
+nav main,
+aside main,
+footer main,
+header main,
+article main,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
+optgroup > :not(option),
+:not(select) > optgroup,
+:not(fieldset) > legend,
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+address h1,
+address h2,
+address h3,
+address h4,
+address h5,
+address h6,
+address nav,
+address aside,
+address header,
+address footer,
+address address,
+address article,
+address section {
+  @include warning('invalid-nesting');
+}
+
+
+/*doc
+---
+title: "Niewłaściwie umieszczony div"
+name: misplaced-div
+category: Ostrzeżenia
+---
+
+### Opis
+Czy wiesz, że nie powinieneś dodawać `<div>`  wewnątrz jakiegokolwiek elementu liniowego? 
+Zamiast tego możesz użyć `<span>`.
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
+
+### Selektor
+```css
+b div,
+i div,
+q div,
+em div,
+abbr div,
+cite div,
+code div,
+span div,
+small div,
+label div,
+strong div
+```
+
+### Test
+``` html
+<b><div>Hej ha!</div></b>
+```
+*/
+b div,
+i div,
+q div,
+em div,
+abbr div,
+cite div,
+code div,
+span div,
+small div,
+label div,
+strong div {
+  @include warning('misplaced-div');
+}
+
+
+/*doc
+---
+title: "Nieprawidłowo użyte znaczniki sekcyjne"
+name: sectioning-tags
+category: Ostrzeżenia
+---
+
+### Opis
+`<section>`, `<aside>`, `<article>` to znaczniki sekcyjne.
+Nie wolno ich używać jako kontenerów (zamiast div)!
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
+* <https://www.w3.org/TR/html5/dom.html#sectioning-content>
+
+### Selektor
+```css
+aside > aside:first-child,
+article > aside:first-child,
+aside > article:first-child,
+aside > section:first-child,
+section > section:first-child,
+article > section:first-child,
+article > article:first-child
+```
+
+### Test
+``` html
+<aside>
+  <section>Jestem opakowany, wiesz.</section>
+</aside>
+```
+*/
+aside > aside:first-child,
+article > aside:first-child,
+aside > article:first-child,
+aside > section:first-child,
+section > section:first-child,
+article > section:first-child,
+article > article:first-child {
+  @include warning('sectioning-tags');
+}
+
+
+/*doc
+---
+title: "legend w fieldset musi być :first-child"
+name: fieldset
+category: Ostrzeżenia
+---
+
+### Opis
+`<legend>`  w elemencie `<fieldset>` musi być pierwszym dzieckiem <code>:first-child</code>.
+Zawsze.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
+
+### Selektor
+```css
+fieldset > *:not(legend):first-child,
+fieldset > legend:not(:first-child)
+```
+
+### Test
+``` html
+<fieldset>
+  <label>Nie jestem legendą</label>
+</fieldset>
+```
+*/
+fieldset > *:not(legend):first-child,
+fieldset > legend:not(:first-child) {
+  @include warning('fieldset');
+}
+
+
+/*doc
+---
+title: "summary w details musi być :first-child"
+name: details
+category: Ostrzeżenia
+---
+
+### Opis
+`<summary>` w elemencie `<details>` musi być pierwszym dzieckiem (<code>:first-child</code>). 
+Zawsze.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
+* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
+
+### Selektor
+```css
+details > *:not(summary):first-child,
+details > summary:not(:first-child)
+```
+
+### Test
+``` html
+<details>
+  <legend>Nie jestem elementem summary</legend>
+</details>
+```
+*/
+details > *:not(summary):first-child,
+details > summary:not(:first-child) {
+  @include warning('details');
+}
+
+
+/*doc
+---
+title: "abbr powinien mieć [title]"
+name: empty-title
+category: Ostrzeżenia
+---
+
+### Opis
+Każdy skrót powinien zawierać wyjaśnienie jego znaczenia, przynajmniej przy pierwszym wystąpieniu.
+
+### Bibliografia
+* BP160 OpQuast
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
+* <https://www.w3.org/TR/WCAG20/#meaning-located>
+* <https://www.w3.org/TR/WCAG-TECHS/G70.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G97.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G102.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H28.html>
+
+### Selektor
+```css
+abbr:not([title]),
+abbr[title=" "],
+abbr[title=""]
+```
+
+### Test
+``` html
+<p>Co wiesz o <abbr>W3C</abbr>?</p>
+```
+*/
+abbr:not([title]),
+abbr[title=" "],
+abbr[title=""] {
+  @include warning('empty-title');
+}
+
+
+/*doc
+---
+title: "[alt] może być pusty, ale wymaga sprawdzenia"
+name: empty-alt
+category: Ostrzeżenia
+---
+
+### Opis
+Wartość <code>[alt]</code> może być pusta, jeśli obraz jest tylko dekoracyjny. W każdym innym przypadku tekst <code>[alt]</code> musi być zdefiniowany. 
+Sprawdź to dwa razy.
+
+### Bibliografia
+* BP160 OpQuast
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+
+### Selektor
+```css
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""],
+embed[type="image"][alt=""],
+object[type="image"][alt=""]
+```
+
+### Test
+``` html
+<img alt="" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+```
+*/
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""] {
+  @include warning('empty-alt', $self-closing: true);
+}
+
+embed[type="image"][alt=""],
+object[type="image"][alt=""] {
+  @include warning('empty-alt');
+}
+
+
+/*doc
+---
+title: "[alt] zawiera nazwę pliku"
+name: filename-alt
+category: Ostrzeżenia
+---
+
+### Opis
+Nazwa pliku w <code>[alt]</code> jest prawdopodobnie błędem automatyzacji… i nigdy nie pomoże żadnemu użytkownikowi.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+
+### Selektor
+```css
+img[alt$=".pdf"],
+area[alt$=".pdf"],
+input[type="image"][alt$=".pdf"],
+img[alt$=".doc"],
+area[alt$=".doc"],
+input[type="image"][alt$=".doc"],
+img[alt$=".png"],
+area[alt$=".png"],
+input[type="image"][alt$=".png"],
+img[alt$=".jpg"],
+area[alt$=".jpg"],
+input[type="image"][alt$=".jpg"],
+img[alt$=".gif"],
+area[alt$=".gif"],
+input[type="image"][alt$=".gif"],
+img[alt$=".mp3"],
+area[alt$=".mp3"],
+input[type="image"][alt$=".mp3"],
+img[alt$=".mp4"],
+area[alt$=".mp4"],
+input[type="image"][alt$=".mp4"],
+img[alt$=".mov"],
+area[alt$=".mov"],
+input[type="image"][alt$=".mov"],
+img[alt$=".ogg"],
+area[alt$=".ogg"],
+input[type="image"][alt$=".ogg"],
+img[alt$=".xls"],
+area[alt$=".xls"],
+input[type="image"][alt$=".xls"],
+img[alt$=".txt"],
+area[alt$=".txt"],
+input[type="image"][alt$=".txt"],
+img[alt$=".zip"],
+area[alt$=".zip"],
+input[type="image"][alt$=".zip"],
+img[alt$=".rar"],
+area[alt$=".rar"],
+input[type="image"][alt$=".rar"],
+img[alt$=".docx"],
+area[alt$=".docx"],
+input[type="image"][alt$=".docx"],
+img[alt$=".webp"],
+area[alt$=".webp"],
+input[type="image"][alt$=".webp"],
+img[alt$=".apng"],
+area[alt$=".apng"],
+input[type="image"][alt$=".apng"],
+img[alt$=".svg"],
+area[alt$=".svg"],
+input[type="image"][alt$=".svg"],
+img[alt$=".svgz"],
+area[alt$=".svgz"],
+input[type="image"][alt$=".svgz"],
+embed[type="image"][alt$=".pdf"],
+object[type="image"][alt$=".pdf"],
+embed[type="image"][alt$=".doc"],
+object[type="image"][alt$=".doc"],
+embed[type="image"][alt$=".png"],
+object[type="image"][alt$=".png"],
+embed[type="image"][alt$=".jpg"],
+object[type="image"][alt$=".jpg"],
+embed[type="image"][alt$=".gif"],
+object[type="image"][alt$=".gif"],
+embed[type="image"][alt$=".mp3"],
+object[type="image"][alt$=".mp3"],
+embed[type="image"][alt$=".mp4"],
+object[type="image"][alt$=".mp4"],
+embed[type="image"][alt$=".mov"],
+object[type="image"][alt$=".mov"],
+embed[type="image"][alt$=".ogg"],
+object[type="image"][alt$=".ogg"],
+embed[type="image"][alt$=".xls"],
+object[type="image"][alt$=".xls"],
+embed[type="image"][alt$=".txt"],
+object[type="image"][alt$=".txt"],
+embed[type="image"][alt$=".zip"],
+object[type="image"][alt$=".zip"],
+embed[type="image"][alt$=".rar"],
+object[type="image"][alt$=".rar"],
+embed[type="image"][alt$=".docx"],
+object[type="image"][alt$=".docx"],
+embed[type="image"][alt$=".webp"],
+object[type="image"][alt$=".webp"],
+embed[type="image"][alt$=".apng"],
+object[type="image"][alt$=".apng"],
+embed[type="image"][alt$=".svg"],
+object[type="image"][alt$=".svg"],
+embed[type="image"][alt$=".svgz"],
+object[type="image"][alt$=".svgz"]
+```
+
+### Test
+``` html
+<img alt="/static/ffoodd.png" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+```
+*/
+$alt: ();
+$self-alt: ();
+
+@each $format in $formats {
+  $alt: append($alt, unquote('img[alt$=".#{$format}"], area[alt$=".#{$format}"], input[type="image"][alt$=".#{$format}"]'), 'comma');
+  $self-alt: append($self-alt, unquote('embed[type="image"][alt$=".#{$format}"], object[type="image"][alt$=".#{$format}"]'), 'comma');
+}
+
+#{$alt} {
+  @include warning('filename-alt', $self-closing: true);
+}
+
+#{$self-alt} {
+  @include warning('filename-alt');
+}
+
+
+/*doc
+---
+title: "Obraz dekoracyjny nie powinien mieć dostępnej nazwy"
+name: decoration
+category: Ostrzeżenia
+---
+
+### Opis
+>Żaden ozdobny obraz - z <code>[aria-hidden="true"]</code> lub pustym <code>[alt]</code> — nie powinien mieć żadnego z tych elementów:
+
+* `[title]`;
+* `[aria-label]`;
+* `[aria-labelledby]`;
+* `[aria-describedby]`;
+* potomne `<title>`;
+* lub potomne `<desc>`.
+
+Ten test obecnie nie może sprawdzić czy istnieje jakiekolwiek dziecko `<title>` lub `<desc>`, ponieważ `<svg>` jest elementem zastąpionym.</p><p>Zobacz <a href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues" title="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues">Przypadki skrajne i znane problemy</a> na wiki a11y.css&#39;.
+
+
+### Bibliografia
+* BP160 OpQuast
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+### Selektor
+```css
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
+svg[aria-hidden="true"][title],
+svg[aria-hidden="true"][aria-label],
+svg[aria-hidden="true"][aria-labelledby],
+svg[aria-hidden="true"][aria-describedby],
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby],
+```
+
+### Test
+``` html
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-hidden="true" title="Ozdobny SVG, mistrz z ciebie!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
+svg[aria-hidden="true"][title],
+svg[aria-hidden="true"][aria-label],
+svg[aria-hidden="true"][aria-labelledby],
+svg[aria-hidden="true"][aria-describedby],
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby], {
+  @include warning('decoration', $self-closing: true);
+}
+
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby] {
+  @include warning('decoration');
+}
+
+
+/*doc
+---
+title: "[role=presentation] nie powinna być używana dla obrazu"
+name: presentation
+category: Ostrzeżenia
+---
+
+### Opis
+Każdy obraz dekoracyjny powinien być oznaczony <code>[aria-hidden="true"]</code> (lub pustym <code>[alt]</code>, jeśli to element`<img>`).
+<code>[role=presentation]</code> spowinno załatwić sprawę, ale w momencie pisania tego tekstu, jego wsparcie jest zbyt niskie w porównaniu do pustego <code>[alt]</code> lub <code>[aria-hidden=true]</code>.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
+* <https://www.w3.org/WAI/tutorials/images/decorative/>
+
+
+### Selektor
+```css
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"],
+canvas[role="presentation"],
+object[role="presentation"]
+```
+
+### Test
+``` html
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg"
+     role="presentation">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"] {
+  @include warning('presentation', $self-closing: true);
+}
+
+canvas[role="presentation"],
+object[role="presentation"] {
+  @include warning('presentation');
+}
+
+
+/*doc
+---
+title: "Rola jest wymagana dla svg"
+name: no-aria-role
+category: Ostrzeżenia
+---
+
+### Opis
+Każdy `<svg>` powinien mieć albo <code>[aria-hidden="true"]</code>, jeśli ma charakter dekoracyjny, albo <code>[role="img"]</code>, jeśli ma charakter informacyjny.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+### Selektor
+```css
+svg:not([aria-hidden="true"]):not([role="img"])
+```
+
+### Test
+``` html
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg"
+     aria-label="Ozdobny SVG, mistrz z ciebie!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+svg:not([aria-hidden="true"]):not([role="img"]) {
+  @include warning('no-aria-role', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[autoplay] raczej nie powinnno być użyte"
+name: autoplay
+category: Ostrzeżenia
+---
+
+### Opis
+Media oparte na czasie, takie jak `<audio>` lub `<video>`  nie powinny być odtwarzane automatycznie , bo może to być dość zaskakujące dla użytkownika.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
+* <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
+* <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
+
+### Selektor
+```css
+video[autoplay],
+audio[autoplay]
+```
+
+### Test
+``` html
+<video autoplay controls src=""></video><span>†</span>
+```
+*/
+video[autoplay],
+audio[autoplay] {
+  @include warning('autoplay', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[controls] byłoby pomocne"
+name: controls
+category: Ostrzeżenia
+---
+
+### Opis
+Medium oparte na czasie, takie jak `<audio>` lub `<video>` będzie łatwiejsze w użyciu, jeśli <code>[controls]</code> są aktywowane dla użytkownika.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
+* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
+* <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
+* <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
+* <https://www.w3.org/TR/WCAG-TECHS/G4.html>
+
+### Selektor
+```css
+video:not([controls]),
+audio:not([controls])
+```
+
+### Test
+``` html
+<video src=""></video><span>†</span>
+```
+*/
+video:not([controls]),
+audio:not([controls]) {
+  @include warning('controls', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Większość węzłów DOM nie może być :empty"
+name: empty-nodes
+category: Ostrzeżenia
+---
+
+### Opis
+Oczywiście elementy void są puste, tak samo jak `<iframe>` i `<textarea>` mogą być <code>:empty</code> (puste).
+Każdy inny znacznik <code>:empty</code>, który nie jest ukryty, jest prawdopodobnie bezużyteczny i powinien zostać usunięty.
+
+Zauważ, że nie dotyczy to znaczników posiadających źródło wskazane w <code>[src]</code>. Jest to raczej opinia, 
+ale ma na celu uniknięcie fałszywych alarmów w odniesieniu do takich znaczników jak `<video>` 
+lub `<audio>`, które mogą być puste, jeśli mają co najmniej jedno źródło określone przez <code>[src]</code>.
+
+
+### Uwagi
+
+* Ten test dotyczy tylko znaczników w `<body>`, ponieważ większość znaczników w head powinna być pusta.
+* `<button>` oraz `<a>` oraz również wyłączone, ponieważ <code>button:empty</code> oraz <code>a:empty</code> są objęte ich własnym błędem.
+
+Moglibyśmy użyć pseudo-klasy <code>:blank</code>, ale w tym momencie jej wsparcie jest bardzo słabe. Moglibyśmy również użyć pseudoklasy <code>:-moz-only-whitespace</code> pseudo-class, ale jej wsparcie jest ograniczone do Firefoxa i w ten sposób moglibyśmy unieważnić nasz stos selektorów…
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
+* <https://www.w3.org/TR/html-markup/syntax.html#void-element>
+* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
+* <https://css-tricks.com/almanac/selectors/b/blank/>
+
+### Selektor
+```css
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+```
+
+### Test
+``` html
+<p id="empty-node_code"></p>
+```
+*/
+/**
+ * 1. An empty tag without dimensions isn't hoverable :/
+ * @note Won't do anything for inline elements.
+ */
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+  @include warning('empty-nodes');
+  /* 1 */
+  min-height: 1px;
+  min-width: 1px;
+}
+
+svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+  @extend %a11y-reset;
+}
+
+
+/*doc
+---
+title: "Możliwe użycie jednowierszowej tabeli układu"
+name: table-layout
+category: Ostrzeżenia
+---
+
+### Opis
+Samotny `<tr>` może być symptomem tabeli użytej do układu.
+Sprawdź to dwa razy!
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+
+### Selektor
+```css
+table:not([role="presentation"]) > tr:only-child,
+table:not([role="presentation"]) > tbody > tr:only-child
+```
+
+### Test
+``` html
+<table>
+  <caption>Jestem podpisem :3</caption>
+  <thead>
+    <tr>
+      <th scope="col">O rany…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jestem biednym samotnym rzęęęędem tabeli!</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table:not([role="presentation"]) > tr:only-child,
+table:not([role="presentation"]) > tbody > tr:only-child {
+  @include warning('table-layout');
+}
+
+
+/*doc
+---
+title: "Zagnieżdżone tabele"
+name: nested-table
+category: Ostrzeżenia
+---
+
+### Opis
+Nie ma dobrego powodu, aby zagnieżdżać tabele danych: więc prawdopodobnie oznacza to, że mamy do czynienia z tabelą układu…
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://www.w3.org/WAI/tutorials/tables/tips/>
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
+
+### Selektor
+```css
+table table
+```
+
+### Test
+``` html
+<table>
+  <caption>Jestem podpisem :3</caption>
+  <thead>
+    <tr>
+      <th scope="col">O rany…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jestem komórką tabeli!</td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <caption>Ja też jestem podpisem</caption>
+          <thead>
+            <tr>
+              <th scope="col">O rany…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jestem komórką tabeli!</td>
+            </tr>
+            <tr>
+              <td>Jestem komórką tabeli!</td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table table {
+  @include warning('nested-table');
+}
+
+
+/*doc
+---
+title: "Każda tabela danych musi mieć podpis"
+name: table-caption
+category: Ostrzeżenia
+---
+
+### Opis
+`<caption>` jest potrzebny dla `<table>` z  danymi.
+I to musi być <code>:first-child</code>, tak przy okazji.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
+* <https://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
+
+### Selektor
+```css
+table:not([role="presentation"]) > caption:not(:first-child),
+table:not([role="presentation"]) > *:first-child:not(caption)
+```
+
+### Test
+``` html
+<table>
+  <thead>
+    <tr>
+      <th id="th-one">Jestem tabelą bez podpisu!</th>
+      <th id="th-two">Jestem tabelą bez podpisu!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" headers="th-one th-two">Jestem tabelą bez podpisu!</td>
+    </tr>
+    <tr>
+      <td colspan="2" headers="th-one th-two">Jestem tabelą bez podpisu!</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table:not([role="presentation"]) > caption:not(:first-child),
+table:not([role="presentation"]) > *:first-child:not(caption) {
+  @include warning('table-caption');
+}
+
+
+/*doc
+---
+title: "Niepoprawna struktura tabeli"
+name: table-structure
+category: Ostrzeżenia
+---
+
+### Opis
+`<thead>`, `<tfoot>` oraz `<tbody>` muszą występować w tej kolejności.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
+
+### Selektor
+```css
+table > tfoot ~ thead,
+table > tbody ~ tfoot,
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup
+```
+
+### Test
+``` html
+<table>
+  <caption>Jestem podpisem</caption>
+  <thead>
+    <tr>
+      <th scope="col">Gdzie jest moja stopka?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+    </tr>
+    <tr>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+      <td>Jestem tabelą ze źle zrobioną stopką.</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <th id="th-1">Jestem tabelą ze źle zrobioną stopką.</th>
+    <th id="th-2">Jestem tabelą ze źle zrobioną stopką.</th>
+  </tfoot>
+</table>
+```
+*/
+table > tfoot ~ thead,
+table > tbody ~ tfoot,
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup {
+  @include warning('table-structure');
+}
+
+
+/*doc
+---
+title: "Brak nagłówka w tabeli danych"
+name: missing-thead
+category: Ostrzeżenia
+---
+
+### Opis
+`<thead>` jest bardzo potrzebny, jeśli istnieje `<tbody>`.
+
+### Selektor
+```css
+table:not([role="presentation"]) > caption + tbody,
+table:not([role="presentation"]) > tbody:first-child
+```
+
+### Test
+``` html
+<table>
+  <caption>Brakuje thead</caption>
+  <tbody>
+    <tr>
+      <td>Jestem tabelą bez thead.</td>
+      <td>Jestem tabelą bez thead.</td>
+    </tr>
+    <tr>
+      <td>Jestem tabelą bez thead.</td>
+      <td>Jestem tabelą bez thead.</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table:not([role="presentation"]) > caption + tbody,
+table:not([role="presentation"]) > tbody:first-child {
+  @include warning('missing-thead');
+}
+
+
+/*doc
+---
+title: "th bez [scope] lub [id]"
+name: th-no-scope
+category: Ostrzeżenia
+---
+
+### Opis
+`<th>` usilnie potrzebuje <code>[id]</code> lub <code>[scope]</code>.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
+
+### Selektor
+```css
+th:not([scope]):not([id])
+```
+
+### Test
+``` html
+<table>
+  <caption>Potrzebne [scope] lub [id]</caption>
+  <thead>
+    <tr>
+      <th>Jestem bez [scope] lub [id].</th>
+      <th scope="col">Jestem th ze [scope].</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jestem td i czegoś mi brakuje.</td>
+      <td>Jestem td i czegoś mi brakuje.</td>
+    </tr>
+    <tr>
+      <td>Jestem td i czuje się dobrze.</td>
+      <td>Jestem td i czuje się dobrze.</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+th:not([scope]):not([id]) {
+  @include warning('th-no-scope');
+}
+
+
+/*doc
+---
+title: "Użyto spacer.gif"
+name: spacer-gif
+category: Ostrzeżenia
+---
+
+### Opis
+Uwierz mi, to jeszcze musi zostać przetestowane.
+
+### Bibliografia
+* <https://www.la-grange.net/2015/03/11/visible>
+
+### Selektor
+```css
+img[src*="1px.gif"]:not([role="presentation"]),
+img[src*="1x1.gif"]:not([role="presentation"]),
+img[src*="clear.gif"]:not([role="presentation"]),
+img[src*="spacer.gif"]:not([role="presentation"]),
+img[src*="dotclear.gif"]:not([role="presentation"]),
+img[src*="transparent.gif"]:not([role="presentation"]),
+img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
+```
+
+### Test
+``` html
+<img src="/static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
+```
+*/
+img[src*="1px.gif"]:not([role="presentation"]),
+img[src*="1x1.gif"]:not([role="presentation"]),
+img[src*="clear.gif"]:not([role="presentation"]),
+img[src*="spacer.gif"]:not([role="presentation"]),
+img[src*="dotclear.gif"]:not([role="presentation"]),
+img[src*="transparent.gif"]:not([role="presentation"]),
+img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) {
+  @include warning('spacer-gif', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Zła wyliczona wartość"
+name: oops
+category: Ostrzeżenia
+---
+
+### Opis
+Nie śmiej się, to się zdarza.
+
+### Selektor
+```css
+[id*="NaN"],
+[id*="null"],
+[class*="NaN"],
+[class*="null"],
+[id*="undefined"],
+[class*="undefined"]
+```
+
+### Test
+``` html
+<p class="undefined">Oops, coś poszło nie tak.</p>
+```
+*/
+[class*="NaN"],
+[class*="null"],
+[class*="undefined"] {
+  @include warning('undefined-class');
+
+  @include void-tags {
+    @include warning('undefined-class', $self-closing: true);
+  }
+}
+
+[id*="NaN"],
+[id*="null"],
+[id*="undefined"] {
+  @include warning('undefined-id');
+
+  @include void-tags {
+    @include warning('undefined-id', $self-closing: true);
+  }
+}
+
+/*doc
+---
+title: "JS [href]"
+name: href-js
+category: Ostrzeżenia
+---
+
+### Opis
+Atrybut <code>[href]</code>  nie powinien zaczynać się od "javascript". 
+Prawdopodobnie powinien to być `<button>` lub przynajmniej element z <code>[role="button"]</code>, nie sądzisz?
+Jedynym wyjątkiem są skryptozakładki.
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+
+### Selektor
+```css
+a[href^="javascript"]:not([role="button"])
+```
+
+### Test
+``` html
+<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Proszę użyć mojej zakładki ;)</a>
+```
+*/
+a[href^="javascript"]:not([role="button"]) {
+  @include warning('href-js');
+}
+
+
+/*doc
+---
+title: "# [href]"
+name: empty-href
+category: Ostrzeżenia
+---
+
+### Opis
+Atrybut <code>[href]</code> zawiera tylko <code>#</code>.
+Prawdopodobnie powinien to być `<button>` lub przynajmniej <code>[role="button"]</code>. Co myślisz?
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+
+### Selektor
+```css
+a[href="#"]:not([role="button"])
+```
+
+### Test
+``` html
+<a href="#">O rany, ja nic nie znaczę.</a>
+```
+*/
+a[href="#"]:not([role="button"]) {
+  @include warning('empty-href');
+}
+
+
+/*doc
+---
+title: "Atrybut [style]"
+name: style-attr
+category: Ostrzeżenia
+---
+
+### Opis
+Twoje style powinny być sterowane przez plik CSS. To wszystko.
+I nie, JS nie powinien manipulować stylami: lepiej jest bawić się klasami.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+
+### Selektor
+```css
+[style]
+```
+
+### Test
+``` html
+<div style="color: red;">Jestem czerwony. Naprawdę czuję się brudny.</div>
+```
+*/
+[style] {
+  @include warning('style-attr');
+
+  @include void-tags {
+    @include warning('style-attr', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "Niezabezpieczone [target=_blank]"
+name: unsecured-target
+category: Ostrzeżenia
+---
+
+### Opis
+Łącza <code>[target="_blank"]</code> mogą być wykorzystywane do wyłudzania informacji.
+Właściwie nie jest to problem związany z dostępnością, ale wszystko co pomaga użytkownikom jest mile widziane.
+
+### Bibliografia*
+* <https://mathiasbynens.github.io/rel-noopener/>
+* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
+* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
+* <https://dev.to/ben/the-targetblank-vulnerability-by-example>
+* <https://twitter.com/KittyGiraudel/status/801475801397030912>
+
+### Selektor
+```css
+[target$="blank"]:not([rel]),
+[target$="blank"]:not([rel*="noopener"]),
+[target$="blank"]:not([rel*="noreferrer"])
+```
+
+### Test
+``` html
+<a href="/" target="_blank">Czuję się bezbronne...</a>
+```
+*/
+[target$="blank"]:not([rel]),
+[target$="blank"]:not([rel*="noopener"]),
+[target$="blank"]:not([rel*="noreferrer"]) {
+  @include warning('unsecured-target');
+}
+
+
+/*doc
+---
+title: "Brak [aria-level]"
+name: no-aria-level
+category: Ostrzeżenia
+---
+
+### Opis
+Chociaż <code>[aria-level]</code> nie jest wymagany przez specyfikację ARIA, w rzeczywistości lepiej jest go podać.
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
+* <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
+* <https://www.w3.org/TR/wai-aria/roles#heading>
+* <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G141.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H42.html>
+
+### Selektor
+```css
+[role="heading"]:not([aria-level])
+```
+
+### Test
+``` html
+<strong role="heading">Nagłówek z nieokreślonym poziomem</strong>
+```
+*/
+[role="heading"]:not([aria-level]) {
+  @include warning('no-aria-level');
+}
+
+
+/*doc
+---
+title: "label bez atrybutu [for]"
+name: no-for
+category: Ostrzeżenia
+---
+
+### Opis
+Znacznik `<label>` coś etykietuje, w teorii.
+Chociaż domyślne etykietowanie kontrolek formularzy jest akceptowane, prawdopodobnie lepiej jest dwukrotnie sprawdzić, czy kontrolka formularza jest <em>naprawdę</em> zagnieżdżona w swojej `<label>`.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* <https://www.w3.org/WAI/tutorials/forms/labels/>
+* <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+
+### Selektor
+```css
+label:not([for])
+```
+
+### Test
+``` html
+<label>Zgadnij co to?</label>
+```
+*/
+label:not([for]) {
+  @include warning('no-for');
+}
+
+
+/*doc
+---
+title: "Niespójne [dir] i [lang]"
+name: mismatched-dir
+category: Ostrzeżenia
+---
+
+### Opis
+Niektóre języki - jak arabski czy hebrajski - wymagają przełączenia kierunku tekstu za pomocą <code>[dir="rtl"]</code>, ponieważ domyślnym kierunkiem tekstu jest od lewej do prawej. Wymaga to również sprawdzenia każdej zmiany języka strony (oznaczonej za pomocą <code>[lang]</code>) w arabskiej lub hebrajskiej treści, aby zdefiniować również <code>[dir]</code>.
+
+### Bibliografia
+* <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
+* <https://www.w3.org/International/questions/qa-html-dir>
+* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+
+### Selektor
+```css
+[lang="ar"]:not([dir="rtl"]),
+[lang="he"]:not([dir="rtl"]),
+[lang="ar"] [lang]:not([dir="ltr"]),
+[lang="he"] [lang]:not([dir="ltr"]),
+[dir="rtl"]:not([lang="ar"]):not([lang="he"])
+```
+
+### Test
+``` html
+<p dir="rtl" lang="en">Mhhm, jestem trochę zdezorientowany…</p>
+```
+*/
+[lang="ar"]:not([dir="rtl"]),
+[lang="he"]:not([dir="rtl"]),
+[lang="ar"] [lang]:not([dir="ltr"]),
+[lang="he"] [lang]:not([dir="ltr"]),
+[dir="rtl"]:not([lang="ar"]):not([lang="he"]) {
+  @include warning('mismatched-dir');
+}

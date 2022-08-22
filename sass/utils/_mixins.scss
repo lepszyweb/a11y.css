@@ -1,0 +1,593 @@
+@charset "UTF-8";
+
+
+/*doc
+---
+title: "Set minimum level"
+name: set-minimum-level
+category: Docs
+subcategory: Mixins
+---
+
+Defines the minimum level used by `a11y.css`.
+
+Either:
+* `error` for errors only;
+* `warning` for errors and warnings;
+* `obsolete` for everything but advices;
+* `advice` for everything.
+
+#### Source {set-minimum-level-source}
+
+```scss
+@mixin set-minimum-level($level) {
+  $level: to-lower-case($level);
+  $levels: map-keys($themes);
+
+  @if not index($levels, $level) {
+    $default-level: nth($levels, -1);
+    $level: $default-level;
+
+    @warn 'Level `#​{$level}` does not exist. '
+      + 'Please choose one of `#​{inspect($levels)}`. '
+      + 'Falling back on `#​{$default-level}`';
+  }
+
+  $minimum-level: $level !global;
+}
+```
+
+#### Parameters {set-minimum-level-parameters}
+
+| Name     | Description                                       | Type     | Default value |
+| -------- | ------------------------------------------------- | -------- | ------------- |
+| `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
+
+#### Example {set-minimum-level-example}
+
+```sass
+@include set-minimum-level('error');
+```
+*/
+@mixin set-minimum-level($level) {
+  $level: to-lower-case($level);
+  $levels: map-keys($themes);
+
+  @if not index($levels, $level) {
+    $default-level: nth($levels, -1);
+    $level: $default-level;
+
+    @warn 'Level `#{$level}` does not exist. '
+      + 'Please choose one of `#{inspect($levels)}`. '
+      + 'Falling back on `#{$default-level}`';
+  }
+
+  $minimum-level: $level !global;
+}
+
+
+/*doc
+---
+title: "Get a message"
+name: message
+category: Docs
+subcategory: Mixins
+---
+
+Get a message from the translation map based on the defined language and output it in the `content` property.
+
+#### Source {get-message-source}
+
+```scss
+@mixin message($theme, $key) {
+  content: replace-attr(quote("#​{message($theme, $key)}")) !important;
+}
+```
+
+#### Parameters {get-message-parameters}
+
+| Name     | Description                                       | Type     | Default value |
+| -------- | ------------------------------------------------- | -------- | ------------- |
+| `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
+| `$key`   | Message name. Should match a test identifier.     | `String` | —             |
+
+#### Example {get-message-example}
+
+```sass
+.selector {
+  @include message('advice', 'nav');
+}
+```
+
+```css
+.selector {
+  content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+}
+```
+*/
+@mixin message($theme, $key) {
+  content: replace-attr(quote("#{message($theme, $key)}")) !important;
+}
+
+
+/*doc
+---
+title: "Extends selector with void tags"
+name: void-tags
+category: Docs
+subcategory: Mixins
+---
+
+Extends selector with self-closing tags & replaced elements.
+Notice the `&` before the selector, and `$self-closing: true` argument.
+
+#### Source {void-tags-source}
+
+```scss
+@mixin void-tags {
+  @at-root #​{selector-unify($void-tags, &)} {
+    @content;
+  }
+}
+
+```
+
+#### Example {void-tags-example}
+
+```sass
+.selector {
+  @include advice('nav')
+
+  @include void-tags {
+    @include advice('nav', $self-closing: true);
+  }
+}
+```
+
+```css
+area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
+  content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
+}
+```
+*/
+@mixin void-tags {
+  @at-root #{selector-unify($void-tags, &)} {
+    @content;
+  }
+}
+
+
+/*doc
+---
+title: "Set a message"
+name: item
+category: Docs
+subcategory: Mixins
+---
+
+Theme mixin including everything needed for the `$theme`, and checking test is not disabled.
+
+#### Source {item-source}
+
+```scss
+@mixin item($theme, $key, $self-closing: false, $head: false) {
+  $message-key: $theme + ':' + $key;
+  $is-disabled: index($disabled-tests, $message-key);
+
+  @if is-level-enough($theme) and not $is-disabled {
+    @include a11y($theme, $key, $self-closing, $head);
+  }
+}
+```
+
+#### Parameters {item-parameters}
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$theme`        | Either `advice`, `error`, `warning` or `obsolete`          | `String`  | —             |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+*/
+@mixin item($theme, $key, $self-closing: false, $head: false) {
+  $message-key: $theme + ':' + $key;
+  $is-disabled: index($disabled-tests, $message-key);
+
+  @if is-level-enough($theme) and not $is-disabled {
+    @include a11y($theme, $key, $self-closing, $head);
+  }
+}
+
+
+/*doc
+---
+title: "Define an error"
+name: error
+category: Docs
+subcategory: Mixins
+---
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+#### Source {error-source}
+
+```scss
+@mixin error($key, $self-closing: false, $head: false) {
+  @include item('error', $key, $self-closing, $head);
+}
+```
+
+#### Parameters {error-parameters}
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+#### Example {error-example}
+
+```sass
+.selector {
+  @include error("no-src");
+}
+```
+*/
+@mixin error($key, $self-closing: false, $head: false) {
+  @include item('error', $key, $self-closing, $head);
+}
+
+
+/*doc
+---
+title: "Define a warning"
+name: warning
+category: Docs
+subcategory: Mixins
+---
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+#### Source {warning-source}
+
+```scss
+@mixin warning($key, $self-closing: false, $head: false) {
+  @include item('warning', $key, $self-closing, $head);
+}
+```
+
+#### Parameters {warning-parameters}
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+#### Example {warning-example}
+
+```sass
+.selector {
+  @include warning("abbr");
+}
+```
+*/
+@mixin warning($key, $self-closing: false, $head: false) {
+  @include item('warning', $key, $self-closing, $head);
+}
+
+
+/*doc
+---
+title: "Define an obsolete thing"
+name: obsolete
+category: Docs
+subcategory: Mixins
+---
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+#### Source {obsolete-source}
+
+```scss
+@mixin obsolete($key, $self-closing: false, $head: false) {
+  @include item('obsolete', $key, $self-closing, $head);
+}
+```
+
+#### Parameters {obsolete-parameters}
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+#### Example {obsolete-example}
+
+```sass
+.selector {
+  @include obsolete("any");
+}
+```
+*/
+@mixin obsolete($key, $self-closing: false, $head: false) {
+  @include item('obsolete', $key, $self-closing, $head);
+}
+
+
+/*doc
+---
+title: "Define an advice"
+name: advice
+category: Docs
+subcategory: Mixins
+---
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+#### Source {advice-source}
+
+```scss
+@mixin advice($key, $self-closing: false, $head: false) {
+  @include item('advice', $key, $self-closing, $head);
+}
+```
+
+#### Parameters {advice-parameters}
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+#### Example {advice-example}
+
+```sass
+.selector {
+  @include advice("nav");
+}
+```
+*/
+@mixin advice($key, $self-closing: false, $head: false) {
+  @include item('advice', $key, $self-closing, $head);
+}
+
+
+/*doc
+---
+title: "Disable test(s)"
+name: disable-tests
+category: Docs
+subcategory: Mixins
+---
+
+Disable specific tests. Each test key should match an entry in locales `$messages` map,
+made of a level and a test identifier separated by a double-colon, e.g. `error:tab-order`.
+
+#### Source {disable-tests-source}
+
+```scss
+@mixin disable-tests($keys...) {
+  @each $key in $keys {
+    $disabled-tests: append($disabled-tests, $key) !global;
+  }
+}
+```
+
+#### Parameters {disable-tests-parameters}
+
+| Name    | Description               | Type   | Default value |
+| ------- | ------------------------- | ------ | ------------- |
+| `$keys` | Keys of tests to disable. | `List` | —             |
+
+#### Example {disable-tests-example}
+
+```sass
+@include disable-tests('error:tab-order', 'advice:empty-class');
+```
+*/
+@mixin disable-tests($keys...) {
+  @each $key in $keys {
+    $disabled-tests: append($disabled-tests, $key) !global;
+  }
+}
+
+
+/*doc
+---
+title: "Display messages in <head>"
+name: a11y-head
+category: Docs
+subcategory: Mixins
+---
+
+Display messages on `<head>`'s tags.
+
+#### Source {a11y-head-source}
+
+```scss
+@mixin a11y-head($self-closing: false) {
+  // Because it's in the <head>
+  @extend %a11y-head;
+
+  @if $self-closing {
+    ~ link:last-of-type {
+      @extend %a11y-head;
+    }
+  }
+}
+```
+
+#### Parameters {a11y-head-parameters}
+
+| Name            | Description                                         | Type      | Default value |
+| --------------- | --------------------------------------------------- | --------- | ------------- |
+| `$self-closing` | Whether to use message on self or on last `<link>`. | `Boolean` | `false`             |
+
+#### Example {a11y-head-example}
+
+```sass
+.selector {
+  @include a11y-head();
+}
+```
+*/
+@mixin a11y-head($self-closing: false) {
+  // Because it's in the <head>
+  @extend %a11y-head;
+
+  @if $self-closing {
+    ~ link:last-of-type {
+      @extend %a11y-head;
+    }
+  }
+}
+
+
+/*doc
+---
+title: "Display counters ::after <body>"
+name: base-content
+category: Docs
+subcategory: Mixins
+---
+
+Defines `body::after`’s `content` and `background-image` depending on `$minimum-level`.
+
+#### Source {base-content-source}
+
+```scss
+@mixin base-content($minimum-level) {
+  $background: ();
+  $content: ();
+
+  // @note Line breaks can be triggered by «\A» within the message content.
+  // @see issue #7, solution from @7studio
+  @each $theme in map-keys($themes) {
+    @if is-level-enough($theme) {
+      $background-offset: theme-conf($theme, 'background-offset');
+      $background-theme:
+        transparent $background-offset,
+        theme-conf($theme, 'color') $background-offset,
+        theme-conf($theme, 'color') ($background-offset + 0.2em),
+        transparent ($background-offset + 0.2em);
+      $background: append($background, $background-theme, 'comma');
+      $content-theme: quote(message('ui', $theme)) ': ' #​{counter(unquote($theme))} '\A ';
+      $content: append($content, $content-theme);
+    }
+  }
+
+  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+  content: $content;
+}
+```
+
+#### Parameters {base-content-parameters}
+
+| Name             | Description               | Type     | Default value |
+| ---------------- | ------------------------- | -------- | ------------- |
+| `$minimum-level` | Inheriting minimum level. | `String` | —             |
+
+#### Example {base-content-example}
+
+```sass
+@include base-content($minimum-level);
+```
+*/
+@mixin base-content($minimum-level) {
+  $background: ();
+  $content: ();
+
+  // @note Line breaks can be triggered by «\A» within the message content.
+  // @see issue #7, solution from @7studio
+  @each $theme in map-keys($themes) {
+    @if is-level-enough($theme) {
+      $background-offset: theme-conf($theme, 'background-offset');
+      $background-theme:
+        transparent $background-offset,
+        theme-conf($theme, 'color') $background-offset,
+        theme-conf($theme, 'color') ($background-offset + 0.2em),
+        transparent ($background-offset + 0.2em);
+      $background: append($background, $background-theme, 'comma');
+      $content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
+      $content: append($content, $content-theme);
+    }
+  }
+
+  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+  content: $content;
+}
+
+
+/*doc
+---
+title: "Display a message"
+name: a11y
+category: Docs
+subcategory: Mixins
+---
+
+Main mixin to display a message.
+
+#### Source {a11y-source}
+
+```scss
+@mixin a11y($theme, $key, $self-closing: false, $head: false) {
+  @extend %a11y-#​{$theme};
+
+  $base-selector: '&::after';
+
+  @if $self-closing {
+    $base-selector: '& + ::before';
+  }
+
+  @if $head {
+    $base-selector: '& ~ link:last-of-type::before';
+  }
+
+  #​{$base-selector} {
+    @extend %a11y-before;
+    @include message($theme, $key);
+    background: theme-conf($theme, 'color') !important;
+    z-index: theme-conf($theme, 'index') !important;
+  }
+}
+```
+
+#### Parameters {a11y-parameters}
+
+| Name            | Description                                                 | Type      | Default value |
+| --------------- | ----------------------------------------------------------- | --------- | ------------- |
+| `$theme`        | Inheriting minimum level.                                   | `String`  | —             |
+| `$key`          | Key used to fetch message in `$messages` map.               | `String`  | —             |
+| `$self-closing` | Whether or not to use message on self or next node.         | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head.  | `Boolean` | `false`       |
+
+#### Example {a11y-example}
+
+```sass
+@include a11y($theme, $key, $self-closing, $head);
+```
+*/
+@mixin a11y($theme, $key, $self-closing: false, $head: false) {
+  @extend %a11y-#{$theme};
+
+  $base-selector: '&::after';
+
+  @if $self-closing {
+    $base-selector: '& + ::before';
+  }
+
+  @if $head {
+    $base-selector: '& ~ link:last-of-type::before';
+  }
+
+  #{$base-selector} {
+    @extend %a11y-before;
+    @include message($theme, $key);
+    background: theme-conf($theme, 'color') !important;
+    z-index: theme-conf($theme, 'index') !important;
+  }
+}

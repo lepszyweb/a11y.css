@@ -1,0 +1,1724 @@
+@charset "UTF-8";
+
+/*doc
+---
+title: "Atrybuty z białymi znakami"
+name: attribute-whitespace
+category: Błędy
+---
+
+### Opis
+Niektóre atrybuty HTML nie powinny zawierać żadnych białych znaków - mianowicie <code>[id]</code>, <code>[lang]</code> oraz <code>map[name]</code>.
+
+### Bibliografia
+* <https://html.spec.whatwg.org/#the-id-attribute>
+* <https://html.spec.whatwg.org/#the-map-element>
+* <https://tools.ietf.org/html/bcp47#section-2.1.1>
+
+### Selektor
+```css
+[id*=" "],
+[lang*=" "],
+map[name*=" "]
+```
+
+### Test
+```html
+<p id="my id">To jest mój piękny element z ID</p>
+```
+*/
+[id*=" "],
+[lang*=" "],
+map[name*=" "] {
+  @include error('attribute-whitespace');
+
+  @include void-tags {
+    @include error('attribute-whitespace', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[tabindex] > 0"
+name: tab-order
+category: Błędy
+---
+
+### Opis
+Atrybut <code>[tabindex]</code> nigdy nie powinien być większy niż 0.
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13>
+* <https://www.w3.org/TR/WCAG-TECHS/F44.html>
+* <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
+
+### Selektor
+```css
+[tabindex]:not([tabindex="0"]):not([tabindex^="-"])
+```
+
+### Test
+```html
+<button tabindex="1" type="button">Dodatni tabindex jest zły!</button>
+```
+*/
+[tabindex]:not([tabindex="0"]):not([tabindex^="-"]) {
+  @include error('tab-order');
+
+  @include void-tags {
+    @include error('tab-order', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "Pusty [href]"
+name: empty-href
+category: Błędy
+---
+
+### Opis
+Atrybut <code>[href]</code>, jeśli występuje, nie powinien być pusty. Łączy <em>do</em> czegoś, prawda?
+
+### Bibliografia
+* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+
+### Selektor
+```css
+a[href=""],
+a[href=" "]
+```
+
+### Test
+```html
+<a href=" ">Czym jestem? Do czego prowadzę?</a>
+```
+*/
+a[href=""],
+a[href=" "] {
+  @include error('empty-href');
+}
+
+
+/*doc
+---
+title: "Puste łącze"
+name: empty-link
+category: Błędy
+---
+
+### Opis
+Puste łącze powinno mieć etykietę wewnątrz <code>[title]</code>, <code>[aria-label]</code> lub wskazaną przez <code>[aria-labelledby]</code>. 
+Przy okazji, po co miałbyś używać pustego łącza?
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-6-5>
+* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
+* <https://www.w3.org/TR/WCAG-TECHS/H30.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G91.html>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+
+### Selektor
+```css
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby])
+```
+
+### Test
+``` html
+<a href="/" class="inbl w-20" id="empty-link_code"></a>
+```
+*/
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link');
+}
+
+
+/*doc
+---
+title: "Brak alt w img"
+name: no-alt
+category: Błędy
+---
+
+### Opis
+`<img>` musi mieć <code>[alt]</code>. Zawsze.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H36.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H37.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H24.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+### Selektor
+```css
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
+img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt])
+```
+
+### Test
+``` html
+<img src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
+```
+*/
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
+img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt]) {
+  @include error('no-alt', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Brak etykiety dla [role=img]"
+name: no-aria-label
+category: Błędy
+---
+
+### Opis
+Element z <code>[role=img]</code> powinien mieć albo <code>[aria-label]</code> albo <code>[aria-labelledby]</code>. 
+Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <code>[role=img]</code>.
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/roles#img>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
+
+### Selektor
+```css
+[role="img"]:not([aria-label]):not([aria-labelledby]),
+svg[role="img"]:not([aria-label]):not([aria-labelledby])
+```
+
+### Test
+``` html
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label');
+}
+
+svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Brak źródła img"
+name: no-src
+category: Błędy
+---
+
+### Opis
+Element `<img>` musi mieć <code>[src]</code> lub <code>[srcset]</code>. I powinno być poprawne. Oczywiście.
+
+### Bibliografia
+* <https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
+* <https://scottjehl.github.io/picturefill/>
+
+### Selektor
+```css
+img:not([src]):not([srcset]),
+img[src=""],
+img[src=" "],
+img[src="#"],
+img[src="/"],
+img[srcset=""],
+img[srcset=" "],
+img[srcset="#"],
+img[srcset="/"],
+input[type="image"]:not([src]):not([srcset]),
+input[type="image"][src=""],
+input[type="image"][src=" "],
+input[type="image"][src="#"],
+input[type="image"][src="/"],
+input[type="image"][srcset=""],
+input[type="image"][srcset=" "],
+input[type="image"][srcset="#"]
+input[type="image"][srcset="/"]
+```
+
+### Test
+``` html
+<img alt="I tylko mi src brak" width="144" height="144"/>
+```
+*/
+img:not([src]):not([srcset]),
+input[type="image"]:not([src]):not([srcset]) {
+  @include error('no-src');
+}
+
+
+img[src=""],
+img[src=" "],
+img[src="#"],
+img[src="/"],
+input[type="image"][src=""],
+input[type="image"][src=" "],
+input[type="image"][src="#"],
+input[type="image"][src="/"] {
+  @include error('bad-src');
+}
+
+img[srcset=""],
+img[srcset=" "],
+img[srcset="#"],
+img[srcset="/"],
+input[type="image"][srcset=""],
+input[type="image"][srcset=" "],
+input[type="image"][srcset="#"],
+input[type="image"][srcset="/"] {
+  @include error('bad-srcset');
+}
+
+
+/*doc
+---
+title: "Etykieta z pustym atrybutem [for]"
+name: empty-for
+category: Błędy
+---
+
+### Opis
+Znacznik `<label>` z atrybutem <code>[for]</code> powinien oczywiście etykietować coś z atrybutem <code>[id]</code>. W atrybucie <code>[for]</code> musi być wartość <code>[id]</code> etykietowanego elementu. Oczywiście.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* <https://www.w3.org/WAI/tutorials/forms/labels/>
+* <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+
+### Selektor
+```css
+label[for=""],
+label[for=" "]
+```
+
+### Test
+``` html
+<label for=" ">Zgadnij, co to?</label>
+```
+*/
+label[for=""],
+label[for=" "] {
+  @include error('empty-for');
+}
+
+
+/*doc
+---
+title: "Brak jakiejś etykiety"
+name: no-id
+category: Błędy
+---
+
+### Opis
+Jak oznaczyć pole? Masz kilka opcji do wyboru: <code>[id]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+
+### Selektor
+```css
+input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+select:not([id]):not([aria-label]):not([aria-labelledby])
+```
+
+### Test
+``` html
+<input type="text" /><span>†</span>
+```
+*/
+input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+select:not([id]):not([aria-label]):not([aria-labelledby]) {
+  @include error('no-id', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Brak wartości"
+name: no-value
+category: Błędy
+---
+
+### Opis
+Jak oznaczyć etykietą pożąane dane wejściowe typu <code>[reset]</code>, <code>[submit]</code> or <code>[button]</code>? 
+Zawsze masz kilka opcji do wyboru: <code>[value]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+
+### Selektor
+```css
+input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
+```
+
+### Test
+``` html
+<input type="submit" /><span>†</span>
+```
+*/
+input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('no-value', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Pusty przycisk"
+name: empty-button
+category: Błędy
+---
+
+### Opis
+Przycisk `<button>` powinien mieć albo zawartość albo atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code>. Atrybuty te, jeśli istnieją, nie mogą być puste.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+
+### Selektor
+```css
+button:empty:not([aria-label]):not([aria-labelledby]):not([title])
+```
+
+### Test
+``` html
+<button type="button"></button>
+```
+*/
+button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
+  @include error('empty-button');
+}
+
+
+/*doc
+---
+title: "Pusty atrybut przycisku"
+name: empty-button-attr
+category: Błędy
+---
+
+### Opis
+Atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code> w znaczniku `<button>` nie może być pusty.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG-TECHS/H91.html>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+
+### Selektor
+```css
+button[title=""],
+button[aria-label=""],
+button[aria-labelledby=""]
+```
+
+### Test
+``` html
+<button title="" type="button">Test</button>
+```
+*/
+button[title=""] {
+  @include error('empty-button-title');
+}
+
+button[aria-label=""] {
+  @include error('empty-button-aria-label');
+}
+
+button[aria-labelledby=""] {
+  @include error('empty-button-aria-labelledby');
+}
+
+
+/*doc
+---
+title: "Przycisk formularza"
+name: not-form-button
+category: Błędy
+---
+
+### Opis
+Kontrolka `<button>` ma domyślnie wartość <code>[type]</code> równą <code>&amp;quot;submit&amp;quot;</code>, aby wysłać `<form>`.
+
+Jednak jeśli przycisk znajduje się poza `<form>`, jeśli ma on za zadanie wysłać formularz, powinien o tym wspomnieć za pomocą jednego z tych atrybutów: <code>[form]</code>, <code>[formaction]</code>, <code>[formtarget]</code>.
+
+Jeśli nie wysyła niczego, powinien mieć atrybut <code>[type="button"]</code>.
+
+
+### Bibliografia
+* <https://www.w3.org/TR/html5/forms.html#the-button-element>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
+
+### Selektor
+```css
+button:not([type]):not([form]):not([formaction]):not([formtarget])
+```
+
+### Test
+``` html
+<button>Po prostu nie wiem, co ze sobą zrobić.</button>
+```
+*/
+button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @include error('not-form-button');
+}
+
+form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @extend %a11y-reset;
+}
+
+/*doc
+---
+title: "Przycisk, który nie wysyła"
+name: not-submit-button
+category: Błędy
+---
+
+### Opis
+Jeśli  `<button>` ma wartość <code>[type]</code> albo <code>"reset"</code> albo <code>"button"</code>, nie powinien używać następujacych atrybutów:
+* `[formmethod]`;
+* `[formaction]`;
+* `[formtarget]`;
+* `[formenctype]`;
+* `[formnovalidate]`.
+
+### Bibliografia
+* <https://www.w3.org/TR/html5/forms.html#the-button-element>
+
+### Selektor
+```css
+button[type="reset"][formmethod],
+button[type="reset"][formaction],
+button[type="reset"][formtarget],
+button[type="reset"][formenctype],
+button[type="reset"][formnovalidate],
+button[type="button"][formmethod],
+button[type="button"][formaction],
+button[type="button"][formtarget],
+button[type="button"][formenctype],
+button[type="button"][formnovalidate]
+```
+
+### Test
+``` html
+<button type="button" formmethod="GET">Mam metodę</button>
+```
+*/
+button[type="reset"],
+button[type="button"] {
+  &[formmethod],
+  &[formaction],
+  &[formtarget],
+  &[formenctype],
+  &[formnovalidate] {
+    @include error('not-submit-button');
+  }
+}
+
+/*doc
+---
+title: "Wyłączony przycisk"
+name: disabled-button
+category: Błędy
+---
+
+### Opis
+Przycisk `<button>` stylizowany na wyłączony powinien być *faktycznie* wyłączony. 
+Użyj <code>[disabled]</code> i <code>[readonly]</code>.
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
+
+### Selektor
+```css
+button[class*="disabled"]:not([disabled]):not([readonly])
+```
+
+### Test
+``` html
+<button class="is-disabled" type="button">Być albo nie być (wyłączonym)?</button>
+```
+*/
+button[class*="disabled"]:not([disabled]):not([readonly]) {
+  @include error('disabled-button');
+}
+
+
+/*doc
+---
+title: "input bez [type]"
+name: no-type
+category: Błędy
+---
+
+### Opis
+`<input>` potrzebuje <code>[type]</code>, aby powiedzieć użytkownikowi, jaki rodzaj danych jest pożądany.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-11>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
+
+### Selektor
+```css
+input:not([type]),
+input[type=" "],
+input[type=""]
+```
+
+### Test
+``` html
+<label for="No-type">Brak type</label>
+<input value="Cokolwiek chcesz" id="No-type"/><span>†</span>
+```
+*/
+input:not([type]),
+input[type=" "],
+input[type=""] {
+  @include error('no-type', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "optgroup bez label"
+name: optgroup
+category: Błędy
+---
+
+### Opis
+`<optgroup>` potrzebuje <code>[label]</code>, aby wyjaśnić, co jest wewnątrz grupy.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-8>
+* <https://www.w3.org/TR/WCAG-TECHS/H85.html>
+* <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
+
+### Selektor
+```css
+optgroup:not([label])
+```
+
+### Test
+``` html
+<form action="/">
+    <label for="optgroup-test">Oh, hej</label>
+    <select id="optgroup-test">
+      <optgroup label="Jestem grupą">
+        <option value="1">Jestem opcją</option>
+        <option value="2">Jestem kolejną opcją</option>
+      </optgroup>
+      <optgroup>
+        <option value="3">Jestem opcją, ale z następnej grupy</option>
+        <option value="4">Ja też jestem inną opcją, ale z następnej grupy</option>
+     </optgroup>
+   </select>
+</form>
+```
+*/
+optgroup:not([label]) {
+  @include error('optgroup', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "iframe bez [title]"
+name: no-title
+category: Błędy
+---
+
+### Opis
+`<iframe>` potrzebuje <code>[title]</code>, aby powiedzieć użytkownikowi, czego może się spodziewać w ramce.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-2-1>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG-TECHS/H64.html>
+
+### Selektor
+```css
+iframe:not([title]),
+iframe[title=" "],
+iframe[title=""]
+```
+
+### Test
+``` html
+<iframe srcdoc="<!DOCTYPE html><title>Brak [title]</title>"></iframe><span>†</span>
+```
+*/
+iframe:not([title]),
+iframe[title=" "],
+iframe[title=""] {
+  @include error('no-title', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Formularz bez [action]"
+name: no-action
+category: Błędy
+---
+
+### Opis
+Przyznasz, że `<form>` powinien coś robić. Czyż nie?  Właśnie, a <code>[action]</code> ma za zadanie określić co.
+
+### Bibliografia
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
+
+### Selektor
+```css
+form:not([action]),
+form[action=" "],
+form[action=""]
+```
+
+### Test
+``` html
+<form>
+  <label for="input">Zgadnij, co zrobimy z Twoimi danymi?</label>
+  <input id="input" type="text" />
+
+  <input type="submit" value="Nie mam pojęcia, co?"/>
+</form>
+```
+*/
+form:not([action]),
+form[action=" "],
+form[action=""] {
+  @include error('no-action');
+}
+
+
+/*doc
+---
+title: "Język określony nieprawidłowo"
+name: no-lang
+category: Błędy
+---
+
+### Opis
+`<html>` musi wskazywać programom użytkownika naturalny język dokumentu.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-3>
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4>
+* <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
+* <https://www.w3.org/TR/WCAG-TECHS/H57.html>
+* <https://html.spec.whatwg.org/#attr-lang>
+* <https://tools.ietf.org/html/bcp47#section-2.1.1>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
+* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-page>
+* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html>
+* <https://www.matuzo.at/blog/lang-attribute/>
+* <https://codepen.io/matuzo/project/editor/ZyrVee>
+
+### Selektor
+```css
+html:not([lang]),
+html[lang*=" "],
+html[lang=""]
+```
+
+### Test
+``` html
+<iframe title="Przykład nieokreślonego języka" srcdoc="<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Je ne parle pas Français</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <ul>
+        <li>Speak French?</li>
+        <li>Habla usted francés?</li>
+        <li>Sprechen Sie Französisch?</li>
+    </ul>">
+</iframe>
+```
+*/
+html:not([lang]),
+html[lang*=" "],
+html[lang=""] {
+  @include error('no-lang');
+}
+
+
+/*doc
+---
+title: "Tabela układu"
+name: table-for-layout
+category: Błędy
+---
+
+### Opis
+Element `<table>` może być użyty do układu, jeśli dodana jest <code>[role="presentation"]</code>.
+
+Nie wolno jednak używać znaczników semantyki oraz atrybutów mających na celu uporządkowanie danych. Oto ich lista:
+
+* `<th>`;
+* `<thead>`;
+* `<tfoot>`;
+* `<caption>`;
+* `[axis]`;
+* `[scope]`;
+* `[headers]`;
+* `[colgroup]`.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8>
+* <https://www.w3.org/TR/WCAG-TECHS/F46.html>
+* <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
+* <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
+
+### Selektor
+```css
+table[role="presentation"] th,
+table[role="presentation"] thead,
+table[role="presentation"] tfoot,
+table[role="presentation"] caption,
+table[role="presentation"] colgroup,
+table[role="presentation"] [axis],
+table[role="presentation"] [scope],
+table[role="presentation"] [headers]
+```
+
+### Test
+``` html
+<table role="presentation">
+  <caption>Ja nic nie znaczę! Nie powinno mnie tu być!</caption>
+  <tbody>
+    <tr>
+      <td colspan="2">To działa</td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table[role="presentation"] th,
+table[role="presentation"] thead,
+table[role="presentation"] tfoot,
+table[role="presentation"] caption,
+table[role="presentation"] colgroup,
+table[role="presentation"] [axis],
+table[role="presentation"] [scope],
+table[role="presentation"] [headers] {
+  @include error('table-for-layout');
+}
+
+
+/*doc
+---
+title: "Atrybuty [width] i [height]"
+name: dimensions
+category: Błędy
+---
+
+### Opis
+<code>[width]</code> i <code>[height]</code> są informacjami o prezentacji (o wyglądzie). 
+Dlatego nie powinny być używane w znacznikach, poza `<img>`. 
+Zamiast tego używaj CSS.
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#presentation>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+
+### Selektor
+```css
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height]
+```
+
+### Test
+``` html
+<p width="20">Cholera! Źle się czuję :(</p>
+```
+*/
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include error('dimensions');
+
+  @include void-tags {
+    @include error('dimensions', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "Atrybut zdarzenia Javascript"
+name: js-events
+category: Błędy
+---
+
+### Opis
+Atrybuty zdarzeń Javascript (takie jak <code>[onmouseover]</code>) nie powinny być używane.
+Preferuj albo pseudo-klasy CSS (<code>:hover</code>, <code>:focus</code>, <code>:active</code>, etc.) albo obserwatory zdarzeń JS.
+
+### Bibliografia
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
+* <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
+
+### Selektor
+```css
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting]
+```
+
+### Test
+``` html
+<span onclick="alert('Kliknięte!');">Kliknij kliknij kliknij</span>
+```
+*/
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  @include error('js-events');
+}
+
+
+/*doc
+---
+title: "Przestrzeń nazw"
+name: namespace
+category: Błędy
+---
+
+### Opis
+Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS? 
+Tak - cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.
+
+### Bibliografia
+* <https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
+* <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
+* <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
+
+### Selektor
+```css
+[id^="1"],
+[id^="2"],
+[id^="3"],
+[id^="4"],
+[id^="5"],
+[id^="6"],
+[id^="7"],
+[id^="8"],
+[id^="9"],
+[id^="0"],
+[id^="--"],
+[id^="-1"],
+[id^="-2"],
+[id^="-3"],
+[id^="-4"],
+[id^="-5"],
+[id^="-6"],
+[id^="-7"],
+[id^="-8"],
+[id^="-9"],
+[id^="-0"],
+[class^="1"],
+[class^="2"],
+[class^="3"],
+[class^="4"],
+[class^="5"],
+[class^="6"],
+[class^="7"],
+[class^="8"],
+[class^="9"],
+[class^="0"],
+[class^="--"],
+[class^="-1"],
+[class^="-2"],
+[class^="-3"],
+[class^="-4"],
+[class^="-5"],
+[class^="-6"],
+[class^="-7"],
+[class^="-8"],
+[class^="-9"],
+[class^="-0"]
+```
+
+### Test
+``` html
+<div id="2">Witam! Moje ID to 2.</div>
+```
+*/
+[id^="1"],
+[id^="2"],
+[id^="3"],
+[id^="4"],
+[id^="5"],
+[id^="6"],
+[id^="7"],
+[id^="8"],
+[id^="9"],
+[id^="0"],
+[id^="--"],
+[id^="-1"],
+[id^="-2"],
+[id^="-3"],
+[id^="-4"],
+[id^="-5"],
+[id^="-6"],
+[id^="-7"],
+[id^="-8"],
+[id^="-9"],
+[id^="-0"] {
+  @include error('id-namespace');
+}
+
+[class^="1"],
+[class^="2"],
+[class^="3"],
+[class^="4"],
+[class^="5"],
+[class^="6"],
+[class^="7"],
+[class^="8"],
+[class^="9"],
+[class^="0"],
+[class^="--"],
+[class^="-1"],
+[class^="-2"],
+[class^="-3"],
+[class^="-4"],
+[class^="-5"],
+[class^="-6"],
+[class^="-7"],
+[class^="-8"],
+[class^="-9"],
+[class^="-0"] {
+  @include error('class-namespace');
+}
+
+
+/*doc
+---
+title: "Pusty znacznik title"
+name: no-page-title
+category: Błędy
+---
+
+### Opis
+Znacznik `<title>` jest pierwszą rzeczą czytaną na głos przez czytniki ekranu - aby ogłosić&hellip; tytuł strony - a także pierwszą rzeczą wyświetlaną na stronach wyników wyszukiwarek.
+
+Moglibyśmy użyć pseudoklasy <code>:blank</code>, ale w tym momencie jej obsługa jest bardzo słaba. Moglibyśmy również użyć pseudoklasy <code>:-moz-only-whitespace</code>, ale jej obsługa jest ograniczona do Firefoksa, co mogłoby spowodować niepoprawność naszego stosu selektorów…
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5>
+* <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
+* <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
+* <https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title>
+* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G88.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G127.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H25.html>
+* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
+* <https://css-tricks.com/almanac/selectors/b/blank/>
+
+### Selektor
+```css
+title:empty
+```
+
+### Test
+``` html
+<title></title>
+```
+*/
+title:empty {
+  @include error('no-page-title');
+  @include a11y-head;
+}
+
+
+/*doc
+---
+title: "Niedostępny atrybut viewport"
+name: unaccessible-viewport
+category: Błędy
+---
+
+### Opis
+Użytkownik powinien mieć możliwość powiększania lub pomniejszania strony, aby poprawić czytelność i wygodę; jest to zwykle dozwolone w `<meta>` viewport.
+
+### Bibliografia
+* <https://bitsofco.de/linting-html-using-css/>
+* <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
+* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html>
+* <https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
+* <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
+
+### Selektor
+```css
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"]
+```
+
+### Test
+``` html
+<iframe title="Przykład złej instrukcji viewport" srcdoc="<!DOCTYPE html>
+  <html lang='pl'>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Przykład złej instrukcji viewport</title>
+      <meta name='viewport' content='user-scalable=no'/>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <h1>Zła instrukcja <code>viewport</code></h1>">
+</iframe>
+```
+*/
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"] {
+  @include error('unaccessible-viewport', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Niewłaściwy charset"
+name: incorrect-charset
+category: Błędy
+---
+
+### Opis
+Używanie kodowania znaków <code>utf-8</code> jest zalecane przez samo W3C:
+> obsługuje wiele języków i może obsługiwać strony i formularze w dowolnej mieszance tych języków.
+
+Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wykorzystywanych przez inne zestawy znaków…
+
+### Bibliografia
+* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
+* <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
+* <https://validator.w3.org/docs/help.html#faq-charset>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning>
+* <https://validator.w3.org/i18n-checker/>
+* <https://www.w3.org/International/tutorials/tutorial-char-enc/>
+
+### Selektor
+```css
+meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
+```
+
+### Test
+``` html
+<meta charset="Windows-1252"/><link>†</link>
+```
+*/
+meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
+  @include error('incorrect-charset', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Charset powinien być w head pierwszy"
+name: late-charset
+category: Błędy
+---
+
+### Opis
+Jak wyjaśniono na Mozilla Developer Network:
+> Element `<meta>` deklarujący kodowanie musi znajdować się wewnątrz elementu `<head>`
+i <strong>w obrębie pierwszych 1024 bajtów</strong> HTML, ponieważ niektóre przeglądarki
+patrzą tylko na te bajty przed wyborem kodowania.
+
+Ma to również na celu zapobieżenie staremu eksploitowi bezpieczeństwa wykorzystującemu UTF-7. Zadeklarowanie zestawu znaków przed znacznikiem `<title>` jest najprostszym sposobem, aby to ukryć.
+
+### Bibliografia
+* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
+* <https://w3c.github.io/html/document-metadata.html#charset>
+* <https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
+
+### Selektor
+```css
+head :first-child:not([charset])
+```
+
+### Test
+``` html
+<iframe title="Spóźnione ustawienie strony kodowej" srcdoc="<!DOCTYPE html>
+  <html lang=en>
+    <head>
+      <title>Oups !</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    </head>
+    <body>
+      <h1>Jak jestem zakodowany, kolego?</h1>">
+</iframe>
+```
+*/
+head :first-child:not([charset]) {
+  @include error('late-charset', $self-closing: false, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Niepoprawny atrybut [dir]"
+name: invalid-dir
+category: Błędy
+---
+
+### Opis
+Atrybut  <code>[dir]</code> służący do określenia kierunku tekstu elementu - przyjmuje tylko trzy wartości: <code>rtl</code>, <code>ltr</code> oraz <code>auto</code>.
+
+### Bibliografia
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
+* <https://www.w3.org/International/questions/qa-html-dir>
+* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+
+### Selektor
+```css
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
+```
+
+### Test
+``` html
+<p dir="wtf">Cóż, jestem trochę zdezorientowany…</p>
+```
+*/
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
+  @include error('invalid-dir');
+}
+
+
+/*doc
+---
+title: "[accesskey] to zły pomysł"
+name: accesskey
+category: Błędy
+---
+
+### Opis
+Atrybut <code>[accesskey]</code> jest przeznaczony do implementacji skrótów klawiaturowych specyficznych dla danej witryny. 
+Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już używane przez system operacyjny, przeglądarkę, rozszerzenie przeglądarki, a nawet ustawienia użytkownika…
+
+To jest opinia: w idealnym świecie <code>[accesskey]</code> może być używany mądrze. Yup. Być może.
+
+### Bibliografia
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
+* <https://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
+* <https://w3c.github.io/html/editing.html#element-attrdef-global-accesskey>
+* <https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
+* <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
+
+### Selektor
+```css
+[accesskey]
+```
+
+### Test
+``` html
+<a id="key" name="key" accesskey="1">Przejdź do tego łącza, używając <kbd>1</kbd></a>
+```
+*/
+[accesskey] {
+  @include error('accesskey');
+}
+
+
+/*doc
+---
+title: "Grupowanie pól"
+name: inputs-group
+category: Błędy
+---
+
+### Opis
+Pola typu <code>radio</code> lub <code>checkbox</code> są zwykle zgrupowane. Atrybut <code>[name]</code> służy do ich programowego powiązania, dlatego jest potrzebny.
+
+### Bibliografia
+* <https://www.w3.org/WAI/tutorials/forms/grouping/>
+* <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+
+### Selektor
+```css
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name])
+```
+
+### Test
+``` html
+<form action="/">
+  <fieldset>
+    <legend>Opcje</legend>
+    <p>
+      <label for="option-1">Opcja N<sup>o</sup>1</label>
+      <input type="radio" id="option-1"><span>†</span>
+    </p>
+    <p>
+      <label for="option-2">Opcja N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options">
+    </p>
+  </fieldset>
+</form>
+```
+*/
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name]) {
+  @include error('inputs-group', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[radio] poza fieldset"
+name: radio-group
+category: Błędy
+---
+
+### Opis
+Pola typu <code>radio</code> powinny być zgrupowane przez nadrzędny `<fieldset>`, opisany przez jego `<legend>`.
+
+Zauważ, że WCAG tego nie wymaga, ale zdecydowanie zaleca: &bdquo;w przypadku, gdy indywidualna etykieta związana z każdą konkretną kontrolą zapewnia wystarczający opis, użycie elementów fieldset i legend nie jest wymagane&rdquo;
+
+Ten test może być ostrzeżeniem…
+
+### Bibliografia
+* <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+
+### Selektor
+```css
+[type="radio"]
+```
+
+### Test
+``` html
+<form action="/">
+  <p>
+    <label for="option-1">Opcja nr 1</label>
+    <input type="radio" id="option-1" name="options"><span>†</span>
+  </p>
+
+  <br>
+
+  <fieldset>
+    <legend>Próba w zestawie pól, nie powinna być dopasowana</legend>
+    <p>
+      <label for="option-2">Opcja nr 2</label>
+      <input type="radio" id="option-2" name="options"><span>†</span>
+    </p>
+  </fieldset>
+</form>
+```
+*/
+[type="radio"] {
+  @include error('radio-group', $self-closing: true);
+}
+
+fieldset [type="radio"] {
+  @extend %a11y-reset;
+}
+
+
+/*doc
+---
+title: "[role=slider] - brak atrybutów"
+name: role-slider
+category: Błędy
+---
+
+### Opis
+Element z <code>[role="slider"]</code> wymaga kilku atrybutów:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+Również <code>[aria-valuetext]</code> jest mile widziany, mimo że nie jest wymagany przez specyfikację ARIA.
+
+### Bibliografia
+* <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
+* <https://www.w3.org/TR/wai-aria/roles#slider>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.oaa-accessibility.org/examplep/slider1/>
+* <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
+* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
+
+### Selektor
+```css
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow])
+```
+
+### Test
+``` html
+<label for="slider">Slider</label>
+<input id="slider" role="slider" type="range" /><span>†</span>
+```
+*/
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow]) {
+  @include error('role-slider');
+
+  @include void-tags {
+    @include error('role-slider', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=spinbutton] wymaga atrybutów"
+name: role-spinbutton
+category: Błędy
+---
+
+### Opis
+Element z [role=spinbutton] wymaga kilku atrybutów::
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/roles#spinbutton>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://oaa-accessibility.org/example/33/>
+
+### Selektor
+```css
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow])
+```
+
+### Test
+``` html
+<label for="spinbutton">Spinbutton</label>
+<input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
+```
+*/
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow]) {
+  @include error('role-spinbutton');
+
+  @include void-tags {
+    @include error('role-spinbutton', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=checkbox] nie ma stanu"
+name: role-checkbox
+category: Błędy
+---
+
+### Opis
+Element z <code>[role="checkbox"]</code> wymaga atrybutu stanu <code>[aria-checked]</code>
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/roles#checkbox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
+* <https://oaa-accessibility.org/examples/role/76/>
+
+### Selektor
+```css
+[role="checkbox"]:not([aria-checked])
+```
+
+### Test
+``` html
+<img src="/static/ffoodd.png" alt="Pole wyboru" role="checkbox" width="36" height="36"/><span>†</span>
+```
+*/
+[role="checkbox"]:not([aria-checked]) {
+  @include error('role-checkbox');
+
+  @include void-tags {
+    @include error('role-checkbox', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=combobox] nie ma [state]"
+name: role-combobox
+category: Błędy
+---
+
+### Opis
+Element z <code>[role="combobox"]</code> wymaga atrybutu stanu <code>[aria-expanded]</code>.
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/roles#combobox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
+* <https://oaa-accessibility.org/examples/role/77/>
+
+### Selektor
+```css
+[role="combobox"]:not([aria-expanded])
+```
+
+### Test
+``` html
+<input type="text" aria-label="Pole złożone" role="combobox" id="combobox"><span>†</span>
+```
+*/
+[role="combobox"]:not([aria-expanded]) {
+  @include error('role-combobox');
+
+  @include void-tags {
+    @include error('role-combobox', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=scrollbar] wymaga właściwości"
+name: role-scrollbar
+category: Błędy
+---
+
+### Opis
+Niektóre właściwości muszą być zgodne z wzorcem projektowym <code>[role="scrollbar"]</code>:
+
+* `[aria-controls]`
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+* `[aria-orientation]`
+
+### Bibliografia
+* <https://www.w3.org/TR/wai-aria/roles#scrollbar>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
+
+### Selektor
+```css
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation])
+```
+
+### Test
+``` html
+<div role="scrollbar">↓</div>
+```
+*/
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation]) {
+  @include error('role-scrollbar');
+}
+
+
+/*doc
+---
+title: "Zagnieżdżony element interaktywny"
+name: nested-interactive
+category: Błędy
+---
+
+### Opis
+Element interaktywny nie może być umieszczony w innym elemencie interaktywnym (np. `<a>` w `<button>`).
+
+
+### Bibliografia
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/xhtml1/#prohibitions>
+* <https://w3c.github.io/html/dom.html#interactive-content-2>
+* <https://w3c.github.io/html/sec-forms.html#the-form-element>
+* <https://w3c.github.io/html/sec-forms.html#the-progress-element>
+* <https://w3c.github.io/html/sec-forms.html#the-meter-element>
+* <https://w3c.github.io/html/sec-forms.html#the-button-element>
+* <https://w3c.github.io/html/textlevel-semantics.html#the-a-element>
+* <https://w3c.github.io/html/sec-forms.html#the-label-element>
+
+### Selektor
+```css
+a a[href],
+button a[href],
+a audio[controls],
+button audio[controls],
+a video[controls],
+button video[controls],
+a button,
+button button,
+a details,
+button details,
+a embed,
+button embed,
+a iframe,
+button iframe,
+a img[usemap],
+button img[usemap],
+a label,
+button label,
+a select,
+button select,
+a textarea,
+button textarea,
+a input[type]:not([hidden]),
+button input[type]:not([hidden]),
+form form,
+label label,
+meter meter,
+progress progress
+```
+
+### Test
+``` html
+<a href="https://lepszyweb.pl">
+  <button type=button">Chwila, co mam uruchomić?</button>
+</a>
+```
+*/
+$tags: ();
+
+@each $tag in $interactive {
+  $tags: append($tags, unquote('a #{$tag}, button #{$tag}'), 'comma');
+}
+
+#{$tags},
+form form,
+label label,
+meter meter,
+progress progress {
+  @include error('nested-interactive');
+}

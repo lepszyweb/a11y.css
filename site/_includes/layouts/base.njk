@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | a11y.css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Ten plik CSS ma na celu ostrzeganie programistów o możliwych zagrożeniach i błędach występujących w kodzie HTML. Może być również użyty do wstępnej oceny jakości strony. Wystarczy go dołączyć jako zewnętrzny arkusz stylów.">
+    <link rel="stylesheet" href="./static/docs.css?v={% version %}">
+    <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <div class="sr-only-focusable" id="skip-links">
+      <a href="#toc">Do spisu treści</a>
+      <a href="#content">Do treści</a>
+    </div>
+    {% include "partials/header.njk" %}
+
+    <aside role="complementary">
+      {% block sidebar %}{% endblock %}
+
+      <div class="box hidden-sm">
+        <p class="box-title">Rozszerzenia przeglądarek</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css - rozszerzenie dla Firefox">
+              <img src="./static/firefox.svg" width="112" height="42" alt="a11y.css - rozszerzenie dla Firefox"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css - rozszerzenie dla Chrome">
+              <img src="./static/chrome.svg" width="119" height="42" alt="a11y.css - rozszerzenie dla Chrome"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main role="main" id="content" tabindex="-1">
+      {% block content %}{% endblock %}
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+    <script src="./static/docs.js?v={% version %}"></script>
+  </body>
+</html>
