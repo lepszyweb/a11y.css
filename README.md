@@ -47,9 +47,8 @@ Warto również pamiętać, że ładowanie skryptozakładki może potrwać kilka
 
 Chcesz wiedzieć więcej o CSP i CORS? Przeczytaj:
 
-* [czym jest  i jak wpływa na bezpieczeństwo](https://sekurak.pl/czym-jest-cors-cross-origin-resource-sharing-i-jak-wplywa-na-bezpieczenstwo/) 
 * [Czym jest Content Security Policy?](https://sekurak.pl/czym-jest-content-security-policy/)
-
+* [Czym jest CORS i jak wpływa na bezpieczeństwo](https://sekurak.pl/czym-jest-cors-cross-origin-resource-sharing-i-jak-wplywa-na-bezpieczenstwo/) 
 
 ## Wkład
 
