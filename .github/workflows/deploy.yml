@@ -28,7 +28,8 @@ jobs:
         run: |
               npm ci
               npm run build
-              mv ./site ./_site
+              mkdrir ./_site
+              cp -r ./site/* ./_site/*
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
