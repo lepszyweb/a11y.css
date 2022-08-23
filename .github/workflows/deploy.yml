@@ -33,7 +33,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-         path: /_site
+         path: ./_site
+     
+        if: ${{ always() }}
       - run: ls ./docs
   
   deploy:
