@@ -28,7 +28,7 @@ jobs:
         run: |
               npm ci
               npm run build
-              mkdrir ./_site
+              mkdir ./_site
               cp -r ./site/* ./_site/*
 
       - name: Upload artifact
