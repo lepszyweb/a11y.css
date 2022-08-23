@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-         path:  ${{ github.workspace }}/docs/_site
+         path:  ${{ github.workspace }}/site/_site
   
   deploy:
     needs: build
