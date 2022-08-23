@@ -28,8 +28,10 @@ jobs:
         run: |
               npm ci
               npm run build
-              mv ${{ github.workspace }}/site ${{ github.workspace }}/_site
-
+              mv ${{ github.workspace }}/site ${{ github.workspace }}/_site   
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
   
