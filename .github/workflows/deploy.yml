@@ -11,6 +11,11 @@ on:
     branches:
       - main-pl
       - "!dependabot/**"
+      
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -18,22 +23,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
-           node-version: 16.x
-
-      - name: Install dependencies & build
-        run: |
-              npm ci
-              npm run build
-              mv ${{ github.workspace }}/site ${{ github.workspace }}/_site   
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v1
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./docs/_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+         path: /docs/_site      
   
   deploy:
     needs: build
