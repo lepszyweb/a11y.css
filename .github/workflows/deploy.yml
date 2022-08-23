@@ -46,8 +46,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
       
+      
     runs-on: ubuntu-latest
     steps:
+      - run: ${{ steps.deployment.outputs.page_url }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
