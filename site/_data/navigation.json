@@ -1,32 +1,32 @@
 [
   {
     "label": "Błędy",
-    "href": "/errors.html",
+    "href": "/bledy.html",
     "htmlClass": "errors"
   },
   {
     "label": "Ostrzeżenia",
-    "href": "/warnings.html",
+    "href": "/ostrzezenia.html",
     "htmlClass": "warnings"
   },
   {
     "label": "Przestarzałe",
-    "href": "/obsoletes.html",
+    "href": "/przestarzale.html",
     "htmlClass": "obsolete"
   },
   {
     "label": "Porady",
-    "href": "/advices.html",
+    "href": "/porady.html",
     "htmlClass": "advices"
   },
   {
     "label": "Rozszerzenia przeglądarek",
-    "href": "/webextension.html",
+    "href": "/rozszerzenia-przegladarek.html",
     "htmlClass": "webextension"
   },
   {
     "label": "<abbr title=\"Dokumentacja\">Dok.</abbr> <b><abbr title=\"Interfejs programowania aplikacji\">API</abbr></b>",
-    "href": "/docs.html",
+    "href": "/dokumentacja.html",
     "htmlClass": "sassdoc"
   },
   {

@@ -1,0 +1,32 @@
+---
+pagination:
+  data: themes
+  size: 1
+  alias: themePage
+permalink: "{{ themePage.title | slug }}.html"
+---
+{% extends "layouts/base.njk" %}
+{% import "./_includes/components/utils.njk" as utils %}
+
+{% set theme = sass[themePage.theme] %}
+
+{% block css %}
+  {% if 'docs' != themePage.title %}
+    <link rel="stylesheet" href="./static/css/a11y-en_{{ themePage.title | lower }}-only.css">
+    <link rel="stylesheet" href="./static/css/a11y-light.min.css">
+  {% endif %}
+{% endblock %}
+
+{% block title %}{{ themePage.title }}{% endblock %}
+
+{% block sidebar %}
+  {{ utils.toc(theme, themePage.subthemes) }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ themePage.title }}</h1>
+  {{ utils.writeSassDoc(theme, themePage.subthemes) }}
+{% endblock %}
+
+
+
