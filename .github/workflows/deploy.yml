@@ -28,10 +28,7 @@ jobs:
         run: |
               npm ci
               npm run build
-             
-              ls ${{ github.workspace }}/site
-              mkdir ${{ github.workspace }}/_site
-              cp -r ${{ github.workspace }}/site/* ${{ github.workspace }}/_site/*
+              mv ${{ github.workspace }}/site ${{ github.workspace }}/_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
