@@ -28,6 +28,8 @@ jobs:
         run: |
               npm ci
               npm run build
+              ls mkdir ${{ github.workspace }}
+              ls ${{ github.workspace }}/_site
               mkdir ${{ github.workspace }}/_site
               cp -r ${{ github.workspace }}/site/* ${{ github.workspace }}/_site/*
 
