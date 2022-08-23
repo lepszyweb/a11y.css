@@ -3,9 +3,9 @@ on: [push]
 
 jobs:
   build_deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-10.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Build
         uses: TartanLlama/actions-eleventy@master
       - name: Deploy
