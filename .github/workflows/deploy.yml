@@ -19,9 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
+     - name: Use Node.js 16.x
+       uses: actions/setup-node@v1
+       with:
            node-version: 16.x
 
       - name: Install dependencies & build
@@ -31,6 +31,8 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+            path: site
 
   deploy:
     environment:
