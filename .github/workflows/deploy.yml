@@ -33,7 +33,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-         path: /docs/_site      
+         path: /_site
+      - run: ls ./docs
   
   deploy:
     needs: build
