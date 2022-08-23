@@ -2,17 +2,7 @@ name: deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches-ignore:
-      - "dependabot/**"
-  pull_request:
-    types:
-      - opened
-      - synchronize
-    branches:
-      - main-pl
-      - "!dependabot/**"
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
