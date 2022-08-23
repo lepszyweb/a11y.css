@@ -11,7 +11,7 @@ Ten plik CSS ma na celu ostrzeganie programistów o *możliwych zagrożeniach i 
 
 Podczas uruchamiania arkusza stylów obok każdego z obciążonych elementów powinna pojawić się wskazówka informująca o tym, co się dzieje.
 
-*Ten pilnik nie zastępuje kompletnego narzędzia, takiego jak [aXe](https://www.deque.com/products/axe/), [Tanaguru](http://www.tanaguru.com/en/) czy [Tenon](http://tenon.io/). Ma on jedynie na celu pokazać możliwe słabości. Oczywiście, powinieneś ręcznie sprawdzić ręcznie, aby wiedzieć, czy kod powinien, czy nie powinien zostać poprawiony.*
+*Ten plik nie zastępuje kompletnego narzędzia, takiego jak [aXe](https://www.deque.com/products/axe/), [Tanaguru](http://www.tanaguru.com/en/) czy [Tenon](http://tenon.io/). Ma on jedynie na celu pokazać możliwe słabości. Oczywiście, powinieneś ręcznie sprawdzić ręcznie, aby wiedzieć, czy kod powinien, czy nie powinien zostać poprawiony.*
 
 
 ## Jak korzystać?

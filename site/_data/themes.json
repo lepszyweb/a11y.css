@@ -1,42 +1,42 @@
 [
   {
-    "title": "Advices",
+    "title": "Porady",
     "theme": "advice"
   },
   {
-    "title": "Errors",
+    "title": "Błędy",
     "theme": "error"
   },
   {
-    "title": "Obsoletes",
+    "title": "Przestarzałe",
     "theme": "obsolete"
   },
   {
-    "title": "Warnings",
+    "title": "Ostrzeżenia",
     "theme": "warning"
   },
   {
-    "title": "WebExtension",
+    "title": "Rozszerzenia przeglądarek",
     "theme": "webextension"
   },
   {
-    "title": "Docs",
+    "title": "Dokumentacja",
     "theme": "api",
     "subthemes":  [
       {
-        "title": "Functions",
+        "title": "Funkcje",
         "theme": "functions"
       },
       {
-        "title": "Mixins",
+        "title": "Domieszki",
         "theme": "mixins"
       },
       {
-        "title": "Placeholders",
+        "title": "Symbole zastępcze",
         "theme": "placeholders"
       },
       {
-        "title": "Variables",
+        "title": "Zmienne",
         "theme": "variables"
       }
     ]
