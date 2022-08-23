@@ -7,7 +7,7 @@ layout: "templates/page"
 
 Wymawiaj "Alix".
 
-Ten plik <abbr lanag="en" title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr> ma na celu ostrzeganie programistów o <b>możliwych zagrożeniach i błędach</b> występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
+A11y.css to plik <abbr lanag="en" title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr>, który ma na celu ostrzeganie programistów o <b>możliwych zagrożeniach i błędach</b> występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
 
 
 ## Jak stosować?
@@ -23,14 +23,14 @@ Zapewnia ono kilka fajnych funkcji, których nie ma w głównym pliku CSS (na ra
 * sprawdzanie alternatyw obrazów poprzez ich wyświetlanie;
 * zwiększanie odstępów w tekście.
 
-Ponadto rozszerzenie przeglądarek umożliwiają:
+Ponadto rozszerzenia przeglądarek umożliwiają:
 
-* przełączanie CSS i zmianę poziomu dokładności w locie,, 
+* przełączanie CSS i zmianę poziomu dokładności testów w locie,, 
 * zapamiętywanie ustawień dla każdej karty,
 * automatyczną aktualizację w tle.
 
 ## Wkład
 
-Jeśli chcesz się zaangażować w ten projekt, upewnij się, że [zajrzysz na jego wiki](https://github.com/lepszyweb/a11y.css/wiki). Z&nbsp;przyjemnością przeczytam twoje problemy lub pull requesty!
+Jeśli chcesz się zaangażować w ten projekt, najpierw [zajrzyj na jego wiki](https://github.com/lepszyweb/a11y.css/wiki). Z&nbsp;przyjemnością przeczytam także  zgłoszone przez Ciebie problemy lub pull requesty!
 
 Możesz również zaangażować się w oryginalny projekt, który prowadzi Gaël Poupard. Znajdziesz go pod adresem (https://github.com/ffoodd/a11y.css)

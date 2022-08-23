@@ -1,37 +1,37 @@
 [
   {
-    "label": "Errors",
+    "label": "Błędy",
     "href": "/errors.html",
     "htmlClass": "errors"
   },
   {
-    "label": "Warnings",
+    "label": "Ostrzeżenia",
     "href": "/warnings.html",
     "htmlClass": "warnings"
   },
   {
-    "label": "Obsoletes",
+    "label": "Przestarzałe",
     "href": "/obsoletes.html",
     "htmlClass": "obsolete"
   },
   {
-    "label": "Advices",
+    "label": "Porady",
     "href": "/advices.html",
     "htmlClass": "advices"
   },
   {
-    "label": "WebExtension",
+    "label": "Rozszerzenia przeglądarek",
     "href": "/webextension.html",
     "htmlClass": "webextension"
   },
   {
-    "label": "<b><abbr title=\"Application Programming Interface\">API</abbr></b> Doc",
+    "label": "<abbr title=\"Dokumentacja\">Dok.</abbr> <b><abbr title=\"Interfejs programowania aplikacji\">API</abbr></b>",
     "href": "/docs.html",
     "htmlClass": "sassdoc"
   },
   {
-    "label": "On <b>Github</b>",
-    "href": "https://github.com/ffoodd/a11y.css",
+    "label": "<b>Github</b>",
+    "href": "https://github.com/lepszyweb/a11y.css",
     "external": true
   }
 ]

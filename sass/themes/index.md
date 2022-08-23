@@ -1,38 +1,39 @@
-##Introduction
 
-Pronounced "Alix".
+## Wstęp
 
-This <abbr title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr> file intends to warn developers about <b>possible risks and mistakes</b> that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
+Wymawiaj &bdquo;Alix&rdquo;. Bo tak prościej!
 
-##How to use?
+Plik a11y.css to plik <abbr title="Kaskadowego arkusza stylów" aria-label="Kaskadowego arkusza stylów">CSS</abbr>, który ma na celu ostrzeganie programistów o <b>możliwych zagrożeniach i błędach</b> występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
 
-###WebExtension
+## Jak stosować?
 
-Either you're using <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/"  target="_blank" rel="noopener noreferrer">Firefox <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10"><polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon><polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon></svg></a> or <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">Chrome <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10"><polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon><polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon></svg></a>, you're invited to install and use a11y.css's webextension.
+### Rozszerzenie przeglądarki
 
-It provides some nice features not included in the main CSS file (for now), such as:
+Niezależnie od tego, czy używasz <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/"  target="_blank" rel="noopener noreferrer">Firefox <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(link zewnętrzny)" width="10" height="10"><polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon><polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon></svg></a>, czy <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">Chrome <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(link zewnętrzny)" width="10" height="10"><polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon><polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon></svg></a>, zapraszamy do zainstalowania i używania rozszerzenia przeglądarki **a11y.css**.
 
-* force focus visibility;
-* show lang attributes;
-* check images' alternatives by displaying them;
-* increase text spacings.
+Zapewnia ono kilka fajnych funkcji, których nie ma w głównym pliku CSS (na razie), takich jak:
 
-As a WebExtension, it also enables to:
+* wymuszona widoczność fokusu;
+* pokazywanie atrybutu lang;
+* sprawdzanie alternatyw obrazów poprzez ich wyświetlanie;
+* zwiększanie odstępów w tekście.
 
-* toggle CSS and change level on the fly, 
-* remember settings for each tab,
-* automatically update in the background.
+Ponadto rozszerzenie przeglądarek umożliwiają:
 
-###Bookmarklet
+* przełączanie CSS i zmianę poziomu dokładności w locie,, 
+* zapamiętywanie ustawień dla każdej karty,
+* automatyczną aktualizację w tle.
 
-You can also use the form on the left sidebar to define the minimum level and language, in order to generate a custom bookmarklet. Then simply drag the green button to your bookmarks, and you're done! You're now able to use a11y.css on every page you visit by simply clicking on this bookmark.
+### Skryptozakładka
 
-####Bookmarklet's caveats
+Możesz również użyć formularza na lewym pasku bocznym, aby określić minimalny poziom i język, aby wygenerować własną skryptozakładkę. Następnie po prostu przeciągnij zielony przycisk do swoich zakładek i gotowe! Teraz jesteś w stanie używać a11y.css na każdej stronie, którą odwiedzasz, po prostu klikając na tę zakładkę.
 
-The main caveat consists of <abbr title="Content Security Policy" aria-label="Content Security Policy">CSP</abbr> HTTP headers blocking unsafe / external script — mostly due to browsers bugs and inconsistencies. But many <abbr title="Cross Origin Resource Sharing" aria-label="Cross Origin Resource Sharing">CORS</abbr> policies might prevent a bookmarklet from working…
+#### Zastrzeżenia dotyczące zakładki
 
-But also note that the bookmarklet might take a couple of seconds to load since it basically injects the `a11y.css` stylesheet within the <abbr title="Document Object Model" aria-label="Document Object Model">DOM</abbr> of the page you're browsing. It might be a bit slow at first because it is being downloaded from GitHub, but it's the price to pay to keep it <b>up-to-date</b>.
+Główne zastrzeżenie polega na tym, że nagłówki HTTP <abbr title="zasad bezpieczeństwa treści" aria-label="zasad bezpieczeństwa treści">CSP</abbr> blokują niebezpieczne/zewnętrzne skrypty - głównie z powodu błędów i niespójności przeglądarek. Ale wiele zasad <abbr title="Współdzielenie zasobów pomiędzy różnymi źródłami" aria-label="Współdzielenie zasobów pomiędzy różnymi źródłami">CORS</abbr> może zablokować działanie skryptozakładki…
 
-##Contribution
+Należy również pamiętać, że ładowanie skryptozakładki może potrwać kilka sekund, ponieważ zasadniczo wstrzykuje ona arkusz stylów <code class="styleguide">a11y.css</code> do <abbr title="Document Object Model" aria-label="Document Object Model">DOM</abbr> przeglądanej strony. Na początku może być trochę powolny, ponieważ jest pobierany z GitHuba, ale jest to cena, którą trzeba zapłacić za jej <b>aktualność</b>.
 
-If you want to get involved in this project, be sure to [take a look at its wiki](https://github.com/ffoodd/a11y.css/wiki). I'll be pleased to read your issues or pull requests!
+## Wkład
+
+Jeśli chcesz się zaangażować w ten projekt, upewnij się, że [zajrzysz na jego wiki](https://github.com/lepszyweb/a11y.css/wiki). Z przyjemnością przeczytam twoje problemy lub pull requesty!
