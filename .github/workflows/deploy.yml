@@ -11,11 +11,6 @@ on:
     branches:
       - main-pl
       - "!dependabot/**"
-      
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -23,38 +18,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+           node-version: 16.x
+
       - name: Install dependencies & build
         run: |
               npm ci
               npm run build
-              npm run docs
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ${{ github.workspace }}/docs
-          destination:  ${{ github.workspace }}/docs/_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-         path:  ${{ github.workspace }}/site/_site
-  
-  deploy:
-    needs: build
 
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-      
-      
-    runs-on: ubuntu-latest
-    steps:
-      - run: ${{ steps.deployment.outputs.page_url }}
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
