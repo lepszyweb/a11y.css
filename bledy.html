@@ -1,0 +1,1604 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>Błędy | a11y.css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Ten plik CSS ma na celu ostrzeganie programistów o możliwych zagrożeniach i błędach występujących w kodzie HTML. Może być również użyty do wstępnej oceny jakości strony. Wystarczy go dołączyć jako zewnętrzny arkusz stylów.">
+    <link rel="stylesheet" href="./static/docs.css?v=1661445028197">
+    <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+  
+    <link rel="stylesheet" href="./static/css/a11y-en_błędy-only.css">
+    <link rel="stylesheet" href="./static/css/a11y-light.min.css">
+  
+
+  </head>
+  <body>
+    <div class="sr-only-focusable" id="skip-links">
+      <a href="#toc">Do spisu treści</a>
+      <a href="#content">Do treści</a>
+    </div>
+    <header role="banner" id="top" tabindex="-1">
+  <a href="." id="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img" aria-labelledby="titre">
+      <title id="titre">a11y.css</title>
+      <path fill="#ffce00" d="M0 8a8 8 0 0 1 8-8h164a8 8 0 0 1 8 8v163.81a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8z"/>
+      <path fill="currentColor" d="M80.83 36.9a10 10 0 0 1 5.06-7.18 7.43 7.43 0 0 1 8.53 1.53 8.76 8.76 0 0 1 2.91 6.18c0 4.71.09 64.9 0 68.32a10.42 10.42 0 0 1-1.77 5.83 8 8 0 0 1-8 3.23c-4-.86-6.63-4.74-6.75-8.71s-.01-69.07.02-69.2zM27 120.87c6-4.4 11.77-9.09 17.83-13.4-4-3.22-7.94-6.52-12.17-9.39-3.62-2.46-8.14-5.36-7-10.42a5.86 5.86 0 0 1 3.8-4.43 7.07 7.07 0 0 1 6.19 1.41c2.23 1.7 22.88 17.71 24.22 19.61a5.75 5.75 0 0 1 .63 5.93 13.16 13.16 0 0 1-5 4.79c-4.37 2.7-17.18 12.84-19.54 14.66a8.32 8.32 0 0 1-6.87 1.74 5.47 5.47 0 0 1-4-5 7.62 7.62 0 0 1 .57-3.52 5.84 5.84 0 0 1 1.34-1.98zm126.43.81c2.18 3.27 1.27 7.87-2.57 9.37-4.27 1.67-8-2.09-11.07-4.4-3.81-2.83-7.55-5.73-11.35-8.57-1.72-1.29-3.48-2.48-5.25-3.71a12.08 12.08 0 0 1-4.18-4.35 5.81 5.81 0 0 1 .42-5.41c1-1.69 23.77-19.87 25.64-20.75a6.78 6.78 0 0 1 5.5-.45 6 6 0 0 1 3.43 4.08c1.29 5.07-3.31 8.09-6.93 10.53-2.08 1.41-10.21 7.81-12.27 9.48 3.42 2.33 16.62 12.48 17.46 13.11a10 10 0 0 0 1.21 1.06zM100 141.25a11 11 0 1 1-11-11 11 11 0 0 1 11 11z"/>
+    </svg>
+  </a>
+  <nav role="navigation" aria-label="Główna" class="nav">
+  <ul class="list-unstyled">
+    
+      <li>
+        <a href="./bledy.html" class="errors" aria-current="page">
+          Błędy
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="./ostrzezenia.html" class="warnings">
+          Ostrzeżenia
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="./przestarzale.html" class="obsolete">
+          Przestarzałe
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="./porady.html" class="advices">
+          Porady
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="./rozszerzenia-przegladarek.html" class="webextension">
+          Rozszerzenia przeglądarek
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="./dokumentacja.html" class="sassdoc">
+          <abbr title="Dokumentacja">Dok.</abbr> <b><abbr title="Interfejs programowania aplikacji">API</abbr></b>
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/lepszyweb/a11y.css">
+          <b>Github</b>
+          
+            <span class="sr-only">&nbsp;(łącze zewnętrzne)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
+  <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+  <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+</svg>
+          
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+</header>
+
+
+    <aside role="complementary">
+      
+  
+<nav role="navigation" aria-labelledby="toc-title" id="toc">
+  <p class="box-title" id="toc-title">Spis treści</p>
+  
+    <ol>
+      
+        
+        <li>
+          <a href="#attribute-whitespace">Atrybuty z białymi znakami</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#tab-order">[tabindex] &gt; 0</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#empty-href">Pusty [href]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#empty-link">Puste łącze</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-alt">Brak alt w img</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-aria-label">Brak etykiety dla [role=img]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-src">Brak źródła img</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#empty-for">Etykieta z pustym atrybutem [for]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-id">Brak jakiejś etykiety</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-value">Brak wartości</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#empty-button">Pusty przycisk</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#empty-button-attr">Pusty atrybut przycisku</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#not-form-button">Przycisk formularza</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#not-submit-button">Przycisk, który nie wysyła</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#disabled-button">Wyłączony przycisk</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-type">input bez [type]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#optgroup">optgroup bez label</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-title">iframe bez [title]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-action">Formularz bez [action]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-lang">Język określony nieprawidłowo</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#table-for-layout">Tabela układu</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#dimensions">Atrybuty [width] i [height]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#js-events">Atrybut zdarzenia Javascript</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#namespace">Przestrzeń nazw</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#no-page-title">Pusty znacznik title</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#unaccessible-viewport">Niedostępny atrybut viewport</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#incorrect-charset">Niewłaściwy charset</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#late-charset">Charset powinien być w head pierwszy</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#invalid-dir">Niepoprawny atrybut [dir]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#accesskey">[accesskey] to zły pomysł</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#inputs-group">Grupowanie pól</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#radio-group">[radio] poza fieldset</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#role-slider">[role=slider] - brak atrybutów</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#role-spinbutton">[role=spinbutton] wymaga atrybutów</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#role-checkbox">[role=checkbox] nie ma stanu</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#role-combobox">[role=combobox] nie ma [state]</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#role-scrollbar">[role=scrollbar] wymaga właściwości</a>
+        </li>
+        
+      
+        
+        <li>
+          <a href="#nested-interactive">Zagnieżdżony element interaktywny</a>
+        </li>
+        
+      
+    </ol>
+  
+</nav>
+
+
+
+      <div class="box hidden-sm">
+        <p class="box-title">Rozszerzenia przeglądarek</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css - rozszerzenie dla Firefox">
+              <img src="./static/firefox.svg" width="112" height="42" alt="a11y.css - rozszerzenie dla Firefox"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en" title="a11y.css - rozszerzenie dla Chrome">
+              <img src="./static/chrome.svg" width="119" height="42" alt="a11y.css - rozszerzenie dla Chrome"/>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+        <p class="box-title">Skryptozakładki</p>
+
+        <ul class="list-unstyled">
+          <li>
+            <a class="btn"  href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://lepszyweb.pl/plik/a11y-pl_error.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">a11y.css błędy</a>
+          </li>
+          <li>
+            <a class="btn"  href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://lepszyweb.pl/plik/a11y-pl_warning.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">a11y.css ostrzeżenia</a>
+          </li>
+          <li>
+            <a class="btn" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://lepszyweb.pl/plik/a11y-pl_obsolete.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">a11y.css przestarzałe</a>
+          </li>
+        </ul>
+
+
+    </aside>
+
+    <main role="main" id="content" tabindex="-1">
+      
+  <h1>Błędy</h1>
+  
+  
+      
+        <article>
+          <h2 id="attribute-whitespace">Atrybuty z białymi znakami</h2>
+          <h3>Opis</h3>
+<p>Niektóre atrybuty HTML nie powinny zawierać żadnych białych znaków - mianowicie <code>[id]</code>, <code>[lang]</code> oraz <code>map[name]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://html.spec.whatwg.org/#the-id-attribute">https://html.spec.whatwg.org/#the-id-attribute</a></li>
+<li><a href="https://html.spec.whatwg.org/#the-map-element">https://html.spec.whatwg.org/#the-map-element</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[id*=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+[lang*=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+map[name*=<span class="token string">" "</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><p id="my id">To jest mój piękny element z ID.</p>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>To jest mój piękny element z ID.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="tab-order">[tabindex] &gt; 0</h2>
+          <h3>Opis</h3>
+<p>Atrybut <code>[tabindex]</code> nigdy nie powinien być większy niż 0.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-12-13">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-12-13</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F44.html">https://www.w3.org/TR/WCAG-TECHS/F44.html</a></li>
+<li><a href="https://www.scottohara.me/blog/2019/05/25/tabindex.html">https://www.scottohara.me/blog/2019/05/25/tabindex.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[tabindex]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[tabindex=<span class="token string">"0"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[tabindex^=<span class="token string">"-"</span>]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button tabindex="1" type="button">Dodatni tabindex jest zły!</button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Dodatni tabindex jest zły!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="empty-href">Pusty [href]</h2>
+          <h3>Opis</h3>
+<p>Atrybut <code>[href]</code>, jeśli występuje, nie powinien być pusty. Łączy <em>do</em> czegoś, prawda?</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements">https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">a[href=<span class="token string">""</span>]<span class="token punctuation">,</span>
+a[href=<span class="token string">" "</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><a href=" ">Czym jestem? Do czego prowadzę?</a>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span> <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Czym jestem? Do czego prowadzę?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="empty-link">Puste łącze</h2>
+          <h3>Opis</h3>
+<p>Puste łącze powinno mieć etykietę wewnątrz <code>[title]</code>, <code>[aria-label]</code> lub wskazaną przez <code>[aria-labelledby]</code>.
+Przy okazji, po co miałbyś używać pustego łącza?</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-6-5">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-6-5</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">https://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H30.html">https://www.w3.org/TR/WCAG-TECHS/H30.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/G91.html">https://www.w3.org/TR/WCAG-TECHS/G91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">a</span><span class="token punctuation">:</span>empty[title=<span class="token string">""</span>]<span class="token punctuation">,</span>
+<span class="token property">a</span><span class="token punctuation">:</span>empty[aria-label=<span class="token string">""</span>]<span class="token punctuation">,</span>
+<span class="token property">a</span><span class="token punctuation">:</span>empty[aria-labelledby=<span class="token string">""</span>]<span class="token punctuation">,</span>
+<span class="token property">a</span><span class="token punctuation">:</span><span class="token property">empty</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><a href="/" class="inbl w-20" id="empty-link_code"></a>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inbl w-20<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>empty-link_code<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-alt">Brak alt w img</h2>
+          <h3>Opis</h3>
+<p><code>&lt;img&gt;</code> musi mieć <code>[alt]</code>. Zawsze.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-1-1">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-1-1</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/html51/semantics.html#alt">https://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">https://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H36.html">https://www.w3.org/TR/WCAG-TECHS/H36.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H37.html">https://www.w3.org/TR/WCAG-TECHS/H37.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H24.html">https://www.w3.org/TR/WCAG-TECHS/H24.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F65.html">https://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">img[alt=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+area[alt=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][alt=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+<span class="token property">img</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[alt]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token property">area</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[alt]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[alt]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><img src="./static/ffoodd.png" width="144" height="144" /><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-aria-label">Brak etykiety dla [role=img]</h2>
+          <h3>Opis</h3>
+<p>Element z <code>[role=img]</code> powinien mieć albo <code>[aria-label]</code> albo <code>[aria-labelledby]</code>.
+Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <code>[role=img]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#img">https://www.w3.org/TR/wai-aria/roles#img</a></li>
+<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#textalternativecomputation">https://www.w3.org/TR/wai-aria/roles#textalternativecomputation</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+svg[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>12cm<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4cm<span class="token punctuation">"</span></span> <span class="token attr-name">viewBox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0 0 1200 400<span class="token punctuation">"</span></span>
+     <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span>
+        <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>forestgreen<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>darkgreen<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span>  <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-src">Brak źródła img</h2>
+          <h3>Opis</h3>
+<p>Element <code>&lt;img&gt;</code> musi mieć <code>[src]</code> lub <code>[srcset]</code>. I powinno być poprawne. Oczywiście.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src">https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src</a></li>
+<li><a href="https://scottjehl.github.io/picturefill/">https://scottjehl.github.io/picturefill/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">img</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[src]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[srcset]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src=<span class="token string">""</span>]<span class="token punctuation">,</span>
+img[src=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+img[src=<span class="token string">"#"</span>]<span class="token punctuation">,</span>
+img[src=<span class="token string">"/"</span>]<span class="token punctuation">,</span>
+img[srcset=<span class="token string">""</span>]<span class="token punctuation">,</span>
+img[srcset=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+img[srcset=<span class="token string">"#"</span>]<span class="token punctuation">,</span>
+img[srcset=<span class="token string">"/"</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[src]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[srcset]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][src=<span class="token string">""</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][src=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][src=<span class="token string">"#"</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][src=<span class="token string">"/"</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][srcset=<span class="token string">""</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][srcset=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">"image"</span>][srcset=<span class="token string">"#"</span>]
+input[type=<span class="token string">"image"</span>][srcset=<span class="token string">"/"</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><img alt="I tylko mi src brak" width="144" height="144"/>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>I tylko mi src brak<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="empty-for">Etykieta z pustym atrybutem [for]</h2>
+          <h3>Opis</h3>
+<p>Znacznik <code>&lt;label&gt;</code> z atrybutem <code>[for]</code> powinien oczywiście etykietować coś z atrybutem <code>[id]</code>. W atrybucie <code>[for]</code> musi być wartość <code>[id]</code> etykietowanego elementu. Oczywiście.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#test-11-1-2">https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#test-11-1-2</a></li>
+<li><a href="https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981">https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/labels/">https://www.w3.org/WAI/tutorials/forms/labels/</a></li>
+<li><a href="https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/">https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">https://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">label[for=<span class="token string">""</span>]<span class="token punctuation">,</span>
+label[for=<span class="token string">" "</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><label for=" ">Zgadnij, co to?</label>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span> <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Zgadnij, co to?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-id">Brak jakiejś etykiety</h2>
+          <h3>Opis</h3>
+<p>Jak oznaczyć pole? Masz kilka opcji do wyboru: <code>[id]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-1">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-1</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">https://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">input</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type=<span class="token string">"button"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type=<span class="token string">"submit"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type=<span class="token string">"hidden"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type=<span class="token string">"reset"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type=<span class="token string">"image"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[id]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token property">textarea</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[id]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token property">select</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[id]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><input type="text" /><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-value">Brak wartości</h2>
+          <h3>Opis</h3>
+<p>Jak oznaczyć etykietą pożąane dane wejściowe typu <code>[reset]</code>, <code>[submit]</code> or <code>[button]</code>?
+Zawsze masz kilka opcji do wyboru: <code>[value]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H91.html">https://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">input[type=<span class="token string">"reset"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[value]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+input[type=<span class="token string">"submit"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[value]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+input[type=<span class="token string">"button"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[value]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><input type="submit" /><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="empty-button">Pusty przycisk</h2>
+          <h3>Opis</h3>
+<p>Przycisk <code>&lt;button&gt;</code> powinien mieć albo zawartość albo atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code>. Atrybuty te, jeśli istnieją, nie mogą być puste.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire">https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H91.html">https://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">button</span><span class="token punctuation">:</span><span class="token property">empty</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button type="button"></button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="empty-button-attr">Pusty atrybut przycisku</h2>
+          <h3>Opis</h3>
+<p>Atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code> w znaczniku <code>&lt;button&gt;</code> nie może być pusty.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire">https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H91.html">https://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">button[title=<span class="token string">""</span>]<span class="token punctuation">,</span>
+button[aria-label=<span class="token string">""</span>]<span class="token punctuation">,</span>
+button[aria-labelledby=<span class="token string">""</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button title="" type="button">Test</button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="not-form-button">Przycisk formularza</h2>
+          <h3>Opis</h3>
+<p>Kontrolka <code>&lt;button&gt;</code> ma domyślnie wartość <code>[type]</code> równą <code>&amp;amp;quot;submit&amp;amp;quot;</code>, aby wysłać <code>&lt;form&gt;</code>.</p>
+<p>Jednak jeśli przycisk znajduje się poza <code>&lt;form&gt;</code>, jeśli ma on za zadanie wysłać formularz, powinien o tym wspomnieć za pomocą jednego z tych atrybutów: <code>[form]</code>, <code>[formaction]</code>, <code>[formtarget]</code>.</p>
+<p>Jeśli nie wysyła niczego, powinien mieć atrybut <code>[type="button"]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/html5/forms.html#the-button-element">https://www.w3.org/TR/html5/forms.html#the-button-element</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">button</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[form]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[formaction]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[formtarget]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button>Po prostu nie wiem, co ze sobą zrobić.</button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Po prostu nie wiem, co ze sobą zrobić.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="not-submit-button">Przycisk, który nie wysyła</h2>
+          <h3>Opis</h3>
+<p>Jeśli  <code>&lt;button&gt;</code> ma wartość <code>[type]</code> albo <code>"reset"</code> albo <code>"button"</code>, nie powinien używać następujacych atrybutów:</p>
+<ul>
+<li><code>[formmethod]</code>;</li>
+<li><code>[formaction]</code>;</li>
+<li><code>[formtarget]</code>;</li>
+<li><code>[formenctype]</code>;</li>
+<li><code>[formnovalidate]</code>.</li>
+</ul>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/html5/forms.html#the-button-element">https://www.w3.org/TR/html5/forms.html#the-button-element</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">button[type=<span class="token string">"reset"</span>][formmethod]<span class="token punctuation">,</span>
+button[type=<span class="token string">"reset"</span>][formaction]<span class="token punctuation">,</span>
+button[type=<span class="token string">"reset"</span>][formtarget]<span class="token punctuation">,</span>
+button[type=<span class="token string">"reset"</span>][formenctype]<span class="token punctuation">,</span>
+button[type=<span class="token string">"reset"</span>][formnovalidate]<span class="token punctuation">,</span>
+button[type=<span class="token string">"button"</span>][formmethod]<span class="token punctuation">,</span>
+button[type=<span class="token string">"button"</span>][formaction]<span class="token punctuation">,</span>
+button[type=<span class="token string">"button"</span>][formtarget]<span class="token punctuation">,</span>
+button[type=<span class="token string">"button"</span>][formenctype]<span class="token punctuation">,</span>
+button[type=<span class="token string">"button"</span>][formnovalidate]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button type="button" formmethod="GET">Mam metodę</button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">formmethod</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>GET<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Mam metodę<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="disabled-button">Wyłączony przycisk</h2>
+          <h3>Opis</h3>
+<p>Przycisk <code>&lt;button&gt;</code> stylizowany na wyłączony powinien być <em>faktycznie</em> wyłączony.
+Użyj <code>[disabled]</code> i <code>[readonly]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">button[class*=<span class="token string">"disabled"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[disabled]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[readonly]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><button class="is-disabled" type="button">Być albo nie być (wyłączonym)?</button>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>is-disabled<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Być albo nie być (wyłączonym)?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-type">input bez [type]</h2>
+          <h3>Opis</h3>
+<p><code>&lt;input&gt;</code> potrzebuje <code>[type]</code>, aby powiedzieć użytkownikowi, jaki rodzaj danych jest pożądany.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-11">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-11</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#minimize-error-suggestions">https://www.w3.org/TR/WCAG20/#minimize-error-suggestions</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">input</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[type]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+input[type=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+input[type=<span class="token string">""</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><label for="No-type">Brak type</label>
+<input value="Cokolwiek chcesz" id="No-type"/><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>No-type<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Brak type<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Cokolwiek chcesz<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>No-type<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="optgroup">optgroup bez label</h2>
+          <h3>Opis</h3>
+<p><code>&lt;optgroup&gt;</code> potrzebuje <code>[label]</code>, aby wyjaśnić, co jest wewnątrz grupy.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-8">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-8</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H85.html">https://www.w3.org/TR/WCAG-TECHS/H85.html</a></li>
+<li><a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85">https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">optgroup</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[label]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><form action="/">
+    <label for="optgroup-test">Oh, hej</label>
+    <select id="optgroup-test">
+      <optgroup label="Jestem grupą">
+        <option value="1">Jestem opcją</option>
+        <option value="2">Jestem kolejną opcją</option>
+      </optgroup>
+      <optgroup>
+        <option value="3">Jestem opcją, ale z następnej grupy</option>
+        <option value="4">Ja też jestem inną opcją, ale z następnej grupy</option>
+     </optgroup>
+   </select>
+</form>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>optgroup-test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Oh, hej<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>optgroup-test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optgroup</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Jestem grupą<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Jestem opcją<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Jestem kolejną opcją<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optgroup</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optgroup</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Jestem opcją, ale z następnej grupy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Ja też jestem inną opcją, ale z następnej grupy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optgroup</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-title">iframe bez [title]</h2>
+          <h3>Opis</h3>
+<p><code>&lt;iframe&gt;</code> potrzebuje <code>[title]</code>, aby powiedzieć użytkownikowi, czego może się spodziewać w ramce.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-2-1">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-2-1</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H64.html">https://www.w3.org/TR/WCAG-TECHS/H64.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">iframe</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+iframe[title=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+iframe[title=<span class="token string">""</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><iframe srcdoc="<!DOCTYPE html><title>Brak [title]</title>"></iframe><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>&lt;title>Brak [title]&lt;/title><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-action">Formularz bez [action]</h2>
+          <h3>Opis</h3>
+<p>Przyznasz, że <code>&lt;form&gt;</code> powinien coś robić. Czyż nie?  Właśnie, a <code>[action]</code> ma za zadanie określić co.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">form</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[action]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+form[action=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+form[action=<span class="token string">""</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><form>
+  <label for="input">Zgadnij, co zrobimy z Twoimi danymi?</label>
+  <input id="input" type="text" />
+
+  <input type="submit" value="Nie mam pojęcia, co?"/>
+</form>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Zgadnij, co zrobimy z Twoimi danymi?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Nie mam pojęcia, co?<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-lang">Język określony nieprawidłowo</h2>
+          <h3>Opis</h3>
+<p><code>&lt;html&gt;</code> musi wskazywać programom użytkownika naturalny język dokumentu.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-3">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-3</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/glossaire.html#langue-par-dfaut">https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/glossaire.html#langue-par-dfaut</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-4">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-4</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id">https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H57.html">https://www.w3.org/TR/WCAG-TECHS/H57.html</a></li>
+<li><a href="https://html.spec.whatwg.org/#attr-lang">https://html.spec.whatwg.org/#attr-lang</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-page">https://www.w3.org/WAI/WCAG21/Understanding/language-of-page</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html</a></li>
+<li><a href="https://www.matuzo.at/blog/lang-attribute/">https://www.matuzo.at/blog/lang-attribute/</a></li>
+<li><a href="https://codepen.io/matuzo/project/editor/ZyrVee">https://codepen.io/matuzo/project/editor/ZyrVee</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">html</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[lang]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+html[lang*=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+html[lang=<span class="token string">""</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><iframe title="Przykład nieokreślonego języka" srcdoc="<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Je ne parle pas Français</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <ul>
+        <li>Speak French?</li>
+        <li>Habla usted francés?</li>
+        <li>Sprechen Sie Französisch?</li>
+    </ul>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Przykład nieokreślonego języka<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+      &lt;meta charset=<span class="token punctuation">'</span>utf-8<span class="token punctuation">'</span>/>
+      &lt;title>Je ne parle pas Français&lt;/title>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=<span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span> type=<span class="token punctuation">'</span>text/css<span class="token punctuation">'</span> href=<span class="token punctuation">'</span>https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css<span class="token punctuation">'</span>>
+    &lt;/head>
+    &lt;body>
+      &lt;ul>
+        &lt;li>Speak French?&lt;/li>
+        &lt;li>Habla usted francés?&lt;/li>
+        &lt;li>Sprechen Sie Französisch?&lt;/li>
+    &lt;/ul><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="table-for-layout">Tabela układu</h2>
+          <h3>Opis</h3>
+<p>Element <code>&lt;table&gt;</code> może być użyty do układu, jeśli dodana jest <code>[role="presentation"]</code>.</p>
+<p>Nie wolno jednak używać znaczników semantyki oraz atrybutów mających na celu uporządkowanie danych. Oto ich lista:</p>
+<ul>
+<li><code>&lt;th&gt;</code>;</li>
+<li><code>&lt;thead&gt;</code>;</li>
+<li><code>&lt;tfoot&gt;</code>;</li>
+<li><code>&lt;caption&gt;</code>;</li>
+<li><code>[axis]</code>;</li>
+<li><code>[scope]</code>;</li>
+<li><code>[headers]</code>;</li>
+<li><code>[colgroup]</code>.</li>
+</ul>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-5-8">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-5-8</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F46.html">https://www.w3.org/TR/WCAG-TECHS/F46.html</a></li>
+<li><a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49">https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49</a></li>
+<li><a href="https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic">https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">table[role=<span class="token string">"presentation"</span>] th<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] thead<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] tfoot<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] caption<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] colgroup<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] [axis]<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] [scope]<span class="token punctuation">,</span>
+table[role=<span class="token string">"presentation"</span>] [headers]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><table role="presentation">
+  <caption>Ja nic nie znaczę! Nie powinno mnie tu być!</caption>
+  <tbody>
+    <tr>
+      <td colspan="2">To działa</td>
+    </tr>
+  </tbody>
+</table>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>presentation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">></span></span>Ja nic nie znaczę! Nie powinno mnie tu być!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">colspan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>To działa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="dimensions">Atrybuty [width] i [height]</h2>
+          <h3>Opis</h3>
+<p><code>[width]</code> i <code>[height]</code> są informacjami o prezentacji (o wyglądzie).
+Dlatego nie powinny być używane w znacznikach, poza <code>&lt;img&gt;</code>.
+Zamiast tego używaj CSS.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#presentation">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#presentation</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-10-1-">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-10-1-</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>embed<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>svg<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span>[width]<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>embed<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>svg<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span>[height]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><p width="20">Cholera! Źle się czuję :(</p>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Cholera! Źle się czuję :(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="js-events">Atrybut zdarzenia Javascript</h2>
+          <h3>Opis</h3>
+<p>Atrybuty zdarzeń Javascript (takie jak <code>[onmouseover]</code>) nie powinny być używane.
+Preferuj albo pseudo-klasy CSS (<code>:hover</code>, <code>:focus</code>, <code>:active</code>, etc.) albo obserwatory zdarzeń JS.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[onafterprint]<span class="token punctuation">,</span> [onbeforeprint]<span class="token punctuation">,</span> [onbeforeunload]<span class="token punctuation">,</span>
+[onerror]<span class="token punctuation">,</span> [onhaschange]<span class="token punctuation">,</span> [onload]<span class="token punctuation">,</span> [onmessage]<span class="token punctuation">,</span>
+[onoffline]<span class="token punctuation">,</span> [ononline]<span class="token punctuation">,</span> [onpagehide]<span class="token punctuation">,</span> [onpageshow]<span class="token punctuation">,</span>
+[onpopstate]<span class="token punctuation">,</span> [onredo]<span class="token punctuation">,</span> [onresize]<span class="token punctuation">,</span> [onstorage]<span class="token punctuation">,</span>
+[onundo]<span class="token punctuation">,</span> [onunload]<span class="token punctuation">,</span>
+[onblur]<span class="token punctuation">,</span> [onchage]<span class="token punctuation">,</span> [oncontextmenu]<span class="token punctuation">,</span> [onfocus]<span class="token punctuation">,</span>
+[onformchange]<span class="token punctuation">,</span> [onforminput]<span class="token punctuation">,</span> [oninput]<span class="token punctuation">,</span> [oninvalid]<span class="token punctuation">,</span>
+[onreset]<span class="token punctuation">,</span> [onselect]<span class="token punctuation">,</span> [onsubmit]<span class="token punctuation">,</span>
+[onkeydown]<span class="token punctuation">,</span> [onkeypress]<span class="token punctuation">,</span> [onkeyup]<span class="token punctuation">,</span>
+[onclick]<span class="token punctuation">,</span> [ondblclick]<span class="token punctuation">,</span> [ondrag]<span class="token punctuation">,</span> [ondragend]<span class="token punctuation">,</span>
+[ondragenter]<span class="token punctuation">,</span> [ondragleave]<span class="token punctuation">,</span> [ondragover]<span class="token punctuation">,</span>
+[ondragstart]<span class="token punctuation">,</span> [ondrop]<span class="token punctuation">,</span> [onmousedown]<span class="token punctuation">,</span> [onmousemove]<span class="token punctuation">,</span>
+[onmouseout]<span class="token punctuation">,</span> [onmouseover]<span class="token punctuation">,</span> [onmouseup]<span class="token punctuation">,</span> [onmousewheel]<span class="token punctuation">,</span>
+[onscroll]<span class="token punctuation">,</span>
+[onabort]<span class="token punctuation">,</span> [oncanplay]<span class="token punctuation">,</span> [oncanplaythrough]<span class="token punctuation">,</span>
+[ondurationchange]<span class="token punctuation">,</span> [onemptied]<span class="token punctuation">,</span> [onended]<span class="token punctuation">,</span> [onerror]<span class="token punctuation">,</span>
+[onloadeddata]<span class="token punctuation">,</span> [onloadedmetadata]<span class="token punctuation">,</span> [onloadstart]<span class="token punctuation">,</span>
+[onpause]<span class="token punctuation">,</span> [onplay]<span class="token punctuation">,</span> [onplaying]<span class="token punctuation">,</span> [onprogress]<span class="token punctuation">,</span>
+[onratechange]<span class="token punctuation">,</span> [onreadystatechange]<span class="token punctuation">,</span> [onseeked]<span class="token punctuation">,</span>
+[onseeking]<span class="token punctuation">,</span> [onstalled]<span class="token punctuation">,</span> [onsuspend]<span class="token punctuation">,</span> [ontimeupdate]<span class="token punctuation">,</span>
+[onvolumechange]<span class="token punctuation">,</span> [onwaiting]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><span onclick="alert('Kliknięte!');">Kliknij kliknij kliknij</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Kliknięte!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Kliknij kliknij kliknij<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="namespace">Przestrzeń nazw</h2>
+          <h3>Opis</h3>
+<p>Czy wiesz, że niektórych znaków należy unikać jako pierwszych znaków w nazwach klas i identyfikatorach CSS?
+Tak - cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar">https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar</a></li>
+<li><a href="https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/">https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/</a></li>
+<li><a href="https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html">https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[id^=<span class="token string">"1"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"2"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"3"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"4"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"5"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"6"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"7"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"8"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"9"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"0"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"--"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-1"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-2"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-3"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-4"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-5"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-6"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-7"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-8"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-9"</span>]<span class="token punctuation">,</span>
+[id^=<span class="token string">"-0"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"1"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"2"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"3"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"4"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"5"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"6"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"7"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"8"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"9"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"0"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"--"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-1"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-2"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-3"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-4"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-5"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-6"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-7"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-8"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-9"</span>]<span class="token punctuation">,</span>
+[class^=<span class="token string">"-0"</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><div id="2">Witam! Moje ID to 2.</div>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Witam! Moje ID to 2.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="no-page-title">Pusty znacznik title</h2>
+          <h3>Opis</h3>
+<p>Znacznik <code>&lt;title&gt;</code> jest pierwszą rzeczą czytaną na głos przez czytniki ekranu - aby ogłosić&hellip; tytuł strony - a także pierwszą rzeczą wyświetlaną na stronach wyników wyszukiwarek.</p>
+<p>Moglibyśmy użyć pseudoklasy <code>:blank</code>, ale w tym momencie jej obsługa jest bardzo słaba. Moglibyśmy również użyć pseudoklasy <code>:-moz-only-whitespace</code>, ale jej obsługa jest ograniczona do Firefoksa, co mogłoby spowodować niepoprawność naszego stosu selektorów…</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-5">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-5</a></li>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/glossaire.html#titrePage">https://rgaa.lepszyweb.pl/pl/rgaa/glossaire.html#titrePage</a></li>
+<li><a href="https://www.w3.org/TR/html5/document-metadata.html#the-title-element">https://www.w3.org/TR/html5/document-metadata.html#the-title-element</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title">https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title</a></li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/G88.html">https://www.w3.org/TR/WCAG-TECHS/G88.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/G127.html">https://www.w3.org/TR/WCAG-TECHS/G127.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H25.html">https://www.w3.org/TR/WCAG-TECHS/H25.html</a></li>
+<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
+<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">title</span><span class="token punctuation">:</span>empty
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><title></title>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="unaccessible-viewport">Niedostępny atrybut viewport</h2>
+          <h3>Opis</h3>
+<p>Użytkownik powinien mieć możliwość powiększania lub pomniejszania strony, aby poprawić czytelność i wygodę; jest to zwykle dozwolone w <code>&lt;meta&gt;</code> viewport.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://bitsofco.de/linting-html-using-css/">https://bitsofco.de/linting-html-using-css/</a></li>
+<li><a href="https://dequeuniversity.com/rules/axe/2.1/meta-viewport">https://dequeuniversity.com/rules/axe/2.1/meta-viewport</a></li>
+<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale</a></li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html</a></li>
+<li><a href="https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/">https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/</a></li>
+<li><a href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">https://adrianroselli.com/2015/10/dont-disable-zoom.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">meta[name=<span class="token string">"viewport"</span>][content*=<span class="token string">"maximum-scale"</span>]<span class="token punctuation">,</span>
+meta[name=<span class="token string">"viewport"</span>][content*=<span class="token string">"minimum-scale"</span>]<span class="token punctuation">,</span>
+meta[name=<span class="token string">"viewport"</span>][content*=<span class="token string">"user-scalable=no"</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><iframe title="Przykład złej instrukcji viewport" srcdoc="<!DOCTYPE html>
+  <html lang='pl'>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Przykład złej instrukcji viewport</title>
+      <meta name='viewport' content='user-scalable=no'/>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <h1>Zła instrukcja <code>viewport</code></h1>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Przykład złej instrukcji viewport<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html lang=<span class="token punctuation">'</span>pl<span class="token punctuation">'</span>>
+    &lt;head>
+      &lt;meta charset=<span class="token punctuation">'</span>utf-8<span class="token punctuation">'</span>/>
+      &lt;title>Przykład złej instrukcji viewport&lt;/title>
+      &lt;meta name=<span class="token punctuation">'</span>viewport<span class="token punctuation">'</span> content=<span class="token punctuation">'</span>user-scalable=no<span class="token punctuation">'</span>/>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=<span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span> type=<span class="token punctuation">'</span>text/css<span class="token punctuation">'</span> href=<span class="token punctuation">'</span>https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css<span class="token punctuation">'</span>>
+    &lt;/head>
+    &lt;body>
+      &lt;h1>Zła instrukcja &lt;code>viewport&lt;/code>&lt;/h1><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="incorrect-charset">Niewłaściwy charset</h2>
+          <h3>Opis</h3>
+<p>Używanie kodowania znaków <code>utf-8</code> jest zalecane przez samo W3C:</p>
+<blockquote>
+  <p>obsługuje wiele języków i może obsługiwać strony i formularze w dowolnej mieszance tych języków.</p>
+</blockquote>
+<p>Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wykorzystywanych przez inne zestawy znaków…</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
+<li><a href="https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset">https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</a></li>
+<li><a href="https://validator.w3.org/docs/help.html#faq-charset">https://validator.w3.org/docs/help.html#faq-charset</a></li>
+<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning</a></li>
+<li><a href="https://validator.w3.org/i18n-checker/">https://validator.w3.org/i18n-checker/</a></li>
+<li><a href="https://www.w3.org/International/tutorials/tutorial-char-enc/">https://www.w3.org/International/tutorials/tutorial-char-enc/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">meta[charset]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[charset=<span class="token string">"utf-8"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[charset=<span class="token string">"UTF-8"</span>]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><meta charset="Windows-1252"/><link>†</link>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Windows-1252<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="late-charset">Charset powinien być w head pierwszy</h2>
+          <h3>Opis</h3>
+<p>Jak wyjaśniono na Mozilla Developer Network:</p>
+<blockquote>
+  <p>Element <code>&lt;meta&gt;</code> deklarujący kodowanie musi znajdować się wewnątrz elementu <code>&lt;head&gt;</code>
+  i <strong>w obrębie pierwszych 1024 bajtów</strong> HTML, ponieważ niektóre przeglądarki
+  patrzą tylko na te bajty przed wyborem kodowania.</p>
+</blockquote>
+<p>Ma to również na celu zapobieżenie staremu eksploitowi bezpieczeństwa wykorzystującemu UTF-7. Zadeklarowanie zestawu znaków przed znacznikiem <code>&lt;title&gt;</code> jest najprostszym sposobem, aby to ukryć.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</a></li>
+<li><a href="https://w3c.github.io/html/document-metadata.html#charset">https://w3c.github.io/html/document-metadata.html#charset</a></li>
+<li><a href="https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html">https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">head</span> <span class="token punctuation">:</span><span class="token property">first-child</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[charset]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><iframe title="Spóźnione ustawienie strony kodowej" srcdoc="<!DOCTYPE html>
+  <html lang=en>
+    <head>
+      <title>Oups !</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    </head>
+    <body>
+      <h1>Jak jestem zakodowany, kolego?</h1>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Spóźnione ustawienie strony kodowej<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html lang=en>
+    &lt;head>
+      &lt;title>Oups !&lt;/title>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    &lt;/head>
+    &lt;body>
+      &lt;h1>Jak jestem zakodowany, kolego?&lt;/h1><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="invalid-dir">Niepoprawny atrybut [dir]</h2>
+          <h3>Opis</h3>
+<p>Atrybut  <code>[dir]</code> służący do określenia kierunku tekstu elementu - przyjmuje tylko trzy wartości: <code>rtl</code>, <code>ltr</code> oraz <code>auto</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113</a></li>
+<li><a href="https://www.w3.org/International/questions/qa-html-dir">https://www.w3.org/International/questions/qa-html-dir</a></li>
+<li><a href="https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute">https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute</a></li>
+<li><a href="https://w3c.github.io/html/dom.html#the-dir-attribute">https://w3c.github.io/html/dom.html#the-dir-attribute</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[dir]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[dir=<span class="token string">"rtl"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[dir=<span class="token string">"ltr"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[dir=<span class="token string">"auto"</span>]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><p dir="wtf">Cóż, jestem trochę zdezorientowany…</p>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wtf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Cóż, jestem trochę zdezorientowany…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="accesskey">[accesskey] to zły pomysł</h2>
+          <h3>Opis</h3>
+<p>Atrybut <code>[accesskey]</code> jest przeznaczony do implementacji skrótów klawiaturowych specyficznych dla danej witryny.
+Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już używane przez system operacyjny, przeglądarkę, rozszerzenie przeglądarki, a nawet ustawienia użytkownika…</p>
+<p>To jest opinia: w idealnym świecie <code>[accesskey]</code> może być używany mądrze. Yup. Być może.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159</a></li>
+<li><a href="https://www.cs.tut.fi/~jkorpela/forms/accesskey.html">https://www.cs.tut.fi/~jkorpela/forms/accesskey.html</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey</a></li>
+<li><a href="https://w3c.github.io/html/editing.html#element-attrdef-global-accesskey">https://w3c.github.io/html/editing.html#element-attrdef-global-accesskey</a></li>
+<li><a href="https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/">https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/</a></li>
+<li><a href="https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html">https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[accesskey]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><a id="key" name="key" accesskey="1">Przejdź do tego łącza, używając <kbd>1</kbd></a>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span> <span class="token attr-name">accesskey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Przejdź do tego łącza, używając <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="inputs-group">Grupowanie pól</h2>
+          <h3>Opis</h3>
+<p>Pola typu <code>radio</code> lub <code>checkbox</code> są zwykle zgrupowane. Atrybut <code>[name]</code> służy do ich programowego powiązania, dlatego jest potrzebny.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/grouping/">https://www.w3.org/WAI/tutorials/forms/grouping/</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox">https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio">https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name">https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H71.html">https://www.w3.org/TR/WCAG-TECHS/H71.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[type=<span class="token string">"radio"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[name]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[type=<span class="token string">"checkbox"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>only-of-type<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[name]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><form action="/">
+  <fieldset>
+    <legend>Opcje</legend>
+    <p>
+      <label for="option-1">Opcja N<sup>o</sup>1</label>
+      <input type="radio" id="option-1"><span>†</span>
+    </p>
+    <p>
+      <label for="option-2">Opcja N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options">
+    </p>
+  </fieldset>
+</form>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Opcje<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Opcja N<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sup</span><span class="token punctuation">></span></span>o<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sup</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Opcja N<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sup</span><span class="token punctuation">></span></span>o<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sup</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-2<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>options<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="radio-group">[radio] poza fieldset</h2>
+          <h3>Opis</h3>
+<p>Pola typu <code>radio</code> powinny być zgrupowane przez nadrzędny <code>&lt;fieldset&gt;</code>, opisany przez jego <code>&lt;legend&gt;</code>.</p>
+<p>Zauważ, że WCAG tego nie wymaga, ale zdecydowanie zaleca: &bdquo;w przypadku, gdy indywidualna etykieta związana z każdą konkretną kontrolą zapewnia wystarczający opis, użycie elementów fieldset i legend nie jest wymagane&rdquo;</p>
+<p>Ten test może być ostrzeżeniem…</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons">https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio">https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name">https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H71.html">https://www.w3.org/TR/WCAG-TECHS/H71.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[type=<span class="token string">"radio"</span>]
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><form action="/">
+  <p>
+    <label for="option-1">Opcja nr 1</label>
+    <input type="radio" id="option-1" name="options"><span>†</span>
+  </p>
+
+  <br>
+
+  <fieldset>
+    <legend>Próba w zestawie pól, nie powinna być dopasowana</legend>
+    <p>
+      <label for="option-2">Opcja nr 2</label>
+      <input type="radio" id="option-2" name="options"><span>†</span>
+    </p>
+  </fieldset>
+</form>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Opcja nr 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>options<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Próba w zestawie pól, nie powinna być dopasowana<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Opcja nr 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option-2<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>options<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="role-slider">[role=slider] - brak atrybutów</h2>
+          <h3>Opis</h3>
+<p>Element z <code>[role="slider"]</code> wymaga kilku atrybutów:</p>
+<ul>
+<li><code>[aria-valuemin]</code></li>
+<li><code>[aria-valuemax]</code></li>
+<li><code>[aria-valuenow]</code></li>
+</ul>
+<p>Również <code>[aria-valuetext]</code> jest mile widziany, mimo że nie jest wymagany przez specyfikację ARIA.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378">https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#slider">https://www.w3.org/TR/wai-aria/roles#slider</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://www.oaa-accessibility.org/examplep/slider1/">https://www.oaa-accessibility.org/examplep/slider1/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/">https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"slider"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemin]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"slider"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemax]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"slider"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuenow]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><label for="slider">Slider</label>
+<input id="slider" role="slider" type="range" /><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slider<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Slider<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slider<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slider<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>range<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="role-spinbutton">[role=spinbutton] wymaga atrybutów</h2>
+          <h3>Opis</h3>
+<p>Element z [role=spinbutton] wymaga kilku atrybutów::</p>
+<ul>
+<li><code>[aria-valuemin]</code></li>
+<li><code>[aria-valuemax]</code></li>
+<li><code>[aria-valuenow]</code></li>
+</ul>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#spinbutton">https://www.w3.org/TR/wai-aria/roles#spinbutton</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://oaa-accessibility.org/example/33/">https://oaa-accessibility.org/example/33/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"spinbutton"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemin]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"spinbutton"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemax]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"spinbutton"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuenow]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><label for="spinbutton">Spinbutton</label>
+<input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>spinbutton<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Spinbutton<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>spinbutton<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>spinbutton<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>range<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="role-checkbox">[role=checkbox] nie ma stanu</h2>
+          <h3>Opis</h3>
+<p>Element z <code>[role="checkbox"]</code> wymaga atrybutu stanu <code>[aria-checked]</code></p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#checkbox">https://www.w3.org/TR/wai-aria/roles#checkbox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked">https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked</a></li>
+<li><a href="https://oaa-accessibility.org/examples/role/76/">https://oaa-accessibility.org/examples/role/76/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"checkbox"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-checked]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><img src="./static/ffoodd.png" alt="Pole wyboru" role="checkbox" width="36" height="36"/><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Pole wyboru<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>36<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>36<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="role-combobox">[role=combobox] nie ma [state]</h2>
+          <h3>Opis</h3>
+<p>Element z <code>[role="combobox"]</code> wymaga atrybutu stanu <code>[aria-expanded]</code>.</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#combobox">https://www.w3.org/TR/wai-aria/roles#combobox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded</a></li>
+<li><a href="https://oaa-accessibility.org/examples/role/77/">https://oaa-accessibility.org/examples/role/77/</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"combobox"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-expanded]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><input type="text" aria-label="Pole złożone" role="combobox" id="combobox"><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Pole złożone<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>combobox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>combobox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="role-scrollbar">[role=scrollbar] wymaga właściwości</h2>
+          <h3>Opis</h3>
+<p>Niektóre właściwości muszą być zgodne z wzorcem projektowym <code>[role="scrollbar"]</code>:</p>
+<ul>
+<li><code>[aria-controls]</code></li>
+<li><code>[aria-valuemin]</code></li>
+<li><code>[aria-valuemax]</code></li>
+<li><code>[aria-valuenow]</code></li>
+<li><code>[aria-orientation]</code></li>
+</ul>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#scrollbar">https://www.w3.org/TR/wai-aria/roles#scrollbar</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation">https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-controls]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemin]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemax]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuenow]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-orientation]<span class="token punctuation">)</span>
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><div role="scrollbar">↓</div>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scrollbar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>↓<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+        <article>
+          <h2 id="nested-interactive">Zagnieżdżony element interaktywny</h2>
+          <h3>Opis</h3>
+<p>Element interaktywny nie może być umieszczony w innym elemencie interaktywnym (np. <code>&lt;a&gt;</code> w <code>&lt;button&gt;</code>).</p>
+<h3>Bibliografia</h3>
+<ul>
+<li><a href="https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-2">https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-2</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-parses">https://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/xhtml1/#prohibitions">https://www.w3.org/TR/xhtml1/#prohibitions</a></li>
+<li><a href="https://w3c.github.io/html/dom.html#interactive-content-2">https://w3c.github.io/html/dom.html#interactive-content-2</a></li>
+<li><a href="https://w3c.github.io/html/sec-forms.html#the-form-element">https://w3c.github.io/html/sec-forms.html#the-form-element</a></li>
+<li><a href="https://w3c.github.io/html/sec-forms.html#the-progress-element">https://w3c.github.io/html/sec-forms.html#the-progress-element</a></li>
+<li><a href="https://w3c.github.io/html/sec-forms.html#the-meter-element">https://w3c.github.io/html/sec-forms.html#the-meter-element</a></li>
+<li><a href="https://w3c.github.io/html/sec-forms.html#the-button-element">https://w3c.github.io/html/sec-forms.html#the-button-element</a></li>
+<li><a href="https://w3c.github.io/html/textlevel-semantics.html#the-a-element">https://w3c.github.io/html/textlevel-semantics.html#the-a-element</a></li>
+<li><a href="https://w3c.github.io/html/sec-forms.html#the-label-element">https://w3c.github.io/html/sec-forms.html#the-label-element</a></li>
+</ul>
+<h3>Selektor</h3>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">a a[href]<span class="token punctuation">,</span>
+button a[href]<span class="token punctuation">,</span>
+a audio[controls]<span class="token punctuation">,</span>
+button audio[controls]<span class="token punctuation">,</span>
+a video[controls]<span class="token punctuation">,</span>
+button video[controls]<span class="token punctuation">,</span>
+a button<span class="token punctuation">,</span>
+button button<span class="token punctuation">,</span>
+a details<span class="token punctuation">,</span>
+button details<span class="token punctuation">,</span>
+a embed<span class="token punctuation">,</span>
+button embed<span class="token punctuation">,</span>
+a iframe<span class="token punctuation">,</span>
+button iframe<span class="token punctuation">,</span>
+a img[usemap]<span class="token punctuation">,</span>
+button img[usemap]<span class="token punctuation">,</span>
+a label<span class="token punctuation">,</span>
+button label<span class="token punctuation">,</span>
+a select<span class="token punctuation">,</span>
+button select<span class="token punctuation">,</span>
+a textarea<span class="token punctuation">,</span>
+button textarea<span class="token punctuation">,</span>
+a input[type]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[hidden]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+button input[type]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[hidden]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+form form<span class="token punctuation">,</span>
+label label<span class="token punctuation">,</span>
+meter meter<span class="token punctuation">,</span>
+progress progress
+</code></pre></div>
+<h3>Test</h3>
+<div class="pre"><div><a href="https://lepszyweb.pl">
+  <button type=button">Chwila, co mam uruchomić?</button>
+</a>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://lepszyweb.pl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  &lt;button type=button">Chwila, co mam uruchomić?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre></div>
+        </article>
+      
+    
+
+
+      
+    </main>
+    <footer role="contentinfo">
+  <p class="builtWith box">
+      Zbudowane za pomocą
+      <a href="https://www.11ty.dev/">
+        Eleventy
+        <span class="sr-only">&nbsp;(łącze zewnętrzne)</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
+  <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+  <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+</svg>-
+      </a>
+    </p>
+    <div>
+      <p>® 2014 —&nbsp;2022 <strong>Gaël Poupard</strong><br/>® 2021 —&nbsp;2022 <strong>Pracownia Dostępności Cyfrowej LepszyWeb.pl</strong></p>
+      <p>Licencja: <a href="https://opensource.org/licenses/MIT">MIT</a> i <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+      <br><a href="#skip-links">Wróć na początek</a></p>
+    </div>
+</footer>
+
+    <script src="./static/docs.js?v=1661445028198"></script>
+  </body>
+</html>
