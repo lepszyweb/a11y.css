@@ -19,7 +19,7 @@ Masz co najmniej trzy możliwości. Możesz skorzystać z rozszerzenia przegląd
 
 ### Rozszerzenie przeglądarki
 
-Niezależnie od tego, której przeglądarki używasz, zainstaluj używasz <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">a11y.css dla Firefoksa&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>, albo <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">a11y.css dla dla Chrome&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>.
+Niezależnie od tego, której przeglądarki używasz, zainstaluj używasz <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">a11y.css dla Firefoksa&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>, albo <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">a11y.css dla Chrome&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>.
 
 Zapewnia ono kilka fajnych funkcji, których nie ma w głównym pliku CSS (na razie), takich jak:
 
