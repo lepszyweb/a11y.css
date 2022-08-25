@@ -1,24 +1,28 @@
 a11y.css
 ========
 
-Wymawiaj &bdquo;Alix&rdquo;. Bo tak prościej!
+Wymawiaj „Alix”. Bo tak prościej!
 
 [![GitHub version](https://badge.fury.io/gh/ffoodd%2Fa11y.css.svg)](https://badge.fury.io/gh/ffoodd%2Fa11y.css)
 
 ## Co to jest?
 
-Jest to specjalnie skonfigurowany plik CSS, który ma na celu ostrzeganie programistów o *możliwych błędach i&nbsp;zagrożeniach* w kodzie HTML. Może posłużyć do przybliżonej oceny jakości strony przez proste dołączenie go do strony jako zewnętrznego arkusza stylów.
+Jest to specjalnie skonfigurowany plik CSS, który ma na celu ostrzeganie programistów o *możliwych błędach i&nbsp;zagrożeniach* w kodzie HTML. Może również posłużyć do przybliżonej oceny jakości strony przez proste dołączenie go jako zewnętrznego arkusza stylów.
+
+**a11y.css** niczego na przeglądanej stronie nie zmienia. Powoduje tylko, że od momentu jej uaktywnienia do odświeżenia strony, przeglądarka stosuje do odtworzenia strony dodatkowy arkusz stylów, który oznacza błędy występujące w kodzie HTML strony i miejsca, które mogą powodować problemy. 
 
 Po uruchamianiu `a11y.css` obok każdego z podejrzanych elementów pojawia się wskazówka sygnalizująca, co się dzieje. 
 
 > Zważ przy tym, że *a11y.css nie zastępuje kompletnego narzędzia, takiego jak [aXe](https://www.deque.com/products/axe/), [Tanaguru](http://www.tanaguru.com/en/) czy [Tenon](http://tenon.io/). Ma on jedynie na celu pokazać możliwe słabości. Oczywiście, aby wiedzieć na pewno, czy kod powinien, czy nie powinien zostać poprawiony, trzeba go sprawdzić ręcznie.*
 
 
-## Jak korzystać z a11y.css?
+## Jak stosować a11y.css?
+
+Masz co najmniej trzy możliwości. Możesz skorzystać z rozszerzenia przeglądarki albo ze skryptozakładek, albo użyć **a11y.css** lub jego wariacji jako zewnętrznego arkusza stylów. 
 
 ### Rozszerzenie przeglądarki
 
-Jeśli używasz [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/) lub [Chrome](https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en), zainstaluj i&nbsp;używaj rozszerzenia przeglądarki **a11y.css**.
+Niezależnie od tego, której przeglądarki używasz, zainstaluj używasz <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">a11y.css dla Firefoksa&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>, albo <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">a11y.css dla dla Chrome&nbsp;<span class="sr-only">(łącze zewnętrzne)</span>{% include "icons/external-link.svg" %}</a>.
 
 Zapewnia ono kilka fajnych funkcji, których póki co nie ma w pliku CSS, takich jak:
 
@@ -35,9 +39,7 @@ Ponadto rozszerzenie przeglądarek umożliwiają:
 
 ### Skryptozakładka
 
-Możesz użyć głównego pliku **a11y.css** albo jego wariacji jako skryptozakładki. Na polskiej stronie projektu w bocznym pasku umieściliśmy kilka przycisków, za pomocą których możesz dodać do swoich zakładek w przeglądarce. Gdy wejdziesz na stronę, którą chcesz zbadać, wystarczy wywołać łącze zakładki. Gdy skończysz badanie, po prostu odśwież stronę. 
-
-Skryptozakładka niczego nie zmienia na przeglądanej stronie. Powoduje jedynie, że od momentu jej uaktywnienia do odświeżenia strony, przeglądarka stosuje do odtworzenia strony dodatkowy arkusz stylów, który oznacza błędy występujące w kodzie HTML strony i miejsca, które mogą powodować problemy.   
+Możesz użyć głównego pliku **a11y.css** albo jego wariacji jako skryptozakładki. Na polskiej stronie projektu w bocznym pasku umieściliśmy kilka przycisków, za pomocą których możesz dodać **a11y.css** do swoich zakładek w przeglądarce. Gdy wejdziesz na stronę, którą chcesz zbadać, wystarczy wywołać łącze zakładki. Gdy skończysz badanie, po prostu odśwież stronę. 
 
 #### Zastrzeżenia dotyczące zakładki
 
@@ -49,6 +51,10 @@ Chcesz wiedzieć więcej o CSP i CORS? Przeczytaj:
 
 * [Czym jest Content Security Policy?](https://sekurak.pl/czym-jest-content-security-policy/)
 * [Czym jest CORS i jak wpływa na bezpieczeństwo](https://sekurak.pl/czym-jest-cors-cross-origin-resource-sharing-i-jak-wplywa-na-bezpieczenstwo/) 
+
+*** Zewnętrzny plik css
+
+Tworzysz stronę? Dodaj **a11y.css** jako zewnętrzy arkusz stylów. Efekt, ręczę, będzie czasem trudno znieść. I dlatego poprawisz wykryte usterki, a Twoja strona będzie wzorem poprawności. 
 
 ## Wkład
 
