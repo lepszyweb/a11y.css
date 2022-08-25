@@ -5,8 +5,7 @@ on:
   push:
     branches:
       - main-pl
-    branches-ignore:
-      - "dependabot/**"
+      - "!dependabot/**"
   pull_request:
     types:
       - opened
