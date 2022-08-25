@@ -1,16 +1,7 @@
 name: Docs
 
 on:
-  push:
-    branches-ignore:
-      - "dependabot/**"
-  pull_request:
-    types:
-      - opened
-      - synchronize
-    branches:
-      - main-pl
-      - "!dependabot/**"
+  workflow_dispatch:
 
 env:
   FORCE_COLOR: 2
