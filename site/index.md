@@ -34,11 +34,11 @@ Ponadto rozszerzenia przeglądarek umożliwiają:
 * zapamiętywanie ustawień dla każdej karty,
 * automatyczną aktualizację w tle.
 
-*** Skryptozakładki 
+### Skryptozakładki 
 
 Skryptozakładki to również dobra opcja. Możesz ich użyć w każdej przeglądarce. Możesz je dodać do swojej ulubionej przeglądarki, korzystając z przycisków na bocznym pasku. Do dyspozycji masz 4 warianty.
 
-*** Zewnętrzny plik css
+### Zewnętrzny plik css
 
 Tworzysz stronę? Dodaj **a11y.css** jako zewnętrzy arkusz stylów. Efekt, ręczę, będzie czasem trudno znieść. I dlatego poprawisz wykryte usterki, a Twoja strona będzie wzorem poprawności.  
 
