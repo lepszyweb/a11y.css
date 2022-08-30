@@ -51,7 +51,7 @@ Atrybut <code>[tabindex]</code> nigdy nie powinien być większy niż 0.
 
 ### Bibliografia
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-12-13>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-12-13>
 * <https://www.w3.org/TR/WCAG-TECHS/F44.html>
 * <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
 
@@ -118,7 +118,7 @@ Puste łącze powinno mieć etykietę wewnątrz <code>[title]</code>, <code>[ari
 Przy okazji, po co miałbyś używać pustego łącza?
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-6-5>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-6-5>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
@@ -158,7 +158,7 @@ category: Błędy
 `<img>` musi mieć <code>[alt]</code>. Zawsze.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-1-1>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
@@ -352,7 +352,7 @@ category: Błędy
 Jak oznaczyć pole? Masz kilka opcji do wyboru: <code>[id]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-1>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-1>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -389,7 +389,7 @@ Jak oznaczyć etykietą pożąane dane wejściowe typu <code>[reset]</code>, <co
 Zawsze masz kilka opcji do wyboru: <code>[value]</code>, <code>[title]</code>, <code>[aria-label]</code> oraz <code>[aria-labelledby]</code>.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 
@@ -424,7 +424,7 @@ Przycisk `<button>` powinien mieć albo zawartość albo atrybut <code>[aria-lab
 
 ### Bibliografia
 * <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -456,7 +456,7 @@ Atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[tit
 
 ### Bibliografia
 * <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -611,7 +611,7 @@ category: Błędy
 `<input>` potrzebuje <code>[type]</code>, aby powiedzieć użytkownikowi, jaki rodzaj danych jest pożądany.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-11>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-11>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ### Selektor
@@ -645,7 +645,7 @@ category: Błędy
 `<optgroup>` potrzebuje <code>[label]</code>, aby wyjaśnić, co jest wewnątrz grupy.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-11-8>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-8>
 * <https://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
@@ -687,7 +687,7 @@ category: Błędy
 `<iframe>` potrzebuje <code>[title]</code>, aby powiedzieć użytkownikowi, czego może się spodziewać w ramce.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-2-1>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-2-1>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H64.html>
 
@@ -758,9 +758,9 @@ category: Błędy
 `<html>` musi wskazywać programom użytkownika naturalny język dokumentu.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-3>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3>
 * <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-4>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <https://www.w3.org/TR/WCAG-TECHS/H57.html>
 * <https://html.spec.whatwg.org/#attr-lang>
@@ -826,7 +826,7 @@ Nie wolno jednak używać znaczników semantyki oraz atrybutów mających na cel
 * `[colgroup]`.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-5-8>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-8>
 * <https://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 * <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
@@ -880,8 +880,8 @@ Dlatego nie powinny być używane w znacznikach, poza `<img>`.
 Zamiast tego używaj CSS.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#presentation>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-10-1->
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#presentation>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
@@ -1105,7 +1105,7 @@ Znacznik `<title>` jest pierwszą rzeczą czytaną na głos przez czytniki ekran
 Moglibyśmy użyć pseudoklasy <code>:blank</code>, ale w tym momencie jej obsługa jest bardzo słaba. Moglibyśmy również użyć pseudoklasy <code>:-moz-only-whitespace</code>, ale jej obsługa jest ograniczona do Firefoksa, co mogłoby spowodować niepoprawność naszego stosu selektorów…
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-5>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5>
 * <https://rgaa.lepszyweb.pl/pl/rgaa/glossaire.html#titrePage>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
@@ -1659,7 +1659,7 @@ Element interaktywny nie może być umieszczony w innym elemencie interaktywnym 
 
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa/criteres.html#crit-8-2>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
