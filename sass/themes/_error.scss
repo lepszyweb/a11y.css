@@ -315,7 +315,7 @@ category: Błędy
 Znacznik `<label>` z atrybutem <code>[for]</code> powinien oczywiście etykietować coś z atrybutem <code>[id]</code>. W atrybucie <code>[for]</code> musi być wartość <code>[id]</code> etykietowanego elementu. Oczywiście.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
@@ -423,7 +423,7 @@ category: Błędy
 Przycisk `<button>` powinien mieć albo zawartość albo atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code>. Atrybuty te, jeśli istnieją, nie mogą być puste.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#formulaires>
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
@@ -455,7 +455,7 @@ category: Błędy
 Atrybut <code>[aria-label]</code>, <code>[aria-labelledby]</code> lub <code>[title]</code> w znaczniku `<button>` nie może być pusty.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/criteres.html#formulaire>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#formulaires>
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
@@ -759,7 +759,7 @@ category: Błędy
 
 ### Bibliografia
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-3>
-* <https://rgaa.lepszyweb.pl/pl/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
+* <https://rgaa.lepszyweb.pl/pl/glossaire.html#jezykDomyslny>
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <https://www.w3.org/TR/WCAG-TECHS/H57.html>
@@ -880,7 +880,7 @@ Dlatego nie powinny być używane w znacznikach, poza `<img>`.
 Zamiast tego używaj CSS.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#presentation>
+* <https://rgaa.lepszyweb.pl/pl/criteres.html#prezentacja>
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
@@ -1106,7 +1106,7 @@ Moglibyśmy użyć pseudoklasy <code>:blank</code>, ale w tym momencie jej obsł
 
 ### Bibliografia
 * <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-5>
-* <https://rgaa.lepszyweb.pl/pl/rgaa/glossaire.html#titrePage>
+* <https://rgaa.lepszyweb.pl/pl/glossaire.html#tytulStrony>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
 * <https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title>
