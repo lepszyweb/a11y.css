@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="Ten plik CSS ma na celu ostrzeganie programistów o możliwych zagrożeniach i błędach występujących w kodzie HTML. Może być również użyty do wstępnej oceny jakości strony. Wystarczy go dołączyć jako zewnętrzny arkusz stylów.">
-    <link rel="stylesheet" href="./static/docs.css?v=1680831296468">
+    <link rel="stylesheet" href="./static/docs.css?v=1680874006735">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
@@ -299,7 +299,7 @@ którego wartość powinna być równa liczbie <code>&lt;option&gt;</code>.</p>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">select[required]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[multiple]<span class="token punctuation">)</span>[size=<span class="token string">"1"</span>]<span class="token punctuation">,</span>
-select[required]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[multiple]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[size]<span class="token punctuation">)</span>
+select[required]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[multiple]<span class="token punctuation">,</span> [size]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><select name="slices" required>
@@ -395,7 +395,7 @@ select[required]<span class="token punctuation">:</span><span class="token funct
 <li><a href="https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element</a></li>
 </ul>
 <h4>Selektor</h4>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figcaption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>last-child<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figcaption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span> <span class="token punctuation">:</span>last-child<span class="token punctuation">)</span>
 </code></pre></div>
 <h4>Test</h4>
 <div class="pre"><div><figure role="group">
@@ -834,6 +834,6 @@ svg[aria-label][title]
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1680831296475"></script>
+    <script src="./static/docs.js?v=1680874006742"></script>
   </body>
 </html>
