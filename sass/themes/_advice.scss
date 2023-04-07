@@ -21,7 +21,7 @@ którego wartość powinna być równa liczbie `<option>`.
 ### Selektor
 ```css
 select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size])
+select[required]:not([multiple], [size])
 ```
 
 ### Test
@@ -33,7 +33,7 @@ select[required]:not([multiple]):not([size])
 ```
 */
 select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size]) {
+select[required]:not([multiple], [size]) {
   @include advice('select-option-not-empty', $self-closing: true);
 }
 
@@ -177,7 +177,7 @@ Element `<figcaption>` powinien być pierwszym lub ostatnim dzieckiem. Nie inacz
 
 #### Selektor
 ```css
-figcaption:not(:first-child):not(:last-child)
+figcaption:not(:first-child, :last-child)
 ```
 
 #### Test
@@ -189,7 +189,7 @@ figcaption:not(:first-child):not(:last-child)
 </figure>
 ```
 */
-figcaption:not(:first-child):not(:last-child) {
+figcaption:not(:first-child, :last-child) {
   @include advice('figcaption-order');
 }
 

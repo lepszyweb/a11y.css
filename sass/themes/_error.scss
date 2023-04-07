@@ -56,7 +56,7 @@ Atrybut <code>[tabindex]</code> nigdy nie powinien być większy niż 0.
 
 ### Selektor
 ```css
-[tabindex]:not([tabindex="0"]):not([tabindex^="-"])
+[tabindex]:not([tabindex="0"], [tabindex^="-"])
 ```
 
 ### Test
@@ -64,7 +64,7 @@ Atrybut <code>[tabindex]</code> nigdy nie powinien być większy niż 0.
 <button tabindex="1" type="button">Dodatni tabindex jest zły!</button>
 ```
 */
-[tabindex]:not([tabindex="0"]):not([tabindex^="-"]) {
+[tabindex]:not([tabindex="0"], [tabindex^="-"]) {
   @include error('tab-order');
 
   @include void-tags {
@@ -130,7 +130,7 @@ Przy okazji, po co miałbyś używać pustego łącza?
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby])
+a:empty:not([title], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -141,7 +141,7 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby])
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
+a:empty:not([title], [aria-label], [aria-labelledby]) {
   @include error('empty-link');
 }
 
@@ -204,15 +204,15 @@ Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <c
 
 ### Bibliografia
 * <https://www.w3.org/TR/wai-aria/roles#img>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria/roles#presentation>
 * <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
 
 ### Selektor
 ```css
-[role="img"]:not([aria-label]):not([aria-labelledby]),
-svg[role="img"]:not([aria-label]):not([aria-labelledby])
+[role="img"]:not([aria-label], [aria-labelledby]),
+svg[role="img"]:not([aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -224,11 +224,11 @@ svg[role="img"]:not([aria-label]):not([aria-labelledby])
 </svg><span>†</span>
 ```
 */
-[role="img"]:not([aria-label]):not([aria-labelledby]) {
+[role="img"]:not([aria-label], [aria-labelledby]) {
   @include error('no-aria-label');
 }
 
-svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
+svg[role="img"]:not([aria-label], [aria-labelledby]) {
   @include error('no-aria-label', $self-closing: true);
 }
 
@@ -249,7 +249,7 @@ Element `<img>` musi mieć <code>[src]</code> lub <code>[srcset]</code>. I powin
 
 ### Selektor
 ```css
-img:not([src]):not([srcset]),
+img:not([src], [srcset]),
 img[src=""],
 img[src=" "],
 img[src="#"],
@@ -258,7 +258,7 @@ img[srcset=""],
 img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
-input[type="image"]:not([src]):not([srcset]),
+input[type="image"]:not([src], [srcset]),
 input[type="image"][src=""],
 input[type="image"][src=" "],
 input[type="image"][src="#"],
@@ -274,8 +274,8 @@ input[type="image"][srcset="/"]
 <img alt="I tylko mi src brak" width="144" height="144"/>
 ```
 */
-img:not([src]):not([srcset]),
-input[type="image"]:not([src]):not([srcset]) {
+img:not([src], [srcset]),
+input[type="image"]:not([src], [srcset]) {
   @include error('no-src');
 }
 
@@ -311,7 +311,7 @@ category: Błędy
 ---
 
 ### Opis
-Znacznik `<label>` z atrybutem <code>[for]</code> powinien oczywiście etykietować coś z atrybutem <code>[id]</code>. W atrybucie <code>[for]</code> musi być wartość <code>[id]</code> etykietowanego elementu. Oczywiście.
+W atrybucie <code>[for]</code> musi być wartość <code>[id]</code> etykietowanego elementu. Oczywiście.
 
 ### Bibliografia
 * <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#test-11-1-2>
@@ -359,9 +359,9 @@ Jak oznaczyć pole? Masz kilka opcji do wyboru: <code>[id]</code>, <code>[title]
 
 ### Selektor
 ```css
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby])
+input:not([type="button"], [type="submit"], [type="hidden"], [type="reset"], [type="image"], [id], [aria-label], [title], [aria-labelledby]),
+textarea:not([id], [aria-label], [aria-labelledby]),
+select:not([id], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -369,9 +369,9 @@ select:not([id]):not([aria-label]):not([aria-labelledby])
 <input type="text" /><span>†</span>
 ```
 */
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby]) {
+input:not([type="button"], [type="submit"], [type="hidden"], [type="reset"], [type="image"], [id], [aria-label], [title], [aria-labelledby]),
+textarea:not([id], [aria-label], [aria-labelledby]),
+select:not([id], [aria-label], [aria-labelledby]) {
   @include error('no-id', $self-closing: true);
 }
 
@@ -394,9 +394,9 @@ Zawsze masz kilka opcji do wyboru: <code>[value]</code>, <code>[title]</code>, <
 
 ### Selektor
 ```css
-input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
+input[type="reset"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="submit"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="button"]:not([value], [title], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -404,9 +404,9 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 <input type="submit" /><span>†</span>
 ```
 */
-input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
+input[type="reset"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="submit"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="button"]:not([value], [title], [aria-label], [aria-labelledby]) {
   @include error('no-value', $self-closing: true);
 }
 
@@ -431,7 +431,7 @@ Przycisk `<button>` powinien mieć albo zawartość albo atrybut <code>[aria-lab
 
 ### Selektor
 ```css
-button:empty:not([aria-label]):not([aria-labelledby]):not([title])
+button:empty:not([aria-label], [aria-labelledby], [title])
 ```
 
 ### Test
@@ -439,7 +439,7 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 <button type="button"></button>
 ```
 */
-button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
+button:empty:not([aria-label], [aria-labelledby], [title]) {
   @include error('empty-button');
 }
 
@@ -507,7 +507,7 @@ Jeśli nie wysyła niczego, powinien mieć atrybut <code>[type="button"]</code>.
 
 ### Selektor
 ```css
-button:not([type]):not([form]):not([formaction]):not([formtarget])
+button:not([type], [form], [formaction], [formtarget])
 ```
 
 ### Test
@@ -515,11 +515,11 @@ button:not([type]):not([form]):not([formaction]):not([formtarget])
 <button>Po prostu nie wiem, co ze sobą zrobić.</button>
 ```
 */
-button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+button:not([type], [form], [formaction], [formtarget]) {
   @include error('not-form-button');
 }
 
-form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+form button:not([type], [form], [formaction], [formtarget]) {
   @extend %a11y-reset;
 }
 
@@ -887,8 +887,8 @@ Zamiast tego używaj CSS.
 
 ### Selektor
 ```css
-:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-:not(img):not(object):not(embed):not(svg):not(canvas)[height]
+:not(img, object, embed, svg, canvas)[width],
+:not(img, object, embed, svg, canvas)[height]
 ```
 
 ### Test
@@ -896,8 +896,8 @@ Zamiast tego używaj CSS.
 <p width="20">Cholera! Źle się czuję :(</p>
 ```
 */
-:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+:not(img, object, embed, svg, canvas)[width],
+:not(img, object, embed, svg, canvas)[height] {
   @include error('dimensions');
 
   @include void-tags {
@@ -1207,7 +1207,7 @@ Ponadto pozwala uniknąć pewnych problemów związanych z bezpieczeństwem, wyk
 
 ### Selektor
 ```css
-meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
+meta[charset]:not([charset="utf-8"], [charset="UTF-8"])
 ```
 
 ### Test
@@ -1215,7 +1215,7 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 <meta charset="Windows-1252"/><link>†</link>
 ```
 */
-meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
+meta[charset]:not([charset="utf-8"], [charset="UTF-8"]) {
   @include error('incorrect-charset', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
@@ -1285,7 +1285,7 @@ Atrybut  <code>[dir]</code> służący do określenia kierunku tekstu elementu -
 
 ### Selektor
 ```css
-[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
+[dir]:not([dir="rtl"], [dir="ltr"], [dir="auto"])
 ```
 
 ### Test
@@ -1293,7 +1293,7 @@ Atrybut  <code>[dir]</code> służący do określenia kierunku tekstu elementu -
 <p dir="wtf">Cóż, jestem trochę zdezorientowany…</p>
 ```
 */
-[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
+[dir]:not([dir="rtl"], [dir="ltr"], [dir="auto"]) {
   @include error('invalid-dir');
 }
 
@@ -1375,7 +1375,7 @@ Pola typu <code>radio</code> lub <code>checkbox</code> są zwykle zgrupowane. At
 ```
 */
 [type="radio"]:not([name]),
-[type="checkbox"]:not(:only-of-type):not([name]) {
+[type="checkbox"]:not(:only-of-type, [name]) {
   @include error('inputs-group', $self-closing: true);
 }
 

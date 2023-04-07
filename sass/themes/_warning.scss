@@ -21,7 +21,7 @@ Jedynym dozwolonym dzieckiem w `<ul>` i `<ol>` jest `<li>` - i odwrotnie jest r�
 ```css
 ul > :not(li),
 ol > :not(li),
-:not(ul):not(ol) > li
+:not(ul, ol) > li
 ```
 
 ### Test
@@ -33,7 +33,7 @@ ol > :not(li),
 */
 ul > :not(li),
 ol > :not(li),
-:not(ul):not(ol) > li {
+:not(ul, ol) > li {
   @include warning('invalid-list-nesting');
 }
 
@@ -58,7 +58,7 @@ Elementy `<dt>` i `<dd>` powinny być bezpośrednio sąsiadującym rodzeństwem.
 ### Selektor
 ```css
 dt + :not(dd),
-:not(dt):not(dd) + dd
+:not(dt, dd) + dd
 ```
 
 ### Test
@@ -70,7 +70,7 @@ dt + :not(dd),
 ```
 */
 dt + :not(dd),
-:not(dt):not(dd) + dd {
+:not(dt, dd) + dd {
   @include warning('invalid-def');
 }
 
@@ -98,7 +98,7 @@ Każda inna konstrukcja może być gdzieś naruszeniem.
 ```css
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd):not(div)
+dl > :not(dt, dd, div)
 ```
 
 ### Test
@@ -110,7 +110,7 @@ dl > :not(dt):not(dd):not(div)
 */
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd):not(div) {
+dl > :not(dt, dd, div) {
   @include warning('invalid-def-nesting');
 }
 
@@ -217,13 +217,13 @@ article main,
 :not(tr) > th,
 colgroup *:not(col),
 :not(colgroup) > col,
-tr > :not(td):not(th),
+tr > :not(td, th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+select > :not(option, optgroup),
+:not(select, optgroup) > option,
+table > *:not(thead, tfoot, tbody, tr, colgroup, caption),
 address h1,
 address h2,
 address h3,
@@ -253,13 +253,13 @@ article main,
 :not(tr) > th,
 colgroup *:not(col),
 :not(colgroup) > col,
-tr > :not(td):not(th),
+tr > :not(td, th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+select > :not(option, optgroup),
+:not(select, optgroup) > option,
+table > *:not(thead, tfoot, tbody, tr, colgroup, caption),
 address h1,
 address h2,
 address h3,
@@ -836,7 +836,7 @@ Każdy `<svg>` powinien mieć albo <code>[aria-hidden="true"]</code>, jeśli ma 
 
 ### Selektor
 ```css
-svg:not([aria-hidden="true"]):not([role="img"])
+svg:not([aria-hidden="true"], [role="img"])
 ```
 
 ### Test
@@ -849,7 +849,7 @@ svg:not([aria-hidden="true"]):not([role="img"])
 </svg><span>†</span>
 ```
 */
-svg:not([aria-hidden="true"]):not([role="img"]) {
+svg:not([aria-hidden="true"], [role="img"]) {
   @include warning('no-aria-role', $self-closing: true);
 }
 
@@ -953,7 +953,8 @@ Moglibyśmy użyć pseudo-klasy <code>:blank</code>, ale w tym momencie jej wspa
 
 ### Selektor
 ```css
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title)
+```
 ```
 
 ### Test
@@ -965,14 +966,13 @@ body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
  * 1. An empty tag without dimensions isn't hoverable :/
  * @note Won't do anything for inline elements.
  */
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title) {
   @include warning('empty-nodes');
   /* 1 */
   min-height: 1px;
   min-width: 1px;
 }
-
-svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+svg *:empty:not(title, desc, [hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr) {
   @extend %a11y-reset;
 }
 
@@ -1389,7 +1389,7 @@ a[href^="javascript"]:not([role="button"])
 
 ### Test
 ``` html
-<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Proszę użyć mojej zakładki ;)</a>
+<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
 ```
 */
 a[href^="javascript"]:not([role="button"]) {
@@ -1590,7 +1590,7 @@ Niektóre języki - jak arabski czy hebrajski - wymagają przełączenia kierunk
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),
 [lang="he"] [lang]:not([dir="ltr"]),
-[dir="rtl"]:not([lang="ar"]):not([lang="he"])
+[dir="rtl"]:not([lang="ar"], [lang="he"])
 ```
 
 ### Test
@@ -1602,6 +1602,6 @@ Niektóre języki - jak arabski czy hebrajski - wymagają przełączenia kierunk
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),
 [lang="he"] [lang]:not([dir="ltr"]),
-[dir="rtl"]:not([lang="ar"]):not([lang="he"]) {
+[dir="rtl"]:not([lang="ar"], [lang="he"]) {
   @include warning('mismatched-dir');
 }
