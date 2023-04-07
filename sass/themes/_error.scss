@@ -587,7 +587,7 @@ Użyj <code>[disabled]</code> i <code>[readonly]</code>.
 
 ### Selektor
 ```css
-button[class*="disabled"]:not([disabled]):not([readonly])
+button[class*="disabled"]:not([disabled], [readonly])
 ```
 
 ### Test
@@ -595,7 +595,7 @@ button[class*="disabled"]:not([disabled]):not([readonly])
 <button class="is-disabled" type="button">Być albo nie być (wyłączonym)?</button>
 ```
 */
-button[class*="disabled"]:not([disabled]):not([readonly]) {
+button[class*="disabled"]:not([disabled], [readonly])
   @include error('disabled-button');
 }
 
