@@ -972,6 +972,7 @@ body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, ar
   min-height: 1px;
   min-width: 1px;
 }
+
 svg *:empty:not(title, desc, [hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr) {
   @extend %a11y-reset;
 }
