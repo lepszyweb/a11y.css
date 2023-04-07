@@ -203,11 +203,10 @@ Element z <code>[role=img]</code> powinien mieć albo <code>[aria-label]</code> 
 Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <code>[role=img]</code>.
 
 ### Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#img>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/wai-aria-1.2/#img>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/wai-aria/roles#presentation>
-* <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
+* <https://www.w3.org/TR/wai-aria-1.2/#presentation>
 
 ### Selektor
 ```css
@@ -762,7 +761,7 @@ category: Błędy
 * <https://rgaa.lepszyweb.pl/rgaa4-slownik.html#jezykDomyslny>
 * <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG21/#language-of-page>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H5>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H57>
 * <https://html.spec.whatwg.org/#attr-lang>
 * <https://tools.ietf.org/html/bcp47#section-2.1.1>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
@@ -1149,7 +1148,7 @@ Użytkownik powinien mieć możliwość powiększania lub pomniejszania strony, 
 * <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
 * <https://www.w3.org/TR/WCAG21/#resize-text>
 * <https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html>
-* <https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
+* <https://www.accede-web.com/notices/html-et-css/bonnes-pratiques/ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
 * <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
 
 ### Selektor
@@ -1240,7 +1239,6 @@ Ma to również na celu zapobieżenie staremu eksploitowi bezpieczeństwa wykorz
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://w3c.github.io/html/document-metadata.html#charset>
-* <https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
 
 ### Selektor
 ```css
@@ -1453,10 +1451,10 @@ Również <code>[aria-valuetext]</code> jest mile widziany, mimo że nie jest wy
 
 ### Bibliografia
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
-* <https://www.w3.org/TR/wai-aria/roles#slider>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria-1.2/#slider>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
 * <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
 * <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
 * <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
@@ -1501,10 +1499,10 @@ Element z [role=spinbutton] wymaga kilku atrybutów::
 * `[aria-valuenow]`
 
 ### Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#spinbutton>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria-1.2/#spinbutton>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
 
 ### Selektor
 ```css
@@ -1541,8 +1539,8 @@ category: Błędy
 Element z <code>[role="checkbox"]</code> wymaga atrybutu stanu <code>[aria-checked]</code>
 
 ### Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#checkbox>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
+* <https://www.w3.org/TR/wai-aria-1.2/#checkbox>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-checked>
 
 ### Selektor
 ```css
@@ -1574,8 +1572,8 @@ category: Błędy
 Element z <code>[role="combobox"]</code> wymaga atrybutu stanu <code>[aria-expanded]</code>.
 
 ### Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#combobox>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
+* <https://www.w3.org/TR/wai-aria-1.2/#combobox>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-expanded>
 
 ### Selektor
 ```css
@@ -1613,12 +1611,12 @@ Niektóre właściwości muszą być zgodne z wzorcem projektowym <code>[role="s
 * `[aria-orientation]`
 
 ### Bibliografia
-* <https://www.w3.org/TR/wai-aria/roles#scrollbar>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
+* <https://www.w3.org/TR/wai-aria-1.2/#scrollbar>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-controls>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin> 
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax> 
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow> 
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-orientation>
 
 ### Selektor
 ```css
