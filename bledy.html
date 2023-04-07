@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="Ten plik CSS ma na celu ostrzeganie programistów o możliwych zagrożeniach i błędach występujących w kodzie HTML. Może być również użyty do wstępnej oceny jakości strony. Wystarczy go dołączyć jako zewnętrzny arkusz stylów.">
-    <link rel="stylesheet" href="./static/docs.css?v=1680876986971">
+    <link rel="stylesheet" href="./static/docs.css?v=1680907436363">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
@@ -498,11 +498,10 @@ input[type=<span class="token string">"image"</span>]<span class="token punctuat
 Jeśli obraz jest dekoracyjny, użyj <code>[role=presentation]</code> zamiast <code>[role=img]</code>.</p>
 <h3>Bibliografia</h3>
 <ul>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#img">https://www.w3.org/TR/wai-aria/roles#img</a></li>
-<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#img">https://www.w3.org/TR/wai-aria-1.2/#img</a></li>
+<li><a href="https://www.w3.org/TR/WCAG21/#non-text-content">https://www.w3.org/TR/WCAG21/#non-text-content</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#textalternativecomputation">https://www.w3.org/TR/wai-aria/roles#textalternativecomputation</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#presentation">https://www.w3.org/TR/wai-aria-1.2/#presentation</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -735,7 +734,7 @@ Użyj <code>[disabled]</code> i <code>[readonly]</code>.</p>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122</a></li>
 </ul>
 <h3>Selektor</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">button[class*=<span class="token string">"disabled"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[disabled]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[readonly]<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">button[class*=<span class="token string">"disabled"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[disabled]<span class="token punctuation">,</span> [readonly]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><button class="is-disabled" type="button">Być albo nie być (wyłączonym)?</button>
@@ -868,7 +867,7 @@ form[action=<span class="token string">""</span>]
 <li><a href="https://rgaa.lepszyweb.pl/rgaa4-slownik.html#jezykDomyslny">https://rgaa.lepszyweb.pl/rgaa4-slownik.html#jezykDomyslny</a></li>
 <li><a href="https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-4">https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-4</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#language-of-page">https://www.w3.org/TR/WCAG21/#language-of-page</a></li>
-<li><a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H5">https://www.w3.org/WAI/WCAG21/Techniques/html/H5</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H57">https://www.w3.org/WAI/WCAG21/Techniques/html/H57</a></li>
 <li><a href="https://html.spec.whatwg.org/#attr-lang">https://html.spec.whatwg.org/#attr-lang</a></li>
 <li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang</a></li>
@@ -1130,7 +1129,7 @@ Tak - cyfry, dwóch myślników lub myślnika, po którym następuje cyfra.</p>
 <li><a href="https://dequeuniversity.com/rules/axe/2.1/meta-viewport">https://dequeuniversity.com/rules/axe/2.1/meta-viewport</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#resize-text">https://www.w3.org/TR/WCAG21/#resize-text</a></li>
 <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html</a></li>
-<li><a href="https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/">https://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/</a></li>
+<li><a href="https://www.accede-web.com/notices/html-et-css/bonnes-pratiques/ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/">https://www.accede-web.com/notices/html-et-css/bonnes-pratiques/ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/</a></li>
 <li><a href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">https://adrianroselli.com/2015/10/dont-disable-zoom.html</a></li>
 </ul>
 <h3>Selektor</h3>
@@ -1208,7 +1207,6 @@ meta[name=<span class="token string">"viewport"</span>][content*=<span class="to
 <li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</a></li>
 <li><a href="https://w3c.github.io/html/document-metadata.html#charset">https://w3c.github.io/html/document-metadata.html#charset</a></li>
-<li><a href="https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html">https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">head</span> <span class="token punctuation">:</span><span class="token property">first-child</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[charset]<span class="token punctuation">)</span>
@@ -1393,10 +1391,10 @@ Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już u
 <h3>Bibliografia</h3>
 <ul>
 <li><a href="https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378">https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#slider">https://www.w3.org/TR/wai-aria/roles#slider</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#slider">https://www.w3.org/TR/wai-aria-1.2/#slider</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow">https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax</a></li>
 <li><a href="https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/">https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/</a></li>
 <li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/</a></li>
 <li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/</a></li>
@@ -1426,10 +1424,10 @@ Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już u
 </ul>
 <h3>Bibliografia</h3>
 <ul>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#spinbutton">https://www.w3.org/TR/wai-aria/roles#spinbutton</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#spinbutton">https://www.w3.org/TR/wai-aria-1.2/#spinbutton</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow">https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"spinbutton"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-valuemin]<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -1450,8 +1448,8 @@ Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już u
 <p>Element z <code>[role="checkbox"]</code> wymaga atrybutu stanu <code>[aria-checked]</code></p>
 <h3>Bibliografia</h3>
 <ul>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#checkbox">https://www.w3.org/TR/wai-aria/roles#checkbox</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked">https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#checkbox">https://www.w3.org/TR/wai-aria-1.2/#checkbox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-checked">https://www.w3.org/TR/wai-aria-1.2/#aria-checked</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"checkbox"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-checked]<span class="token punctuation">)</span>
@@ -1468,8 +1466,8 @@ Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już u
 <p>Element z <code>[role="combobox"]</code> wymaga atrybutu stanu <code>[aria-expanded]</code>.</p>
 <h3>Bibliografia</h3>
 <ul>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#combobox">https://www.w3.org/TR/wai-aria/roles#combobox</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#combobox">https://www.w3.org/TR/wai-aria-1.2/#combobox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-expanded">https://www.w3.org/TR/wai-aria-1.2/#aria-expanded</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"combobox"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-expanded]<span class="token punctuation">)</span>
@@ -1493,12 +1491,12 @@ Jest to zazwyczaj zły pomysł, ponieważ skróty klawiaturowe mogą być już u
 </ul>
 <h3>Bibliografia</h3>
 <ul>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#scrollbar">https://www.w3.org/TR/wai-aria/roles#scrollbar</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation">https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#scrollbar">https://www.w3.org/TR/wai-aria-1.2/#scrollbar</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-controls">https://www.w3.org/TR/wai-aria-1.2/#aria-controls</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin</a> </li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax">https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax</a> </li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow">https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow</a> </li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.2/#aria-orientation">https://www.w3.org/TR/wai-aria-1.2/#aria-orientation</a></li>
 </ul>
 <h3>Selektor</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"scrollbar"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-controls]<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -1595,6 +1593,6 @@ progress progress
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1680876986972"></script>
+    <script src="./static/docs.js?v=1680907436364"></script>
   </body>
 </html>
