@@ -11,9 +11,9 @@ category: Ostrzeżenia
 Jedynym dozwolonym dzieckiem w `<ul>` i `<ol>` jest `<li>` - i odwrotnie jest również prawdziwe.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
@@ -49,9 +49,9 @@ category: Ostrzeżenia
 Elementy `<dt>` i `<dd>` powinny być bezpośrednio sąsiadującym rodzeństwem. I nic więcej. Chociaż wiele `<dd>` może nastąpić za pojedynczym `<dt>`.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
@@ -87,9 +87,9 @@ Elementy `<div>`, `<dt>` i `<dd>` powinny być bezpośrednimi dziećmi `<dl>`.
 Każda inna konstrukcja może być gdzieś naruszeniem.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
@@ -126,9 +126,9 @@ category: Ostrzeżenia
 Element `<figcaption>` poza `<figure>` nie ma sensu.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
 ### Selektor
@@ -157,7 +157,7 @@ category: Ostrzeżenia
 Element `<figure>` potrzebuje atrybutu ARIA <code>[role="group"]</code> ze względu na dostępność.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-10>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
@@ -200,11 +200,11 @@ category: Ostrzeżenia
 Może inne nieprawidłowe zagnieżdżenia do przetestowania. Bądź na bieżąco.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>.
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 
 ### Selektor
 ```css
@@ -285,7 +285,7 @@ category: Ostrzeżenia
 ---
 
 ### Opis
-Czy wiesz, że nie powinieneś dodawać `<div>`  wewnątrz jakiegokolwiek elementu liniowego?
+Czy wiesz, że nie powinieneś dodawać `<div>` wewnątrz jakiegokolwiek elementu liniowego?
 Zamiast tego możesz użyć `<span>`.
 
 ### Bibliografia
@@ -382,9 +382,9 @@ category: Ostrzeżenia
 Zawsze.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-6>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
 ### Selektor
@@ -418,9 +418,9 @@ category: Ostrzeżenia
 Zawsze.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-11-6>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
@@ -455,12 +455,11 @@ Każdy skrót powinien zawierać wyjaśnienie jego znaczenia, przynajmniej przy 
 
 ### Bibliografia
 * BP160 OpQuast
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-9-4>
-* <https://www.w3.org/TR/WCAG20/#meaning-located>
-* <https://www.w3.org/TR/WCAG-TECHS/G70.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G97.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G102.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H28.html>
+* <https://www.w3.org/TR/WCAG21/#abbreviations>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G70>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G97>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G102>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H28>
 
 ### Selektor
 ```css
@@ -494,14 +493,14 @@ Sprawdź to dwa razy.
 
 ### Bibliografia
 * BP160 OpQuast
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-2>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
 
 ### Selektor
 ```css
@@ -540,14 +539,14 @@ category: Ostrzeżenia
 Nazwa pliku w <code>[alt]</code> jest prawdopodobnie błędem automatyzacji… i nigdy nie pomoże żadnemu użytkownikowi.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-2>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
 
 ### Selektor
 ```css
@@ -689,16 +688,16 @@ Zobacz <a href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-iss
 
 ### Bibliografia
 * BP160 OpQuast
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-2>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria/roles#presentation>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
 
 ### Selektor
 ```css
@@ -783,7 +782,7 @@ Każdy obraz dekoracyjny powinien być oznaczony <code>[aria-hidden="true"]</cod
 <code>[role=presentation]</code> spowinno załatwić sprawę, ale w momencie pisania tego tekstu, jego wsparcie jest zbyt niskie w porównaniu do pustego <code>[alt]</code> lub <code>[aria-hidden=true]</code>.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/notes-techniques.html#crit-1-2>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
@@ -831,9 +830,9 @@ category: Ostrzeżenia
 Każdy `<svg>` powinien mieć albo <code>[aria-hidden="true"]</code>, jeśli ma charakter dekoracyjny, albo <code>[role="img"]</code>, jeśli ma charakter informacyjny.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-1-2>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-1-2>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
 
 ### Selektor
 ```css
@@ -866,9 +865,9 @@ category: Ostrzeżenia
 Media oparte na czasie, takie jak `<audio>` lub `<video>`  nie powinny być odtwarzane automatycznie , bo może to być dość zaskakujące dla użytkownika.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-4-18>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-13-17>
-* <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-4-18>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-13-17>
+* <https://www.w3.org/TR/WCAG21/#audio-control>
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ### Selektor
@@ -899,11 +898,11 @@ category: Ostrzeżenia
 Medium oparte na czasie, takie jak `<audio>` lub `<video>` będzie łatwiejsze w użyciu, jeśli <code>[controls]</code> są aktywowane dla użytkownika.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-4-20>
-* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
-* <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
-* <https://www.w3.org/TR/WCAG-TECHS/G4.html>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-4-20>
+* <https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded>
+* <https://www.w3.org/TR/WCAG21/#keyboard>
+* <https://www.w3.org/TR/WCAG21/#no-keyboard-trap>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G4>
 
 ### Selektor
 ```css
@@ -990,8 +989,8 @@ Samotny `<tr>` może być symptomem tabeli użytej do układu.
 Sprawdź to dwa razy!
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-3>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selektor
 ```css
@@ -1033,8 +1032,8 @@ category: Ostrzeżenia
 Nie ma dobrego powodu, aby zagnieżdżać tabele danych: więc prawdopodobnie oznacza to, że mamy do czynienia z tabelą układu…
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-3>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
@@ -1096,10 +1095,10 @@ category: Ostrzeżenia
 I to musi być <code>:first-child</code>, tak przy okazji.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-4>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-5-4>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
-* <https://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H39>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ### Selektor
@@ -1145,9 +1144,9 @@ category: Ostrzeżenia
 `<thead>`, `<tfoot>` oraz `<tbody>` muszą występować w tej kolejności.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
 ### Selektor
@@ -1246,9 +1245,9 @@ category: Ostrzeżenia
 `<th>` usilnie potrzebuje <code>[id]</code> lub <code>[scope]</code>.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-5-7>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H43>
 
 ### Selektor
 ```css
@@ -1439,9 +1438,9 @@ Twoje style powinny być sterowane przez plik CSS. To wszystko.
 I nie, JS nie powinien manipulować stylami: lepiej jest bawić się klasami.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-10-1>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-10-1>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selektor
 ```css
@@ -1511,12 +1510,12 @@ Chociaż <code>[aria-level]</code> nie jest wymagany przez specyfikację ARIA, w
 
 ### Bibliografia
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#crit-9-1>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
 * <https://www.w3.org/TR/wai-aria/roles#heading>
-* <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G141.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H42.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA12>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G141>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H42>
 
 ### Selektor
 ```css
@@ -1545,14 +1544,14 @@ Znacznik `<label>` coś etykietuje, w teorii.
 Chociaż domyślne etykietowanie kontrolek formularzy jest akceptowane, prawdopodobnie lepiej jest dwukrotnie sprawdzić, czy kontrolka formularza jest <em>naprawdę</em> zagnieżdżona w swojej `<label>`.
 
 ### Bibliografia
-* <https://rgaa.lepszyweb.pl/pl/criteres.html#test-11-1-2>
+* <https://rgaa.lepszyweb.pl/rgaa4-kryteria.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
-* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
 * <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
+* <https://www.w3.org/TR/WCAG21/#headings-and-labels>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 
 ### Selektor
 ```css
