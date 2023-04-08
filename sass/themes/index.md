@@ -3,7 +3,7 @@
 
 Wymawiaj &bdquo;Alix&rdquo;. Bo tak prościej!
 
-Plik a11y.css to plik <abbr title="Kaskadowego arkusza stylów" aria-label="Kaskadowego arkusza stylów">CSS</abbr>, który ma na celu ostrzeganie programistów o <b>możliwych zagrożeniach i błędach</b> występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
+Plik a11y.css to plik <abbr title="Kaskadowego arkusza stylów" aria-label="Kaskadowego arkusza stylów">CSS</abbr>, który ma ostrzegać programistów o <b>możliwych zagrożeniach i błędach</b> występujących w kodzie HTML. Może być również użyty do przybliżonej oceny jakości strony, przez proste dołączenie go jako zewnętrznego arkusza stylów.
 
 ## Jak stosować?
 
