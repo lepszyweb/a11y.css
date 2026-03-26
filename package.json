@@ -72,9 +72,9 @@
     "prismjs": "^1.21.0",
     "sass": "^1.43.3",
     "showdown": "^2.0.2",
-    "stylelint": "^14.0.0",
-    "stylelint-config-recommended": "^7.0.0",
-    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint": "^17.6.0",
+    "stylelint-config-recommended": "^18.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "uglify-js": "^3.15.1",
     "webextension-polyfill": "^0.8.0"
   },
