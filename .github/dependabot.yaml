@@ -8,6 +8,14 @@ updates:
   allow:
   - dependency-type: direct
   - dependency-type: indirect
+
+  groups:
+    stylelint:
+      patterns:
+        - "stylelint"
+        - "stylelint-*"
+        - "postcss-scss"
+
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
