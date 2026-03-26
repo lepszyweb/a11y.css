@@ -16,7 +16,7 @@ on:
 
 env:
   FORCE_COLOR: 2
-  NODE: 16
+  NODE: 20
 
 jobs:
   bundlewatch:
