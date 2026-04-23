@@ -15,6 +15,10 @@ updates:
         - "stylelint"
         - "stylelint-*"
         - "postcss-scss"
+    postcss:
+      patterns:
+        - "postcss"
+        - "postcss-*"
 
 - package-ecosystem: github-actions
   directory: "/"
