@@ -61,6 +61,7 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
+    "@stylistic/stylelint-plugin": "^5.1.0",
     "autoprefixer": "^10.4.2",
     "bundlewatch": "^0.4.1",
     "concurrently": "^9.2.1",
@@ -79,28 +80,33 @@
     "webextension-polyfill": "^0.12.0"
   },
   "stylelint": {
+    "plugins": [
+      "@stylistic/stylelint-plugin"
+    ],
     "extends": "stylelint-config-standard-scss",
     "rules": {
       "no-invalid-position-at-import-rule": null,
       "comment-whitespace-inside": null,
-      "string-quotes": null,
       "color-function-notation": null,
       "at-rule-empty-line-before": null,
       "declaration-empty-line-before": null,
       "comment-empty-line-before": null,
-      "max-line-length": 365,
-      "max-empty-lines": 2,
       "no-duplicate-selectors": null,
       "no-descending-specificity": null,
       "selector-type-no-unknown": null,
-      "selector-list-comma-newline-after": null,
-      "number-leading-zero": null,
+      "declaration-block-no-redundant-longhand-properties": null,
+      "selector-not-notation": null,
       "scss/no-global-function-names": null,
       "scss/operator-no-newline-before": null,
       "scss/dollar-variable-colon-space-after": null,
       "scss/function-quote-no-quoted-strings-inside": null,
       "scss/function-unquote-no-unquoted-strings-inside": null,
-      "scss/dollar-variable-empty-line-before": null
+      "scss/dollar-variable-empty-line-before": null,
+      "@stylistic/string-quotes": null,
+      "@stylistic/max-line-length": 365,
+      "@stylistic/max-empty-lines": 2,
+      "@stylistic/selector-list-comma-newline-after": null,
+      "@stylistic/number-leading-zero": null
     }
   },
   "bundlewatch": {
@@ -122,6 +128,5 @@
         "maxSize": "21.5 kB"
       }
     ]
-  },
-  "dependencies": {}
+  }
 }
