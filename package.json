@@ -61,7 +61,7 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
-    "@stylistic/stylelint-plugin": "^5.1.0",
+    "@stylistic/stylelint-plugin": "^6.0.0",
     "autoprefixer": "^10.4.2",
     "bundlewatch": "^1.1.0",
     "concurrently": "^10.0.0",
