@@ -1,29 +1,39 @@
+
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 99
-  allow:
-  - dependency-type: direct
-  - dependency-type: indirect
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
+    allow:
+      - dependency-type: direct
+      - dependency-type: indirect
+      - dependency-name: "@stylistic/stylelint-plugin"
+        update-types:
+          - "version-update:semver-major"
 
-  groups:
-    stylelint:
-      patterns:
-        - "stylelint"
-        - "stylelint-*"
-        - "postcss-scss"
-    postcss:
-      patterns:
-        - "postcss"
-        - "postcss-*"
+    groups:
+      stylelint:
+        patterns:
+          - "stylelint"
+          - "stylelint-*"
+          - "postcss-scss"
+      stylelint-plugin-major:
+        patterns:
+          - "@stylistic/stylelint-plugin"
+        update-types:
+          - "major"
+      postcss:
+        patterns:
+          - "postcss"
+          - "postcss-*"
 
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 99
-  allow:
-  - dependency-type: direct
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 99
+    allow:
+      - dependency-type: direct
+
